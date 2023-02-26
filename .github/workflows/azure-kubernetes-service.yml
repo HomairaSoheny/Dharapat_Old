@@ -56,7 +56,7 @@ jobs:
 
       - name: Build docker image
         run:
-         docker build -t ${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} -f Dockerfile .
+         docker build -t ${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} -L Dockerfile .
       
       - name: Login to Container Registry
         uses: azure/docker-login@v1
