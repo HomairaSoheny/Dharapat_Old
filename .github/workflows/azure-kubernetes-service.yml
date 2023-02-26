@@ -52,11 +52,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Checks out the repository this file is in
-      - uses: actions/checkout@v3
+      - name: Check out code
+        uses: actions/checkout@v3
 
       - name: Build docker image
         run:
-         docker build -t ${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} -f /dharapat_analytics_cib_analyzer_prime_bank_backend/Dockerfile .
+         docker build -t ${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} -f Dockerfile .
       
       - name: Login to Container Registry
         uses: azure/docker-login@v1
