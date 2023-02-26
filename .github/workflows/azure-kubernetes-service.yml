@@ -37,6 +37,7 @@ on:
 env:
   AZURE_CONTAINER_REGISTRY: ${{secrets.AZURE_REGISTRY}}
   CONTAINER_NAME: ${{secrets.AZURE_REGISTRY_USERNAME}}
+  CONTAINER_PASSWORD: ${{secrets.AZURE_REGISTRY_PASSWORD}}
   IMAGE_NAME: dharapat-prime-bank-cib
   IMAGE_TAG: 1.0.${{github.run_number}}
   RESOURCE_GROUP: ${{secrets.AZURE_REGISTRY_USERNAME}}
@@ -52,11 +53,21 @@ jobs:
     steps:
       # Checks out the repository this file is in
       - uses: actions/checkout@v3
+
+      - name: Build docker image
+        run:
+         docker build -t ${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} Dockerfile .
       
       - name: Login to Container Registry
+        uses: azure/docker-login@v1
+        with:
+          login-server: ${{ env.AZURE_CONTAINER_REGISTRY }}
+          username: ${{ secrets.CONTAINER_NAME }}
+          password: ${{ secrets.CONTAINER_PASSWORD }}
+      
+      - name: Push Docker image to Azure Container Registry
         run: |
-          echo "${{env.CONTAINER_NAME}}" | docker login -u ${{env.CONTAINER_NAME}} ${{env.AZURE_CONTAINER_REGISTRY}}
-
+          docker push ${{env.AZURE_CONTAINER_REGISTRY}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
 
       # Logs in with your Azure credentials
       # - name: Azure login
