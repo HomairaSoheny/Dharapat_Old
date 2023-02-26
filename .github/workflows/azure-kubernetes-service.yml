@@ -57,7 +57,7 @@ jobs:
 
       - name: Build docker image
         run:
-         docker build -t ${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} -f "/media/arif/New Volume1/Arif/AI/dharapat/dharapat_analytics_cib_analyzer_prime_bank_backend/DockerFile" .
+         docker build -t ${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} -f ${{github.workspace}}/DockerFile .
       
       - name: Login to Container Registry
         uses: azure/docker-login@v1
