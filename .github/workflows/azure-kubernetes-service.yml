@@ -68,6 +68,7 @@ jobs:
       
       - name: Push Docker image to Azure Container Registry
         run: |
+          docker tag ${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} ${{env.AZURE_CONTAINER_REGISTRY}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
           docker push ${{env.AZURE_CONTAINER_REGISTRY}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
 
       # Logs in with your Azure credentials
