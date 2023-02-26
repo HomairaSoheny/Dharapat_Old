@@ -24,7 +24,7 @@ jobs:
         id: mode
         run: |
           if [[ "${{github.base_ref}}" == "main" || "${{github.ref}}" == "refs/heads/main" ]]; then
-            echo "mode_name=prod" >> $GITHUB_ENV
+            echo "mode_name=main" >> $GITHUB_ENV
           elif [[ "${{github.base_ref}}" == "develop" || "${{github.ref}}" == "refs/heads/develop" ]]; then
             echo "mode_name=dev" >> $GITHUB_ENV
           fi
