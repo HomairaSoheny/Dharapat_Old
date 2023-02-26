@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{.Values.mode_name}}-cib-service
+  namespace: {{.Values.mode_name}}-cib_analytics
+spec:
+  selector:
+    {{toYaml .Values.labels.cib}}
+  ports:
+    - port: 80
+      targetPort: 8000
+  type: LoadBalancer

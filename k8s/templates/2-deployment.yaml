@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{.Values.mode_name}}-cib-deployments
+  namespace: {{.Values.mode_name}}-cib_analytics
+spec:
+  replicas: {{.Values.replicas}}
+  selector:
+    matchLabels:
+      {{toYaml .Values.labels.cib}}
+  template:
+    metadata:
+      labels:
+        {{toYaml .Values.labels.cib}}
+    spec:
+      containers:
+        - name: {{.Values.mode_name}}-{{.Values.deployments}}-worker-container
+          image: {{.Values.images.cib}}
+          command: ["python", "consumer_rabbitmq.py"]
+          env:
+            - name: PYTHONUNBUFFERED
+              value: "1"
+
+      imagePullSecrets:
+        - name: cib-registry-key
