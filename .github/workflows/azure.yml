@@ -40,7 +40,7 @@ jobs:
           username: ${{env.azure_registry_username}}
           password: ${{env.azure_registry_password}}
           registry: ${{env.azure_registry}}
-          repository: ${{env.mode_name}}-${{env.repo_name}}
+          repository: ${{github.workspace}}/DockerFile
           tag_with_sha: true
   deploy:
     needs:
