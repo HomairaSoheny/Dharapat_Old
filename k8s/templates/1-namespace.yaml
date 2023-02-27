@@ -1,4 +1,4 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: {{.Values.mode_name}}-cib_analytics
+  name: {{.values.mode_name}}-cib_analytics
