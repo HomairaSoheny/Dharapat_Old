@@ -114,3 +114,4 @@ jobs:
           manifests: ${{ env.DEPLOYMENT_MANIFEST_PATH }}
           images: |
             ${{env.AZURE_CONTAINER_REGISTRY}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
+          namespace: dev-cib-analytics
