@@ -48,7 +48,7 @@ jobs:
 
   deploy:
     needs:
-      - build
+      - buildImage
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
