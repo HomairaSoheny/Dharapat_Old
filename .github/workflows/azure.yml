@@ -16,32 +16,36 @@ env:
   azure_credentials: ${{secrets.AZURE_CREDENTIALS}}
   azure_cluster_url: ${{secrets.AZURE_CLUSTER_URL}}
   azure_cluster_token: ${{secrets.AZURE_CLUSTER_TOKEN}}
+  IMAGE_NAME: dharapat-prime-bank-cib
+  IMAGE_TAG: 1.0.${{github.run_number}}
 
 jobs:
-  build:
+  buildImage:
+    permissions:
+      contents: read
+      id-token: write
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-      - name: Set Mode Name
-        id: mode
-        run: |
-          if [[ "${{github.base_ref}}" == "main" || "${{github.ref}}" == "refs/heads/main" ]]; then
-            echo "mode_name=main" >> $GITHUB_ENV
-          elif [[ "${{github.base_ref}}" == "develop" || "${{github.ref}}" == "refs/heads/develop" ]]; then
-            echo "mode_name=dev" >> $GITHUB_ENV
-          fi
-      - name: Check Mode Name
-        run: echo ${{ env.mode_name }}
-      - uses: satackey/action-docker-layer-caching@v0.0.4
-      - name: Build & Push Actions
-        uses: docker/build-push-action@v1
+      # Checks out the repository this file is in
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Build docker image
+        run:
+         docker build -t ${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} -f ${{github.workspace}}/Dockerfile .
+      
+      - name: Login to Container Registry
+        uses: azure/docker-login@v1
         with:
-          username: ${{env.azure_registry_username}}
-          password: ${{env.azure_registry_password}}
-          registry: ${{env.azure_registry}}
-          repository: ${{github.workspace}}
-          tag_with_sha: true
+          login-server: ${{ env.azure_registry }}
+          username: ${{ env.azure_registry_username }}
+          password: ${{ env.azure_registry_password }}
+      
+      - name: Push Docker image to Azure Container Registry
+        run: |
+          docker tag ${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} ${{env.azure_registry}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
+          docker push ${{env.azure_registry}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
+
   deploy:
     needs:
       - build
