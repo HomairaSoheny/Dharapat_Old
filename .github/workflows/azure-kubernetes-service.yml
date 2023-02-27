@@ -104,7 +104,7 @@ jobs:
           resource-group: ${{ env.RESOURCE_GROUP }}
           cluster-name: ${{ env.CLUSTER_NAME }}
           admin: 'false'
-          use-kubelogin: 'true'
+          use-kubelogin: 'false'
 
       # Deploys application based on given manifest file
       - name: Deploys application
