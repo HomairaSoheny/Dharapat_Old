@@ -99,8 +99,8 @@ jobs:
         uses: azure/aks-set-context@v3
         with:
           subscription: ${{ env.AZURE_SUBSCRIPTION_ID }}
-          # resource-group: ${{ env.RESOURCE_GROUP }}
-          # cluster-name: ${{ env.CLUSTER_NAME }}
+          resource-group: ${{ env.RESOURCE_GROUP }}
+          cluster-name: ${{ env.CLUSTER_NAME }}
           admin: 'false'
           use-kubelogin: 'true'
 
