@@ -43,6 +43,8 @@ env:
   RESOURCE_GROUP: ${{secrets.AZURE_REGISTRY_USERNAME}}
   CLUSTER_NAME: ${{secrets.AZURE_CLUSTER_NAME}}
   AZURE_CREDENTIALS: ${{secrets.AZURE_CREDENTIALS}}
+  AZURE_CLUSTER_TOKEN: ${{secrets.AZURE_CLUSTER_TOKEN}}
+  AZURE_CLUSTER_URL: ${{secrets.AZURE_CLUSTER_URL}}
   DEPLOYMENT_MANIFEST_PATH: ${{github.workspace}}/k8s/templates/
 
 jobs:
@@ -96,13 +98,21 @@ jobs:
 
       # # Retrieves your Azure Kubernetes Service cluster's kubeconfig file
       - name: Get K8s context
-        uses: azure/aks-set-context@v3
+        uses: azure/k8s-set-context@v1
         with:
-          subscription: ${{ env.AZURE_SUBSCRIPTION_ID }}
-          resource-group: ${{ env.RESOURCE_GROUP }}
-          cluster-name: ${{ env.CLUSTER_NAME }}
-          admin: 'false'
-          use-kubelogin: 'false'
+          method: service-account
+          k8s-url: ${{env.AZURE_CLUSTER_URL}}
+          k8s-secret: ${{env.AZURE_CLUSTER_TOKEN}}
+        id: setcontext
+
+      # - name: Get K8s context
+      #   uses: azure/aks-set-context@v3
+      #   with:
+      #     subscription: ${{ env.AZURE_SUBSCRIPTION_ID }}
+      #     resource-group: ${{ env.RESOURCE_GROUP }}
+      #     cluster-name: ${{ env.CLUSTER_NAME }}
+      #     admin: 'false'
+      #     use-kubelogin: 'false'
 
       # Deploys application based on given manifest file
       - name: Deploys application
