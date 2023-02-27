@@ -40,12 +40,22 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_CONTAINER_REGISTRY: "your-azure-container-registry"
-  CONTAINER_NAME: "your-container-name"
-  RESOURCE_GROUP: "your-resource-group"
-  CLUSTER_NAME: "your-cluster-name"
-  CHART_PATH: "your-chart-path"
-  CHART_OVERRIDE_PATH: "your-chart-override-path"
+  
+  # CONTAINER_PASSWORD: ${{secrets.AZURE_REGISTRY_PASSWORD}}
+  # IMAGE_NAME: dharapat-prime-bank-cib
+  # IMAGE_TAG: 1.0.${{github.run_number}}
+  
+  
+  # AZURE_CREDENTIALS: ${{secrets.AZURE_CREDENTIALS}}
+  # AZURE_CLUSTER_TOKEN: ${{secrets.AZURE_CLUSTER_TOKEN}}
+  # AZURE_CLUSTER_URL: ${{secrets.AZURE_CLUSTER_URL}}
+
+  AZURE_CONTAINER_REGISTRY: ${{secrets.AZURE_REGISTRY}}
+  CONTAINER_NAME: ${{secrets.AZURE_REGISTRY_USERNAME}}
+  RESOURCE_GROUP: ${{secrets.AZURE_REGISTRY_USERNAME}}
+  CLUSTER_NAME: ${{secrets.AZURE_CLUSTER_NAME}}
+  CHART_PATH: ${{github.workspace}}/k8s/templates/
+  CHART_OVERRIDE_PATH: ${{github.workspace}}/k8s/templates/override
 
 jobs:
   buildImage:
