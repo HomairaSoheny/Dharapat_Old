@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{.values.mode_name}}-cib-service
-  namespace: {{.values.mode_name}}-cib-analytics
+  name: dev-cib-service
+  namespace: dev-cib-analytics
 spec:
   selector:
-    {{toYaml .values.labels.cib}}
+    app: cib-analyser
   ports:
     - port: 80
       targetPort: 8000

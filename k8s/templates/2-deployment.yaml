@@ -1,22 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{.values.mode_name}}-cib-deployments
-  namespace: {{.values.mode_name}}-cib-analytics
+  name: dev-cib-deployments
+  namespace: dev-cib-analytics
 spec:
-  replicas: {{.values.replicas}}
+  replicas: 2
   selector:
     matchLabels:
-      {{toYaml .values.labels.cib}}
+      app: cib-analyser
   template:
     metadata:
       labels:
-        {{toYaml .values.labels.cib}}
+        app: cib-analyser
     spec:
       containers:
-        - name: {{.values.mode_name}}-{{.values.deployments}}-worker-container
-          image: {{.values.images.cib}}
-          command: ["python", "consumer_rabbitmq.py"]
+        - name: cib-analyser
+          image: 
           env:
             - name: PYTHONUNBUFFERED
               value: "1"
