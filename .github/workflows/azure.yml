@@ -20,7 +20,7 @@ env:
   IMAGE_TAG: 1.0.${{github.run_number}}
 
 jobs:
-  buildImage:
+  build:
     permissions:
       contents: read
       id-token: write
@@ -32,7 +32,7 @@ jobs:
 
       - name: Build docker image
         run:
-         docker build -t ${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} -f ${{github.workspace}}/Dockerfile .
+         docker build -t ${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} -f ${{github.workspace}}/DockerFile .
       
       - name: Login to Container Registry
         uses: azure/docker-login@v1
@@ -48,7 +48,7 @@ jobs:
 
   deploy:
     needs:
-      - buildImage
+      - build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
