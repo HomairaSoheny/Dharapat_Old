@@ -100,7 +100,7 @@ jobs:
         with:
           subscription: ${{ env.AZURE_SUBSCRIPTION_ID }}
           resource-group: ${{ env.RESOURCE_GROUP }}
-          # cluster-name: ${{ env.CLUSTER_NAME }}
+          cluster-name: ${{ env.CLUSTER_NAME }}
           admin: 'false'
           use-kubelogin: 'true'
 
