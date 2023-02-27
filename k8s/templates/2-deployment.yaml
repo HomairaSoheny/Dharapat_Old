@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{.values.mode_name}}-cib-deployments
-  namespace: {{.values.mode_name}}-cib_analytics
+  namespace: {{.values.mode_name}}-cib-analytics
 spec:
   replicas: {{.values.replicas}}
   selector:

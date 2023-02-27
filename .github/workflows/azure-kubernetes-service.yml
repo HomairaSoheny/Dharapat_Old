@@ -96,23 +96,15 @@ jobs:
           # cluster-name: ${{env.CLUSTER_NAME}}
           # resource-group: ${{env.RESOURCE_GROUP}}
 
-      # # Retrieves your Azure Kubernetes Service cluster's kubeconfig file
+      # Retrieves your Azure Kubernetes Service cluster's kubeconfig file
       - name: Get K8s context
-        uses: azure/k8s-set-context@v1
+        uses: azure/aks-set-context@v3
         with:
-          method: service-account
-          k8s-url: ${{env.AZURE_CLUSTER_URL}}
-          k8s-secret: ${{env.AZURE_CLUSTER_TOKEN}}
-        id: setcontext
-
-      # - name: Get K8s context
-      #   uses: azure/aks-set-context@v3
-      #   with:
-      #     subscription: ${{ env.AZURE_SUBSCRIPTION_ID }}
-      #     resource-group: ${{ env.RESOURCE_GROUP }}
-      #     cluster-name: ${{ env.CLUSTER_NAME }}
-      #     admin: 'false'
-      #     use-kubelogin: 'false'
+          subscription: ${{ env.AZURE_SUBSCRIPTION_ID }}
+          resource-group: ${{ env.RESOURCE_GROUP }}
+          cluster-name: ${{ env.CLUSTER_NAME }}
+          admin: 'false'
+          use-kubelogin: 'false'
 
       # Deploys application based on given manifest file
       - name: Deploys application
