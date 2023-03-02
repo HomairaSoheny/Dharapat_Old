@@ -5,13 +5,13 @@ def main():
     connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq-temp1.centralindia.azurecontainer.io'))
     channel = connection.channel()
     
-    channel.queue_declare(queue='response')
+    channel.queue_declare(queue='prime_bank_cib_response')
     
     def callback(ch, method, properties, body):
-        print(f"received new message: {body}")
-        channel.basic_publish(exchange='', routing_key='cib_analysis_report', body=json.dumps(generate_full_response()))
+        print(f"received ai extracted cib: {body}")
+        channel.basic_publish(exchange='', routing_key='prime_bank_cib_extracted_download', body=json.dumps(generate_full_response()))
     
-    channel.basic_consume(queue='response', auto_ack=True, on_message_callback=callback)
+    channel.basic_consume(queue='prime_bank_cib_response', auto_ack=True, on_message_callback=callback)
     channel.start_consuming()
 
 
