@@ -17,9 +17,9 @@ def main():
 
 if __name__ == '__main__':
     try:
-        print("main")
+        print("[LOG] main")
         main()
-        print("done")
+        print("[LOG] done")
     except KeyboardInterrupt:
         print('Interrupted')
         try:
