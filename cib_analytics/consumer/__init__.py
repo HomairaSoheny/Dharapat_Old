@@ -1,0 +1,3 @@
+from .consumer_1_class import Consumer_1_class
+from .consumer_2_class import Consumer_2_class
+from .consumer_3_class import Consumer_3_class
