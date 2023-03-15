@@ -108,22 +108,22 @@ jobs:
           use-kubelogin: 'false'
 
       # Deploys application based on given manifest file
-      - name: Set image version
-        uses: cschleiden/replace-tokens@v1
-        with:
-          files: ${{ env.DEPLOYMENT_MANIFEST_PATH }}
-          tokenPrefix: __
-          tokenSuffix: __
-        env:
-          DOCKER_REPOSITORY: ${{env.AZURE_CONTAINER_REGISTRY}}
-          IMAGE_NAME: ${{env.IMAGE_NAME}}
-          IMAGE_TAG:  ${{env.IMAGE_TAG}}
+      # - name: Set image version
+      #   uses: cschleiden/replace-tokens@v1
+      #   with:
+      #     files: ${{ env.DEPLOYMENT_MANIFEST_PATH }}
+      #     tokenPrefix: __
+      #     tokenSuffix: __
+      #   env:
+      #     DOCKER_REPOSITORY: ${{env.AZURE_CONTAINER_REGISTRY}}
+      #     IMAGE_NAME: ${{env.IMAGE_NAME}}
+      #     IMAGE_TAG:  ${{env.IMAGE_TAG}}
 
       - name: Deploys application
         uses: Azure/k8s-deploy@v4
         with:
           action: deploy
           manifests: ${{ env.DEPLOYMENT_MANIFEST_PATH }}
-          # images: |
-          #   ${{env.AZURE_CONTAINER_REGISTRY}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
+          images: |
+            ${{env.AZURE_CONTAINER_REGISTRY}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
           namespace: dev-cib-analytics

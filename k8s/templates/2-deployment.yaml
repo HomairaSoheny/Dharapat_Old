@@ -16,7 +16,8 @@ spec:
       containers:
         - name: cib-analyser
           # image: dharapat.azurecr.io/dharapat-prime-bank-cib:v1.0.5
-          image: __DOCKER_REPOSITORY__/__IMAGE_NAME__:__IMAGE_TAG__
+          image: ${{env.AZURE_CONTAINER_REGISTRY}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
+          image: 
           env:
             - name: PYTHONUNBUFFERED
               value: "1"
