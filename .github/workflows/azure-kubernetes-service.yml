@@ -39,8 +39,8 @@ env:
   CONTAINER_NAME: ${{secrets.AZURE_REGISTRY_USERNAME}}
   CONTAINER_PASSWORD: ${{secrets.AZURE_REGISTRY_PASSWORD}}
   IMAGE_NAME: dharapat-prime-bank-cib
-  IMAGE_TAG: v1.0.7
-  # IMAGE_TAG: ${{ github.run_number }}
+  # IMAGE_TAG: v1.0.7
+  IMAGE_TAG: ${{ github.run_number }}
   RESOURCE_GROUP: ${{secrets.AZURE_REGISTRY_USERNAME}}
   CLUSTER_NAME: ${{secrets.AZURE_CLUSTER_NAME}}
   AZURE_CREDENTIALS: ${{secrets.AZURE_CREDENTIALS}}
@@ -110,7 +110,7 @@ jobs:
       # Deploys application based on given manifest file
       - name: Update deployment YAML file
         run: |
-          sed -i "s|image: ${{env.AZURE_CONTAINER_REGISTRY}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}|" ${{ env.DEPLOYMENT_MANIFEST_PATH }}/2-deployment.yaml
+          sed "s|{{docker-image}}|${{env.AZURE_CONTAINER_REGISTRY}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}|" ${{ env.DEPLOYMENT_MANIFEST_PATH }}/2-deployment.yaml
 
       - name: Deploys application
         uses: Azure/k8s-deploy@v4
