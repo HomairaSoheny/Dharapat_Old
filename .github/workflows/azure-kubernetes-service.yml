@@ -107,7 +107,7 @@ jobs:
           admin: 'false'
           use-kubelogin: 'false'
 
-      Deploys application based on given manifest file
+      # Deploys application based on given manifest file
       - name: Set image version
         uses: cschleiden/replace-tokens@v1
         with:
