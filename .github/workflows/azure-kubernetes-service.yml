@@ -110,7 +110,7 @@ jobs:
       # Deploys application based on given manifest file
       - name: Update deployment YAML file
         run: |
-          sed "s|docker-image|${{env.AZURE_CONTAINER_REGISTRY}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}|" ${{ env.DEPLOYMENT_MANIFEST_PATH }}/2-deployment.yaml
+          sed -i "s|image: docker-image|image: ${{env.AZURE_CONTAINER_REGISTRY}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}|" ${{ env.DEPLOYMENT_MANIFEST_PATH }}/2-deployment.yaml
 
       - name: Deploys application
         uses: Azure/k8s-deploy@v4
