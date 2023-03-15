@@ -115,8 +115,8 @@ jobs:
           tokenPrefix: '{{'
           tokenSuffix: '}}'
           delimiters: '\n'
-        tokens:
-          IMAGE_TAG:  ${{env.IMAGE_TAG}}
+        replace:
+          IMAGE_TAG: ${{env.IMAGE_TAG}}
 
       - name: Deploys application
         uses: Azure/k8s-deploy@v4
