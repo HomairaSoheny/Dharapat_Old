@@ -39,8 +39,8 @@ env:
   CONTAINER_NAME: ${{secrets.AZURE_REGISTRY_USERNAME}}
   CONTAINER_PASSWORD: ${{secrets.AZURE_REGISTRY_PASSWORD}}
   IMAGE_NAME: dharapat-prime-bank-cib
-  # IMAGE_TAG: v1.0.5
-  IMAGE_TAG: ${{ github.run_number }}
+  IMAGE_TAG: v1.0.5
+  # IMAGE_TAG: ${{ github.run_number }}
   RESOURCE_GROUP: ${{secrets.AZURE_REGISTRY_USERNAME}}
   CLUSTER_NAME: ${{secrets.AZURE_CLUSTER_NAME}}
   AZURE_CREDENTIALS: ${{secrets.AZURE_CREDENTIALS}}
@@ -108,15 +108,15 @@ jobs:
           use-kubelogin: 'false'
 
       # Deploys application based on given manifest file
-      - name: Set image version
-        uses: cschleiden/replace-tokens@v1
-        with:
-          files: ${{ env.DEPLOYMENT_MANIFEST_PATH }}/2-deployment.yaml
-          tokenPrefix: '{{'
-          tokenSuffix: '}}'
-          delimiters: '\n'
-        env:
-          IMAGE_TAG: ${{env.IMAGE_TAG}}
+      # - name: Set image version
+      #   uses: cschleiden/replace-tokens@v1
+      #   with:
+      #     files: ${{ env.DEPLOYMENT_MANIFEST_PATH }}/2-deployment.yaml
+      #     tokenPrefix: '{{'
+      #     tokenSuffix: '}}'
+      #     delimiters: '\n'
+      #   env:
+      #     IMAGE_TAG: ${{env.IMAGE_TAG}}
 
       - name: Deploys application
         uses: Azure/k8s-deploy@v4
