@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
         - name: cib-analyser
-          image: dharapat.azurecr.io/dharapat-prime-bank-cib:v1.0.7
+          image: dharapat.azurecr.io/dharapat-prime-bank-cib:latest
+          imagePullPolicy: "Always"
           env:
             - name: PYTHONUNBUFFERED
               value: "1"
