@@ -81,7 +81,7 @@ def main():
             channel1.queue_declare(queue='prime_bank_cib_extracted_download',durable=True)
             channel1.basic_publish(exchange='', routing_key='prime_bank_cib_extracted_download', body=json.dumps(final))
     
-    print('message received')
+    print('[LOG] message received')
         
     channel.basic_consume(queue='prime_bank_cib_response', on_message_callback=callback, auto_ack=True)
     print(' [*] Waiting for messages. To exit press CTRL+C')
