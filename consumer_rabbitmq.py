@@ -60,14 +60,13 @@ def main():
                     final['message'] = 'Ok'
                     final['success'] = True
                     print('detailed ............')
-            #print(final['metaData'])
-            channel1 = connection.channel()
-            channel1.queue_declare(queue='prime_bank_cib_extracted_download', durable=True)
-            channel1.basic_publish(exchange='', routing_key='prime_bank_cib_extracted_download', body=json.dumps(final))
             print("Analysis Report")
             print(".................................")
             print(final)
-            print("Sent")
+            channel1 = connection.channel()
+            channel1.queue_declare(queue='prime_bank_cib_extracted_download', durable=True)
+            channel1.basic_publish(exchange='', routing_key='prime_bank_cib_extracted_download', body=json.dumps(final))
+            print("Analysis Report Sent")
         
         except Exception as exc:
             print(type(exc))
