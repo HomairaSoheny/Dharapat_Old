@@ -37,10 +37,10 @@ def main():
                     final['metaData'] = metadata
                     final['score'] = scorecard
                     final['dashboard'] = dashboard_data
-                    final['dashboard']['total_score'] = []
-                    final['dashboard']['group_score'] = []
-                    final['dashboard']['dashboard_objects'] = []
-                    final['score']['score_objects'] = []
+                    # final['dashboard']['total_score'] = []
+                    # final['dashboard']['group_score'] = []
+                    # final['dashboard']['dashboard_objects'] = []
+                    # final['score']['score_objects'] = []
                     final['message'] = 'Ok'
                     final['success'] = True
                     print('in if......')
@@ -52,24 +52,29 @@ def main():
                     final['metaData'] = metadata
                     final['score'] = scorecard
                     final['dashboard'] = dashboard_data
-                    final['dashboard']['total_score'] = []
-                    final['dashboard']['group_score'] = []
-                    final['dashboard']['corporate_detail_dashboard'] = detail_dashboard_data
-                    final['dashboard']['dashboard_objects'] = []
-                    final['score']['score_objects'] = []
+                    # final['dashboard']['total_score'] = []
+                    # final['dashboard']['group_score'] = []
+                    # final['dashboard']['corporate_detail_dashboard'] = detail_dashboard_data
+                    # final['dashboard']['dashboard_objects'] = []
+                    # final['score']['score_objects'] = []
                     final['message'] = 'Ok'
                     final['success'] = True
                     print('detailed ............')
-            print(final['metaData'])
+            #print(final['metaData'])
             channel1 = connection.channel()
             channel1.queue_declare(queue='prime_bank_cib_extracted_download', durable=True)
             channel1.basic_publish(exchange='', routing_key='prime_bank_cib_extracted_download', body=json.dumps(final))
+            print("Analysis Report")
+            print(".................................")
+            print(final)
+            print("Sent")
         
         except Exception as exc:
             print(type(exc))
             traceback.print_exc()
             
-            raw_json = json.loads(body)
+            raw_json = json.loads(body, strict=False)
+                
             metadata = raw_json['metaData']
             final = dict([
                 ('message', 'Analysis Error Found'),
@@ -86,15 +91,6 @@ def main():
     channel.basic_consume(queue='prime_bank_cib_response', on_message_callback=callback, auto_ack=True)
     print(' [*] Waiting for messages. To exit press CTRL+C')
     channel.start_consuming()
-    print('kichu ki hocche?')
-        
-                    
-        
-    #     print(f"received ai extracted cib: {body}")
-    #     channel.basic_publish(exchange='', routing_key='prime_bank_cib_extracted_download', body=json.dumps(generate_full_response()))
-    
-    # channel.basic_consume(queue='prime_bank_cib_response', auto_ack=True, on_message_callback=callback)
-    # channel.start_consuming()
 
 
 if __name__ == '__main__':
