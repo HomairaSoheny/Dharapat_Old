@@ -94,9 +94,9 @@ def main():
 
 if __name__ == '__main__':
     try:
-        print("[LOG] main")
+        print("[LOG] running rabbitmq main")
         main()
-        print("[LOG] done")
+        print("[LOG] success")
     except KeyboardInterrupt:
         print('Interrupted')
         try:
