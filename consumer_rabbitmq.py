@@ -9,6 +9,7 @@ def main():
     channel.queue_declare(queue='prime_bank_cib_response')
     
     def callback(ch, method, properties, body):
+        print(body)
         try:
             metadata, req_cib, group_cib_list, error_messages = process_response(body)
             if error_messages != "":
@@ -33,7 +34,7 @@ def main():
                 if metadata['cibType'] in ('cd', 'sme'):
                     final = {}
                     scorecard = []
-                    dashboard_data = generate_full_response()
+                    dashboard_data = generate_full_response(cib_list)
                     final['metaData'] = metadata
                     final['score'] = scorecard
                     final['dashboard'] = dashboard_data
@@ -46,7 +47,7 @@ def main():
                     print('in if......')
                 else:
                     scorecard = []
-                    dashboard_data = generate_full_response()
+                    dashboard_data = generate_full_response(cib_list)
                     detail_dashboard_data = []
                     final = {}
                     final['metaData'] = metadata
