@@ -1,8 +1,7 @@
 from .consumer_dashboard import get_consumer_dashboard
 
-def generate_full_response():
-    
+def generate_full_response(cib_list):
     response = []
-    response.append(get_consumer_dashboard())
-    
+    for cib in cib_list:
+        response.append(get_consumer_dashboard(cib))
     return response
