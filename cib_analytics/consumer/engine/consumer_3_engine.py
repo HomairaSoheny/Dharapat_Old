@@ -65,11 +65,11 @@ def Borrowers_name(cibs):
     if cibs.installment_facility is not None: 
         for fac in cibs.installment_facility:
             if (fac['Ref']['Phase']) == 'Living':
-                if i['Other subjects linked to the same contract'] is not None:
-                    for j in range(len(i['Other subjects linked to the same contract'])):
+                if fac['Other subjects linked to the same contract'] is not None:
+                    for j in range(len(fac['Other subjects linked to the same contract'])):
                         if list_app is not None:
-                            if (i['Other subjects linked to the same contract'].iloc[j]["Role"]) == "Borrower" and i['Other subjects linked to the same contract'].iloc[j]['CIB subject code'] in list_app:
-                                Borrow_name.append(i['Other subjects linked to the same contract'].iloc[j]["Name"])
+                            if (fac['Other subjects linked to the same contract'].iloc[j]["Role"]) == "Borrower" and fac['Other subjects linked to the same contract'].iloc[j]['CIB subject code'] in list_app:
+                                Borrow_name.append(fac['Other subjects linked to the same contract'].iloc[j]["Name"])
                             else:
                                  Borrow_name.append("Not given")  
 
@@ -78,11 +78,11 @@ def Borrowers_name(cibs):
     if cibs.noninstallment_facility is not None:
         for fac in cibs.noninstallment_facility:
             if (fac['Ref']['Phase']) == 'Living' and fac['Ref']['Facility']=='Cash Credit against Hypothecation':
-                if i['Other subjects linked to the same contract'] is not None:
-                    for j in range(len(i['Other subjects linked to the same contract'])):
+                if fac['Other subjects linked to the same contract'] is not None:
+                    for j in range(len(fac['Other subjects linked to the same contract'])):
                         if list_app is not None:
-                            if (i['Other subjects linked to the same contract'].iloc[j]["Role"]) == "Borrower" and i['Other subjects linked to the same contract'].iloc[j]['CIB subject code'] in list_app:
-                                Borrow_name.append(i['Other subjects linked to the same contract'].iloc[j]["Name"])
+                            if (fac['Other subjects linked to the same contract'].iloc[j]["Role"]) == "Borrower" and fac['Other subjects linked to the same contract'].iloc[j]['CIB subject code'] in list_app:
+                                Borrow_name.append(fac['Other subjects linked to the same contract'].iloc[j]["Name"])
                             else:
                                 Borrow_name.append("Not given") 
                 else:    
@@ -103,11 +103,11 @@ def get_Applicants_Role(cibs):
     if cibs.installment_facility is not None: 
         for fac in cibs.installment_facility:
             if (fac['Ref']['Phase']) == 'Living':
-                app_role.append(i["Ref"]['Role'])
+                app_role.append(fac["Ref"]['Role'])
     if cibs.noninstallment_facility is not None:
         for fac in cibs.noninstallment_facility:
             if (fac['Ref']['Phase']) == 'Living' and fac['Ref']['Facility']=='Cash Credit against Hypothecation':
-                    app_role.append(i["Ref"]['Role'])    
+                    app_role.append(fac["Ref"]['Role'])    
     return app_role 
 
 
@@ -131,19 +131,13 @@ def sanc_limit(cibs):
     '''
     limit = []    
     if cibs.installment_facility is not None: 
-        
         for fac in cibs.installment_facility:
-            
             if (fac['Ref']['Phase']) == 'Living':
-                
                 limit.append(fac['Ref']['Sanction Limit'])
-                
-    if cibs.noninstallment_facility is not None:
-        
-        for fac in cibs.noninstallment_facility :
-            
-            if (fac['Ref']['Phase']) == 'Living' and fac['Ref']['Facility']=='Cash Credit against Hypothecation':
-                
+
+    if cibs.noninstallment_facility is not None:        
+        for fac in cibs.noninstallment_facility :            
+            if (fac['Ref']['Phase']) == 'Living' and fac['Ref']['Facility']=='Cash Credit against Hypothecation':                
                 limit.append(fac['Contract History']['SancLmt'][0])
     return limit
     
