@@ -3,3 +3,5 @@ publisher.py
 test_response.py
 __pycache__
 .DS_STORE
+*.ipynb
+test_files
