@@ -13,3 +13,6 @@ class Consumer_3_class:
         self.EMI_3  = consumer_3_engine.EMI_3(cib_data)
         self.Loan_start_date = consumer_3_engine.Loan_start_date(cib_data)
         self.Loan_expiry_date = consumer_3_engine.Loan_expiry_date(cib_data)
+
+def __repr__(self):
+        return '\n'.join([(str(k)+' : '+str(v)) for k,v in self.__dict__.items() if k!='config'])
