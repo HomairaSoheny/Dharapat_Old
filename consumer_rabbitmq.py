@@ -34,7 +34,7 @@ def main():
                 if metadata['cibType'] in ('cd', 'sme'):
                     final = {}
                     scorecard = []
-                    dashboard_data = generate_full_response(cib_list)
+                    dashboard_data = generate_full_response(cib_list, 'cd-sme')
                     final['metaData'] = metadata
                     final['score'] = scorecard
                     final['dashboard'] = dashboard_data
@@ -47,7 +47,7 @@ def main():
                     print('in if......')
                 else:
                     scorecard = []
-                    dashboard_data = generate_full_response(cib_list)
+                    dashboard_data = generate_full_response(cib_list, 'corporate')
                     detail_dashboard_data = []
                     final = {}
                     final['metaData'] = metadata
