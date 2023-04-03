@@ -31,21 +31,21 @@ name: Build and deploy an app to AKS
 
 on:
   push:
-    branches: ["main"]
+    branches: ["development_server"]
   workflow_dispatch:
 
 env:
-  AZURE_CONTAINER_REGISTRY: ${{secrets.AZURE_REGISTRY}}
-  CONTAINER_NAME: ${{secrets.AZURE_REGISTRY_USERNAME}}
-  CONTAINER_PASSWORD: ${{secrets.AZURE_REGISTRY_PASSWORD}}
+  AZURE_CONTAINER_REGISTRY: ${{secrets.AZURE_REGISTRY_2}}
+  CONTAINER_NAME: ${{secrets.AZURE_REGISTRY_USERNAME_2}}
+  CONTAINER_PASSWORD: ${{secrets.AZURE_REGISTRY_PASSWORD_2}}
   IMAGE_NAME: dharapat-prime-bank-cib
   # IMAGE_TAG: v1.0.7
   IMAGE_TAG: ${{ github.run_number }}
-  RESOURCE_GROUP: ${{secrets.AZURE_REGISTRY_USERNAME}}
-  CLUSTER_NAME: ${{secrets.AZURE_CLUSTER_NAME}}
-  AZURE_CREDENTIALS: ${{secrets.AZURE_CREDENTIALS}}
-  AZURE_CLUSTER_TOKEN: ${{secrets.AZURE_CLUSTER_TOKEN}}
-  AZURE_CLUSTER_URL: ${{secrets.AZURE_CLUSTER_URL}}
+  RESOURCE_GROUP: ${{secrets.AZURE_REGISTRY_USERNAME_2}}
+  CLUSTER_NAME: ${{secrets.AZURE_CLUSTER_NAME_2}}
+  AZURE_CREDENTIALS: ${{secrets.AZURE_CREDENTIALS_2}}
+  AZURE_CLUSTER_TOKEN: ${{secrets.AZURE_CLUSTER_TOKEN_2}}
+  AZURE_CLUSTER_URL: ${{secrets.AZURE_CLUSTER_URL_2}}
   DEPLOYMENT_MANIFEST_PATH: ${{github.workspace}}/k8s/templates/
 
 jobs:
