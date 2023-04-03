@@ -38,26 +38,16 @@ def main():
                     final['metaData'] = metadata
                     final['score'] = scorecard
                     final['dashboard'] = dashboard_data
-                    # final['dashboard']['total_score'] = []
-                    # final['dashboard']['group_score'] = []
-                    # final['dashboard']['dashboard_objects'] = []
-                    # final['score']['score_objects'] = []
                     final['message'] = 'Ok'
                     final['success'] = True
                     print('in if......')
                 else:
                     scorecard = []
                     dashboard_data = generate_full_response(cib_list, 'corporate')
-                    detail_dashboard_data = []
                     final = {}
                     final['metaData'] = metadata
                     final['score'] = scorecard
                     final['dashboard'] = dashboard_data
-                    # final['dashboard']['total_score'] = []
-                    # final['dashboard']['group_score'] = []
-                    # final['dashboard']['corporate_detail_dashboard'] = detail_dashboard_data
-                    # final['dashboard']['dashboard_objects'] = []
-                    # final['score']['score_objects'] = []
                     final['message'] = 'Ok'
                     final['success'] = True
                     print('detailed ............')
