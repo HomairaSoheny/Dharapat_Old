@@ -36,9 +36,9 @@ on:
 
 env:
   AZURE_CONTAINER_REGISTRY: ${{secrets.AZURE_REGISTRY_2}}
-  CONTAINER_NAME: ${{secrets.AZURE_REGISTRY_USERNAME_2}}
+  CONTAINER_NAME: ${{secrets.AZURE_REGISTRY_USERNAME}}
   CONTAINER_PASSWORD: ${{secrets.AZURE_REGISTRY_PASSWORD_2}}
-  IMAGE_NAME: dharapat_prime_bank_cib
+  IMAGE_NAME: dharapat-prime-bank-cib
   # IMAGE_TAG: v1.0.7
   IMAGE_TAG: ${{ github.run_number }}
   RESOURCE_GROUP: ${{secrets.AZURE_REGISTRY_USERNAME_2}}
