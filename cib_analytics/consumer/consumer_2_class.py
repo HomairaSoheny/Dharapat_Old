@@ -8,7 +8,7 @@ class Consumer_2_class:
         self.get_sanction_limit = consumer_2_engine.get_sanction_limit(cib_data)
         self.get_position_date = consumer_2_engine.get_position_date(cib_data)
         self.get_outstanding = consumer_2_engine.get_outstanding(cib_data)
-        self.avg_get_overdue = consumer_2_engine.avg_get_overdue
+        self.avg_get_overdue = consumer_2_engine.avg_get_overdue(cib_data)
         self.get_overdue = consumer_2_engine.get_overdue(cib_data)
         self.cl_status  = consumer_2_engine.cl_status(cib_data)
         self.EMI = consumer_2_engine.EMI_2(cib_data)
