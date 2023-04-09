@@ -62,7 +62,6 @@ def get_personal_loan_table(cib):
                     "Borrower Name": str(personal_class.Borrowers_name[i]),
                     "Applicants Role": str(personal_class.Applicants_Role[i]),
                     "Nature of Facility": str(personal_class.facility_name[i]),
-                    "Nature of Facility": str(personal_class.facility_name[i]),
                     "Limit": str(personal_class.sanc_limit[i]),
                     "Position Date": str(personal_class.get_position_date[i]),
                     "Outstanding": str(personal_class.get_outstanding[i]),
