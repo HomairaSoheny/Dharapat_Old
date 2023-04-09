@@ -31,26 +31,26 @@ def main():
                 for each in group_cib_list:
                     cib_list.append(each)
                     
-                if metadata['cibType'] in ('cd', 'sme'):
-                    final = {}
-                    scorecard = []
-                    dashboard_data = generate_full_response(cib_list, 'cd-sme')
-                    final['metaData'] = metadata
-                    final['score'] = scorecard
-                    final['dashboard'] = dashboard_data
-                    final['message'] = 'Ok'
-                    final['success'] = True
-                    print('in if......')
-                else:
-                    scorecard = []
-                    dashboard_data = generate_full_response(cib_list, 'corporate')
-                    final = {}
-                    final['metaData'] = metadata
-                    final['score'] = scorecard
-                    final['dashboard'] = dashboard_data
-                    final['message'] = 'Ok'
-                    final['success'] = True
-                    print('detailed ............')
+                #if metadata['cibType'] in ('cd', 'sme'):
+                final = {}
+                scorecard = []
+                dashboard_data = generate_full_response(cib_list, 'cd-sme')
+                final['metaData'] = metadata
+                final['score'] = scorecard
+                final['dashboard'] = dashboard_data
+                final['message'] = 'Ok'
+                final['success'] = True
+                print('in if......')
+                #else:
+                #    scorecard = []
+                #    dashboard_data = generate_full_response(cib_list, 'corporate')
+                #    final = {}
+                #   final['metaData'] = metadata
+                #   final['score'] = scorecard
+                #   final['dashboard'] = dashboard_data
+                #   final['message'] = 'Ok'
+                #   final['success'] = True
+                #   print('detailed ............')
             print("Analysis Report")
             print(".................................")
             print(final)
