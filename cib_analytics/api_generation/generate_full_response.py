@@ -9,4 +9,5 @@ def generate_full_response(cib_list, cib_type):
     else:
         for cib in cib_list:
             response.append(get_consumer_dashboard(cib))
+            
     return response
