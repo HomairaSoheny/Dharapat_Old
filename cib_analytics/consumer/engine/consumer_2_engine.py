@@ -166,11 +166,11 @@ def EMI_2(cibs):
             if facility['Ref']['Phase'] == 'Living':
                 
                 credit = (facility['Ref']['Credit limit'])    
-                outstand = (facility['Contract History'].sort_values('Date', ascending=False).Outstanding[0])
+                outstand = (facility['Contract History'].sort_values('Date', ascending=False)['Outstanding'][0])
                 if outstand == 0:
                     EMI.append(float('inf'))
 
-                if ((sum(facility['Contract History'].sort_values('Date', ascending=False).Outstanding[:12]))/12) == 0:
+                if ((sum(facility['Contract History'].sort_values('Date', ascending=False)['Outstanding'][:12]))/12) == 0:
                     EMI.append(0)
 
                 elif ((credit/outstand)*100 <= 60) :
