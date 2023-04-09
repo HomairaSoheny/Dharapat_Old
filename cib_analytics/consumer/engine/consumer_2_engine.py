@@ -170,7 +170,7 @@ def EMI_2(cibs):
                 if outstand == 0:
                     EMI.append(float('inf'))
 
-                if ((sum(facility['Contract History'].sort_values('Date', ascending=False)['Outstanding'][:12]))/12) == 0:
+                elif ((sum(facility['Contract History'].sort_values('Date', ascending=False)['Outstanding'][:12]))/12) == 0:
                     EMI.append(0)
 
                 elif ((credit/outstand)*100 <= 60) :
