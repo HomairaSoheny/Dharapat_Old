@@ -1,5 +1,19 @@
 # dharapat_analytics_cib_analyzer_prime_bank_backend
 
+## To view logs from azure portal
+
+**For Analytics:**
+
+```**
+kubectl logs -f --selector app=cib-analyser -n dev-cib-analytics
+```
+
+**For AI:**
+
+```
+kubectl logs -f --selector app=cib-analyser-consumer -n cib-analyser-services
+```
+
 ## Running rabbitmq locally
 
 * Stop k8-analytics-backend-dev cluster from portal.azure.com dashboard.
