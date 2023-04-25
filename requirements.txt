@@ -1,2 +1,5 @@
 pika==1.2.1
 pandas==1.5.3
+xlsxwriter==3.1.0
+# jpype1==23.1
+# aspose-cells==23.4.0
