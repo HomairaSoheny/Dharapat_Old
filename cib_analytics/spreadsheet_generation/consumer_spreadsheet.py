@@ -1,12 +1,19 @@
 from ..api_generation.consumer_dashboard import get_credit_card_table, get_loan_table, get_personal_loan_table
 import pandas as pd
+from io import BytesIO
+import xlsxwriter
 
 def consumer_spreadsheet(cib):
+
+    io = BytesIO()
+
     credit_card_table = pd.DataFrame(data=get_credit_card_table(cib))
     loan_table = pd.DataFrame(data=get_loan_table(cib))
     personal_loan_table = pd.DataFrame(data=get_personal_loan_table(cib))
 
-    writer = pd.ExcelWriter('consumer.xlsx', engine='xlsxwriter', )
+    #writer = pd.ExcelWriter('consumer.xlsx', engine='xlsxwriter', )
+    #writer = xlsxwriter.Workbook(io, {'nan_inf_to_errors': True})
+    writer = pd.ExcelWriter(io, engine='xlsxwriter', )
 
     personal_loan_table.to_excel(writer, sheet_name="1", index=False)
     credit_card_table.to_excel(writer, sheet_name="2", index=False)
@@ -28,4 +35,4 @@ def consumer_spreadsheet(cib):
         col_idx = loan_table.columns.get_loc(column)
         writer.sheets["3"].set_column(col_idx, col_idx, column_length)
 
-    writer.close()
+    return writer, io
