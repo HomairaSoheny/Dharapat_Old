@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from rest_framework.views import APIView
 # from settings import abs_path
 from cib_analytics.cib_data_class import cib_class
-from cib_analytics.spreadsheet_generation.consumer_spreadsheet import generate_consumer_spreadsheet
+from cib_analytics.spreadsheet_generation.consumer_spreadsheet import create_report_dashboard
 
 import json
 import os
@@ -21,12 +21,13 @@ class GeneralDashboardReportApiView(APIView):
                 
             path = os.path.join(abs_path)
 
-            writer, io = generate_consumer_spreadsheet.consumer_spreadsheet(cib_data_list, path)
+            writer, io = create_report_dashboard(cib_data_list, path)
             writer.close()
+            
             rFile = io.getvalue()
-           
             response = HttpResponse(rFile,content_type="application/ms-excel")
             response['Content-Disposition'] = f'attachment; filename=data.xlsx'
+
             return response
         except Exception as exc:
             print(exc)
