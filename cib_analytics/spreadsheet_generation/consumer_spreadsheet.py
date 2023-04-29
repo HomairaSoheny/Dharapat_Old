@@ -1,11 +1,21 @@
+from ..cib_data_class import cib_class
 from ..api_generation.consumer_dashboard import get_credit_card_table, get_loan_table, get_personal_loan_table
 import pandas as pd
 from io import BytesIO
 import xlsxwriter
+import datetime
 
-def consumer_spreadsheet(cib):
-
+def create_report_dashboard(cib_datas: list[cib_class], output_dir: str):
+    Output = output_dir + f'\\filename dashboard {datetime.datetime.now().strftime("%d-%m-%Y %Hh%Mm%Ss")}.xlsx'
     io = BytesIO()
+    writer = pd.ExcelWriter(io, engine='xlsxwriter', )
+
+    for cib in cib_datas:
+        generate_consumer_spreadsheet(writer, cib)
+    
+    return writer, io
+
+def generate_consumer_spreadsheet(writer, cib):
 
     credit_card_table = pd.DataFrame(data=get_credit_card_table(cib))
     loan_table = pd.DataFrame(data=get_loan_table(cib))
@@ -13,7 +23,7 @@ def consumer_spreadsheet(cib):
 
     #writer = pd.ExcelWriter('consumer.xlsx', engine='xlsxwriter', )
     #writer = xlsxwriter.Workbook(io, {'nan_inf_to_errors': True})
-    writer = pd.ExcelWriter(io, engine='xlsxwriter', )
+    #writer = pd.ExcelWriter(io, engine='xlsxwriter', )
 
     personal_loan_table.to_excel(writer, sheet_name="1", index=False)
     credit_card_table.to_excel(writer, sheet_name="2", index=False)
@@ -34,5 +44,3 @@ def consumer_spreadsheet(cib):
         column_length = max(loan_table[column].astype(str).map(len).max(), len(column))
         col_idx = loan_table.columns.get_loc(column)
         writer.sheets["3"].set_column(col_idx, col_idx, column_length)
-
-    return writer, io
