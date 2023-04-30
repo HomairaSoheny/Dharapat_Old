@@ -14,6 +14,12 @@ spec:
         app: cib-analyser
     spec:
       containers:
+        - name: worker
+          image: docker-image
+          command: ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "--timeout", "600", "dharapat_cib_analytics_backend.wsgi"]
+          env:
+            - name: PYTHONUNBUFFERED
+              value: analyser"1"
         - name: cib-analyser
           image: docker-image
           imagePullPolicy: "Always"
