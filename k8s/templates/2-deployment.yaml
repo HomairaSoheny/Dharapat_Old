@@ -19,9 +19,10 @@ spec:
           command: ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "--timeout", "600", "cib_analytics.wsgi"]
           env:
             - name: PYTHONUNBUFFERED
-              value: analyser"1"
+              value: "1"
         - name: cib-analyser
           image: docker-image
+          command: ["python", "consumer_rabbitmq.py"]
           imagePullPolicy: "Always"
           env:
             - name: PYTHONUNBUFFERED
