@@ -16,4 +16,4 @@ COPY . .
 
 
 ENV PYTHONPATH "${PYTHONPATH}:/code"
-ENV PYTHONPATH "${PYTHONPATH}:/code/cib_analytics"
+ENV PYTHONPATH "${PYTHONPATH}:/code/cib_analyzer"
