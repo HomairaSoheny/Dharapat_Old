@@ -16,7 +16,7 @@ spec:
       containers:
         - name: worker
           image: docker-image
-          command: ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "--timeout", "600", "dharapat_cib_analytics_backend.wsgi"]
+          command: ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "--timeout", "600", "cib_analytics.wsgi"]
           env:
             - name: PYTHONUNBUFFERED
               value: analyser"1"
