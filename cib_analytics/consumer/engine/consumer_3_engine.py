@@ -74,18 +74,13 @@ def app_business(cibs):
         return []
 
 def Borrowers_name(cibs):
-    try:
-        '''
+    '''
         Will extract the borrower name 
         from "Other subjects linked to the same contract" for each facilility
         
-        '''
-        def Borrowers_name(cibs):
     '''
-    Will extract the borrower name 
-    from "Other subjects linked to the same contract" for each facilility
-    
-    '''
+    try:
+        
         list_app = app_business(cibs)
     
         Borrow_name = []
