@@ -80,30 +80,57 @@ def Borrowers_name(cibs):
         from "Other subjects linked to the same contract" for each facilility
         
         '''
+        def Borrowers_name(cibs):
+    '''
+    Will extract the borrower name 
+    from "Other subjects linked to the same contract" for each facilility
+    
+    '''
         list_app = app_business(cibs)
+    
         Borrow_name = []
-        if list_app is not None:
-            if cibs.installment_facility is not None: 
-                for fac in cibs.installment_facility:
-                    if (fac['Ref']['Phase']) == 'Living':
-                        if fac['Other subjects linked to the same contract'] is not None:
-                                
-                                for j in range(len(fac['Other subjects linked to the same contract'])):
-                                    
-                                    if (fac['Other subjects linked to the same contract'].iloc[j]["Role"]) == "Borrower" and \
-                                            fac['Other subjects linked to the same contract'].iloc[j]['CIB subject code'] in list_app:
-                                        Borrow_name.append(fac['Other subjects linked to the same contract'].iloc[j]["Name"])
-                                    
-            if cibs.noninstallment_facility is not None:
-                for fac in cibs.noninstallment_facility:
-                    if (fac['Ref']['Phase']) == 'Living' and fac['Ref']['Facility']=='Cash Credit against Hypothecation':
-                        if fac['Other subjects linked to the same contract'] is not None:
+        if cibs.installment_facility is not None: 
+            for fac in cibs.installment_facility:
+                if (fac['Ref']['Phase']) == 'Living':
+
+
+                    if  (fac["Ref"]['Role']) == 'Borrower':
+
+                        if cibs.subject_info['Type of subject'].lower() == 'individual':
+
+                            title_ = cibs.subject_info['Title, Name']
+
+                    else: 
+                        if fac['Other subjects linked to the same contract'] is not None and list_app is not None:
+
                             for j in range(len(fac['Other subjects linked to the same contract'])):
                                 if (fac['Other subjects linked to the same contract'].iloc[j]["Role"]) == "Borrower" and \
-                                        fac['Other subjects linked to the same contract'].iloc[j]['CIB subject code'] in list_app:
-                                    Borrow_name.append(fac['Other subjects linked to the same contract'].iloc[j]["Name"])
-    
+                                    fac['Other subjects linked to the same contract'].iloc[j]['CIB subject code'] in list_app:
+                                        Borrow_name.append(fac['Other subjects linked to the same contract'].iloc[j]["Name"])
+
+        if cibs.noninstallment_facility is not None:
+         
+            for fac in cibs.noninstallment_facility:
+
+                if (fac['Ref']['Phase']) == 'Living' and fac['Ref']['Facility']=='Cash Credit against Hypothecation':
+
+
+                    if  (fac["Ref"]['Role']) == 'Borrower':
+
+                        if cibs.subject_info['Type of subject'].lower() == 'individual':
+
+                            Borrow_name.append(cibs.subject_info['Title, Name'])
+
+                    else: 
+                        if fac['Other subjects linked to the same contract'] is not None and list_app is not None:
+
+                            for j in range(len(fac['Other subjects linked to the same contract'])):
+                                if (fac['Other subjects linked to the same contract'].iloc[j]["Role"]) == "Borrower" and \
+                                    fac['Other subjects linked to the same contract'].iloc[j]['CIB subject code'] in list_app:
+                                        Borrow_name.append(fac['Other subjects linked to the same contract'].iloc[j]["Name"])
+
         return Borrow_name                    
+                    
     except Exception as e:
         print(e)
         return []
