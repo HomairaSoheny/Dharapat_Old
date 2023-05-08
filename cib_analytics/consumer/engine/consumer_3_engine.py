@@ -80,7 +80,6 @@ def Borrowers_name(cibs):
         
     '''
     try:
-        
         list_app = app_business(cibs)
     
         Borrow_name = []
@@ -93,18 +92,20 @@ def Borrowers_name(cibs):
 
                         if cibs.subject_info['Type of subject'].lower() == 'individual':
 
-                            title_ = cibs.subject_info['Title, Name']
+                            Borrow_name.append(cibs.subject_info['Title, Name'])
 
                     else: 
-                        if fac['Other subjects linked to the same contract'] is not None and list_app is not None:
+                        if fac['Other subjects linked to the same contract'] is not None:
 
                             for j in range(len(fac['Other subjects linked to the same contract'])):
-                                if (fac['Other subjects linked to the same contract'].iloc[j]["Role"]) == "Borrower" and \
-                                    fac['Other subjects linked to the same contract'].iloc[j]['CIB subject code'] in list_app:
-                                        Borrow_name.append(fac['Other subjects linked to the same contract'].iloc[j]["Name"])
+                                if (fac['Other subjects linked to the same contract'].iloc[j]["Role"]) == "Borrower": # and \
+                                    #fac['Other subjects linked to the same contract'].iloc[j]['CIB subject code'] in list_app:
+                                    Borrow_name.append(fac['Other subjects linked to the same contract'].iloc[j]["Name"])
+                                    
+                    
 
         if cibs.noninstallment_facility is not None:
-         
+
             for fac in cibs.noninstallment_facility:
 
                 if (fac['Ref']['Phase']) == 'Living' and fac['Ref']['Facility']=='Cash Credit against Hypothecation':
@@ -117,15 +118,15 @@ def Borrowers_name(cibs):
                             Borrow_name.append(cibs.subject_info['Title, Name'])
 
                     else: 
-                        if fac['Other subjects linked to the same contract'] is not None and list_app is not None:
+                        if fac['Other subjects linked to the same contract'] is not None:
 
                             for j in range(len(fac['Other subjects linked to the same contract'])):
-                                if (fac['Other subjects linked to the same contract'].iloc[j]["Role"]) == "Borrower" and \
-                                    fac['Other subjects linked to the same contract'].iloc[j]['CIB subject code'] in list_app:
-                                        Borrow_name.append(fac['Other subjects linked to the same contract'].iloc[j]["Name"])
+                                if (fac['Other subjects linked to the same contract'].iloc[j]["Role"]) == "Borrower":# and \
+                                    #fac['Other subjects linked to the same contract'].iloc[j]['CIB subject code'] in list_app:
+                                    Borrow_name.append(fac['Other subjects linked to the same contract'].iloc[j]["Name"])
 
-        return Borrow_name                    
-                    
+        return Borrow_name           
+
     except Exception as e:
         print(e)
         return []
@@ -139,19 +140,17 @@ def get_Applicants_Role(cibs):
         
         ''' 
         app_role  = []
-        list_app = app_business(cibs)
-
-        if list_app is not None:
-            if cibs.installment_facility is not None: 
-                for fac in cibs.installment_facility:
-                    if (fac['Ref']['Phase']) == 'Living' and fac['Other subjects linked to the same contract'] is not None :
-                        app_role.append(fac["Ref"]['Role'])
-            if cibs.noninstallment_facility is not None:
-                for fac in cibs.noninstallment_facility:
-                    if (fac['Ref']['Phase']) == 'Living' and fac['Other subjects linked to the same contract'] is not None and \
-                            fac['Ref']['Facility']=='Cash Credit against Hypothecation':
-                        app_role.append(fac["Ref"]['Role'])    
+        
+        if cibs.installment_facility is not None: 
+            for fac in cibs.installment_facility:
+                if (fac['Ref']['Phase']) == 'Living': #and fac['Other subjects linked to the same contract'] is not None :
+                    app_role.append(fac["Ref"]['Role'])
+        if cibs.noninstallment_facility is not None:
+            for fac in cibs.noninstallment_facility:
+                if (fac['Ref']['Phase']) == 'Living' and fac['Ref']['Facility']=='Cash Credit against Hypothecation':
+                    app_role.append(fac["Ref"]['Role'])    
         return app_role 
+
     except Exception as e:
         print(e)
         return []
@@ -159,19 +158,18 @@ def get_Applicants_Role(cibs):
 def get_facility_name(cibs):
     try:
         facility = []
-        list_app = app_business(cibs)
+        
+        if cibs.installment_facility is not None: 
+            for fac in cibs.installment_facility:
+                if (fac['Ref']['Phase']) == 'Living' and fac['Other subjects linked to the same contract'] is not None:
+                    facility.append(fac['Ref']['Facility'])
+        if cibs.noninstallment_facility is not None:
+             for fac in cibs.noninstallment_facility :
+                if (fac['Ref']['Phase']) == 'Living' and fac['Other subjects linked to the same contract'] is not None and \
+                        fac['Ref']['Facility']=='Cash Credit against Hypothecation':
+                    facility.append(fac['Ref']['Facility'])
+        return facility
 
-        if list_app is not None:
-            if cibs.installment_facility is not None: 
-                for fac in cibs.installment_facility:
-                    if (fac['Ref']['Phase']) == 'Living' and fac['Other subjects linked to the same contract'] is not None:
-                        facility.append(fac['Ref']['Facility'])
-            if cibs.noninstallment_facility is not None:
-                for fac in cibs.noninstallment_facility :
-                    if (fac['Ref']['Phase']) == 'Living' and fac['Other subjects linked to the same contract'] is not None and \
-                            fac['Ref']['Facility']=='Cash Credit against Hypothecation':
-                        facility.append(fac['Ref']['Facility'])
-            return facility
     except Exception as e:
         print(e)
         return []
@@ -185,26 +183,24 @@ def sanc_limit(cibs):
         
         '''
         limit = []  
-        list_app = app_business(cibs)
+        if cibs.installment_facility is not None: 
+            
+            for fac in cibs.installment_facility:
 
-        if list_app is not None:  
-            if cibs.installment_facility is not None: 
-                
-                for fac in cibs.installment_facility:
+                if (fac['Ref']['Phase']) == 'Living': 
+                    limit.append(fac['Ref']['Sanction Limit'])
                     
-                    if (fac['Ref']['Phase']) == 'Living' and fac['Other subjects linked to the same contract'] is not None:
-                        
-                        limit.append(fac['Ref']['Sanction Limit'])
-                        
-            if cibs.noninstallment_facility is not None:
-                
-                for fac in cibs.noninstallment_facility :
-                    
-                    if (fac['Ref']['Phase']) == 'Living'  and fac['Other subjects linked to the same contract'] is not None and \
-                            fac['Ref']['Facility']=='Cash Credit against Hypothecation':
-                        
-                        limit.append(fac['Contract History']['SancLmt'][0])
+        if cibs.noninstallment_facility is not None:
+
+            for fac in cibs.noninstallment_facility :
+
+                if (fac['Ref']['Phase']) == 'Living'  and fac['Ref']['Facility']=='Cash Credit against Hypothecation':
+
+                    limit.append(fac['Contract History']['SancLmt'][0])
         return limit
+     
+
+        
     except Exception as e:
         print(e)
         return []
@@ -221,29 +217,25 @@ def get_position_date(cibs):
         Output: day-month-year
         
         '''
-        
         position_date = []
-        
-        list_app = app_business(cibs)
 
-        if list_app is not None:  
-            if cibs.installment_facility is not None: 
-                
-                for fac in cibs.installment_facility:
-                    
-                    if (fac['Ref']['Phase']) == 'Living' and fac['Other subjects linked to the same contract'] is not None:
-                        position_date.append(pos_date(fac))
-                        
-            if cibs.noninstallment_facility is not None:
-                
-                for fac in cibs.noninstallment_facility :
-                    
-                    if (fac['Ref']['Phase']) == 'Living'  and fac['Other subjects linked to the same contract'] is not None and \
-                            fac['Ref']['Facility']=='Cash Credit against Hypothecation':
-                        
-                        position_date.append(pos_date(fac))   
-                    
+        if cibs.installment_facility is not None: 
+
+            for fac in cibs.installment_facility:
+
+                if (fac['Ref']['Phase']) == 'Living':
+                    position_date.append(pos_date(fac))
+
+        if cibs.noninstallment_facility is not None:
+
+            for fac in cibs.noninstallment_facility :
+
+                if (fac['Ref']['Phase']) == 'Living'  and fac['Ref']['Facility']=='Cash Credit against Hypothecation':
+
+                    position_date.append(pos_date(fac))   
         return position_date
+
+
     except Exception as e:
         print(e)
         return []
@@ -260,25 +252,23 @@ def get_outstanding(cibs)->list:
 
         list_app = app_business(cibs)
 
-        if list_app is not None:  
-            if cibs.installment_facility is not None: 
-                
-                for fac in cibs.installment_facility:
-                    
-                    if (fac['Ref']['Phase']) == 'Living' and fac['Other subjects linked to the same contract'] is not None:
-                        
+
+        if cibs.installment_facility is not None: 
+
+            for fac in cibs.installment_facility:
+
+                    if (fac['Ref']['Phase']) == 'Living':
                         outstanding.append(fac['Contract History'].sort_values('Date', ascending=False).Outstanding[0])
-                        
+
             if cibs.noninstallment_facility is not None:
-                
+
                 for fac in cibs.noninstallment_facility :
-                    
-                    if (fac['Ref']['Phase']) == 'Living'  and fac['Other subjects linked to the same contract'] is not None and \
-                            fac['Ref']['Facility']=='Cash Credit against Hypothecation':
-                        
+
+                    if (fac['Ref']['Phase']) == 'Living'  and fac['Ref']['Facility']=='Cash Credit against Hypothecation':
+
                         outstanding.append(fac['Contract History'].sort_values('Date', ascending=False).Outstand[0])
 
-        return outstanding                
+        return outstanding                              
     except Exception as e:
         print(e)
         return []
@@ -292,23 +282,20 @@ def get_overdue(cibs):
         overdue = []
         list_app = app_business(cibs)
 
-        if list_app is not None:  
-            if cibs.installment_facility is not None: 
-                
-                for fac in cibs.installment_facility:
-                    
-                    if (fac['Ref']['Phase']) == 'Living' and fac['Other subjects linked to the same contract'] is not None :
-                        
+        if cibs.installment_facility is not None: 
+
+            for fac in cibs.installment_facility:
+
+                if (fac['Ref']['Phase']) == 'Living':# and fac['Other subjects linked to the same contract'] is not None :
+
                         overdue.append(fac['Contract History'].sort_values('Date', ascending=False).Overdue[0])
-                        
-            if cibs.noninstallment_facility is not None:
-                
-                for fac in cibs.noninstallment_facility :
-                    
-                    if (fac['Ref']['Phase']) == 'Living'  and fac['Other subjects linked to the same contract'] is not None and \
-                            fac['Ref']['Facility']=='Cash Credit against Hypothecation':
-                        
-                        overdue.append(fac['Contract History'].sort_values('Date', ascending=False).Overdue [0])
+        if cibs.noninstallment_facility is not None:
+
+            for fac in cibs.noninstallment_facility :
+
+                if (fac['Ref']['Phase']) == 'Living'  and  fac['Ref']['Facility']=='Cash Credit against Hypothecation':#fac['Other subjects linked to the same contract'] is not None and \
+
+                    overdue.append(fac['Contract History'].sort_values('Date', ascending=False).Overdue [0])
         return overdue
     except Exception as e:
         print(e)
@@ -322,27 +309,25 @@ def cl_status(cibs):
         
         '''
         sta = []
-        list_app = app_business(cibs)
+      
+        if cibs.installment_facility is not None: 
 
-        if list_app is not None:  
-            if cibs.installment_facility is not None: 
-                
-                for fac in cibs.installment_facility:
-                    
-                    if (fac['Ref']['Phase']) == 'Living' and fac['Other subjects linked to the same contract'] is not None:
-                        
-                        sta.append((fac['Contract History']).sort_values('Date', ascending=False).Status[0])
-                        
-            if cibs.noninstallment_facility is not None:
-                
-                for fac in cibs.noninstallment_facility :
-                    
-                    if (fac['Ref']['Phase']) == 'Living'  and fac['Other subjects linked to the same contract'] is not None and \
-                            fac['Ref']['Facility']=='Cash Credit against Hypothecation':
-                        
-                        sta.append((fac['Contract History']).sort_values('Date', ascending=False).Status[0])
-                
+            for fac in cibs.installment_facility:
+
+                if (fac['Ref']['Phase']) == 'Living' and fac['Other subjects linked to the same contract'] is not None:
+
+                    sta.append((fac['Contract History']).sort_values('Date', ascending=False).Status[0])
+
+        if cibs.noninstallment_facility is not None:
+
+            for fac in cibs.noninstallment_facility :
+
+                if (fac['Ref']['Phase']) == 'Living'  and  fac['Ref']['Facility']=='Cash Credit against Hypothecation':
+
+                    sta.append((fac['Contract History']).sort_values('Date', ascending=False).Status[0])
+
         return sta
+
     except Exception as e:
         print(e)
         return []
@@ -350,39 +335,36 @@ def cl_status(cibs):
 def EMI_3(cibs):
     try:
         '''
-        
-
+       
         Interest Rate of CC-Hypo / OD (%) will be inputted manually
 
-        
         EMI of Term Loan or Monthly Interest of CC/OD
         
         Monthly Interset of CC/OD= (CC Limit × %) ÷ 12
         
         '''
-        
         EMI = []
         Ir = 60
         list_app = app_business(cibs)
 
-        if list_app is not None:  
-        
-            if type(cibs.installment_facility) == list:
-                for fac in cibs.installment_facility:
-                    if fac['Ref']['Phase'] == 'Living' and fac['Other subjects linked to the same contract'] is not None:
-                        EMI.append(fac['Ref']['Installment Amount'])
-                        
-            if type(cibs.noninstallment_facility) == list:
-                
-                for fac in cibs.noninstallment_facility:
-                    if (fac['Ref']['Phase']) == 'Living' and fac['Other subjects linked to the same contract'] is not None and \
-                            fac['Ref']['Facility']=='Cash Credit against Hypothecation':
-                        CC_limit = (fac['Ref']['Contract History']['SancLmt'][0])
-                        Mon_Ir = (CC_limit * (Ir/100) )/12
 
-                        EMI.append(round(Mon_Ir))
+        if type(cibs.installment_facility) == list:
+            for fac in cibs.installment_facility:
+                if fac['Ref']['Phase'] == 'Living': 
+                    EMI.append(fac['Ref']['Installment Amount'])
+
+        if type(cibs.noninstallment_facility) == list:
+
+            for fac in cibs.noninstallment_facility:
+                if (fac['Ref']['Phase']) == 'Living' and  fac['Ref']['Facility']=='Cash Credit against Hypothecation':
+                    CC_limit = (fac['Contract History']['SancLmt'][0])
+                    Mon_Ir = (CC_limit * (Ir/100) )/12
+
+                    EMI.append(round(Mon_Ir))
 
         return EMI 
+        
+
     except Exception as e:
         print(e)
         return []
@@ -396,29 +378,28 @@ def Loan_start_date(cibs):
         Output: d-m-y
         
         '''
-        
         date_str = []
         list_app = app_business(cibs)
 
-        if list_app is not None:  
-            if cibs.installment_facility is not None: 
-                
-                for fac in cibs.installment_facility:
-                    
-                    if (fac['Ref']['Phase']) == 'Living' and fac['Other subjects linked to the same contract'] is not None:
-                        
-                        date_str.append(st_date(fac))
-                        
-            if cibs.noninstallment_facility is not None:
-                
-                for fac in cibs.noninstallment_facility :
-                    
-                    if (fac['Ref']['Phase']) == 'Living' and fac['Other subjects linked to the same contract'] is not None and \
-                            fac['Ref']['Facility']=='Cash Credit against Hypothecation':
-                        
-                        date_str.append(st_date(fac))
+        if cibs.installment_facility is not None: 
+
+            for fac in cibs.installment_facility:
+
+                if (fac['Ref']['Phase']) == 'Living' : 
+                    date_str.append(st_date(fac))
+
+        if cibs.noninstallment_facility is not None:
+
+            for fac in cibs.noninstallment_facility :
+
+                if (fac['Ref']['Phase']) == 'Living' and fac['Ref']['Facility']=='Cash Credit against Hypothecation':
+                    #    fac['Ref']['Facility']=='Cash Credit against Hypothecation':
+
+                    date_str.append(st_date(fac))
 
         return date_str
+
+  
     except Exception as e:
         print(e)
         return []
@@ -435,18 +416,22 @@ def Loan_expiry_date(cibs):
         
         '''
         date_str = []
-        list_app = app_business(cibs)
-        if list_app is not None:  
-            if cibs.installment_facility is not None: 
-                for fac in cibs.installment_facility:
-                    if (fac['Ref']['Phase']) == 'Living' and fac['Other subjects linked to the same contract'] is not None:
-                        date_str.append(ex_date(fac))
-            if cibs.noninstallment_facility is not None:
-                for fac in cibs.noninstallment_facility :
-                    if (fac['Ref']['Phase']) == 'Living' and fac['Other subjects linked to the same contract'] is not None and \
-                            fac['Ref']['Facility']=='Cash Credit against Hypothecation':
-                        date_str.append(ex_date(fac))
-            
+       
+        if cibs.installment_facility is not None: 
+
+            for fac in cibs.installment_facility:
+
+                if (fac['Ref']['Phase']) == 'Living':
+                    date_str.append(ex_date(fac))
+
+        if cibs.noninstallment_facility is not None:
+
+            for fac in cibs.noninstallment_facility :
+
+                if (fac['Ref']['Phase']) == 'Living' and fac['Ref']['Facility']=='Cash Credit against Hypothecation': 
+                        #fac['Ref']['Facility']=='Cash Credit against Hypothecation':
+                    date_str.append(ex_date(fac))
+
         return date_str
     except Exception as e:
         print(e)
