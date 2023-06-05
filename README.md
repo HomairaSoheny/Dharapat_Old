@@ -25,7 +25,7 @@ kubectl logs -f --selector app=cib-analyser-consumer -n cib-analyser-services
 * **AZURE_REGISTRY_USERNAME_2:** Azure Portal > Cluster > Credential > Username
 * **AZURE_REGISTRY_PASSWORD_2:** Azure Portal > Cluster > Credential > Username
 * **AZURE_CLUSTER_NAME_2:** Azure Portal > Cluster Name
-* **AZURE_CREDENTIALS_2:**
+* **AZURE_CREDENTIALS_2 :**
   Format:
 
   ```{
