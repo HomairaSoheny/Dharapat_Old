@@ -97,42 +97,42 @@ def get_std(cib):
 
 def get_sma(cib):
     try:
-        return "Yet to be implemented"
+        return cib.summary_1A['SMA_Amount'].iat[-1] + cib.summary_2A['SMA_Amount'].iat[-1]
     except:
         return "Error"
 
 def get_ss(cib):
     try:
-        return "Yet to be implemented"
+        return cib.summary_1A['SS_Amount'].iat[-1] + cib.summary_2A['SS_Amount'].iat[-1]
     except:
         return "Error"
 
 def get_df(cib):
     try:
-        return "Yet to be implemented"
+        return cib.summary_1A['DF_Amount'].iat[-1] + cib.summary_2A['DF_Amount'].iat[-1]
     except:
         return "Error"
     
 def get_bl(cib):
     try:
-        return "Yet to be implemented"
+        return cib.summary_1A['BL_Amount'].iat[-1] + cib.summary_2A['BL_Amount'].iat[-1]
     except:
         return "Error"
 
 def get_blw(cib):
     try:
-        return "Yet to be implemented"
+        return cib.summary_1A['BLW_Amount'].iat[-1] + cib.summary_2A['BLW_Amount'].iat[-1]
     except:
         return "Error"
 
 def get_stay_order(cib):
     try:
-        return "Yet to be implemented"
+        return cib.summary_1A['Stay Order_Amount'].iat[-1] + cib.summary_2A['Stay Order_Amount'].iat[-1]
     except:
         return "Error"
 
 def get_remarks(cib):
     try:
-        return "Yet to be implemented"
+        return cib.subject_info['Remarks']
     except:
         return "Error"
