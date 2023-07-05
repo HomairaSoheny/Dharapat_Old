@@ -13,7 +13,7 @@ spec:
       labels:
         app: cib-analyser
     spec:
-      # containers:
+      containers:
       #   - name: worker
       #     image: docker-image
       #     command: ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "--timeout", "600", "cib_analyzer.wsgi"]
