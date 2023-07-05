@@ -13,8 +13,12 @@ django.setup()
 
 
 def main():
-    connection = pika.BlockingConnection(pika.ConnectionParameters(
-        'rabbitmq-temp1.centralindia.azurecontainer.io', heartbeat=400))
+    #testing
+    #connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq-temp1.centralindia.azurecontainer.io', heartbeat=400))
+    
+    #production
+    connection = pika.BlockingConnection(pika.ConnectionParameters('rabbit@rabbitmq-0.rabbitmq.rabbits.svc.cluster.local', heartbeat=400))
+    
     channel = connection.channel()
     channel.queue_declare(queue='prime_bank_cib_response')
 
