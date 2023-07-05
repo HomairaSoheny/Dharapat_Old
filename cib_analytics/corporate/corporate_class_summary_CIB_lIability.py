@@ -8,7 +8,7 @@ class corporate_class_summary_CIB_liability:
                 "no_installment": summary_engine.funded_no_installment(cib_data),
                 "total": summary_engine.funded_total(cib_data)
             },
-            "non_funded": summary_engine.non_funded_total(cib_data),
+            "non_funded": summary_engine.non_funded(cib_data),
             "total": summary_engine.total(cib_data),
             "overdue": summary_engine.get_overdue(cib_data),
             "cl_status": summary_engine.get_cl_status(cib_data),
