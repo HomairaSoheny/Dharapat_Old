@@ -17,3 +17,5 @@ COPY . .
 
 ENV PYTHONPATH "${PYTHONPATH}:/code"
 ENV PYTHONPATH "${PYTHONPATH}:/code/cib_analyzer"
+
+CMD [ "python", "consumer_rabbitmq.py" ]
