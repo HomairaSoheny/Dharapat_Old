@@ -5,7 +5,7 @@ from io import BytesIO
 import xlsxwriter
 import datetime
 
-def create_report_dashboard(cib_datas: list[cib_class], output_dir: str):
+def create_report_dashboard(cib_datas, output_dir: str):
     Output = output_dir + f'\\filename dashboard {datetime.datetime.now().strftime("%d-%m-%Y %Hh%Mm%Ss")}.xlsx'
     io = BytesIO()
     writer = pd.ExcelWriter(io, engine='xlsxwriter', )
@@ -17,9 +17,9 @@ def create_report_dashboard(cib_datas: list[cib_class], output_dir: str):
 
 def generate_consumer_spreadsheet(writer, cib):
 
-    credit_card_table = pd.DataFrame(data=get_credit_card_table(cib))
-    loan_table = pd.DataFrame(data=get_loan_table(cib))
-    personal_loan_table = pd.DataFrame(data=get_personal_loan_table(cib))
+    credit_card_table = pd.DataFrame(data=cib['credit_facilities_in_the_name_of_applicant_for_credit_card'])
+    loan_table = pd.DataFrame(data=cib['credit_facilities_is_the_name_of_applicant_for_personal_loan_car_loan_home_loan'])
+    personal_loan_table = pd.DataFrame(data=cib['credit_facilities_in_the_name_of_applicants_business_for_personal_loan_car_loan_home_loan_credit_card'])
 
     #writer = pd.ExcelWriter('consumer.xlsx', engine='xlsxwriter', )
     #writer = xlsxwriter.Workbook(io, {'nan_inf_to_errors': True})

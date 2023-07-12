@@ -17,7 +17,7 @@ class GeneralDashboardReportApiView(APIView):
 
             cib_data_list = []
             for each in raw_data:
-                cib_data_list.append(cib_class(each))
+                cib_data_list.append(each)
                 
             path = os.path.join(abs_path)
 
