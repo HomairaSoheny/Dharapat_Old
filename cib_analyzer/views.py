@@ -13,7 +13,9 @@ class GeneralDashboardReportApiView(APIView):
         try:
             body_unicode = request.body.decode('utf-8')
             body = json.loads(body_unicode)
-            raw_data = body['data']
+            raw_data = body
+            
+            print(body)
 
             cib_data_list = []
             for each in raw_data:
@@ -28,7 +30,7 @@ class GeneralDashboardReportApiView(APIView):
             response = HttpResponse(rFile,content_type="application/ms-excel")
             response['Content-Disposition'] = f'attachment; filename=data.xlsx'
 
-            return response
+            return HttpResponse(response)
         except Exception as exc:
-            print(exc)
-            return exc
+             print(exc)
+             return HttpResponse([exc])
