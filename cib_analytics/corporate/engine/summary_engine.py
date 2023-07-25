@@ -2,10 +2,10 @@ from itertools import zip_longest
 
 
 def isNonFunded(fac):
-    if ('non funded' in fac["Ref"]["Facility"].lower() or
-        'letter of credit' in fac["Ref"]["Facility"].lower() or
-        'guarantee' in fac["Ref"]["Facility"].lower() or
-        'other indirect facility' in fac["Ref"]["Facility"].lower() ):
+    if ("non funded" in fac["Ref"]["Facility"].lower() or
+        "letter of credit" in fac["Ref"]["Facility"].lower() or
+        "guarantee" in fac["Ref"]["Facility"].lower() or
+        "other indirect facility" in fac["Ref"]["Facility"].lower() ):
         return True
     return False
 
@@ -16,7 +16,7 @@ def funded_installment(cib):
             return []
         for facility in cib.installment_facility:
             if isNonFunded(facility) is False:
-                response.append(facility['Ref']['Installment Amount'])
+                response.append(facility["Ref"]["Installment Amount"])
         return response
     except:
         return []
@@ -28,7 +28,7 @@ def funded_no_installment(cib):
             return []
         for facility in cib.noninstallment_facility:
             if isNonFunded(facility) is False:
-                response.append(facility['Ref']['Security Amount'])
+                response.append(facility["Ref"]["Security Amount"])
         return response
     except:
         return []
@@ -47,11 +47,11 @@ def non_funded(cib):
         if cib.installment_facility is not None:
             for facility in cib.installment_facility:
                 if isNonFunded(facility) is True:
-                    response.append(facility['Ref']['Installment Amount'])
+                    response.append(facility["Ref"]["Installment Amount"])
         if cib.noninstallment_facility is not None:
             for facility in cib.noninstallment_facility:
                 if isNonFunded(facility) is True:
-                    response.append(facility['Ref']['Security Amount'])
+                    response.append(facility["Ref"]["Security Amount"])
         return response
     except:
         return []
@@ -70,8 +70,8 @@ def get_overdue(cib):
         for fac_type in (cib.installment_facility, cib.credit_card_facility):
             if fac_type is not None:
                 for fac in fac_type:
-                    if (fac['Ref']['Phase']) == 'Living':
-                        overdue.append((fac['Contract History']).sort_values('Date', ascending=False).Overdue[0])  
+                    if (fac["Ref"]["Phase"]) == "Living":
+                        overdue.append((fac["Contract History"]).sort_values("Date", ascending=False).Overdue[0])  
         return overdue
     except:
         return []
@@ -82,8 +82,8 @@ def get_cl_status(cib):
         for fac_type in (cib.installment_facility, cib.credit_card_facility):
             if fac_type is not None:
                 for fac in fac_type:
-                    if (fac['Ref']['Phase']) == 'Living':
-                        status.append((fac['Contract History']).sort_values('Date', ascending=False).Status[0])
+                    if (fac["Ref"]["Phase"]) == "Living":
+                        status.append((fac["Contract History"]).sort_values("Date", ascending=False).Status[0])
         return status
     except:
         return []
@@ -102,42 +102,42 @@ def get_std(cib):
 
 def get_sma(cib):
     try:
-        return cib.summary_1A['SMA_Amount'].tolist()[:3] + cib.summary_2A['SMA_Amount'].tolist()[:3]
+        return cib.summary_1A["SMA_Amount"].tolist()[:3] + cib.summary_2A["SMA_Amount"].tolist()[:3]
     except:
         return []
 
 def get_ss(cib):
     try:
-        return cib.summary_1A['SS_Amount'].tolist()[:3] + cib.summary_2A['SS_Amount'].tolist()[:3]
+        return cib.summary_1A["SS_Amount"].tolist()[:3] + cib.summary_2A["SS_Amount"].tolist()[:3]
     except:
         return []
 
 def get_df(cib):
     try:
-        return cib.summary_1A['DF_Amount'].tolist()[:3] + cib.summary_2A['DF_Amount'].tolist()[:3]
+        return cib.summary_1A["DF_Amount"].tolist()[:3] + cib.summary_2A["DF_Amount"].tolist()[:3]
     except:
         return []
     
 def get_bl(cib):
     try:
-        return cib.summary_1A['BL_Amount'].tolist()[:3] + cib.summary_2A['BL_Amount'].tolist()[:3]
+        return cib.summary_1A["BL_Amount"].tolist()[:3] + cib.summary_2A["BL_Amount"].tolist()[:3]
     except:
         return []
 
 def get_blw(cib):
     try:
-        return cib.summary_1A['BLW_Amount'].tolist()[:3] + cib.summary_2A['BLW_Amount'].tolist()[:3]
+        return cib.summary_1A["BLW_Amount"].tolist()[:3] + cib.summary_2A["BLW_Amount"].tolist()[:3]
     except:
         return []
 
 def get_stay_order(cib):
     try:
-        return cib.summary_1A['Stay Order_Amount'].tolist()[:3] + cib.summary_2A['Stay Order_Amount'].tolist()[:3]
+        return cib.summary_1A["Stay Order_Amount"].tolist()[:3] + cib.summary_2A["Stay Order_Amount"].tolist()[:3]
     except:
         return []
 
 def get_remarks(cib):
     try:
-        return cib.subject_info['Remarks']
+        return cib.subject_info["Remarks"]
     except:
         return []

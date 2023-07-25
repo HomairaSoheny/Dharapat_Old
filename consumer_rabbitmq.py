@@ -51,7 +51,7 @@ def main():
                 final['metaData'] = metadata
                 print(metadata)
                 print("----------------------------------")
-                dashboard_data = generate_full_response(cib_list, 'corporate')
+                dashboard_data = generate_full_response(cib_list, metadata['cibType'])
                 final['score'] = scorecard
                 final['dashboard'] = dashboard_data
                 final['message'] = 'Ok'
