@@ -20,7 +20,7 @@ def summary_of_cib_liability(cib):
         return {}
 
 def liability_type_wise_breakup(cib):
-    return cib
+    return []
 
 def get_corporate_dashboard(cib):
     corporate_response = {

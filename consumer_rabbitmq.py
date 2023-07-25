@@ -24,8 +24,7 @@ def main():
     def callback(ch, method, properties, body):
         print(body)
         try:
-            metadata, req_cib, group_cib_list, error_messages = process_response(
-                body)
+            metadata, req_cib, group_cib_list, error_messages = process_response(body)
             if error_messages != "":
                 final = dict([
                     ('message', error_messages),
@@ -35,10 +34,8 @@ def main():
                 print(final)
 
                 channel1 = connection.channel()
-                channel1.queue_declare(
-                    queue='prime_bank_cib_extracted_download', durable=True)
-                channel1.basic_publish(
-                    exchange='', routing_key='prime_bank_cib_extracted_download', body=json.dumps(final))
+                channel1.queue_declare(queue='prime_bank_cib_extracted_download', durable=True)
+                channel1.basic_publish(exchange='', routing_key='prime_bank_cib_extracted_download', body=json.dumps(final))
 
             else:
                 cib_list = []
@@ -49,8 +46,9 @@ def main():
 
                 final = {}
                 scorecard = []
-                dashboard_data = generate_full_response(cib_list, 'cd-sme')
                 final['metaData'] = metadata
+                print(metadata)
+                dashboard_data = generate_full_response(cib_list, metadata['cibType'])
                 final['score'] = scorecard
                 final['dashboard'] = dashboard_data
                 final['message'] = 'Ok'
