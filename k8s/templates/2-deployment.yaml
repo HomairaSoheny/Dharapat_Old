@@ -21,9 +21,9 @@ spec:
             - name: PYTHONUNBUFFERED
               value: "1"
         - name: cib-analyser
-          # image: docker-image
+          image: docker-image
           # command: ["python", "consumer_rabbitmq.py"]
-          imagePullPolicy: "Always"
+          # imagePullPolicy: "Always"
           env:
             - name: PYTHONUNBUFFERED
               value: "1"
