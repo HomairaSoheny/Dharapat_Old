@@ -14,8 +14,7 @@ django.setup()
 
 def main():
     #development_server
-    connection = pika.BlockingConnection(pika.ConnectionParameters('', heartbeat=400))
-    #connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq-temp1.centralindia.azurecontainer.io', heartbeat=400))
+    connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq-temp1.centralindia.azurecontainer.io', heartbeat=400))
     #production
     #connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq-0.rabbitmq.rabbits.svc.cluster.local', heartbeat=400))
     
@@ -64,8 +63,8 @@ def main():
             print(final)
             print("----------------------------------")
             channel1 = connection.channel()
-            channel1.queue_declare(queue='prime_bank_cib_extracted_download', durable=True)
-            channel1.basic_publish(exchange='', routing_key='prime_bank_cib_extracted_download', body=json.dumps(final))
+            channel1.queue_declare(queue="prime_bank_cib_extracted_download", durable=True)
+            channel1.basic_publish(exchange='', routing_key="prime_bank_cib_extracted_download", body=json.dumps(final))
             print("Analysis Report Sent")
 
         except Exception as exc:

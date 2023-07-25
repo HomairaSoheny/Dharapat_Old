@@ -16,7 +16,7 @@ def funded_installment(cib):
             return []
         for facility in cib.installment_facility:
             if isNonFunded(facility) is False:
-                response.append(facility["Ref"]["Installment Amount"])
+                response.append(float(facility["Ref"]["Installment Amount"]))
         return response
     except:
         return []
@@ -28,7 +28,7 @@ def funded_no_installment(cib):
             return []
         for facility in cib.noninstallment_facility:
             if isNonFunded(facility) is False:
-                response.append(facility["Ref"]["Security Amount"])
+                response.append(float(facility["Ref"]["Security Amount"]))
         return response
     except:
         return []
@@ -47,11 +47,11 @@ def non_funded(cib):
         if cib.installment_facility is not None:
             for facility in cib.installment_facility:
                 if isNonFunded(facility) is True:
-                    response.append(facility["Ref"]["Installment Amount"])
+                    response.append(float(facility["Ref"]["Installment Amount"]))
         if cib.noninstallment_facility is not None:
             for facility in cib.noninstallment_facility:
                 if isNonFunded(facility) is True:
-                    response.append(facility["Ref"]["Security Amount"])
+                    response.append(float(facility["Ref"]["Security Amount"]))
         return response
     except:
         return []
@@ -71,7 +71,7 @@ def get_overdue(cib):
             if fac_type is not None:
                 for fac in fac_type:
                     if (fac["Ref"]["Phase"]) == "Living":
-                        overdue.append((fac["Contract History"]).sort_values("Date", ascending=False).Overdue[0])  
+                        overdue.append(float((fac["Contract History"]).sort_values("Date", ascending=False).Overdue[0]))  
         return overdue
     except:
         return []
@@ -83,7 +83,7 @@ def get_cl_status(cib):
             if fac_type is not None:
                 for fac in fac_type:
                     if (fac["Ref"]["Phase"]) == "Living":
-                        status.append((fac["Contract History"]).sort_values("Date", ascending=False).Status[0])
+                        status.append(float(fac["Contract History"]).sort_values("Date", ascending=False).Status[0])
         return status
     except:
         return []
