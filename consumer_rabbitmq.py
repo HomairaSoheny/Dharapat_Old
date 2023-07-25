@@ -32,6 +32,8 @@ def main():
                     ('metaData', metadata)
                 ])
                 print(final)
+                print("Error")
+                print("----------------------------------")
 
                 channel1 = connection.channel()
                 channel1.queue_declare(queue='prime_bank_cib_extracted_download', durable=True)
@@ -48,7 +50,8 @@ def main():
                 scorecard = []
                 final['metaData'] = metadata
                 print(metadata)
-                dashboard_data = generate_full_response(cib_list, metadata['cibType'])
+                print("----------------------------------")
+                dashboard_data = generate_full_response(cib_list, 'corporate')
                 final['score'] = scorecard
                 final['dashboard'] = dashboard_data
                 final['message'] = 'Ok'
@@ -56,7 +59,9 @@ def main():
                 print('in if......')
             print("Analysis Report")
             print(".................................")
+            print("----------------------------------")
             print(final)
+            print("----------------------------------")
             channel1 = connection.channel()
             channel1.queue_declare(
                 queue='prime_bank_cib_extracted_download', durable=True)
