@@ -13,7 +13,7 @@ def funded_installment(cib):
     try:
         response = []
         if cib.installment_facility is None:
-            return "Installment Facility not Found"
+            return []
         for facility in cib.installment_facility:
             if isNonFunded(facility) is False:
                 response.append(facility['Ref']['Installment Amount'])
@@ -25,13 +25,13 @@ def funded_no_installment(cib):
     try:
         response = []
         if cib.noninstallment_facility is None:
-            return "Non Installment Facility Not Found"
+            return []
         for facility in cib.noninstallment_facility:
             if isNonFunded(facility) is False:
                 response.append(facility['Ref']['Security Amount'])
         return response
     except:
-        return "Error"
+        return []
 
 def funded_total(cib):
     try:
@@ -92,13 +92,13 @@ def get_default(cib):
     try:
         return []
     except:
-        return "Error"
+        return []
     
 def get_std(cib):
     try:
         return []
     except:
-        return "Error"
+        return []
 
 def get_sma(cib):
     try:
@@ -110,34 +110,34 @@ def get_ss(cib):
     try:
         return cib.summary_1A['SS_Amount'].tolist()[:3] + cib.summary_2A['SS_Amount'].tolist()[:3]
     except:
-        return "Error"
+        return []
 
 def get_df(cib):
     try:
         return cib.summary_1A['DF_Amount'].tolist()[:3] + cib.summary_2A['DF_Amount'].tolist()[:3]
     except:
-        return "Error"
+        return []
     
 def get_bl(cib):
     try:
         return cib.summary_1A['BL_Amount'].tolist()[:3] + cib.summary_2A['BL_Amount'].tolist()[:3]
     except:
-        return "Error"
+        return []
 
 def get_blw(cib):
     try:
         return cib.summary_1A['BLW_Amount'].tolist()[:3] + cib.summary_2A['BLW_Amount'].tolist()[:3]
     except:
-        return "Error"
+        return []
 
 def get_stay_order(cib):
     try:
         return cib.summary_1A['Stay Order_Amount'].tolist()[:3] + cib.summary_2A['Stay Order_Amount'].tolist()[:3]
     except:
-        return "Error"
+        return []
 
 def get_remarks(cib):
     try:
         return cib.subject_info['Remarks']
     except:
-        return "Error"
+        return []
