@@ -35,7 +35,7 @@ def summary_of_cib_liability(cib_list):
             cibs[cib] = aggregate_corporate_cib(cibs[cib])
         return cibs
     except Exception as exc:
-        print("Error on consumer table 2")
+        print("Error on summary_of_cib_liability")
         print(exc)
         return {}
 
