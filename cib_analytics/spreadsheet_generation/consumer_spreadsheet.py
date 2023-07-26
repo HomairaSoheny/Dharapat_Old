@@ -1,8 +1,5 @@
-from ..cib_data_class import cib_class
-from ..api_generation.consumer_dashboard import get_credit_card_table, get_loan_table, get_personal_loan_table
 import pandas as pd
 from io import BytesIO
-import xlsxwriter
 import datetime
 
 def create_report_dashboard(cib_datas, output_dir: str):
