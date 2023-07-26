@@ -1,3 +1,4 @@
+import numpy as np
 from .parsing_utils import parsing_helpers
 from .parsing_utils import type_converters
 from .parsing_utils.sanity_check import sanity_check
@@ -52,9 +53,14 @@ class cib_class:
 
 
         # keys that should be present in any given CIB report
-        self.pdf_name = self.cib_raw["fileName"]
-        self.cib_id = self.cib_raw["id"]
-        self.cib_category = self.cib_raw["catagory"]
+        try:
+            self.pdf_name = self.cib_raw["fileName"]
+            self.cib_id = self.cib_raw["id"]
+            self.cib_category = self.cib_raw["catagory"]
+        except:
+            self.pdf_name = "fileName"
+            self.cib_id = "id"
+            self.cib_category = str(np.random.choice(["Type a", "Type b", "Type c", "Type d", "Type e", "Type f", "Type g", "Type h", "Type i"]))
         
         self.cib_header = parsing_helpers.parse_cib_header(
             self.cib_raw['Credit Information Bureau - Bangladesh Bank']
