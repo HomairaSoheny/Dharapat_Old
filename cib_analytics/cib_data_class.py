@@ -52,6 +52,10 @@ class cib_class:
 
 
         # keys that should be present in any given CIB report
+        self.pdf_name = self.cib_raw["fileName"]
+        self.cib_id = self.cib_raw["id"]
+        self.cib_category = self.cib_raw["catagory"]
+        
         self.cib_header = parsing_helpers.parse_cib_header(
             self.cib_raw['Credit Information Bureau - Bangladesh Bank']
             )
