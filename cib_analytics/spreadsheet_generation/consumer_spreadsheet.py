@@ -1,8 +1,5 @@
-from ..cib_data_class import cib_class
-from ..api_generation.consumer_dashboard import get_credit_card_table, get_loan_table, get_personal_loan_table
 import pandas as pd
 from io import BytesIO
-import xlsxwriter
 import datetime
 
 def create_report_dashboard(cib_datas, output_dir: str):
@@ -17,30 +14,26 @@ def create_report_dashboard(cib_datas, output_dir: str):
 
 def generate_consumer_spreadsheet(writer, cib):
 
-    credit_card_table = pd.DataFrame(data=cib['credit_facilities_in_the_name_of_applicant_for_credit_card'])
-    loan_table = pd.DataFrame(data=cib['credit_facilities_is_the_name_of_applicant_for_personal_loan_car_loan_home_loan'])
-    personal_loan_table = pd.DataFrame(data=cib['credit_facilities_in_the_name_of_applicants_business_for_personal_loan_car_loan_home_loan_credit_card'])
+    credit_card_loan = pd.DataFrame(data=cib["credit_facilities_in_the_name_of_applicant_for_credit_card"])
+    personal_loan = pd.DataFrame(data=cib["credit_facilities_is_the_name_of_applicant_for_personal_loan_car_loan_home_loan"])
+    business_loan = pd.DataFrame(data=cib["credit_facilities_in_the_name_of_applicants_business_for_personal_loan_car_loan_home_loan_credit_card"])
 
-    #writer = pd.ExcelWriter('consumer.xlsx', engine='xlsxwriter', )
-    #writer = xlsxwriter.Workbook(io, {'nan_inf_to_errors': True})
-    #writer = pd.ExcelWriter(io, engine='xlsxwriter', )
-
-    personal_loan_table.to_excel(writer, sheet_name="1", index=False)
-    credit_card_table.to_excel(writer, sheet_name="2", index=False)
-    loan_table.to_excel(writer, sheet_name="3", index=False)
+    business_loan.to_excel(writer, sheet_name="business loan", index=False)
+    credit_card_loan.to_excel(writer, sheet_name="personal credit card", index=False)
+    personal_loan.to_excel(writer, sheet_name="personal loan", index=False)
     
 
-    for column in personal_loan_table:
-        column_length = max(personal_loan_table[column].astype(str).map(len).max(), len(column))
-        col_idx = personal_loan_table.columns.get_loc(column)
-        writer.sheets["1"].set_column(col_idx, col_idx, column_length)
+    for column in business_loan:
+        column_length = max(business_loan[column].astype(str).map(len).max(), len(column))
+        col_idx = business_loan.columns.get_loc(column)
+        writer.sheets["business loan"].set_column(col_idx, col_idx, column_length)
 
-    for column in credit_card_table:
-        column_length = max(credit_card_table[column].astype(str).map(len).max(), len(column))
-        col_idx = credit_card_table.columns.get_loc(column)
-        writer.sheets["2"].set_column(col_idx, col_idx, column_length)
+    for column in credit_card_loan:
+        column_length = max(credit_card_loan[column].astype(str).map(len).max(), len(column))
+        col_idx = credit_card_loan.columns.get_loc(column)
+        writer.sheets["personal credit card"].set_column(col_idx, col_idx, column_length)
     
-    for column in loan_table:
-        column_length = max(loan_table[column].astype(str).map(len).max(), len(column))
-        col_idx = loan_table.columns.get_loc(column)
-        writer.sheets["3"].set_column(col_idx, col_idx, column_length)
+    for column in personal_loan:
+        column_length = max(personal_loan[column].astype(str).map(len).max(), len(column))
+        col_idx = personal_loan.columns.get_loc(column)
+        writer.sheets["personal loan"].set_column(col_idx, col_idx, column_length)

@@ -2,13 +2,19 @@
 
 ## To view logs from azure portal
 
-**For Analytics:**
+### **For Analytics:**
 
-```**
-kubectl logs -f --selector app=cib-analyser -n dev-cib-analytics
-```
+* Django
+  ```
+  kubectl logs -f --selector app=cib-analyser -n dev-cib-analytics --container worker
 
-**For AI:**
+  ```
+* RabbitMQ
+  ```
+  kubectl logs -f --selector app=cib-analyser -n dev-cib-analytics --container cib-analyser
+  ```
+
+### **For AI:**
 
 ```
 kubectl logs -f --selector app=cib-analyser-consumer -n cib-analyser-services
@@ -26,7 +32,7 @@ kubectl logs -f --selector app=cib-analyser-consumer -n cib-analyser-services
 * **AZURE_REGISTRY_PASSWORD_2:** Azure Portal > Cluster > Credential > Username
 * **AZURE_CLUSTER_NAME_2:** Azure Portal > Cluster Name
 * **AZURE_CREDENTIALS_2 :**
-  Format: 
+  Format:
 
   ```{
   {
