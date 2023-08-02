@@ -1,5 +1,5 @@
-from .facility_summary_class import facility_summary_table_class
-from .corporate_summary_class import summary_table_class
+from ..corporate_summary.facility_summary_class import facility_summary_table_class
+from ..corporate_summary.corporate_summary_class import summary_table_class
 import json
 
 def summary_table(cibs):
