@@ -1,5 +1,6 @@
 from ..corporate_summary.facility_summary_class import facility_summary_table_class
 from ..corporate_summary.corporate_summary_class import summary_table_class
+from ..corporate_summary.expired_but_showing_live_class import expired_but_showing_live_table_class
 import json
 
 def summary_table(cibs):
@@ -64,6 +65,23 @@ def summary_of_facility(cib_list):
         print("Error on CIB summary of facility Table")
         print(exc)
         return []
+def summary_of_expired_but_showing_live(cib_list):
+    try:
+
+        get_ex_summary = expired_but_showing_live_table_class(cib_list)
+        Funded_ins = ((get_ex_summary.Funded_ins).to_json(orient = 'records'))
+        Funded_nonins = ((get_ex_summary.Funded_nonins).to_json(orient = 'records'))
+        Non_Funded = ((get_ex_summary.Nonfunded).to_json(orient = 'records'))
+        response = {
+                    "Summary of funded facility" : json.loads(Funded_ins) + json.loads(Funded_nonins),
+                    "Summary of non funded facility": json.loads(Non_Funded)
+                }
+        return response
+    except Exception as exc:
+        print("Error on CIB summary of expired but showing live Table")
+        print(exc)
+        return []
+
     
 
 
