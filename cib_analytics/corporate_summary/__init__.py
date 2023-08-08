@@ -1,2 +1,3 @@
 from .facility_summary_class import facility_summary_table_class
 from .corporate_summary_class import summary_table_class
+from .expired_but_showing_live_class import expired_but_showing_live_table_class
