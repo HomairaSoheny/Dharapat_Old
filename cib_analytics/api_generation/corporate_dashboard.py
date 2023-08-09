@@ -1,8 +1,8 @@
 from ..corporate.corporate_class_liability_breakdown import corporate_class_liability_breakdown
 from ..corporate.corporate_class_summary_CIB_lIability import corporate_class_summary_CIB_liability
-from ..corporate_summary.facility_summary_class import facility_summary_table_class
-from ..corporate_summary.corporate_summary_class import summary_table_class
-from ..corporate_summary.expired_but_showing_live_class import expired_but_showing_live_table_class
+from ..corporate.corporate_summary_class import summary_table_class
+from ..corporate.facility_summary_class import facility_summary_table_class
+from ..corporate.expired_but_showing_live_class import expired_but_showing_live_table_class
 import json
 
 def summary_table(cibs):
