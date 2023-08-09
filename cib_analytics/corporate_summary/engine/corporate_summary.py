@@ -1,13 +1,3 @@
-from glob import glob
-from cib_data_class import cib_class
-import json
-from json import load
-from tqdm.notebook import tqdm
-
-from datetime import  datetime, timedelta
-import collections
-from collections import Counter
-import pandas as pd
 from itertools import zip_longest
 
 def is_living(facility):
