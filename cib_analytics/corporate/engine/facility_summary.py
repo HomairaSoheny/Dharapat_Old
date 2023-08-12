@@ -327,7 +327,28 @@ def funded_ins_guran(cib_list:list):
                             get_status(fac), get_worst_status(fac), reorganized_credit(fac),  get_remarks(fac)]
     
                         table.append(row)
-    return pd.DataFrame(table, columns=columns)
+    table = pd.DataFrame(table, columns=columns)
+    response = {
+        "Installment": table["Installment"].tolist(),
+        "Limit": table["Limit"].tolist(),
+        "Outstanding": table["Outstanding"].tolist(),
+        "Overdue": table["Overdue"].tolist(),
+        "Start Date": table["Start Date"].tolist(),
+        "End Date of Contract": table["End Date of Contract"].tolist(),
+        "Installment amount": table["Installment amount"].tolist(),
+        "Payment Period": table["Payment Period"].tolist(),
+        "Total No. of Installment": table["Total No. of Installment"].tolist(),
+        "Total no. of Installment paid": table["Total no. of Installment paid"].tolist(),
+        "No. of Remaining Installment": table["No. of Remaining Installment"].tolist(),
+        "Date of Last Payment": table["Date of Last Payment"].tolist(),
+        "NPI (No.)": table["NPI (No.)"].tolist(),
+        "Default ": table["Default "].tolist(),
+        "Current Status": table["Current Status"].tolist(),
+        "Worst Status": table["Worst Status"].tolist(),
+        "Reorganized Credit": table["Reorganized Credit"].tolist(),
+        "Remarks": table["Remarks"].tolist(),
+    }
+    return response
 
 def funded_nonins_guran(cib_list:list):
     '''
@@ -351,7 +372,30 @@ def funded_nonins_guran(cib_list:list):
         
                         table.append(row)
                         
-    return pd.DataFrame(table, columns=columns)
+    table = pd.DataFrame(table, columns = columns)
+    response = {
+        "Non Installment": table["Non Installment"].tolist(),
+        "Limit": table["Limit"].tolist(),
+        "Outstanding": table["Outstanding"].tolist(),
+        "Overdue": table["Overdue"].tolist(),
+        "Start Date": table["Start Date"].tolist(),
+        "End Date of Contract": table["End Date of Contract"].tolist(),
+        "Installment amount": table["Installment amount"].tolist(),
+        "Payment Period": table["Payment Period"].tolist(),
+        "Total No. of Installment": table["Total No. of Installment"].tolist(),
+        "Total no. of Installment paid": table["Total no. of Installment paid"].tolist(),
+        "No. of Remaining Installment": table["No. of Remaining Installment"].tolist(),
+        "Date of Last Payment": table["Date of Last Payment"].tolist(),
+        "NPI (No.)": table["NPI (No.)"].tolist(),
+        "Default ": table["Default "].tolist(),
+        "Current Status": table["Current Status"].tolist(),
+        "Worst Status": table["Worst Status"].tolist(),
+        "Reorganized Credit": table["Reorganized Credit"].tolist(),
+        "Remarks": table["Remarks"].tolist(),
+    }
+                        
+    #return pd.DataFrame(table, columns=columns)
+    return response
 
 
 def nonfunded_borrow(cib_list:list):
@@ -375,7 +419,30 @@ def nonfunded_borrow(cib_list:list):
                         table.append(row)
 
                         
-    return pd.DataFrame(table, columns=columns)
+    table = pd.DataFrame(table, columns = columns)
+    response = {
+        "Non Installment": table["Non Installment"].tolist(),
+        "Limit": table["Limit"].tolist(),
+        "Outstanding": table["Outstanding"].tolist(),
+        "Overdue": table["Overdue"].tolist(),
+        "Start Date": table["Start Date"].tolist(),
+        "End Date of Contract": table["End Date of Contract"].tolist(),
+        "Installment amount": table["Installment amount"].tolist(),
+        "Payment Period": table["Payment Period"].tolist(),
+        "Total No. of Installment": table["Total No. of Installment"].tolist(),
+        "Total no. of Installment paid": table["Total no. of Installment paid"].tolist(),
+        "No. of Remaining Installment": table["No. of Remaining Installment"].tolist(),
+        "Date of Last Payment": table["Date of Last Payment"].tolist(),
+        "NPI (No.)": table["NPI (No.)"].tolist(),
+        "Default ": table["Default "].tolist(),
+        "Current Status": table["Current Status"].tolist(),
+        "Worst Status": table["Worst Status"].tolist(),
+        "Reorganized Credit": table["Reorganized Credit"].tolist(),
+        "Remarks": table["Remarks"].tolist(),
+    }
+                        
+    #return pd.DataFrame(table, columns=columns)
+    return response
 
 def nonfunded_guran(cib_list:list):
     '''
@@ -398,5 +465,28 @@ def nonfunded_guran(cib_list:list):
                         table.append(row)
 
                         
-    return pd.DataFrame(table, columns=columns)
+    table = pd.DataFrame(table, columns = columns)
+    response = {
+        "Non Installment": table["Non Installment"].tolist(),
+        "Limit": table["Limit"].tolist(),
+        "Outstanding": table["Outstanding"].tolist(),
+        "Overdue": table["Overdue"].tolist(),
+        "Start Date": table["Start Date"].tolist(),
+        "End Date of Contract": table["End Date of Contract"].tolist(),
+        "Installment amount": table["Installment amount"].tolist(),
+        "Payment Period": table["Payment Period"].tolist(),
+        "Total No. of Installment": table["Total No. of Installment"].tolist(),
+        "Total no. of Installment paid": table["Total no. of Installment paid"].tolist(),
+        "No. of Remaining Installment": table["No. of Remaining Installment"].tolist(),
+        "Date of Last Payment": table["Date of Last Payment"].tolist(),
+        "NPI (No.)": table["NPI (No.)"].tolist(),
+        "Default ": table["Default "].tolist(),
+        "Current Status": table["Current Status"].tolist(),
+        "Worst Status": table["Worst Status"].tolist(),
+        "Reorganized Credit": table["Reorganized Credit"].tolist(),
+        "Remarks": table["Remarks"].tolist(),
+    }
+                        
+    #return pd.DataFrame(table, columns=columns)
+    return response
 
