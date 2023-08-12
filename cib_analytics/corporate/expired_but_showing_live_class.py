@@ -1,6 +1,6 @@
 from .engine import expired_but_showing_live
 
-class expired_but_showing_live_table_class():
+class Expired_but_showing_live_table_class():
     
     def __init__(self, cib_list):
         self.Funded_ins = expired_but_showing_live.funded_ins_details(cib_list)
