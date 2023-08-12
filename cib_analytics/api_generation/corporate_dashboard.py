@@ -1,7 +1,7 @@
 from ..corporate.corporate_class_liability_breakdown import corporate_class_liability_breakdown
 from ..corporate.corporate_class_summary_CIB_lIability import corporate_class_summary_CIB_liability
 from ..corporate.corporate_summary_class import summary_table_class
-from ..corporate.facility_summary_class import facility_summary_table_class
+from ..corporate.facility_summary_class import Facility_summary_table_class
 from ..corporate.expired_but_showing_live_class import expired_but_showing_live_table_class
 import json
 
@@ -44,37 +44,37 @@ def summary_table(cibs):
 
 def summary_of_facility(cib_list):
   
-    try:
-        get_fac_summary = facility_summary_table_class(cib_list)
-        Funded_ins_borrower = ((get_fac_summary.Funded_ins_bor).to_json(orient = 'records'))
-        Funded_nonins_borrower = ((get_fac_summary.Funded_nonins_bor).to_json(orient = 'records'))
-        Funded_ins_guran = ((get_fac_summary.Funded_ins_guran).to_json(orient = 'records'))
-        Funded_nonins_guran = ((get_fac_summary.Funded_non_ins_guran).to_json(orient = 'records'))
-        Non_Funded_bor = ((get_fac_summary.Nonfunded_bor).to_json(orient = 'records'))
-        Non_Funded_guran =  ((get_fac_summary.Nonfunded_bor).to_json(orient = 'records'))
-        response = {
-                "Summary of funded facility for borrower" : str(json.loads(Funded_ins_borrower) + json.loads(Funded_nonins_borrower)),
-                "Summary of funded facility for gurantor" : str(json.loads(Funded_ins_guran)+ json.loads(Funded_nonins_guran)),
-                "Summary of non funded facility for borrower": str(json.loads(Non_Funded_bor)),
-                "Summary of non funded facility for gurantor": str(json.loads(Non_Funded_guran))
-            }
-    
-        return response
-    except Exception as exc:
-        print("Error on CIB summary of facility Table")
-        print(exc)
-        return []
+    # try:
+    get_fac_summary = Facility_summary_table_class(cib_list)
+    Funded_ins_borrower = get_fac_summary.funded_ins_bor
+    Funded_nonins_borrower = get_fac_summary.funded_nonins_bor
+    Funded_ins_guran = get_fac_summary.funded_ins_guran
+    Funded_nonins_guran = get_fac_summary.funded_non_ins_guran
+    Non_Funded_bor = get_fac_summary.nonfunded_bor
+    Non_Funded_guran =  get_fac_summary.nonfund_guran
+    # response = {
+    #         "Summary of funded facility for borrower" : Funded_ins_borrower + Funded_nonins_borrower,
+    #         "Summary of funded facility for gurantor" : Funded_ins_guran + Funded_nonins_guran,
+    #         "Summary of non funded facility for borrower": Non_Funded_bor,
+    #         "Summary of non funded facility for gurantor": Non_Funded_guran
+    #     }
+
+    return Funded_nonins_borrower
+    # except Exception as exc:
+    #     print("Error on CIB summary of facility Table")
+    #     print(exc)
+    #     return []
     
 def summary_of_expired_but_showing_live(cib_list):
     try:
 
         get_ex_summary = expired_but_showing_live_table_class(cib_list)
-        Funded_ins = ((get_ex_summary.Funded_ins).to_json(orient = 'records'))
-        Funded_nonins = ((get_ex_summary.Funded_nonins).to_json(orient = 'records'))
-        Non_Funded = ((get_ex_summary.Nonfunded).to_json(orient = 'records'))
+        Funded_ins = get_ex_summary.Funded_ins
+        Funded_nonins = get_ex_summary.Funded_nonins
+        Non_Funded = get_ex_summary.Nonfunded
         response = {
-                    "Summary of funded facility" : str(json.loads(Funded_ins) + json.loads(Funded_nonins)),
-                    "Summary of non funded facility": str(json.loads(Non_Funded))
+                    "Summary of funded facility" : Funded_ins + Funded_nonins,
+                    "Summary of non funded facility": Non_Funded
                 }
         return response
     except Exception as exc:
