@@ -1,6 +1,6 @@
 from .engine import liability_breakdown_engine
 
-class corporate_class_liability_breakdown:
+class CorporateLiabilityBreakdownClass:
     def __init__(self, cib_data):
         self.a = {
             "company or person": liability_breakdown_engine.company_or_person(cib_data),

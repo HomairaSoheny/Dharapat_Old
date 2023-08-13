@@ -1,14 +1,14 @@
-from ..corporate.corporate_class_liability_breakdown import corporate_class_liability_breakdown
-from ..corporate.corporate_class_summary_CIB_lIability import corporate_class_summary_CIB_liability
-from ..corporate.corporate_summary_class import summary_table_class
-from ..corporate.facility_summary_class import Facility_summary_table_class
-from ..corporate.expired_but_showing_live_class import Expired_but_showing_live_table_class
+from ..corporate.corporate_class_liability_breakdown import CorporateLiabilityBreakdownClass
+from ..corporate.corporate_class_summary_CIB_lIability import CorporateSummaryCIBLiabilityClass
+from ..corporate.corporate_summary_class import CorporateSummaryTableClass
+from ..corporate.facility_summary_class import CorporateFacilitySummaryTableClass
+from ..corporate.expired_but_showing_live_class import CorporateExpiredButShowingLiveClass
 import json
 
 
 def summary_table(cibs):
     try:
-        get_summary_table = summary_table_class(cibs)
+        get_summary_table = CorporateSummaryTableClass(cibs)
         response = []
         for i in range(len(get_summary_table.concern_name)):
             if i < (len(get_summary_table.concern_name)-1):
@@ -46,7 +46,7 @@ def summary_table(cibs):
 
 def summary_of_facility(cib_list):
     try:
-        get_fac_summary = Facility_summary_table_class(cib_list)
+        get_fac_summary = CorporateFacilitySummaryTableClass(cib_list)
         Funded_ins_borrower = get_fac_summary.funded_ins_bor
         Funded_nonins_borrower = get_fac_summary.funded_nonins_bor
         Funded_ins_guran = get_fac_summary.funded_ins_guran
@@ -72,7 +72,7 @@ def summary_of_facility(cib_list):
 def summary_of_expired_but_showing_live(cib_list):
     try:
 
-        get_ex_summary = Expired_but_showing_live_table_class(cib_list)
+        get_ex_summary = CorporateExpiredButShowingLiveClass(cib_list)
         Funded_ins = get_ex_summary.Funded_ins
         Funded_nonins = get_ex_summary.Funded_nonins
         Non_Funded = get_ex_summary.Nonfunded
@@ -151,7 +151,7 @@ def aggregate_corporate_cib(cib_list):
         "remarks": []
     }
     for cib in cib_list:
-        summary = corporate_class_summary_CIB_liability(cib)
+        summary = CorporateSummaryCIBLiabilityClass(cib)
         response["funded"]["installment"] += summary.funded["installment"]
         response["funded"]["no_installment"] += summary.funded["no_installment"]
         response["funded"]["total"] += summary.funded["total"]

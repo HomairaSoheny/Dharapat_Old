@@ -1,6 +1,6 @@
 from .engine import summary_engine
 
-class corporate_class_summary_CIB_liability:
+class CorporateSummaryCIBLiabilityClass:
     def __init__(self, cib_data):
         self.funded = {
                 "installment": summary_engine.funded_installment(cib_data),
