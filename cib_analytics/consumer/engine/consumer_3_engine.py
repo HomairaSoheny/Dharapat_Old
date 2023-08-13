@@ -309,23 +309,14 @@ def cl_status(cibs):
         
         '''
         sta = []
-      
         if cibs.installment_facility is not None: 
-
             for fac in cibs.installment_facility:
-
                 if (fac['Ref']['Phase']) == 'Living' and fac['Other subjects linked to the same contract'] is not None:
-
                     sta.append((fac['Contract History']).sort_values('Date', ascending=False).Status[0])
-
         if cibs.noninstallment_facility is not None:
-
             for fac in cibs.noninstallment_facility :
-
                 if (fac['Ref']['Phase']) == 'Living'  and  fac['Ref']['Facility']=='Cash Credit against Hypothecation':
-
                     sta.append((fac['Contract History']).sort_values('Date', ascending=False).Status[0])
-
         return sta
 
     except Exception as e:
