@@ -23,7 +23,7 @@ def get_loan_table(cib):
                 })
         return response
     except Exception as exc:
-        print("Error on consumer table 1")
+        print("Error on loan table")
         print(exc)
         return []
 
@@ -49,7 +49,7 @@ def get_credit_card_table(cib):
                 })
         return response
     except Exception as exc:
-        print("Error on consumer table 2")
+        print("Error on credit card table")
         print(exc)
         return []
     
@@ -73,7 +73,7 @@ def get_personal_loan_table(cib):
                 })
         return response
     except Exception as exc:
-        print("Error on consumer table 3")
+        print("Error on personal loan table")
         print(exc)
         return []
 
