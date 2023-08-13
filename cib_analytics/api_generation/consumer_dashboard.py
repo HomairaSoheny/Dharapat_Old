@@ -1,10 +1,10 @@
-from ..consumer.consumer_1_class import Consumer_1_class
-from ..consumer.consumer_2_class import Consumer_2_class
-from ..consumer.consumer_3_class import Consumer_3_class
+from ..consumer.consumer_1_class import ConsumerLoanClass
+from ..consumer.consumer_2_class import ConsumerCreditCardClass
+from ..consumer.consumer_3_class import ConsumerPersonalLoanClass
 
 def get_loan_table(cib):
     try:
-        loan_class = Consumer_1_class(cib)
+        loan_class = ConsumerLoanClass(cib)
         response = []
         for i in range(len(loan_class.Borrowers_name)):
             response.append({
@@ -29,7 +29,7 @@ def get_loan_table(cib):
 
 def get_credit_card_table(cib):
     try:
-        credit_card_class = Consumer_2_class(cib)
+        credit_card_class = ConsumerCreditCardClass(cib)
         response = []
         for i in range(len(credit_card_class.Borrowers_name)):
             response.append({
@@ -55,7 +55,7 @@ def get_credit_card_table(cib):
     
 def get_personal_loan_table(cib):
     try:
-        personal_class = Consumer_3_class(cib)
+        personal_class = ConsumerPersonalLoanClass(cib)
         response = []
         for i in range(len(personal_class.Borrowers_name)):
             response.append({
