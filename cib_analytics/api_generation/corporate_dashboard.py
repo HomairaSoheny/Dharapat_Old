@@ -245,7 +245,8 @@ def get_corporate_dashboard(cib):
         "summary table": summary_table(cib),
         "summary of facility": summary_of_facility(cib),
         "summary of expired but showing live": summary_of_expired_but_showing_live(cib),
-        "summary of funded terminated loan": summary_of_funded_terminated_loan(cib)
+        "summary of funded terminated loan": summary_of_funded_terminated_loan(cib),
+        "summary of nonfunded terminated loan": summary_of_nonfunded_terminated_loan(cib)
     }
 
     return corporate_response
