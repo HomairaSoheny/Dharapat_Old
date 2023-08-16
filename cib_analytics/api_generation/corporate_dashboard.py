@@ -86,7 +86,67 @@ def summary_of_expired_but_showing_live(cib_list):
         print("Error on CIB summary of expired but showing live Table")
         print(exc)
         return []
+def summary_of_funded_terminated_loan(cib_list):
+    try:
+        get_summary_terminated = terminated_loan_funded_table_class(cib_list)
+        response = []
+        response.append({'Total funded terminated loan': get_summary_terminated.number_of_funded_terminated_loan})
+    
+        for i in range (len(get_summary_terminated.Funded_facility_name)):
+          
+            response.append({
+                "Installment":get_summary_terminated.Funded_facility_name[i],
+                "Limit": get_summary_terminated.Funded_ins_limit[i],
+                "Worse classification status": get_summary_terminated.Funded_ins_worse_cl_status[i],
+                "Date of classification status": get_summary_terminated.Funded_date_of_classification[i]
+            })
+        for i in range (len(get_summary_terminated.Funded_nonins_facility_name)):
+        
+            response.append({
+                "Non installment":get_summary_terminated.Funded_nonins_facility_name[i],
+                "Limit": get_summary_terminated.Funded_nonins_limit[i],
+                "Worse classification status": get_summary_terminated.Funded_nonins_worse_cl_status[i],
+                "Date of classification status": get_summary_terminated.Funded_nonins_date_of_classification[i]
+            })
+        return response
+    except Exception as exc:
+        print("Error on CIB summary of terminated loan table")
+        print(exc)
+        return []
+    
+def summary_of_nonfunded_terminated_loan(cib_list):
+    try:   
+        get_summary_terminated = terminated_loan_nonfunded_table_class(cib_list)
+        response = []
+        response.append({'Total non funded terminated loan': get_summary_terminated.Total_nonfunded_terminated_loan})
+        for i in range (len(get_summary_terminated.Non_funded_facility_name)):
+            
+            response.append({
+                "Facility":get_summary_terminated.Non_funded_facility_name[i],
+                "Limit": get_summary_terminated.Non_funded_ins_limit[i],
+                "Worse classification status": get_summary_terminated.Non_funded_ins_worse_cl_status[i],
+                "Date of classification status": get_summary_terminated.Non_Funded_date_of_classification[i]
+            })
+        return response
+    except Exception as exc:
+        print("Error on CIB summary of terminated loan table")
+        print(exc)
+        return []
+    
 
+def summary_of_requested_loan(cib_list):
+    try:
+        get_summary_requested = requested_loan_summary_table_class(cib_list)
+        requested_loan = ((get_summary_requested.Funded_ins_bor)).to_json(orient = 'records')
+        response = {
+                    "Summary of requested facility" : json.loads(requested_loan)   
+                }                  
+        return response
+    except Exception as exc:
+        print("Error on CIB summary of facility Table")
+        print(exc)
+        return []
+    
 
 def summary_of_cib_liability(cib_list):
     try:
