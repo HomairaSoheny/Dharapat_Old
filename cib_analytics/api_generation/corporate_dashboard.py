@@ -139,10 +139,13 @@ def summary_of_nonfunded_terminated_loan(cib_list):
 def summary_of_requested_loan(cib_list):
     try:
         get_summary_requested = RequestedLoanSummaryTableClass(cib_list)
-        requested_loan = get_summary_requested.Funded_ins_bor
         response = {
-                    "Summary of requested facility" : requested_loan
-                }                  
+            "Type of Contract": get_summary_requested.Funded_ins_bor["Type of Contract"].tolist(),
+            "Facility": get_summary_requested.Funded_ins_bor["Facility"].tolist(),
+            "Role": get_summary_requested.Funded_ins_bor["Role"].tolist(),
+            "Total Requested Amount": get_summary_requested.Funded_ins_bor["Total Requested Amount"].tolist(),
+            "Request date": [str(date) for date in get_summary_requested.Funded_ins_bor["Request date"].tolist()]
+        }
         return response
     except Exception as exc:
         print("Error on CIB summary of facility Table")
@@ -246,7 +249,8 @@ def get_corporate_dashboard(cib):
         "summary of facility": summary_of_facility(cib),
         "summary of expired but showing live": summary_of_expired_but_showing_live(cib),
         "summary of funded terminated loan": summary_of_funded_terminated_loan(cib),
-        "summary of nonfunded terminated loan": summary_of_nonfunded_terminated_loan(cib)
+        "summary of nonfunded terminated loan": summary_of_nonfunded_terminated_loan(cib),
+        "summary of requested loan": summary_of_requested_loan(cib)
     }
 
     return corporate_response
