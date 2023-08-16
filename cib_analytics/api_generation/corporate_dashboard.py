@@ -3,8 +3,9 @@ from ..corporate.corporate_class_summary_CIB_lIability import CorporateSummaryCI
 from ..corporate.corporate_summary_class import CorporateSummaryTableClass
 from ..corporate.facility_summary_class import CorporateFacilitySummaryTableClass
 from ..corporate.expired_but_showing_live_class import CorporateExpiredButShowingLiveClass
-import json
-
+from ..corporate.terminated_loan_funded_class import TerminatedLoanFundedTableClass
+from ..corporate.terminated_loan_nonfunded_class import TerminatedLoanNonfundedTableClass
+from ..corporate.requested_loan_class import RequestedLoanSummaryTableClass
 
 def summary_table(cibs):
     try:
@@ -86,9 +87,10 @@ def summary_of_expired_but_showing_live(cib_list):
         print("Error on CIB summary of expired but showing live Table")
         print(exc)
         return []
+    
 def summary_of_funded_terminated_loan(cib_list):
     try:
-        get_summary_terminated = terminated_loan_funded_table_class(cib_list)
+        get_summary_terminated = TerminatedLoanFundedTableClass(cib_list)
         response = []
         response.append({'Total funded terminated loan': get_summary_terminated.number_of_funded_terminated_loan})
     
@@ -116,7 +118,7 @@ def summary_of_funded_terminated_loan(cib_list):
     
 def summary_of_nonfunded_terminated_loan(cib_list):
     try:   
-        get_summary_terminated = terminated_loan_nonfunded_table_class(cib_list)
+        get_summary_terminated = TerminatedLoanNonfundedTableClass(cib_list)
         response = []
         response.append({'Total non funded terminated loan': get_summary_terminated.Total_nonfunded_terminated_loan})
         for i in range (len(get_summary_terminated.Non_funded_facility_name)):
@@ -136,10 +138,10 @@ def summary_of_nonfunded_terminated_loan(cib_list):
 
 def summary_of_requested_loan(cib_list):
     try:
-        get_summary_requested = requested_loan_summary_table_class(cib_list)
-        requested_loan = ((get_summary_requested.Funded_ins_bor)).to_json(orient = 'records')
+        get_summary_requested = RequestedLoanSummaryTableClass(cib_list)
+        requested_loan = get_summary_requested.Funded_ins_bor
         response = {
-                    "Summary of requested facility" : json.loads(requested_loan)   
+                    "Summary of requested facility" : requested_loan
                 }                  
         return response
     except Exception as exc:

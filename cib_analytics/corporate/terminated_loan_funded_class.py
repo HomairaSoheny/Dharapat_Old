@@ -1,6 +1,6 @@
 from .engine import terminated_loan_summary
 
-class terminated_loan_funded_table_class():
+class TerminatedLoanFundedTableClass():
 
     def __init__(self, cib_list):
         self.number_of_funded_terminated_loan = terminated_loan_summary.term_total_funded_loan(cib_list)
