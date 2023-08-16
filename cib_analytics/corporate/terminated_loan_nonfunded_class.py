@@ -1,0 +1,14 @@
+from .engine import terminated_loan_summary
+
+class terminated_loan_nonfunded_table_class():
+
+    def __init__(self, cib_list):
+
+        self.Total_nonfunded_terminated_loan = terminated_loan_summary.term_total_nonfunded_loan(cib_list)
+        self.Non_funded_ins_limit = terminated_loan_summary.nonfunded_worse_cl_status(cib_list)
+        self.Non_funded_facility_name = terminated_loan_summary.nonfunded_facility_name(cib_list)
+        self.Non_funded_ins_worse_cl_status = terminated_loan_summary.nonfunded_worse_cl_status(cib_list)
+        self.Non_Funded_date_of_classification = terminated_loan_summary.nonfunded_date_of_class(cib_list)
+
+    def __repr__(self):
+        return '\n'.join([(str(k)+' : '+str(v)) for k,v in self.__dict__.items() if k!='config'])
