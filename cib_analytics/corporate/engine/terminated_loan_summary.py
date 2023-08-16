@@ -1,15 +1,3 @@
-from glob import glob
-from cib_data_class import cib_class
-import json
-from json import load
-from tqdm.notebook import tqdm
-
-from datetime import  datetime, timedelta
-import collections
-from collections import Counter
-
-
-
 def is_living(facility):
     if facility["Ref"]["Phase"] == "Living":
         return True
