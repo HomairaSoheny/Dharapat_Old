@@ -1,106 +1,106 @@
-def company_or_person(cib):
+def company_or_person(cib_list):
     try:
         return []
     except:
         return []
     
-def a_overdraft(cib):
+def a_overdraft(cib_list):
     try:
         return []
     except:
         return []
 
-def a_overdue(cib):
+def a_overdue(cib_list):
     try:
         return []
     except:
         return []
 
-def b_time_loan(cib):
+def b_time_loan(cib_list):
     try:
         return []
     except:
         return []
 
-def b_overdue(cib):
+def b_overdue(cib_list):
     try:
         return []
     except:
         return []
 
-def c_ltr(cib):
+def c_ltr(cib_list):
     try:
         return []
     except:
         return []
 
-def c_overdue(cib):
+def c_overdue(cib_list):
     try:
         return []
     except:
         return []
 
-def d_other_non_installment(cib):
+def d_other_non_installment(cib_list):
     try:
         return []
     except:
         return []
 
-def d_overdue(cib):
+def d_overdue(cib_list):
     try:
         return []
     except:
         return []
 
-def e_term_loan(cib):
+def e_term_loan(cib_list):
     try:
         return []
     except:
         return []
 
-def e_emi(cib):
+def e_emi(cib_list):
     try:
         return []
     except:
         return []
 
-def e_overdue(cib):
+def e_overdue(cib_list):
     try:
         return []
     except:
         return []
 
-def f_other_installment_loan(cib):
+def f_other_installment_loan(cib_list):
     try:
         return []
     except:
         return []
 
-def f_emi(cib):
+def f_emi(cib_list):
     try:
         return []
     except:
         return []
 
-def f_overdue(cib):
+def f_overdue(cib_list):
     try:
         return []
     except:
         return []
 
-def total_lc(cib):
+def total_lc(cib_list):
     try:
         return []
     except:
         return []
 
-def total_indirect_liability(cib):
+def total_indirect_liability(cib_list):
     try:
         return []
     except:
         return []
 
-def total_bg(cib):
+def total_bg(cib_list):
     try:
         return []
     except:
