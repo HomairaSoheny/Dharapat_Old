@@ -62,9 +62,7 @@ class cib_class:
             self.cib_id = "id"
             self.cib_category = str(np.random.choice(["Type a", "Type b", "Type c", "Type d", "Type e", "Type f", "Type g", "Type h", "Type i"]))
         
-        self.cib_header = parsing_helpers.parse_cib_header(
-            self.cib_raw['Credit Information Bureau - Bangladesh Bank']
-            )
+        self.cib_header = parsing_helpers.parse_cib_header(self.cib_raw['Credit Information Bureau - Bangladesh Bank'])
         self.cib_header = type_converters.convert_cib_header(self.cib_header)
 
         self.inquired = parsing_helpers.handle_inquired(self.cib_raw['INQUIRED'])
@@ -75,14 +73,10 @@ class cib_class:
 
         self.address = parsing_helpers.parse_address(self.cib_raw['ADDRESS'])
 
-        self.summary_1 = parsing_helpers.raw_to_dict(
-            self.cib_raw['1. SUMMARY OF FACILITY(S) AS BORROWER & CO-BORROWER']
-            )
+        self.summary_1 = parsing_helpers.raw_to_dict(self.cib_raw['1. SUMMARY OF FACILITY(S) AS BORROWER & CO-BORROWER'])
         self.summary_1 = type_converters.convert_summary_1_2(self.summary_1)
 
-        self.summary_1A = parsing_helpers.parse_facility_table(
-            self.cib_raw['1.(A) SUMMARY OF THE FUNDED FACILITIES AS BORROWER & CO-BORROWER']
-            )
+        self.summary_1A = parsing_helpers.parse_facility_table(self.cib_raw['1.(A) SUMMARY OF THE FUNDED FACILITIES AS BORROWER & CO-BORROWER'])
         self.summary_1A = type_converters.convert_facility_table(self.summary_1A)
 
         self.summary_1B = parsing_helpers.parse_facility_table(

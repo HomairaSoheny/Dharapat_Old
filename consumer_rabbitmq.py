@@ -71,7 +71,8 @@ def main():
             print(type(exc))
             traceback.print_exc()
 
-            raw_json = json.loads(body, strict=False)
+            with open(body, 'r') as j:
+                raw_json = json.loads(j.read(), strict=False)
 
             metadata = raw_json['metaData']
             final = dict([
