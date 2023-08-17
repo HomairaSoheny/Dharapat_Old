@@ -23,7 +23,7 @@ def tot_fund_terminated_loan(facility):
     
     for fac in facility:
         
-        if is_living(fac) != False and isNonFunded(fac)==False:
+        if is_living(fac) is False and isNonFunded(fac) is False:
     
             No_ter_loan += 1
         
@@ -35,7 +35,7 @@ def tot_nonfund_terminated_loan(facility):
     
     for fac in facility:
         
-        if is_living(fac) != False and isNonFunded(fac)==True:
+        if is_living(fac) is False and isNonFunded(fac) is True:
     
             No_ter_loan += 1
         
