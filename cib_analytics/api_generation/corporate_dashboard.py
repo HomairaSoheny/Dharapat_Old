@@ -7,6 +7,46 @@ from ..corporate.terminated_loan_funded_class import TerminatedLoanFundedTableCl
 from ..corporate.terminated_loan_nonfunded_class import TerminatedLoanNonfundedTableClass
 from ..corporate.requested_loan_class import RequestedLoanSummaryTableClass
 
+def get_category_wise_summary_table(cib_list):
+    try:
+        cibs = {"Type a": [],
+                "Type b": [],
+                "Type c": [],
+                "Type d": [],
+                "Type e": [],
+                "Type f": [],
+                "Type g": [],
+                "Type h": [],
+                "Type i": []}
+        for cib in cib_list:
+            if cib.cib_category == "Type a":
+                cibs["Type a"].append(cib)
+            elif cib.cib_category == "Type b":
+                cibs["Type b"].append(cib)
+            elif cib.cib_category == "Type c":
+                cibs["Type c"].append(cib)
+            elif cib.cib_category == "Type d":
+                cibs["Type d"].append(cib)
+            elif cib.cib_category == "Type e":
+                cibs["Type e"].append(cib)
+            elif cib.cib_category == "Type f":
+                cibs["Type f"].append(cib)
+            elif cib.cib_category == "Type g":
+                cibs["Type g"].append(cib)
+            elif cib.cib_category == "Type h":
+                cibs["Type h"].append(cib)
+            elif cib.cib_category == "Type i":
+                cibs["Type i"].append(cib)
+        for cib in cibs:
+            cibs[cib] = summary_table(cibs[cib])
+        return cibs
+    except Exception as exc:
+        print("Error on summary table")
+        print(exc)
+        return {}
+    
+
+
 def summary_table(cibs):
     try:
         get_summary_table = CorporateSummaryTableClass(cibs)
@@ -245,7 +285,7 @@ def get_corporate_dashboard(cib):
     corporate_response = {
         "summary of cib liability": summary_of_cib_liability(cib),
         "liability type wise break up": liability_type_wise_breakup(cib),
-        "summary table": summary_table(cib),
+        "summary table": get_category_wise_summary_table(cib),
         "summary of facility": summary_of_facility(cib),
         "summary of expired but showing live": summary_of_expired_but_showing_live(cib),
         "summary of funded terminated loan": summary_of_funded_terminated_loan(cib),
