@@ -16,7 +16,7 @@ def funded_installment(cib):
             return []
         for facility in cib.installment_facility:
             if isNonFunded(facility) is False:
-                response.append(float(facility["Ref"]["Installment Amount"]))
+                response.append(float(facility["Ref"]['Sanction Limit']))
         return response
     except:
         return []
@@ -28,7 +28,7 @@ def funded_no_installment(cib):
             return []
         for facility in cib.noninstallment_facility:
             if isNonFunded(facility) is False:
-                response.append(float(facility["Ref"]["Security Amount"]))
+                response.append(float(facility["Ref"]['SancLmt']))
         return response
     except:
         return []
@@ -47,11 +47,11 @@ def non_funded(cib):
         if cib.installment_facility is not None:
             for facility in cib.installment_facility:
                 if isNonFunded(facility) is True:
-                    response.append(float(facility["Ref"]["Installment Amount"]))
+                    response.append(float(facility["Ref"]["Sanction Limit"]))
         if cib.noninstallment_facility is not None:
             for facility in cib.noninstallment_facility:
                 if isNonFunded(facility) is True:
-                    response.append(float(facility["Ref"]["Security Amount"]))
+                    response.append(float(facility["Ref"]["SancLmt"]))
         return response
     except:
         return []
