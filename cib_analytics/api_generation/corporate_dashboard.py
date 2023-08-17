@@ -75,7 +75,7 @@ def summary_table(cibs):
                     'Non funded outstanding': str(sum(get_summary_table.non_funded_amount)),
                     'Total outstanding': str(sum(get_summary_table.total_amount)),
                     'Overdue': str(sum(get_summary_table.overdue_amount)),
-                    'Status': None,
+                    'Status': "",
                 })
         return response
 
