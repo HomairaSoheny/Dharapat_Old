@@ -257,22 +257,22 @@ def aggregate_corporate_cib(cib_list):
     }
     for cib in cib_list:
         summary = CorporateSummaryCIBLiabilityClass(cib)
-        response["funded"]["installment"] += summary.funded["installment"]
-        response["funded"]["no_installment"] += summary.funded["no_installment"]
-        response["funded"]["total"] += summary.funded["total"]
+        response["funded"]["installment"] += list(summary.funded["installment"])
+        response["funded"]["no_installment"] += list(summary.funded["no_installment"])
+        response["funded"]["total"] += list(summary.funded["total"])
         response["non_funded"] += list(summary.non_funded)
         response["total"] += list(summary.total)
         response["overdue"] += list(summary.overdue)
         response["cl status"] += list(summary.cl_status)
         response["default"] += list(summary.default)
-        response["loan amount"]["STD"] += summary.loan_amount["STD"]
-        response["loan amount"]["SMA"] += summary.loan_amount["SMA"]
-        response["loan amount"]["SS"] += summary.loan_amount["SS"]
-        response["loan amount"]["DF"] += summary.loan_amount["DF"]
-        response["loan amount"]["BL"] += summary.loan_amount["BL"]
-        response["loan amount"]["BLW"] += summary.loan_amount["BLW"]
-        response["loan amount"]["stay_order"] += summary.loan_amount["stay_order"]
-        response["remarks"] += summary.remarks
+        response["loan amount"]["STD"] += list(summary.loan_amount["STD"])
+        response["loan amount"]["SMA"] += list(summary.loan_amount["SMA"])
+        response["loan amount"]["SS"] += list(summary.loan_amount["SS"])
+        response["loan amount"]["DF"] += list(summary.loan_amount["DF"])
+        response["loan amount"]["BL"] += list(summary.loan_amount["BL"])
+        response["loan amount"]["BLW"] += list(summary.loan_amount["BLW"])
+        response["loan amount"]["stay_order"] += list(summary.loan_amount["stay_order"])
+        response["remarks"] += list(summary.remarks)
 
     return response
 
