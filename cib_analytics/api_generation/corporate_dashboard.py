@@ -131,12 +131,14 @@ def summary_of_expired_but_showing_live(cib_list):
 def summary_of_funded_terminated_loan(cib_list):
     try:
         get_summary_terminated = TerminatedLoanFundedTableClass(cib_list)
-        response = []
-        response.append({'Total funded terminated loan': get_summary_terminated.number_of_funded_terminated_loan})
+        response = {}
+        response['Total funded terminated loan'] = get_summary_terminated.number_of_funded_terminated_loan
+        response['Installment Table'] = []
+        response['Non Installment Table'] = []
     
         for i in range (len(get_summary_terminated.funded_facility_name)):
           
-            response.append({
+            response['Installment Table'].append({
                 "Installment":get_summary_terminated.funded_facility_name[i],
                 "Limit": get_summary_terminated.funded_ins_limit[i],
                 "Worse classification status": get_summary_terminated.funded_ins_worse_cl_status[i],
@@ -144,7 +146,7 @@ def summary_of_funded_terminated_loan(cib_list):
             })
         for i in range (len(get_summary_terminated.funded_nonins_facility_name)):
         
-            response.append({
+            response['Non Installment Table'].append({
                 "Non installment":get_summary_terminated.funded_nonins_facility_name[i],
                 "Limit": get_summary_terminated.funded_nonins_limit[i],
                 "Worse classification status": get_summary_terminated.funded_nonins_worse_cl_status[i],
@@ -159,11 +161,12 @@ def summary_of_funded_terminated_loan(cib_list):
 def summary_of_nonfunded_terminated_loan(cib_list):
     try:   
         get_summary_terminated = TerminatedLoanNonfundedTableClass(cib_list)
-        response = []
-        response.append({'Total non funded terminated loan': get_summary_terminated.Total_nonfunded_terminated_loan})
+        response = {}
+        response['Total non funded terminated loan'] = get_summary_terminated.Total_nonfunded_terminated_loan
+        response['Facility Table'] = []
         for i in range (len(get_summary_terminated.Non_funded_facility_name)):
             
-            response.append({
+            response['Facility Table'].append({
                 "Facility":get_summary_terminated.Non_funded_facility_name[i],
                 "Limit": get_summary_terminated.Non_funded_ins_limit[i],
                 "Worse classification status": get_summary_terminated.Non_funded_ins_worse_cl_status[i],
