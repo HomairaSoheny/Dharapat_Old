@@ -18,28 +18,18 @@ def isNonFunded(fac):
     return False
     
 def tot_fund_terminated_loan(facility):
-    
-    No_ter_loan  = 0
-    
+    no_ter_loan  = 0
     for fac in facility:
-        
         if is_living(fac) is False and isNonFunded(fac) is False:
-    
-            No_ter_loan += 1
-        
-    return No_ter_loan
+            no_ter_loan += 1   
+    return no_ter_loan
 
 def tot_nonfund_terminated_loan(facility):
-    
-    No_ter_loan  = 0
-    
+    no_ter_loan  = 0
     for fac in facility:
-        
         if is_living(fac) is False and isNonFunded(fac) is True:
-    
-            No_ter_loan += 1
-        
-    return No_ter_loan
+            no_ter_loan += 1
+    return no_ter_loan
 
 def get_class_from_set(classes : set):
     for classification in ('BLW', 'BL', 'DF', 'SS', 'SMA', 'UC', "STD"):
@@ -48,65 +38,47 @@ def get_class_from_set(classes : set):
     return None
 
 def get_worst_status(facility : dict):
-    return get_class_from_set(set(facility["Contract History"].Status))
+    return get_class_from_set(set(facility["Contract History"].Status.tolist()))
 
 
 def funded_ins_limit(cibs):
-
     try:
         installment = []
-        
         for cib in cibs:
-
             if type(cib.installment_facility) == list:
-                for fac in cib.installment_facility:
-                    
-                    if is_living(fac) == False and isNonFunded(fac) != True:
-                            
-                        installment.append(fac['Ref']['Sanction Limit'])
+                for fac in cib.installment_facility:                    
+                    if is_living(fac) == False and isNonFunded(fac) != True:                            
+                        installment.append(str(fac['Ref']['Sanction Limit']))
         return installment
     except Exception as exc:
         print("funded_ins_limit: ", exc)
-        return None
+        return []
 
 def funded_ins_facility_name(cibs):                    
-
     try:                
         facility_name = []
-        
         for cib in cibs:
-
             if type(cib.installment_facility) == list:
-                
                 for fac in cib.installment_facility:
-                    
                     if is_living(fac) == False and isNonFunded(fac) != True: 
-                        
-                        facility_name.append(fac['Ref']['Facility'])
-                        
+                        facility_name.append(str(fac['Ref']['Facility']))
         return facility_name
     except Exception as exc:
         print("funded_ins_facility_name: ", exc)
-        return None
+        return []
 
 def funded_ins_worse_cl_status(cibs):   
     try:
-        cl_status = []
-        
+        cl_status = []        
         for cib in cibs:
-
             if type(cib.installment_facility) == list:
-                
                 for fac in cib.installment_facility:
-                    
                     if is_living(fac) == False and isNonFunded(fac) != True: 
-                        
                         cl_status.append(get_worst_status(fac))
-                        
         return cl_status
     except Exception as exc:
         print("funded_ins_worse_cl_status: ", exc)
-        return None
+        return []
                     
 def classification_date(fac):
     
@@ -122,118 +94,76 @@ def classification_date(fac):
         else:
             date = fac['Ref']['Date of classification']
             date = (date.strftime("%d")+'-'+date.strftime("%b")+'-'+date.strftime("%y"))
-        return date
+        return str(date)
     except Exception as exc:
         print("classification_date: ",exc)
-        return None
+        return []
                   
 
 def funded_ins_date_of_class(cibs):
     try:
         date = []
         for cib in cibs:
-
             if type(cib.installment_facility) == list:
-                
                 for fac in cib.installment_facility:
-                    
                     if is_living(fac) == False and isNonFunded(fac) != True: 
-                        
                         date.append(classification_date(fac))
         return date
     except Exception as exc:
         print("funded_ins_date_of_class: ",exc)
-        return None
+        return []
 
 def funded_non_ins(cibs):
     try:
-        non_installment = []
-        
+        non_installment = []        
         for cib in cibs:
-
             if type(cib.noninstallment_facility) == list:
-                
                 for fac in cib.noninstallment_facility:
-                    
                     if is_living(fac) == False and isNonFunded(fac) != True:
-                            
-                        non_installment.append(fac["Contract History"]['SancLmt'][0])
+                        non_installment.append(str(fac["Contract History"]['SancLmt'][0]))
         return non_installment
     except Exception as exc:
         print("funded_non_ins: ",exc)
-        return None    
+        return []
 
 def funded_non_ins_facility_name(cibs):   
     try:               
         facility_name = []
-        
         for cib in cibs:
-
             if type(cib.noninstallment_facility) == list:
-                
                 for fac in cib.noninstallment_facility:
-                    
                     if is_living(fac) == False and isNonFunded(fac) != True: 
-                        
-                        facility_name.append(fac['Ref']['Facility'])
-                        
+                        facility_name.append(str(fac['Ref']['Facility']))
         return facility_name
     except Exception as exc:
         print("funded_non_ins_facility_name: ",exc)
-        return None
+        return []
 
 def funded_non_ins_worse_cl_status(cibs):   
     try: 
         cl_status = []
-        
         for cib in cibs:
-
             if type(cib.noninstallment_facility) == list:
-                
                 for fac in cib.noninstallment_facility:
-                    
                     if is_living(fac) == False and isNonFunded(fac) != True: 
-                        
                         cl_status.append(get_worst_status(fac))
-                        
         return cl_status
     except Exception as exc:
         print("funded_non_ins_worse_cl_status: ",exc)
-        return None
-                    
-def classification_date(fac):
-    
-    '''
-    Helper function to extract starting date
-    
-    Output : day-month-year
-    
-    '''
-    
-    if (fac['Ref']['Date of classification']) is None:
-        date = 'Not present'
-    else:
-        date = fac['Ref']['Date of classification']
-        date = (date.strftime("%d")+'-'+date.strftime("%b")+'-'+date.strftime("%y"))
-    return date
+        return []
 
 def funded_non_ins_date_of_class(cibs):
-
     try: 
         date = []
         for cib in cibs:
-
             if type(cib.noninstallment_facility) == list:
-                
                 for fac in cib.noninstallment_facility:
-                    
                     if is_living(fac) == False and isNonFunded(fac) != True: 
-                        
                         date.append(classification_date(fac))
-        return date     
+        return date
     except Exception as exc:
         print("funded_non_ins_date_of_class: ", exc)
-        return None         
+        return []         
    
 def term_total_funded_loan(cibs):
     try: 
@@ -263,91 +193,53 @@ def term_total_nonfunded_loan(cibs):
     
     
 def nonfunded_facility_name(cibs):     
-
     try:               
-                    
         facility_name = []
-        
         for cib in cibs:
-            
             if type(cib.installment_facility) == list:
-                
                 for fac in cib.installment_facility:
-                    
                     if is_living(fac) == False and isNonFunded(fac) == True: 
-                        
-                        facility_name.append(fac['Ref']['Facility'])
-                        
+                        facility_name.append(str(fac['Ref']['Facility']))
             if type(cib.noninstallment_facility) == list:
-                
                 for fac in cib.noninstallment_facility:
-                    
-                    if is_living(fac) == False and isNonFunded(fac) == True: 
-                        
-                        facility_name.append(fac['Ref']['Facility'])
-                        
+                    if is_living(fac) == False and isNonFunded(fac) == True:
+                        facility_name.append(str(fac['Ref']['Facility']))
         return facility_name
     except Exception as exc:
         print("nonfunded_facility_name: ",exc)
-        return None
+        return []
     
 
 
 def nonfunded_limit(cibs):
-
     try: 
-        Sanc_limit = []
-        
+        sanc_limit = []
         for cib in cibs:
-            
             if type(cib.installment_facility) == list:
-                
                 for fac in cib.installment_facility:
-                    
                     if is_living(fac) == False and isNonFunded(fac) == True:
-                            
-                        Sanc_limit.append(fac['Ref']['Sanction Limit'])
-            
-                        
+                        sanc_limit.append(str(fac['Ref']['Sanction Limit']))
             if type(cib.noninstallment_facility) == list:
-                
                 for fac in cib.noninstallment_facility:
-                    
                     if is_living(fac) == False and isNonFunded(fac) == True:
-                            
-                        Sanc_limit.append(fac['Ref']['SancLmt'][0])
-                        
-        return Sanc_limit
-
+                        sanc_limit.append(str(fac['Ref']['SancLmt'][0]))
+        return sanc_limit
     except Exception as exc:
         print("nonfunded_limit: ",exc)
-        return None
-
-   
-    
+        return []
     
 def nonfunded_worse_cl_status(cibs):  
-
     try:
         cl_status = []
-        
         for cib in cibs:
             if type(cib.installment_facility) == list:
-                
                 for fac in cib.installment_facility:
-                    
                     if is_living(fac) == False and isNonFunded(fac) == True: 
-                        
                         cl_status.append(get_worst_status(fac))
-            
             if type(cib.noninstallment_facility) == list:
-                
                 for fac in cib.noninstallment_facility:
-                    
                     if is_living(fac) == False and isNonFunded(fac) == True: 
-                        
                         cl_status.append(get_worst_status(fac))
-              
         return cl_status  
     
     except Exception as exc:
@@ -361,22 +253,14 @@ def nonfunded_date_of_class(cibs):
         date = []
         for cib in cibs:
             if type(cib.installment_facility) == list:
-                
                 for fac in cib.installment_facility:
-                    
                     if is_living(fac) == False and isNonFunded(fac) == True: 
-                        
                         date.append(classification_date(fac))
-                        
             if type(cib.noninstallment_facility) == list:
-                
                 for fac in cib.noninstallment_facility:
-                    
                     if is_living(fac) == False and isNonFunded(fac) == True: 
-                        
                         date.append(classification_date(fac))
         return date
-    
     except Exception as exc:
             print("nonfunded_date_of_class: ",exc)
             return None

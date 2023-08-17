@@ -88,19 +88,19 @@ def summary_table(cibs):
 def summary_of_facility(cib_list):
     try:
         get_fac_summary = CorporateFacilitySummaryTableClass(cib_list)
-        Funded_ins_borrower = get_fac_summary.funded_ins_bor
-        Funded_nonins_borrower = get_fac_summary.funded_nonins_bor
-        Funded_ins_guran = get_fac_summary.funded_ins_guran
-        Funded_nonins_guran = get_fac_summary.funded_non_ins_guran
-        Non_Funded_bor = get_fac_summary.nonfunded_bor
-        Non_Funded_guran = get_fac_summary.nonfund_guran
+        funded_ins_borrower = get_fac_summary.funded_ins_bor
+        funded_nonins_borrower = get_fac_summary.funded_nonins_bor
+        funded_ins_guran = get_fac_summary.funded_ins_guran
+        funded_nonins_guran = get_fac_summary.funded_non_ins_guran
+        non_Funded_bor = get_fac_summary.nonfunded_bor
+        non_Funded_guran = get_fac_summary.nonfund_guran
         response = {
-            "Summary of funded facility for borrower": {"funded_ins_borrower": Funded_ins_borrower,
-                                                        "funded_nonins_borrower": Funded_nonins_borrower},
-            "Summary of funded facility for gurantor" : {"funded_ins_guran": Funded_ins_guran,
-                                                        "funded_nonins_guran": Funded_nonins_guran},
-            "Summary of non funded facility for borrower": Non_Funded_bor,
-            "Summary of non funded facility for gurantor": Non_Funded_guran
+            "Summary of funded facility for borrower": {"funded_ins_borrower": funded_ins_borrower,
+                                                        "funded_nonins_borrower": funded_nonins_borrower},
+            "Summary of funded facility for gurantor" : {"funded_ins_guran": funded_ins_guran,
+                                                        "funded_nonins_guran": funded_nonins_guran},
+            "Summary of non funded facility for borrower": non_Funded_bor,
+            "Summary of non funded facility for gurantor": non_Funded_guran
         }
 
         return response
@@ -114,13 +114,13 @@ def summary_of_expired_but_showing_live(cib_list):
     try:
 
         get_ex_summary = CorporateExpiredButShowingLiveClass(cib_list)
-        Funded_ins = get_ex_summary.Funded_ins
-        Funded_nonins = get_ex_summary.Funded_nonins
-        Non_Funded = get_ex_summary.Nonfunded
+        funded_ins = get_ex_summary.funded_ins
+        funded_nonins = get_ex_summary.funded_nonins
+        non_funded = get_ex_summary.nonfunded
         response = {
-            "Summary of funded facility": {"funded_ins": Funded_ins,
-                                           "funded_nonins": Funded_nonins},
-            "Summary of non funded facility": Non_Funded
+            "Summary of funded facility": {"funded_ins": funded_ins,
+                                           "funded_nonins": funded_nonins},
+            "Summary of non funded facility": non_funded
         }
         return response
     except Exception as exc:
