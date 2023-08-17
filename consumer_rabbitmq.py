@@ -64,8 +64,6 @@ def main():
             print("----------------------------------")
             channel1 = connection.channel()
             channel1.queue_declare(queue="prime_bank_cib_extracted_download", durable=True)
-            print("________________________________________")
-            print(final)
             channel1.basic_publish(exchange='', routing_key="prime_bank_cib_extracted_download", body=json.dumps(final))
             print("Analysis Report Sent")
 
