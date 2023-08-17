@@ -236,41 +236,27 @@ def funded_non_ins_date_of_class(cibs):
         return None         
    
 def term_total_funded_loan(cibs):
-        
-    try:
-     
+    try: 
         terminated_loan = 0
-    
         for cib in cibs:
-
             if type(cib.installment_facility) == list:
-
-                terminated_loan += (tot_fund_terminated_loan(cib.installment_facility))
-                
-            if type(cib.noninstallment_facility) == list:    
-            
+                terminated_loan += (tot_fund_terminated_loan(cib.installment_facility))                
+            if type(cib.noninstallment_facility) == list:                
                 terminated_loan += (tot_fund_terminated_loan(cib.noninstallment_facility))  
-   
         return terminated_loan 
     except Exception as exc:
         print("term_total_funded_loan: ",exc)
         return None
     
 def term_total_nonfunded_loan(cibs):
-
     try: 
         terminated_loan = 0
         for cib in cibs:
-
             if type(cib.installment_facility) == list:
-
                 terminated_loan += (tot_nonfund_terminated_loan(cib.installment_facility))
-        
             if type(cib.noninstallment_facility) == list:    
                 terminated_loan += (tot_nonfund_terminated_loan(cib.noninstallment_facility))
-                
-        return terminated_loan 
-    
+        return terminated_loan
     except Exception as exc:
         print("term_total_nonfunded_loan: ",exc)
         return None 

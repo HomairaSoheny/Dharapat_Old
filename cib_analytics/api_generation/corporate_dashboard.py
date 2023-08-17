@@ -134,21 +134,21 @@ def summary_of_funded_terminated_loan(cib_list):
         response = []
         response.append({'Total funded terminated loan': get_summary_terminated.number_of_funded_terminated_loan})
     
-        for i in range (len(get_summary_terminated.Funded_facility_name)):
+        for i in range (len(get_summary_terminated.funded_facility_name)):
           
             response.append({
-                "Installment":get_summary_terminated.Funded_facility_name[i],
-                "Limit": get_summary_terminated.Funded_ins_limit[i],
-                "Worse classification status": get_summary_terminated.Funded_ins_worse_cl_status[i],
-                "Date of classification status": get_summary_terminated.Funded_date_of_classification[i]
+                "Installment":get_summary_terminated.funded_facility_name[i],
+                "Limit": get_summary_terminated.funded_ins_limit[i],
+                "Worse classification status": get_summary_terminated.funded_ins_worse_cl_status[i],
+                "Date of classification status": get_summary_terminated.funded_date_of_classification[i]
             })
-        for i in range (len(get_summary_terminated.Funded_nonins_facility_name)):
+        for i in range (len(get_summary_terminated.funded_nonins_facility_name)):
         
             response.append({
-                "Non installment":get_summary_terminated.Funded_nonins_facility_name[i],
-                "Limit": get_summary_terminated.Funded_nonins_limit[i],
-                "Worse classification status": get_summary_terminated.Funded_nonins_worse_cl_status[i],
-                "Date of classification status": get_summary_terminated.Funded_nonins_date_of_classification[i]
+                "Non installment":get_summary_terminated.funded_nonins_facility_name[i],
+                "Limit": get_summary_terminated.funded_nonins_limit[i],
+                "Worse classification status": get_summary_terminated.funded_nonins_worse_cl_status[i],
+                "Date of classification status": get_summary_terminated.funded_nonins_date_of_classification[i]
             })
         return response
     except Exception as exc:
