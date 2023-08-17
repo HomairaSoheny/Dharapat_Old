@@ -64,6 +64,8 @@ def main():
             print("----------------------------------")
             channel1 = connection.channel()
             channel1.queue_declare(queue="prime_bank_cib_extracted_download", durable=True)
+            print("________________________________________")
+            print(final)
             channel1.basic_publish(exchange='', routing_key="prime_bank_cib_extracted_download", body=json.dumps(final))
             print("Analysis Report Sent")
 
@@ -71,10 +73,12 @@ def main():
             print(type(exc))
             traceback.print_exc()
 
-            with open(body, 'r') as j:
-                raw_json = json.loads(j.read(), strict=False)
-
-            metadata = raw_json['metaData']
+            try:
+                raw_json = json.loads(body, strict=False)
+                metadata = raw_json['metaData']
+            except:
+                metadata = []
+                
             final = dict([
                 ('message', 'Analysis Error Found'),
                 ('success', False),
