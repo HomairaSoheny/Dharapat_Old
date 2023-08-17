@@ -144,7 +144,7 @@ def summary_of_requested_loan(cib_list):
             "Facility": get_summary_requested.Funded_ins_bor["Facility"].tolist(),
             "Role": get_summary_requested.Funded_ins_bor["Role"].tolist(),
             "Total Requested Amount": get_summary_requested.Funded_ins_bor["Total Requested Amount"].tolist(),
-            "Request date": [str(date) for date in get_summary_requested.Funded_ins_bor["Request date"].tolist()]
+            "Request date": [str(date.date()) for date in get_summary_requested.Funded_ins_bor["Request date"].tolist()]
         }
         return response
     except Exception as exc:
