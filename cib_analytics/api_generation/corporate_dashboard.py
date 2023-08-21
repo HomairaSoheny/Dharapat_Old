@@ -6,7 +6,7 @@ from ..corporate.expired_but_showing_live_class import CorporateExpiredButShowin
 from ..corporate.terminated_loan_funded_class import TerminatedLoanFundedTableClass
 from ..corporate.terminated_loan_nonfunded_class import TerminatedLoanNonfundedTableClass
 from ..corporate.requested_loan_class import RequestedLoanSummaryTableClass
-
+from ..corporate.
 def get_category_wise_summary_table(cib_list):
     try:
         cibs = {"Type a": [],
