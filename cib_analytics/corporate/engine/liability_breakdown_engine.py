@@ -102,6 +102,13 @@ def total_indirect_liability(cib_list):
 
 def total_bg(cib_list):
     try:
-        return []
+        overdue_amount = []
+        for cib_data in cib_list:  
+            if not isinstance(cib_data.noninstallment_facility, type(None)):
+                for fac in cib_data.noninstallment_facility:
+                    if not isStayOrder(fac) and isNonFunded(fac) is True: 
+                        if is_living(fac) is True and (fac['Ref']['Facility'].lower()) == 'guarantee (non funded)' :
+                            overdue_amount.append(fac['Contract History'].Overdue[0])
+        return overdue_amount
     except:
         return []
