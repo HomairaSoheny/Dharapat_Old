@@ -6,7 +6,7 @@ from ..corporate.expired_but_showing_live_class import CorporateExpiredButShowin
 from ..corporate.terminated_loan_funded_class import TerminatedLoanFundedTableClass
 from ..corporate.terminated_loan_nonfunded_class import TerminatedLoanNonfundedTableClass
 from ..corporate.requested_loan_class import RequestedLoanSummaryTableClass
-from ..corporate.
+from ..corporate.reschedule_loan_summary_class import RescheduleLoanSummaryTableClass
 def get_category_wise_summary_table(cib_list):
     try:
         cibs = {"Type a": [],
@@ -108,7 +108,21 @@ def summary_of_facility(cib_list):
         print("Error on CIB summary of facility Table")
         print(exc)
         return []
-
+def summary_of_reschedule_loan(cibs):
+    try:
+        get_res_summary = reschedule_loan_summary_table_class(cibs)
+        Reschedule_loan_borrow = ((get_res_summary.Reschedule_loan_for_borrower).to_json(orient = 'records'))
+        Reschedule_loan_guran = ((get_res_summary.Reschedule_loan_for_gurantor).to_json(orient = 'records'))
+        response = {
+                "Summary of reschedule loan for borrower": json.loads(Reschedule_loan_borrow),
+                "Summary of reschedule loan for gurantor": json.loads(Reschedule_loan_borrow)
+        }
+        return response
+    
+    except Exception as exc:
+        print("Error on CIB summary of Reschedule Loan Table")
+        print(exc)
+        return []
 
 def summary_of_expired_but_showing_live(cib_list):
     try:
