@@ -96,10 +96,16 @@ def total_lc(cib_list):
 
 def total_indirect_liability(cib_list):
     try:
-        return []
+        indirect_liability = []
+        for cib_data in cib_list:  
+            if not isinstance(cib_data.noninstallment_facility, type(None)):
+                for fac in cib_data.noninstallment_facility:
+                    if not isStayOrder(fac) and isNonFunded(fac) is True: 
+                        if is_living(fac) is True and (fac['Ref']['Facility'].lower()) == 'other indirect facility (non funded)' :
+                            indirect_liability.append(fac['Contract History'].Overdue[0])
+        return indirect_liability
     except:
         return []
-
 def total_bg(cib_list):
     try:
         overdue_amount = []
