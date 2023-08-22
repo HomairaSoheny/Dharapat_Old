@@ -22,9 +22,13 @@ def has_rescheduling_instance(fac : dict):
                 return True
 
     return False
-def acc_name(fac):
-    return (fac['Ref']['Facility'])
+#def acc_name(fac):
+#    return (fac['Ref']['Facility'])
+def get_title_trade_name(cib):
+    if 'Trade Name' in cib.subject_info.keys():
+        return cib.subject_info['Trade Name']
 
+    return cib.subject_info['Title, Name']
 def reschedule_type(fac):
     for key in fac['Ref'].keys():
         if key.lower().replace(' ','')=='numberoftime(s)rescheduled':
@@ -54,19 +58,21 @@ def last_res_date(fac):
     return date
 def rescheduled_loan_borrow(cib_list:list):
     '''
-    Summary of Non funded (installment and non-installment facility) facility table for borrower 
+    Summary of Rescheduled loan (installment and non-installment facility) facility table for borrower 
     '''
     try:
         columns = ['Name of account', 'type of Reschedule', 'No. of reschedule Loan', 'Amount', 'Date of last rescheduling']
         table = []
+        
         for cib_data in cib_list:  
+            acc_name = get_title_trade_name(cib_data)
             for facility in (cib_data.noninstallment_facility, cib_data.installment_facility):
                 if not isinstance(facility, type(None)):
                     for fac in facility:
                         if  not isStayOrder(fac) and fac['Ref']['Role'] != "Guarantor": 
                             if is_living(fac) is True and has_rescheduling_instance(fac) is True:
                                     
-                                row = [ acc_name(fac),  reschedule_type(fac), no_reschedule_loan(fac), sec_amount(fac), last_res_date(fac)]
+                                row = [ acc_name,  reschedule_type(fac), no_reschedule_loan(fac), sec_amount(fac), last_res_date(fac)]
                                 table.append(row)
 
                             
@@ -76,27 +82,32 @@ def rescheduled_loan_borrow(cib_list:list):
         print(exc)
         return []
 
+    except Exception as exc:
+        print("function: reschedule_loan_borrow")
+        print(exc)
+        return []
+
 
 def rescheduled_loan_guran(cib_list:list):
     '''
-    Summary of Non funded (installment and non-installment facility) facility table for borrower 
+    Summary of Rescheduled loan (installment and non-installment facility)  table for gurantor
     '''
     try: 
         columns = ['Name of account', 'type of Reschedule', 'Number of reschedule Loan', 'Amount', 'Date of last rescheduling']
         table = []
         for cib_data in cib_list:  
+            acc_name = get_title_trade_name(cib_data)
             for facility in (cib_data.noninstallment_facility, cib_data.installment_facility):
                 if not isinstance(facility, type(None)):
                     for fac in facility:
                         if  not isStayOrder(fac) and fac['Ref']['Role'] == "Guarantor": 
-                            if is_living(fac) is True and has_rescheduling_instance(fac) is True:
-                                    
-                                row = [ acc_name(fac),  reschedule_type(fac), no_reschedule_loan(fac), sec_amount(fac), last_res_date(fac)]
+                            if is_living(fac) is True and has_rescheduling_instance(fac) is True:    
+                                row = [ acc_name,  reschedule_type(fac), no_reschedule_loan(fac), sec_amount(fac), last_res_date(fac)]
                                 table.append(row)
 
                             
         return pd.DataFrame(table, columns=columns)
     except Exception as exc:
-        print("function: reschedule_loan_borrow")
+        print("function: reschedule_loan_guran")
         print(exc)
         return []
