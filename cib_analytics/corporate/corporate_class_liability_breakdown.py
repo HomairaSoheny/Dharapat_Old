@@ -3,7 +3,7 @@ from .engine import liability_breakdown_engine
 class CorporateLiabilityBreakdownClass:
     def __init__(self, cib_list):
         self.response = {
-            "A xOverdraft CC  OD Cash Credit": liability_breakdown_engine.a_overdraft(cib_list),
+            "A Overdraft CC  OD Cash Credit": liability_breakdown_engine.a_overdraft(cib_list),
             "Overdue EOL of A": liability_breakdown_engine.a_overdue(cib_list),
             "B Time Loan": liability_breakdown_engine.b_time_loan(cib_list),
             "Overdue EOL of B": liability_breakdown_engine.b_overdue(cib_list),

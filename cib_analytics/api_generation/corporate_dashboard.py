@@ -299,9 +299,33 @@ def aggregate_corporate_cib(cib_list):
     return response
 
 
-def liability_type_wise_breakup(cibs):
+def get_liability_type_wise_breakup(cibs):
     liabilities = CorporateLiabilityBreakdownClass(cibs)
     return liabilities.response
+
+def liability_type_wise_breakup(cib_list):
+
+    try:
+        cibs = {"Type a": [],
+                "Type b": [],
+                "Type c": [],
+                "Type d": []
+                }
+        for cib in cib_list:
+            if cib.cib_category == "Type a" or cib.cib_category == "Type b":
+                cibs["Type a"].append(cib)
+            elif cib.cib_category == "Type c" or cib.cib_category == "Type d" or cib.cib_category == "Type e":
+                cibs["Type b"].append(cib)
+            elif cib.cib_category == "Type f":
+                cibs["Type d"].append(cib)
+                
+        for cib in cibs:
+            cibs[cib] = get_liability_type_wise_breakup(cibs[cib])
+        return cibs
+    except Exception as exc:
+        print("Error on liability_type_wise_breakup")
+        print(exc)
+        return {}
 
 
 def get_corporate_dashboard(cibs):
