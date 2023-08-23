@@ -299,8 +299,9 @@ def aggregate_corporate_cib(cib_list):
     return response
 
 
-def liability_type_wise_breakup(cib):
-    return []
+def liability_type_wise_breakup(cibs):
+    liabilities = CorporateLiabilityBreakdownClass(cibs)
+    return liabilities.response
 
 
 def get_corporate_dashboard(cibs):

@@ -1,9 +1,27 @@
-def company_or_person(cib_list):
-    try:
-        return []
-    except:
-        return []
-    
+def isStayOrder(fac):
+    if type(fac['Contract History']) == dict and 'Stay Order' in fac['Contract History'].keys():
+        return True
+
+def is_living(fac):
+    if fac["Ref"]["Phase"] == "Living":
+        return True
+    else:
+        return False
+
+def isNonFunded(fac):
+    """
+    much faster than regex matching
+
+    classification of non funded based on IDLC response
+    Non-Funded : LC (Letter of Credit), BG (Bank Guarantee), Guarantee, Payment Guarantee
+    """
+    if ('non funded' in fac["Ref"]["Facility"].lower() or
+        'letter of credit' in fac["Ref"]["Facility"].lower() or
+        'guarantee' in fac["Ref"]["Facility"].lower() or
+        'other indirect facility' in fac["Ref"]["Facility"].lower() ):
+
+        return True
+
 def a_overdraft(cib_list):
     try:
         return []
@@ -106,6 +124,7 @@ def total_indirect_liability(cib_list):
         return indirect_liability
     except:
         return []
+    
 def total_bg(cib_list):
     try:
         overdue_amount = []
