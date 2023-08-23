@@ -86,7 +86,14 @@ def f_overdue(cib_list):
 
 def total_lc(cib_list):
     try:
-        return []
+        letter_of_credit = []
+        for cib_data in cib_list:  
+            if not isinstance(cib_data.noninstallment_facility, type(None)):
+                for fac in cib_data.noninstallment_facility:
+                    if not isStayOrder(fac) and isNonFunded(fac) is True: 
+                        if is_living(fac) is True and (fac['Ref']['Facility'].lower()) == 'letter of credit (non funded)' :
+                            letter_of_credit.append(str(fac['Contract History'].Overdue[0]))
+        return letter_of_credit
     except:
         return []
 
