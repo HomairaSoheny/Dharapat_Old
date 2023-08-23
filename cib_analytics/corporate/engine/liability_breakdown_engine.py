@@ -120,7 +120,7 @@ def total_indirect_liability(cib_list):
                 for fac in cib_data.noninstallment_facility:
                     if not isStayOrder(fac) and isNonFunded(fac) is True: 
                         if is_living(fac) is True and (fac['Ref']['Facility'].lower()) == 'other indirect facility (non funded)' :
-                            indirect_liability.append(fac['Contract History'].Overdue[0])
+                            indirect_liability.append(str(fac['Contract History'].Overdue[0]))
         return indirect_liability
     except:
         return []
@@ -133,7 +133,7 @@ def total_bg(cib_list):
                 for fac in cib_data.noninstallment_facility:
                     if not isStayOrder(fac) and isNonFunded(fac) is True: 
                         if is_living(fac) is True and (fac['Ref']['Facility'].lower()) == 'guarantee (non funded)' :
-                            overdue_amount.append(fac['Contract History'].Overdue[0])
+                            overdue_amount.append(str(fac['Contract History'].Overdue[0]))
         return overdue_amount
     except:
         return []
