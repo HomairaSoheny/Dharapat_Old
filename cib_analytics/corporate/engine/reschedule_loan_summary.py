@@ -1,13 +1,5 @@
 import pandas as pd
-
-def is_living(facility):
-    if facility["Ref"]["Phase"] == "Living":
-        return True
-    else:
-        return False
-def isStayOrder(fac):
-    if type(fac['Contract History']) == dict and 'Stay Order' in fac['Contract History'].keys():
-        return True
+from ...general_helper import is_living, isStayOrder
 
 def has_rescheduling_instance(fac : dict):
     for key in fac['Ref'].keys():
