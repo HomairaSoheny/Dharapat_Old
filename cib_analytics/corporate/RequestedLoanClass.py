@@ -1,6 +1,6 @@
 from .engine import requested_loan_summary
 
-class RequestedLoanSummaryTableClass:
+class RequestedLoanSummary:
     
     def __init__(self, cib_list):
         self.funded_ins_bor = requested_loan_summary.requested_loan(cib_list)

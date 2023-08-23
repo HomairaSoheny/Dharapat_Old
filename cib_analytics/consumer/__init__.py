@@ -1,3 +1,3 @@
-from .consumer_1_class import ConsumerLoanClass
-from .consumer_2_class import ConsumerCreditCardClass
-from .consumer_3_class import ConsumerPersonalLoanClass
+from .LoanClass import Loan
+from .CreditCardClass import CreditCard
+from .PersonalLoanClass import PersonalLoan

@@ -1,6 +1,6 @@
 from .engine import terminated_loan_summary
 
-class TerminatedLoanNonfundedTableClass():
+class TerminatedLoanNonfunded():
 
     def __init__(self, cib_list):
 

@@ -1,6 +1,6 @@
 from .engine import stay_order_summary
 
-class  StayOrderSummaryClass():
+class  StayOrderSummary():
 
     def __init__(self, cib_list):
         self.stay_order_borrower = stay_order_summary.stay_order_borrower(cib_list)

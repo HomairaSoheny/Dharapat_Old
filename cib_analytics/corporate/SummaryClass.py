@@ -1,5 +1,5 @@
 from .engine import corporate_summary
-class CorporateSummaryTableClass():
+class Summary():
     def __init__(self, cibs):
             
             self.concern_name = corporate_summary.get_concern_name(cibs)

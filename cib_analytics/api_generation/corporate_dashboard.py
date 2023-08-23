@@ -1,13 +1,13 @@
-from ..corporate.corporate_class_liability_breakdown import CorporateLiabilityBreakdownClass
-from ..corporate.corporate_class_summary_CIB_lIability import CorporateSummaryCIBLiabilityClass
-from ..corporate.corporate_summary_class import CorporateSummaryTableClass
-from ..corporate.facility_summary_class import CorporateFacilitySummaryTableClass
-from ..corporate.expired_but_showing_live_class import CorporateExpiredButShowingLiveClass
-from ..corporate.terminated_loan_funded_class import TerminatedLoanFundedTableClass
-from ..corporate.terminated_loan_nonfunded_class import TerminatedLoanNonfundedTableClass
-from ..corporate.requested_loan_class import RequestedLoanSummaryTableClass
-from ..corporate.reschedule_loan_summary_class import RescheduleLoanSummaryTableClass
-from ..corporate.stay_order_summary_class import StayOrderSummaryClass
+from ..corporate.LiabilityBreakdownClass import LiabilityBreakdown
+from ..corporate.SummaryCIBLiabilityClass import SummaryCIBLiability
+from ..corporate.SummaryClass import Summary
+from ..corporate.FacilitySummaryClass import FacilitySummary
+from ..corporate.ExpiredButShowingLiveClass import ExpiredButShowingLive
+from ..corporate.TerminatedLoanFundedClass import TerminatedLoanFunded
+from ..corporate.TerminatedLoanNonFundedClass import TerminatedLoanNonfunded
+from ..corporate.RequestedLoanClass import RequestedLoanSummary
+from ..corporate.RescheduleLoanSummaryClass import RescheduleLoanSummary
+from ..corporate.StayOrderSummaryClass import StayOrderSummary
 from ..general_helpers import cib_class_division
 
 def get_category_wise_summary_table(cib_list):
@@ -23,7 +23,7 @@ def get_category_wise_summary_table(cib_list):
 
 def summary_table(cibs):
     try:
-        summary_table = CorporateSummaryTableClass(cibs)
+        summary_table = Summary(cibs)
         response = []
         for i in range(len(summary_table.concern_name)):
             if i < (len(summary_table.concern_name)-1):
@@ -61,7 +61,7 @@ def summary_table(cibs):
 
 def summary_of_facility(cib_list):
     try:
-        fac_summary = CorporateFacilitySummaryTableClass(cib_list)
+        fac_summary = FacilitySummary(cib_list)
         response = {
             "Summary of funded facility for borrower":  {
                                                         "funded_ins_borrower": fac_summary.funded_ins_bor,
@@ -83,7 +83,7 @@ def summary_of_facility(cib_list):
     
 def summary_of_reschedule_loan(cibs):
     try:
-        res_summary = RescheduleLoanSummaryTableClass(cibs)
+        res_summary = RescheduleLoanSummary(cibs)
         response = {
                 "Summary of reschedule loan for borrower": res_summary.reschedule_loan_for_borrower,
                 "Summary of reschedule loan for gurantor": res_summary.reschedule_loan_for_gurantor
@@ -97,7 +97,7 @@ def summary_of_reschedule_loan(cibs):
     
 def summary_of_stay_order(cibs):
     try: 
-        stay_summary = StayOrderSummaryClass(cibs)
+        stay_summary = StayOrderSummary(cibs)
         response = {
             "Summary of stay order for Borrower": stay_summary.stay_order_borrower,
             "Summary of stay order for Gurantor": stay_summary.stay_order_gurantor
@@ -111,7 +111,7 @@ def summary_of_stay_order(cibs):
     
 def summary_of_expired_but_showing_live(cib_list):
     try:
-        get_ex_summary = CorporateExpiredButShowingLiveClass(cib_list)
+        get_ex_summary = ExpiredButShowingLive(cib_list)
         response = {
             "Summary of funded facility":   {
                                             "funded_ins": get_ex_summary.funded_ins,
@@ -127,7 +127,7 @@ def summary_of_expired_but_showing_live(cib_list):
     
 def summary_of_funded_terminated_loan(cib_list):
     try:
-        get_summary_terminated = TerminatedLoanFundedTableClass(cib_list)
+        get_summary_terminated = TerminatedLoanFunded(cib_list)
         response = {}
         response['Total funded terminated loan'] = get_summary_terminated.number_of_funded_terminated_loan
         response['Installment Table'] = []
@@ -157,7 +157,7 @@ def summary_of_funded_terminated_loan(cib_list):
     
 def summary_of_nonfunded_terminated_loan(cib_list):
     try:   
-        get_summary_terminated = TerminatedLoanNonfundedTableClass(cib_list)
+        get_summary_terminated = TerminatedLoanNonfunded(cib_list)
         response = {}
         response['Total non funded terminated loan'] = get_summary_terminated.total_nonfunded_terminated_loan
         response['Facility Table'] = []
@@ -178,7 +178,7 @@ def summary_of_nonfunded_terminated_loan(cib_list):
 
 def summary_of_requested_loan(cib_list):
     try:
-        get_summary_requested = RequestedLoanSummaryTableClass(cib_list)
+        get_summary_requested = RequestedLoanSummary(cib_list)
         response = {
             "Type of Contract": get_summary_requested.funded_ins_bor["Type of Contract"].tolist(),
             "Facility": get_summary_requested.funded_ins_bor["Facility"].tolist(),
@@ -229,7 +229,7 @@ def aggregate_corporate_cib(cib_list):
         "remarks": []
     }
     for cib in cib_list:
-        summary = CorporateSummaryCIBLiabilityClass(cib)
+        summary = SummaryCIBLiability(cib)
         response["funded"]["installment"] += list(summary.funded["installment"])
         response["funded"]["no_installment"] += list(summary.funded["no_installment"])
         response["funded"]["total"] += list(summary.funded["total"])
@@ -251,7 +251,7 @@ def aggregate_corporate_cib(cib_list):
 
 
 def get_liability_type_wise_breakup(cibs):
-    liabilities = CorporateLiabilityBreakdownClass(cibs)
+    liabilities = LiabilityBreakdown(cibs)
     return liabilities.response
 
 def liability_type_wise_breakup(cib_list):

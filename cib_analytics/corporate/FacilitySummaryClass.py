@@ -1,6 +1,6 @@
 from .engine import facility_summary
 
-class CorporateFacilitySummaryTableClass:
+class FacilitySummary:
     
     def __init__(self, cib_list):
         self.funded_ins_bor = facility_summary.funded_ins_borrow(cib_list)
