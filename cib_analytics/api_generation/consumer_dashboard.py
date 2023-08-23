@@ -54,28 +54,28 @@ def get_credit_card_table(cib):
         return []
     
 def get_personal_loan_table(cib):
-    # try:
-    personal_class = PersonalLoan(cib)
-    response = []
-    for i in range(len(personal_class.borrowers_name)):
-        response.append({
-                "Borrower Name": str(personal_class.borrowers_name[i]),
-                "Applicants Role": str(personal_class.applicants_role[i]),
-                "Nature of Facility": str(personal_class.facility_name[i]),
-                "Limit": str(personal_class.sanc_limit[i]),
-                "Position Date": str(personal_class.get_position_date[i]),
-                "Outstanding": str(personal_class.get_outstanding[i]),
-                "Overdue": str(personal_class.get_overdue[i]),
-                "CL Status": str(personal_class.cl_status[i]),
-                "EMI of Term Loan or percent of Credit Card Limit Outstanding": str(personal_class.EMI_3[i]),
-                "Loan Start Date": str(personal_class.loan_start_date[i]),
-                "Loan Expiry Date": str(personal_class.loan_expiry_date[i]),
-            })
-    return response
-    # except Exception as exc:
-    #     print("Error on personal loan table")
-    #     print(exc)
-    #     return []
+    try:
+        personal_class = PersonalLoan(cib)
+        response = []
+        for i in range(len(personal_class.borrowers_name)):
+            response.append({
+                    "Borrower Name": str(personal_class.borrowers_name[i]),
+                    "Applicants Role": str(personal_class.applicants_role[i]),
+                    "Nature of Facility": str(personal_class.facility_name[i]),
+                    "Limit": str(personal_class.sanc_limit[i]),
+                    "Position Date": str(personal_class.get_position_date[i]),
+                    "Outstanding": str(personal_class.get_outstanding[i]),
+                    "Overdue": str(personal_class.get_overdue[i]),
+                    "CL Status": str(personal_class.cl_status[i]),
+                    "EMI of Term Loan or percent of Credit Card Limit Outstanding": str(personal_class.EMI_3[i]),
+                    "Loan Start Date": str(personal_class.loan_start_date[i]),
+                    "Loan Expiry Date": str(personal_class.loan_expiry_date[i]),
+                })
+        return response
+    except Exception as exc:
+        print("Error on personal loan table")
+        print(exc)
+        return []
 
 def get_consumer_dashboard(cib):
     consumer_response = {
