@@ -51,32 +51,32 @@ def get_category_wise_summary_table(cib_list):
 
 def summary_table(cibs):
     try:
-        get_summary_table = CorporateSummaryTableClass(cibs)
+        summary_table = CorporateSummaryTableClass(cibs)
         response = []
-        for i in range(len(get_summary_table.concern_name)):
-            if i < (len(get_summary_table.concern_name)-1):
+        for i in range(len(summary_table.concern_name)):
+            if i < (len(summary_table.concern_name)-1):
                 response.append({
-                    'Concern name': str(get_summary_table.concern_name[i]),
+                    'Concern name': str(summary_table.concern_name[i]),
                     'Funded outstanding': {
-                        'Installment': str(get_summary_table.funded_ins_data[i]),
-                        'Non installment': str(get_summary_table.funded_non_ins_data[i]),
-                        'Total': str(get_summary_table.total_funded_amount[i])
+                        'Installment': str(summary_table.funded_ins_data[i]),
+                        'Non installment': str(summary_table.funded_non_ins_data[i]),
+                        'Total': str(summary_table.total_funded_amount[i])
                     },
-                    'Non funded outstanding': str(get_summary_table.non_funded_amount[i]),
-                    'Total outstanding': str(get_summary_table.total_amount[i]),
-                    'Overdue': str(get_summary_table.overdue_amount[i]),
-                    'Status': str(get_summary_table.status[i])
+                    'Non funded outstanding': str(summary_table.non_funded_amount[i]),
+                    'Total outstanding': str(summary_table.total_amount[i]),
+                    'Overdue': str(summary_table.overdue_amount[i]),
+                    'Status': str(summary_table.status[i])
                 })
             else:
                 response.append({
                     'Concern name': 'sub_total',
                     'Funded outstanding': {
-                        'Installment': str(sum(get_summary_table.funded_ins_data)),
-                        'Non installment': str(sum(get_summary_table.funded_non_ins_data)),
-                        'Total': str(sum(get_summary_table.total_funded_amount))},
-                    'Non funded outstanding': str(sum(get_summary_table.non_funded_amount)),
-                    'Total outstanding': str(sum(get_summary_table.total_amount)),
-                    'Overdue': str(sum(get_summary_table.overdue_amount)),
+                        'Installment': str(sum(summary_table.funded_ins_data)),
+                        'Non installment': str(sum(summary_table.funded_non_ins_data)),
+                        'Total': str(sum(summary_table.total_funded_amount))},
+                    'Non funded outstanding': str(sum(summary_table.non_funded_amount)),
+                    'Total outstanding': str(sum(summary_table.total_amount)),
+                    'Overdue': str(sum(summary_table.overdue_amount)),
                     'Status': "",
                 })
         return response
@@ -89,20 +89,14 @@ def summary_table(cibs):
 
 def summary_of_facility(cib_list):
     try:
-        get_fac_summary = CorporateFacilitySummaryTableClass(cib_list)
-        funded_ins_borrower = get_fac_summary.funded_ins_bor
-        funded_nonins_borrower = get_fac_summary.funded_nonins_bor
-        funded_ins_guran = get_fac_summary.funded_ins_guran
-        funded_nonins_guran = get_fac_summary.funded_non_ins_guran
-        non_Funded_bor = get_fac_summary.nonfunded_bor
-        non_Funded_guran = get_fac_summary.nonfund_guran
+        fac_summary = CorporateFacilitySummaryTableClass(cib_list)
         response = {
-            "Summary of funded facility for borrower": {"funded_ins_borrower": funded_ins_borrower,
-                                                        "funded_nonins_borrower": funded_nonins_borrower},
-            "Summary of funded facility for gurantor" : {"funded_ins_guran": funded_ins_guran,
-                                                        "funded_nonins_guran": funded_nonins_guran},
-            "Summary of non funded facility for borrower": non_Funded_bor,
-            "Summary of non funded facility for gurantor": non_Funded_guran
+            "Summary of funded facility for borrower": {"funded_ins_borrower": fac_summary.funded_ins_bor,
+                                                        "funded_nonins_borrower": fac_summary.funded_nonins_bor},
+            "Summary of funded facility for gurantor" : {"funded_ins_guran": fac_summary.funded_ins_guran,
+                                                        "funded_nonins_guran": fac_summary.funded_non_ins_guran},
+            "Summary of non funded facility for borrower": fac_summary.nonfunded_bor,
+            "Summary of non funded facility for gurantor": fac_summary.nonfund_guran
         }
 
         return response
@@ -113,11 +107,10 @@ def summary_of_facility(cib_list):
     
 def summary_of_reschedule_loan(cibs):
     try:
-        get_res_summary = RescheduleLoanSummaryTableClass(cibs)
-
+        res_summary = RescheduleLoanSummaryTableClass(cibs)
         response = {
-                "Summary of reschedule loan for borrower": get_res_summary.reschedule_loan_for_borrower,
-                "Summary of reschedule loan for gurantor": get_res_summary.reschedule_loan_for_gurantor
+                "Summary of reschedule loan for borrower": res_summary.reschedule_loan_for_borrower,
+                "Summary of reschedule loan for gurantor": res_summary.reschedule_loan_for_gurantor
         }
         return response
     
@@ -128,12 +121,10 @@ def summary_of_reschedule_loan(cibs):
     
 def summary_of_stay_order(cibs):
     try: 
-        get_stay_summary = StayOrderSummaryClass(cibs)
-        summary_stay_order_borrower =  get_stay_summary.stay_order_borrower
-        summary_stay_order_gurantor = get_stay_summary.stay_order_gurantor
+        stay_summary = StayOrderSummaryClass(cibs)
         response = {
-            "Summary of stay order for Borrower": summary_stay_order_borrower,
-            "Summary of stay order for Gurantor": summary_stay_order_gurantor
+            "Summary of stay order for Borrower": stay_summary.stay_order_borrower,
+            "Summary of stay order for Gurantor": stay_summary.stay_order_gurantor
         }
         return response
     
@@ -144,15 +135,11 @@ def summary_of_stay_order(cibs):
     
 def summary_of_expired_but_showing_live(cib_list):
     try:
-
         get_ex_summary = CorporateExpiredButShowingLiveClass(cib_list)
-        funded_ins = get_ex_summary.funded_ins
-        funded_nonins = get_ex_summary.funded_nonins
-        non_funded = get_ex_summary.nonfunded
         response = {
-            "Summary of funded facility": {"funded_ins": funded_ins,
-                                           "funded_nonins": funded_nonins},
-            "Summary of non funded facility": non_funded
+            "Summary of funded facility": {"funded_ins": get_ex_summary.funded_ins,
+                                           "funded_nonins": get_ex_summary.funded_nonins},
+            "Summary of non funded facility": get_ex_summary.nonfunded
         }
         return response
     except Exception as exc:
