@@ -316,16 +316,17 @@ def liability_type_wise_breakup(cib):
     return []
 
 
-def get_corporate_dashboard(cib):
+def get_corporate_dashboard(cibs):
     corporate_response = {
-        "summary of cib liability": summary_of_cib_liability(cib),
-        "liability type wise break up": liability_type_wise_breakup(cib),
-        "summary table": get_category_wise_summary_table(cib),
-        "summary of facility": summary_of_facility(cib),
-        "summary of expired but showing live": summary_of_expired_but_showing_live(cib),
-        "summary of funded terminated loan": summary_of_funded_terminated_loan(cib),
-        "summary of nonfunded terminated loan": summary_of_nonfunded_terminated_loan(cib),
-        "summary of requested loan": summary_of_requested_loan(cib)
+        "summary of cib liability": summary_of_cib_liability(cibs),
+        "liability type wise break up": liability_type_wise_breakup(cibs),
+        "summary table": get_category_wise_summary_table(cibs),
+        "summary of facility": summary_of_facility(cibs),
+        "summary of expired but showing live": summary_of_expired_but_showing_live(cibs),
+        "summary of funded terminated loan": summary_of_funded_terminated_loan(cibs),
+        "summary of nonfunded terminated loan": summary_of_nonfunded_terminated_loan(cibs),
+        "summary of requested loan": summary_of_requested_loan(cibs),
+        "summary of reschedule loan": summary_of_reschedule_loan(cibs)
     }
 
     return corporate_response
