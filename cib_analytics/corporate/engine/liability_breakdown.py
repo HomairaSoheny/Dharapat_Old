@@ -2,15 +2,39 @@ from ...general_helpers import is_living, isNonFunded, isStayOrder
 
 def a_overdraft(cib_list):
     try:
-        return []
+        total_loan = []
+        for cib_data in cibs:
+            amount = 0
+            if not isinstance(cib_data.noninstallment_facility, type(None)):
+                for fac in cib_data.noninstallment_facility:
+                    if not isStayOrder(fac) and is_living(fac) is True:
+                        if ('overdraft' in fac['Ref']['Facility'].lower() or
+                            'cash credit' in fac['Ref']['Facility'].lower() or
+                            'cc' in fac['Ref']['Facility'].lower() or
+                            'od' in fac['Ref']['Facility'].lower()):
+                            amount += 1
+            total_loan.append(amount)
+        return total_loan
     except:
         return []
-
 def a_overdue(cib_list):
     try:
-        return []
+        total_overdue = []
+        for cib_data in cibs:
+            amount = 0
+            if not isinstance(cib_data.noninstallment_facility, type(None)):
+                for fac in cib_data.noninstallment_facility:
+                    if not isStayOrder(fac) and is_living(fac) is True:
+                        if ('overdraft' in fac['Ref']['Facility'].lower() or
+                            'cash credit' in fac['Ref']['Facility'].lower() or
+                            'cc' in fac['Ref']['Facility'].lower() or
+                            'od' in fac['Ref']['Facility'].lower()):
+                            amount += fac['Contract History'].Overdue[0]
+            total_overdue.append(amount)
+        return total_overdue
     except:
         return []
+            
 
 def b_time_loan(cib_list):
     try:
@@ -38,50 +62,117 @@ def c_overdue(cib_list):
 
 def d_other_non_installment(cib_list):
     try:
+        total_no_loan = []
+        for cib_data in cib_list:
+            amount = 0
+            if not isinstance(cib_data.noninstallment_facility, type(None)):
+                for fac in cib_data.noninstallment_facility:
+                    if not isStayOrder(fac) and is_living(fac) is True:
+                        if (fac['Ref']['Facility'].lower()) == 'other non instalment contract':
+                            amount +=  1
+            total_no_loan.append(amount)
+        return total_no_loan
+    except: 
         return []
-    except:
-        return []
-
 def d_overdue(cib_list):
     try:
-        return []
-    except:
+        total_overdue = []
+        for cib_data in cib_list:
+            amount = 0
+            if not isinstance(cib_data.noninstallment_facility, type(None)):
+                for fac in cib_data.noninstallment_facility:
+                    if not isStayOrder(fac) and is_living(fac) is True:
+                        if (fac['Ref']['Facility'].lower()) == 'other non instalment contract':
+                            amount += fac['Contract History'].Overdue[0]
+            total_overdue.append(amount)
+        return total_overdue
+    except: 
         return []
 
 def e_term_loan(cib_list):
     try:
-        return []
-    except:
-        return []
+        total_no_loan = []
+        for cib_data in cib_list:
+            amount = 0
+            if not isinstance(cib_data.installment_facility, type(None)):
+                for fac in cib_data.installment_facility:
+                    if not isStayOrder(fac) and is_living(fac) is True:
+                        if (fac['Ref']['Facility'].lower()) == 'term loan':
+                            amount += 1
+            total_no_loan.append(amount)
+        return total_no_loan
+    except: 
+        return 
 
 def e_emi(cib_list):
     try:
+        total_loan = []
+        for cib_data in cib_list:
+            amount = 0
+            if not isinstance(cib_data.installment_facility, type(None)):
+                for fac in cib_data.installment_facility:
+                    if not isStayOrder(fac) and is_living(fac) is True:
+                        if (fac['Ref']['Facility'].lower()) == 'term loan':
+                            amount += fac['Ref']['Installment Amount']
+            total_loan.append(amount)
+        return total_loan
+    except: 
         return []
-    except:
-        return []
-
 def e_overdue(cib_list):
     try:
+        total_loan = []
+        for cib_data in cib_list:
+            amount = 0
+            if not isinstance(cib_data.installment_facility, type(None)):
+                for fac in cib_data.installment_facility:
+                    if not isStayOrder(fac) and is_living(fac) is True:
+                        if (fac['Ref']['Facility'].lower()) == 'term loan':
+                            amount += fac['Contract History'].Overdue[0]
+            total_loan.append(amount)
+        return total_loan
+    except: 
         return []
-    except:
-        return []
-
 def f_other_installment_loan(cib_list):
     try:
+        total_no_loan = []
+        for cib_data in cib_list:
+            amount = 0
+            if not isinstance(cib_data.installment_facility, type(None)):
+                for fac in cib_data.installment_facility:
+                    if not isStayOrder(fac) and is_living(fac) is True:
+                        if (fac['Ref']['Facility'].lower()) == 'other instalment contract':
+                            amount += 1
+            total_no_loan.append(amount)
+        return total_no_loan
+    except: 
         return []
-    except:
-        return []
-
 def f_emi(cib_list):
     try:
+        total_loan = []
+        for cib_data in cib_list:
+            amount = 0
+            if not isinstance(cib_data.installment_facility, type(None)):
+                for fac in cib_data.installment_facility:
+                    if not isStayOrder(fac) and is_living(fac) is True:
+                        if (fac['Ref']['Facility'].lower()) == 'other instalment contract':
+                            amount += fac['Ref']['Installment Amount']
+            total_loan.append(amount)
+        return total_loan
+    except: 
         return []
-    except:
-        return []
-
 def f_overdue(cib_list):
     try:
-        return []
-    except:
+        total_overdue = []
+        for cib_data in cib_list:
+            amount = 0
+            if not isinstance(cib_data.installment_facility, type(None)):
+                for fac in cib_data.installment_facility:
+                    if not isStayOrder(fac) and is_living(fac) is True:
+                        if (fac['Ref']['Facility'].lower()) == 'other instalment contract':
+                            amount += fac['Contract History'].Overdue[0]
+            total_overdue.append(amount)
+        return total_overdue
+    except: 
         return []
 
 def total_lc(cib_list):
