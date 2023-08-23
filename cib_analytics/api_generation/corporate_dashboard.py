@@ -326,7 +326,8 @@ def get_corporate_dashboard(cibs):
         "summary of funded terminated loan": summary_of_funded_terminated_loan(cibs),
         "summary of nonfunded terminated loan": summary_of_nonfunded_terminated_loan(cibs),
         "summary of requested loan": summary_of_requested_loan(cibs),
-        "summary of reschedule loan": summary_of_reschedule_loan(cibs)
+        "summary of reschedule loan": summary_of_reschedule_loan(cibs),
+        "summary of stay order": summary_of_stay_order(cibs)
     }
 
     return corporate_response
