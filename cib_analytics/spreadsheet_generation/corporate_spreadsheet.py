@@ -1,0 +1,11 @@
+def generate_corporate_spreadsheet(writer, result):    
+    summary_of_cib_liability = result["summary of cib liability"]
+    liability_type_wise_breakup = result["liability type wise break up"]
+    get_category_wise_summary_table = result["summary table"]
+    summary_of_facility = result["summary of facility"] 
+    summary_of_expired_but_showing_live = result["summary of expired but showing live"] 
+    summary_of_funded_terminated_loan = result["summary of funded terminated loan"]
+    summary_of_nonfunded_terminated_loan = result["summary of nonfunded terminated loan"] 
+    summary_of_requested_loan = result["summary of requested loan"]
+    summary_of_reschedule_loan = result["summary of reschedule loan"]
+    summary_of_stay_order = result["summary of stay order"]
