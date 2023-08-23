@@ -59,7 +59,15 @@ def stay_order_borrower(cib_list:list):
                             table.append(row)
 
                             
-        return pd.DataFrame(table, columns=columns)
+        table = pd.DataFrame(table, columns=columns)
+        return {
+            "Name of account": table["Name of account"].tolist(),
+            "Nature of facility": table["Nature of facility"].tolist(),
+            "Stayorder amount": table["Stayorder amount"].tolist(),
+            "Writ no": table["Writ no"].tolist(),
+            "Remarks": table["Remarks"].tolist()
+        }
+        
     except Exception as exc:
         print("function: stay_order_borrower")
         print(exc)
@@ -82,9 +90,16 @@ def stay_order_gurantor(cib_list:list):
                         if isStayOrder(fac) is True and fac['Ref']['Role'] == "Guarantor": 
                             row = [ acc_name, fac_name(fac), Stayorder_amount(fac),'--', remarks(fac)]
                             table.append(row)
-
-                            
-        return pd.DataFrame(table, columns=columns)
+                                                
+        table = pd.DataFrame(table, columns=columns)
+        return {
+            "Name of account": table["Name of account"].tolist(),
+            "Nature of facility": table["Nature of facility"].tolist(),
+            "Stayorder amount": table["Stayorder amount"].tolist(),
+            "Writ no": table["Writ no"].tolist(),
+            "Remarks": table["Remarks"].tolist()
+        }
+        
     except Exception as exc:
         print("function: stay_order_gurantor")
         print(exc)
