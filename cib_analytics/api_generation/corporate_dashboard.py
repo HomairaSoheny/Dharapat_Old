@@ -8,37 +8,11 @@ from ..corporate.terminated_loan_nonfunded_class import TerminatedLoanNonfundedT
 from ..corporate.requested_loan_class import RequestedLoanSummaryTableClass
 from ..corporate.reschedule_loan_summary_class import RescheduleLoanSummaryTableClass
 from ..corporate.stay_order_summary_class import StayOrderSummaryClass
+from ..general_helpers import cib_class_division
 
 def get_category_wise_summary_table(cib_list):
     try:
-        cibs = {"Type a": [],
-                "Type b": [],
-                "Type c": [],
-                "Type d": [],
-                "Type e": [],
-                "Type f": [],
-                "Type g": [],
-                "Type h": [],
-                "Type i": []}
-        for cib in cib_list:
-            if cib.cib_category == "Type a":
-                cibs["Type a"].append(cib)
-            elif cib.cib_category == "Type b":
-                cibs["Type b"].append(cib)
-            elif cib.cib_category == "Type c":
-                cibs["Type c"].append(cib)
-            elif cib.cib_category == "Type d":
-                cibs["Type d"].append(cib)
-            elif cib.cib_category == "Type e":
-                cibs["Type e"].append(cib)
-            elif cib.cib_category == "Type f":
-                cibs["Type f"].append(cib)
-            elif cib.cib_category == "Type g":
-                cibs["Type g"].append(cib)
-            elif cib.cib_category == "Type h":
-                cibs["Type h"].append(cib)
-            elif cib.cib_category == "Type i":
-                cibs["Type i"].append(cib)
+        cibs = cib_class_division(cib_list)
         for cib in cibs:
             cibs[cib] = summary_table(cibs[cib])
         return cibs
@@ -46,8 +20,6 @@ def get_category_wise_summary_table(cib_list):
         print("Error on summary table")
         print(exc)
         return {}
-    
-
 
 def summary_table(cibs):
     try:
@@ -91,10 +63,14 @@ def summary_of_facility(cib_list):
     try:
         fac_summary = CorporateFacilitySummaryTableClass(cib_list)
         response = {
-            "Summary of funded facility for borrower": {"funded_ins_borrower": fac_summary.funded_ins_bor,
-                                                        "funded_nonins_borrower": fac_summary.funded_nonins_bor},
-            "Summary of funded facility for gurantor" : {"funded_ins_guran": fac_summary.funded_ins_guran,
-                                                        "funded_nonins_guran": fac_summary.funded_non_ins_guran},
+            "Summary of funded facility for borrower":  {
+                                                        "funded_ins_borrower": fac_summary.funded_ins_bor,
+                                                        "funded_nonins_borrower": fac_summary.funded_nonins_bor
+                                                        },
+            "Summary of funded facility for gurantor" : {
+                                                        "funded_ins_guran": fac_summary.funded_ins_guran,
+                                                        "funded_nonins_guran": fac_summary.funded_non_ins_guran
+                                                        },
             "Summary of non funded facility for borrower": fac_summary.nonfunded_bor,
             "Summary of non funded facility for gurantor": fac_summary.nonfund_guran
         }
@@ -137,8 +113,10 @@ def summary_of_expired_but_showing_live(cib_list):
     try:
         get_ex_summary = CorporateExpiredButShowingLiveClass(cib_list)
         response = {
-            "Summary of funded facility": {"funded_ins": get_ex_summary.funded_ins,
-                                           "funded_nonins": get_ex_summary.funded_nonins},
+            "Summary of funded facility":   {
+                                            "funded_ins": get_ex_summary.funded_ins,
+                                            "funded_nonins": get_ex_summary.funded_nonins
+                                            },
             "Summary of non funded facility": get_ex_summary.nonfunded
         }
         return response
@@ -181,15 +159,15 @@ def summary_of_nonfunded_terminated_loan(cib_list):
     try:   
         get_summary_terminated = TerminatedLoanNonfundedTableClass(cib_list)
         response = {}
-        response['Total non funded terminated loan'] = get_summary_terminated.Total_nonfunded_terminated_loan
+        response['Total non funded terminated loan'] = get_summary_terminated.total_nonfunded_terminated_loan
         response['Facility Table'] = []
-        for i in range (len(get_summary_terminated.Non_funded_facility_name)):
+        for i in range (len(get_summary_terminated.non_funded_facility_name)):
             
             response['Facility Table'].append({
-                "Facility":get_summary_terminated.Non_funded_facility_name[i],
-                "Limit": get_summary_terminated.Non_funded_ins_limit[i],
-                "Worse classification status": get_summary_terminated.Non_funded_ins_worse_cl_status[i],
-                "Date of classification status": get_summary_terminated.Non_Funded_date_of_classification[i]
+                "Facility":get_summary_terminated.non_funded_facility_name[i],
+                "Limit": get_summary_terminated.non_funded_ins_limit[i],
+                "Worse classification status": get_summary_terminated.non_funded_ins_worse_cl_status[i],
+                "Date of classification status": get_summary_terminated.non_Funded_date_of_classification[i]
             })
         return response
     except Exception as exc:
@@ -202,11 +180,11 @@ def summary_of_requested_loan(cib_list):
     try:
         get_summary_requested = RequestedLoanSummaryTableClass(cib_list)
         response = {
-            "Type of Contract": get_summary_requested.Funded_ins_bor["Type of Contract"].tolist(),
-            "Facility": get_summary_requested.Funded_ins_bor["Facility"].tolist(),
-            "Role": get_summary_requested.Funded_ins_bor["Role"].tolist(),
-            "Total Requested Amount": get_summary_requested.Funded_ins_bor["Total Requested Amount"].tolist(),
-            "Request date": [str(date.date()) for date in get_summary_requested.Funded_ins_bor["Request date"].tolist()]
+            "Type of Contract": get_summary_requested.funded_ins_bor["Type of Contract"].tolist(),
+            "Facility": get_summary_requested.funded_ins_bor["Facility"].tolist(),
+            "Role": get_summary_requested.funded_ins_bor["Role"].tolist(),
+            "Total Requested Amount": get_summary_requested.funded_ins_bor["Total Requested Amount"].tolist(),
+            "Request date": [str(date.date()) for date in get_summary_requested.funded_ins_bor["Request date"].tolist()]
         }
         return response
     except Exception as exc:
@@ -217,34 +195,7 @@ def summary_of_requested_loan(cib_list):
 
 def summary_of_cib_liability(cib_list):
     try:
-        cibs = {"Type a": [],
-                "Type b": [],
-                "Type c": [],
-                "Type d": [],
-                "Type e": [],
-                "Type f": [],
-                "Type g": [],
-                "Type h": [],
-                "Type i": []}
-        for cib in cib_list:
-            if cib.cib_category == "Type a":
-                cibs["Type a"].append(cib)
-            elif cib.cib_category == "Type b":
-                cibs["Type b"].append(cib)
-            elif cib.cib_category == "Type c":
-                cibs["Type c"].append(cib)
-            elif cib.cib_category == "Type d":
-                cibs["Type d"].append(cib)
-            elif cib.cib_category == "Type e":
-                cibs["Type e"].append(cib)
-            elif cib.cib_category == "Type f":
-                cibs["Type f"].append(cib)
-            elif cib.cib_category == "Type g":
-                cibs["Type g"].append(cib)
-            elif cib.cib_category == "Type h":
-                cibs["Type h"].append(cib)
-            elif cib.cib_category == "Type i":
-                cibs["Type i"].append(cib)
+        cibs = cib_class_division(cib_list)
         for cib in cibs:
             cibs[cib] = aggregate_corporate_cib(cibs[cib])
         return cibs

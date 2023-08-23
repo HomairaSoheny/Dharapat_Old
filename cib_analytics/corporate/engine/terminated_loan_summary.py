@@ -1,4 +1,4 @@
-from ...general_helper import is_living, isNonFunded
+from ...general_helpers import is_living, isNonFunded
     
 def tot_fund_terminated_loan(facility):
     no_ter_loan  = 0

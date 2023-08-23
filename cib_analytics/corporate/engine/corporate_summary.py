@@ -1,5 +1,5 @@
 from itertools import zip_longest
-from ...general_helper import is_living, isNonFunded, isStayOrder
+from ...general_helpers import is_living, isNonFunded, isStayOrder
 
 
 

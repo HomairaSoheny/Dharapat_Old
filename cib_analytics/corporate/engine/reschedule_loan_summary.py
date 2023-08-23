@@ -1,5 +1,5 @@
 import pandas as pd
-from ...general_helper import is_living, isStayOrder
+from ...general_helpers import is_living, isStayOrder
 
 def has_rescheduling_instance(fac : dict):
     for key in fac['Ref'].keys():

@@ -1,5 +1,5 @@
 import pandas as pd
-from ...general_helper import is_living, isNonFunded, isStayOrder
+from ...general_helpers import is_living, isNonFunded, isStayOrder
     
 def expired_live_loan_check(fac, date_of_inquiry):
 

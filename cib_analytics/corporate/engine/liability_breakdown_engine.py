@@ -1,4 +1,4 @@
-from ...general_helper import is_living, isNonFunded, isStayOrder
+from ...general_helpers import is_living, isNonFunded, isStayOrder
 
 def a_overdraft(cib_list):
     try:
