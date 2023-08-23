@@ -86,39 +86,28 @@ def f_overdue(cib_list):
 
 def total_lc(cib_list):
     try:
-        letter_of_credit = []
-        for cib_data in cib_list:  
-            if not isinstance(cib_data.noninstallment_facility, type(None)):
-                for fac in cib_data.noninstallment_facility:
-                    if not isStayOrder(fac) and isNonFunded(fac) is True: 
-                        if is_living(fac) is True and (fac['Ref']['Facility'].lower()) == 'letter of credit (non funded)' :
-                            letter_of_credit.append(str(fac['Contract History'].Overdue[0]))
-        return letter_of_credit
+        total_lc = []
+        for cib_data in cib_list:
+            total_lc.append(cib_data.summary_1B.Living_Amount.values[1])
+        return total_lc
     except:
         return []
-
+    
 def total_indirect_liability(cib_list):
     try:
         indirect_liability = []
         for cib_data in cib_list:  
-            if not isinstance(cib_data.noninstallment_facility, type(None)):
-                for fac in cib_data.noninstallment_facility:
-                    if not isStayOrder(fac) and isNonFunded(fac) is True: 
-                        if is_living(fac) is True and (fac['Ref']['Facility'].lower()) == 'other indirect facility (non funded)' :
-                            indirect_liability.append(str(fac['Contract History'].Overdue[0]))
+            indirect_liability.append(cib_data.summary_1B.Living_Amount.values[2])   
         return indirect_liability
     except:
         return []
     
+    
 def total_bg(cib_list):
     try:
-        overdue_amount = []
+        bank_gurantee = []
         for cib_data in cib_list:  
-            if not isinstance(cib_data.noninstallment_facility, type(None)):
-                for fac in cib_data.noninstallment_facility:
-                    if not isStayOrder(fac) and isNonFunded(fac) is True: 
-                        if is_living(fac) is True and (fac['Ref']['Facility'].lower()) == 'guarantee (non funded)' :
-                            overdue_amount.append(str(fac['Contract History'].Overdue[0]))
-        return overdue_amount
+            bank_gurantee.append(cib_data.summary_1B.Living_Amount.values[0])
+        return bank_gurantee
     except:
         return []
