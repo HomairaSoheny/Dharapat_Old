@@ -1,5 +1,4 @@
 import pandas as pd
-from datetime import  datetime, timedelta
 
 def is_living(facility):
     if facility["Ref"]["Phase"] == "Living":
@@ -56,6 +55,7 @@ def last_res_date(fac):
                 date = (date.strftime("%d")+'-'+date.strftime("%b")+'-'+date.strftime("%y"))
             
     return date
+
 def rescheduled_loan_borrow(cib_list:list):
     '''
     Summary of Rescheduled loan (installment and non-installment facility) facility table for borrower 
@@ -76,7 +76,17 @@ def rescheduled_loan_borrow(cib_list:list):
                                 table.append(row)
 
                             
-        return pd.DataFrame(table, columns=columns)
+        table = pd.DataFrame(table, columns=columns)
+        response = {
+            "Name of account": table["Name of account"].tolist(),
+            "type of Reschedule": table["type of Reschedule"].tolist(),
+            "No. of reschedule Loan": table["No. of reschedule Loan"].tolist(),
+            "Amount": table["Amount"].tolist(),
+            "Date of last rescheduling": table["Date of last rescheduling"].tolist(),
+        }
+        
+        return response
+        
     except Exception as exc:
         print("function: reschedule_loan_borrow")
         print(exc)
@@ -106,7 +116,15 @@ def rescheduled_loan_guran(cib_list:list):
                                 table.append(row)
 
                             
-        return pd.DataFrame(table, columns=columns)
+        table = pd.DataFrame(table, columns=columns)
+        return {
+            "Name of account": table["Name of account"].tolist(),
+            "type of Reschedule": table["type of Reschedule"].tolist(),
+            "Number of reschedule Loan": table["Number of reschedule Loan"].tolist(),
+            "Amount": table["Amount"].tolist(),
+            "Date of last rescheduling": table["Date of last rescheduling"].tolist()
+        }
+        
     except Exception as exc:
         print("function: reschedule_loan_guran")
         print(exc)

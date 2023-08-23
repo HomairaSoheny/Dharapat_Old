@@ -8,6 +8,7 @@ from ..corporate.terminated_loan_nonfunded_class import TerminatedLoanNonfundedT
 from ..corporate.requested_loan_class import RequestedLoanSummaryTableClass
 from ..corporate.reschedule_loan_summary_class import RescheduleLoanSummaryTableClass
 from ..corporate.stay_order_summary_class import StayOrderSummaryClass
+
 def get_category_wise_summary_table(cib_list):
     try:
         cibs = {"Type a": [],
@@ -109,14 +110,14 @@ def summary_of_facility(cib_list):
         print("Error on CIB summary of facility Table")
         print(exc)
         return []
+    
 def summary_of_reschedule_loan(cibs):
     try:
-        get_res_summary = reschedule_loan_summary_table_class(cibs)
-        Reschedule_loan_borrow = ((get_res_summary.Reschedule_loan_for_borrower).to_json(orient = 'records'))
-        Reschedule_loan_guran = ((get_res_summary.Reschedule_loan_for_gurantor).to_json(orient = 'records'))
+        get_res_summary = RescheduleLoanSummaryTableClass(cibs)
+
         response = {
-                "Summary of reschedule loan for borrower": json.loads(Reschedule_loan_borrow),
-                "Summary of reschedule loan for gurantor": json.loads(Reschedule_loan_borrow)
+                "Summary of reschedule loan for borrower": get_res_summary.reschedule_loan_for_borrower,
+                "Summary of reschedule loan for gurantor": get_res_summary.reschedule_loan_for_gurantor
         }
         return response
     
@@ -124,14 +125,15 @@ def summary_of_reschedule_loan(cibs):
         print("Error on CIB summary of Reschedule Loan Table")
         print(exc)
         return []
+    
 def summary_of_stay_order(cibs):
     try: 
         get_stay_summary = StayOrderSummaryClass(cibs)
-        summary_stay_order_borrower =  ((get_stay_summary.stay_order_borrower).to_json(orient = 'records'))   
-        summary_stay_order_gurantor = ((get_stay_summary.stay_order_gurantor).to_json(orient = 'records')) 
+        summary_stay_order_borrower =  get_stay_summary.stay_order_borrower
+        summary_stay_order_gurantor = get_stay_summary.stay_order_gurantor
         response = {
-            "Summary of stay order for Borrower": json.loads(summary_stay_order_borrower),
-            "Summary of stay order for Gurantor": json.loads(summary_stay_order_gurantor)
+            "Summary of stay order for Borrower": summary_stay_order_borrower,
+            "Summary of stay order for Gurantor": summary_stay_order_gurantor
         }
         return response
     
@@ -139,6 +141,7 @@ def summary_of_stay_order(cibs):
         print("Error on CIB summary of Stay order Table")
         print(exc)
         return []
+    
 def summary_of_expired_but_showing_live(cib_list):
     try:
 
