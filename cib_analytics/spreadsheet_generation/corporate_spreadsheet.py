@@ -8,11 +8,22 @@ def generate_corporate_spreadsheet(writer, result):
         get_category_wise_summary_table = result["summary table"]
         summary_of_facility = result["summary of facility"] 
         summary_of_expired_but_showing_live = result["summary of expired but showing live"] 
-        summary_of_funded_terminated_loan = result["summary of funded terminated loan"]
+        create_summary_of_funded_terminated_loan_spreadsheet(writer, result["summary of funded terminated loan"])
         summary_of_nonfunded_terminated_loan = result["summary of nonfunded terminated loan"] 
         summary_of_requested_loan = result["summary of requested loan"]
         summary_of_reschedule_loan = result["summary of reschedule loan"]
         summary_of_stay_order = result["summary of stay order"]
+
+def create_summary_of_funded_terminated_loan_spreadsheet(workbook, analysed_data):
+    df = pd.DataFrame(analysed_data["Installment Table"])
+    df.to_excel(workbook, sheet_name="funded terminated loan", startrow=1)
+    workbook.sheets["funded terminated loan"].merge_range("A1:E1", "Installment Table")
+    
+    len = df.shape[0]+5
+    
+    df = pd.DataFrame(analysed_data["Non Installment Table"])
+    df.to_excel(workbook, sheet_name="funded terminated loan", startrow=len)
+    workbook.sheets["funded terminated loan"].merge_range("A"+str(len)+":E"+str(len), "Non Installment Table")
 
 def create_libility_type_wise_break_up_spreadsheet(workbook, analysed_data):
     len = 1
@@ -20,7 +31,7 @@ def create_libility_type_wise_break_up_spreadsheet(workbook, analysed_data):
         data = analysed_data[key]
         df = pd.DataFrame(pad_dict_list(data, 0))
         df.to_excel(workbook, sheet_name="liability type wise break up", startrow=len)
-        workbook.sheets["liability type wise break up"].merge_range("A"+str(len)+":P"+str(len), key)
+        workbook.sheets["liability type wise break up"].merge_range("A"+str(len)+":R"+str(len), key)
         len += df.shape[0]+5
             
 def create_summary_of_cib_liability_spreadsheet(workbook, analysed_data):
