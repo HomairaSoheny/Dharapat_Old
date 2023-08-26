@@ -11,8 +11,19 @@ def generate_corporate_spreadsheet(writer, result):
         create_summary_of_funded_terminated_loan_spreadsheet(writer, result["summary of funded terminated loan"])
         create_summary_of_non_funded_terminated_loan_spreadsheet(writer, result["summary of nonfunded terminated loan"] )
         create_summary_of_requested_loan_spreadsheet(writer, result["summary of requested loan"])
-        summary_of_reschedule_loan = result["summary of reschedule loan"]
+        create_summary_of_reschedule_loan_spreadsheet(writer, result["summary of reschedule loan"])
         summary_of_stay_order = result["summary of stay order"]
+
+def create_summary_of_reschedule_loan_spreadsheet(workbook, analysed_data):
+    df = pd.DataFrame(analysed_data["Summary of reschedule loan for borrower"])
+    df.to_excel(workbook, sheet_name="Summary of reschedule loan", startrow=1)
+    workbook.sheets["Summary of reschedule loan"].merge_range("A1:F1", "Summary of reschedule loan for borrower")
+    
+    len = df.shape[0]+5
+    
+    df = pd.DataFrame(analysed_data["Summary of reschedule loan for gurantor"])
+    df.to_excel(workbook, sheet_name="Summary of reschedule loan", startrow=len)
+    workbook.sheets["Summary of reschedule loan"].merge_range("A"+str(len)+":F"+str(len), "Summary of reschedule loan for gurantor")
 
 def create_summary_of_requested_loan_spreadsheet(workbook, analysed_data):
     df = pd.DataFrame(analysed_data)
