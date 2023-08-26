@@ -4,7 +4,7 @@ import pandas as pd
 def generate_corporate_spreadsheet(writer, result):
     with writer as writer:
         create_summary_of_cib_liability_spreadsheet(writer, result["summary of cib liability"])
-        liability_type_wise_breakup = result["liability type wise break up"]
+        create_libility_type_wise_break_up_spreadsheet(writer, result["liability type wise break up"])
         get_category_wise_summary_table = result["summary table"]
         summary_of_facility = result["summary of facility"] 
         summary_of_expired_but_showing_live = result["summary of expired but showing live"] 
@@ -14,6 +14,15 @@ def generate_corporate_spreadsheet(writer, result):
         summary_of_reschedule_loan = result["summary of reschedule loan"]
         summary_of_stay_order = result["summary of stay order"]
 
+def create_libility_type_wise_break_up_spreadsheet(workbook, analysed_data):
+    len = 1
+    for key in analysed_data:
+        data = analysed_data[key]
+        df = pd.DataFrame(pad_dict_list(data, 0))
+        df.to_excel(workbook, sheet_name="liability type wise break up", startrow=len)
+        workbook.sheets["liability type wise break up"].merge_range("A"+str(len)+":P"+str(len), key)
+        len += df.shape[0]+5
+            
 def create_summary_of_cib_liability_spreadsheet(workbook, analysed_data):
     len = 2
     for key in analysed_data:
