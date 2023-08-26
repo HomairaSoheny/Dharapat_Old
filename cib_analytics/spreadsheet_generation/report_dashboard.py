@@ -10,7 +10,7 @@ def create_report_dashboard(cib_datas, output_dir: str):
     writer = pd.ExcelWriter(io, engine='xlsxwriter', )
 
     if "summary of cib liability" in cib_datas[0]:
-        generate_corporate_spreadsheet(writer, cib_datas)
+        generate_corporate_spreadsheet(writer, cib_datas[0])
     else:
         for cib in cib_datas:
             generate_consumer_spreadsheet(writer, cib)
