@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from rest_framework.views import APIView
 # from settings import abs_path
 from cib_analytics.cib_data_class import cib_class
-from cib_analytics.spreadsheet_generation.consumer_spreadsheet import create_report_dashboard
+from cib_analytics.spreadsheet_generation.report_dashboard import create_report_dashboard
 
 import json
 import os

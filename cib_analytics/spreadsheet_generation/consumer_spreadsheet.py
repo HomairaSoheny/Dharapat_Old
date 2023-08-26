@@ -1,16 +1,4 @@
 import pandas as pd
-from io import BytesIO
-import datetime
-
-def create_report_dashboard(cib_datas, output_dir: str):
-    Output = output_dir + f'\\filename dashboard {datetime.datetime.now().strftime("%d-%m-%Y %Hh%Mm%Ss")}.xlsx'
-    io = BytesIO()
-    writer = pd.ExcelWriter(io, engine='xlsxwriter', )
-
-    for cib in cib_datas:
-        generate_consumer_spreadsheet(writer, cib)
-    
-    return writer, io
 
 def generate_consumer_spreadsheet(writer, cib):
 
