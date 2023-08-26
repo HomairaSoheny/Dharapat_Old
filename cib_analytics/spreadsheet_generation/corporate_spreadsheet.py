@@ -10,9 +10,13 @@ def generate_corporate_spreadsheet(writer, result):
         summary_of_expired_but_showing_live = result["summary of expired but showing live"] 
         create_summary_of_funded_terminated_loan_spreadsheet(writer, result["summary of funded terminated loan"])
         create_summary_of_non_funded_terminated_loan_spreadsheet(writer, result["summary of nonfunded terminated loan"] )
-        summary_of_requested_loan = result["summary of requested loan"]
+        create_summary_of_requested_loan_spreadsheet(writer, result["summary of requested loan"])
         summary_of_reschedule_loan = result["summary of reschedule loan"]
         summary_of_stay_order = result["summary of stay order"]
+
+def create_summary_of_requested_loan_spreadsheet(workbook, analysed_data):
+    df = pd.DataFrame(analysed_data)
+    df.to_excel(workbook, sheet_name="summary of requested loan")
 
 def create_summary_of_non_funded_terminated_loan_spreadsheet(workbook, analysed_data):
     df = pd.DataFrame(analysed_data["Facility Table"])
