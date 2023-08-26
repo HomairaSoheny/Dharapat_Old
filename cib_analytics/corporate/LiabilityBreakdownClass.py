@@ -2,7 +2,7 @@ from .engine import liability_breakdown
 
 class LiabilityBreakdown:
     def __init__(self, cib_list):
-        self.response = {
+        self.response = { 
             "Borrowing Company or Person": liability_breakdown.borrowing_com_per(cib_list),
             "A Overdraft CC  OD Cash Credit": liability_breakdown.a_overdraft(cib_list),
             "Overdue EOL of A": liability_breakdown.a_overdue(cib_list),
