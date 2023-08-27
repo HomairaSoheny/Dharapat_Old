@@ -6,13 +6,48 @@ def generate_corporate_spreadsheet(writer, result):
         create_summary_of_cib_liability_spreadsheet(writer, result["summary of cib liability"])
         create_libility_type_wise_break_up_spreadsheet(writer, result["liability type wise break up"])
         create_summary_table_spreaksheet(writer, result["summary table"])
-        summary_of_facility = result["summary of facility"] 
+        create_summary_of_facility_spreadsheet (writer, result["summary of facility"] )
         create_summary_of_expired_but_showing_live_spreadsheet(writer, result["summary of expired but showing live"] )
         create_summary_of_funded_terminated_loan_spreadsheet(writer, result["summary of funded terminated loan"])
         create_summary_of_non_funded_terminated_loan_spreadsheet(writer, result["summary of nonfunded terminated loan"] )
         create_summary_of_requested_loan_spreadsheet(writer, result["summary of requested loan"])
         create_summary_of_reschedule_loan_spreadsheet(writer, result["summary of reschedule loan"])
         create_summary_of_stay_order_spreadsheet(writer, result["summary of stay order"])
+
+def create_summary_of_facility_spreadsheet(workbook, analysed_data):
+    funded_ins_borrower = pd.DataFrame(analysed_data["Summary of funded facility for borrower"]["funded_ins_borrower"])
+    funded_nonins_borrower = pd.DataFrame(analysed_data["Summary of funded facility for borrower"]["funded_nonins_borrower"])
+    funded_ins_guran = pd.DataFrame(analysed_data["Summary of funded facility for gurantor"]["funded_ins_guran"])
+    funded_nonins_guran = pd.DataFrame(analysed_data["Summary of funded facility for gurantor"]["funded_nonins_guran"])
+    non_funded_borrower = pd.DataFrame(analysed_data["Summary of non funded facility for borrower"])
+    non_funded_guran = pd.DataFrame(analysed_data["Summary of non funded facility for gurantor"])
+    
+    len = 1
+    funded_ins_borrower.to_excel(workbook, sheet_name="summary of facility", startrow=1)
+    workbook.sheets["summary of facility"].merge_range("A1:S1", "Funded Installment Borrower")
+    len += funded_ins_borrower.shape[0]+5
+    
+    funded_nonins_borrower.to_excel(workbook, sheet_name="summary of facility", startrow=len)
+    workbook.sheets["summary of facility"].merge_range("A"+str(len)+":S"+str(len), "Funded Non Installments Borrower")
+    len += funded_nonins_borrower.shape[0]+5
+    
+    funded_ins_guran.to_excel(workbook, sheet_name="summary of facility", startrow=len)
+    workbook.sheets["summary of facility"].merge_range("A"+str(len)+":S"+str(len), "Funded Installments Gurantor")
+    len += funded_ins_guran.shape[0]+5
+    
+    funded_nonins_guran.to_excel(workbook, sheet_name="summary of facility", startrow=len)
+    workbook.sheets["summary of facility"].merge_range("A"+str(len)+":S"+str(len), "Funded No Installments Gurantor")
+    len += funded_nonins_guran.shape[0]+5
+    
+    non_funded_borrower.to_excel(workbook, sheet_name="summary of facility", startrow=len)
+    workbook.sheets["summary of facility"].merge_range("A"+str(len)+":S"+str(len), "Non Funded Installments Borrower")
+    len += non_funded_borrower.shape[0]+5
+    
+    non_funded_guran.to_excel(workbook, sheet_name="summary of facility", startrow=len)
+    workbook.sheets["summary of facility"].merge_range("A"+str(len)+":S"+str(len), "Non Funded Installments Gurantor")
+    len += non_funded_guran.shape[0]+5
+    
+    
         
 def create_summary_of_expired_but_showing_live_spreadsheet(workbook, analysed_data):
     funded_ins = pd.DataFrame(analysed_data["Summary of funded facility"]["funded_ins"])
