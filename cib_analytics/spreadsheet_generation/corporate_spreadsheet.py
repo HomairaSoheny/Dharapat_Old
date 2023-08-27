@@ -5,7 +5,7 @@ def generate_corporate_spreadsheet(writer, result):
     with writer as writer:
         create_summary_of_cib_liability_spreadsheet(writer, result["summary of cib liability"])
         create_libility_type_wise_break_up_spreadsheet(writer, result["liability type wise break up"])
-        get_category_wise_summary_table = result["summary table"]
+        create_summary_table_spreaksheet(writer, result["summary table"])
         summary_of_facility = result["summary of facility"] 
         summary_of_expired_but_showing_live = result["summary of expired but showing live"] 
         create_summary_of_funded_terminated_loan_spreadsheet(writer, result["summary of funded terminated loan"])
@@ -13,6 +13,42 @@ def generate_corporate_spreadsheet(writer, result):
         create_summary_of_requested_loan_spreadsheet(writer, result["summary of requested loan"])
         create_summary_of_reschedule_loan_spreadsheet(writer, result["summary of reschedule loan"])
         create_summary_of_stay_order_spreadsheet(writer, result["summary of stay order"])
+
+def create_summary_table_spreaksheet(workbook, analysed_data):
+    len = 2
+    for key in analysed_data:
+        fixed_dict_data = []
+        if analysed_data[key] == []:
+            analysed_data[key] = [{
+                    "Concern name": [],
+                    "Funded outstanding": {
+                        "Installment": [],
+                        "Non installment": [],
+                        "Total": [],   
+                    },
+                    "Non funded outstanding": [],
+                    "Total outstanding": [],
+                    "Overdue": [],
+                    "Status": []
+                }]
+        for data in analysed_data[key]:
+            fixed_dict_data.append({
+                "Concern name": data["Concern name"],
+                "Installment": data["Funded outstanding"]["Installment"],
+                "Non Installment": data["Funded outstanding"]["Non installment"],
+                "Total": data["Funded outstanding"]["Total"],
+                "Non funded outstanding": data["Non funded outstanding"],
+                "Total outstanding": data["Total outstanding"],
+                "Overdue": data["Overdue"],
+                "Status": data["Status"]
+                })
+        df = pd.DataFrame(fixed_dict_data)
+        df.to_excel(workbook, sheet_name="summary table", startrow=len)
+        workbook.sheets["summary table"].merge_range("A"+str(len-1)+":I"+str(len-1), key)
+        workbook.sheets["summary table"].merge_range("C"+str(len)+":E"+str(len), "Funded Outstanding")
+        len += df.shape[0]+5
+        
+    
 
 def create_summary_of_stay_order_spreadsheet(workbook, analysed_data):
     df = pd.DataFrame(analysed_data["Summary of stay order for Borrower"])
