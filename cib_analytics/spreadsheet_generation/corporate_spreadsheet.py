@@ -7,12 +7,26 @@ def generate_corporate_spreadsheet(writer, result):
         create_libility_type_wise_break_up_spreadsheet(writer, result["liability type wise break up"])
         create_summary_table_spreaksheet(writer, result["summary table"])
         summary_of_facility = result["summary of facility"] 
-        summary_of_expired_but_showing_live = result["summary of expired but showing live"] 
+        create_summary_of_expired_but_showing_live_spreadsheet(writer, result["summary of expired but showing live"] )
         create_summary_of_funded_terminated_loan_spreadsheet(writer, result["summary of funded terminated loan"])
         create_summary_of_non_funded_terminated_loan_spreadsheet(writer, result["summary of nonfunded terminated loan"] )
         create_summary_of_requested_loan_spreadsheet(writer, result["summary of requested loan"])
         create_summary_of_reschedule_loan_spreadsheet(writer, result["summary of reschedule loan"])
         create_summary_of_stay_order_spreadsheet(writer, result["summary of stay order"])
+        
+def create_summary_of_expired_but_showing_live_spreadsheet(workbook, analysed_data):
+    funded_ins = pd.DataFrame(analysed_data["Summary of funded facility"]["funded_ins"])
+    funded_nonins = pd.DataFrame(analysed_data["Summary of funded facility"]["funded_nonins"])
+    non_funded = pd.DataFrame(analysed_data["Summary of non funded facility"])
+    
+    funded_ins.to_excel(workbook, sheet_name="expired but showing live", startrow=1)
+    workbook.sheets["expired but showing live"].merge_range("A1:S1", "Funded Installments")
+    
+    funded_nonins.to_excel(workbook, sheet_name="expired but showing live", startrow=funded_ins.shape[0]+5)
+    workbook.sheets["expired but showing live"].merge_range("A"+str(funded_ins.shape[0]+5)+":S"+str(funded_ins.shape[0]+5), "Funded No Installments")
+    
+    non_funded.to_excel(workbook, sheet_name="expired but showing live", startrow=funded_ins.shape[0]+funded_nonins.shape[0]+10)
+    workbook.sheets["expired but showing live"].merge_range("A"+str(funded_ins.shape[0]+funded_nonins.shape[0]+10)+":S"+str(funded_ins.shape[0]+funded_nonins.shape[0]+10), "Non Funded Installments")
 
 def create_summary_table_spreaksheet(workbook, analysed_data):
     len = 2
