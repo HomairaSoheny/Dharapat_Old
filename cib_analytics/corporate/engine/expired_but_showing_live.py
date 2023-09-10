@@ -19,13 +19,16 @@ def start_date(fac):
         date = 'Not present'
     else:
         date = fac['Ref']['Starting date']
-        date = (date.strftime("%d")+'-'+date.strftime("%b")+'-'+date.strftime("%y"))
-    return date
+        date = str(date.strftime("%d")+'-'+date.strftime("%b")+'-'+date.strftime("%y"))
+    if date is not None:
+        return date
+    else:
+        return None
 
 def get_status(fac : dict):
     try:
         if not isStayOrder(fac):
-            return fac["Contract History"].Status[0]
+            return str(fac["Contract History"].Status[0])
         return "None" 
     except Exception as exc:
         print(exc)
@@ -34,7 +37,7 @@ def get_status(fac : dict):
 def get_class_from_set(classes : set):
     for classification in ('BLW', 'BL', 'DF', 'SS', 'SMA', 'UC', "STD"):
         if classification in classes:
-            return classification
+            return str(classification)
     return "None"
     
 def get_worst_status(fac: dict):
@@ -60,8 +63,11 @@ def end_date(fac):
             date = 'Not present'
         else:
             date = fac['Ref']['End date of contract']
-            date = (date.strftime("%d")+'-'+date.strftime("%b")+'-'+date.strftime("%y"))
-        return date
+            date = str(date.strftime("%d")+'-'+date.strftime("%b")+'-'+date.strftime("%y"))
+        if date is not None:
+            return date
+        else:
+            return "None"
     except Exception as exc:
         print(exc)
         return "None"
@@ -80,8 +86,11 @@ def last_pay_date(fac):
             date = 'Not present'
         else:
             date = fac['Ref']['Date of last payment']
-            date = (date.strftime("%d")+'-'+date.strftime("%b")+'-'+date.strftime("%y"))
-        return date
+            date = str(date.strftime("%d")+'-'+date.strftime("%b")+'-'+date.strftime("%y"))
+        if date is not None:
+            return date
+        else:
+            return "None"
     except Exception as exc:
         print(exc)
         return "None"
@@ -95,7 +104,7 @@ def get_NPI(fac : dict):
     '''
     try: 
         if not isStayOrder(fac):
-            return fac["Contract History"].NPI[0]
+            return str(fac["Contract History"].NPI[0])
         return "None"
     except Exception as exc:
         print(exc)
@@ -112,7 +121,7 @@ def funded_ins(fac):
     """
     try: 
         if not isStayOrder(fac):
-            return fac['Ref']['Sanction Limit']
+            return str(fac['Ref']['Sanction Limit'])
         return "None"  
     except Exception as exc:
         print(exc)
@@ -129,7 +138,7 @@ def funded_non_ins(fac):
     """
     try:  
         if not isStayOrder(fac):
-            return fac["Contract History"].SancLmt.values[0]
+            return str(fac["Contract History"].SancLmt.values[0])
         return "None"
     except Exception as exc:
         print(exc)
@@ -138,7 +147,7 @@ def funded_non_ins(fac):
 
 def facility_name(fac):                    
     try:
-        return fac['Ref']['Facility']
+        return str(fac['Ref']['Facility'])
     except Exception as exc:
         print(exc)
         return "None"
@@ -155,8 +164,8 @@ def get_outstanding(fac):
     try:
         if not isStayOrder(fac):
             if "Outstand" in fac["Contract History"].columns:
-                return fac["Contract History"].Outstand[0]
-            return fac["Contract History"].Outstanding[0]
+                return str(fac["Contract History"].Outstand[0])
+            return str(fac["Contract History"].Outstanding[0])
     except Exception as exc:
         print(exc)
         return "None"
@@ -166,7 +175,7 @@ def get_outstanding(fac):
 def funded_ins_overdue(fac):
     try:
         if not isStayOrder(fac):
-            return fac['Contract History']['Overdue'][0]
+            return str(fac['Contract History']['Overdue'][0])
         return "None"
     except Exception as exc:
         print(exc)
@@ -176,7 +185,7 @@ def funded_ins_overdue(fac):
 def funded_non_ins_overdue(fac):
     try:
         if not isStayOrder(fac):
-            return fac['Contract History'].sort_values('Date', ascending=False).Overdue [0]
+            return str(fac['Contract History'].sort_values('Date', ascending=False).Overdue[0])
         return "None"
     except Exception as exc:
         print(exc)
@@ -186,37 +195,35 @@ def funded_non_ins_overdue(fac):
                         
 def funded_ins_amount(fac):
     try:
-        return fac['Ref']['Installment Amount']
+        return str(fac['Ref']['Installment Amount'])
     except Exception as exc:
         print(exc)
         return "None"
                             
 def funded_pay_period(fac):
     try:
-        return fac['Ref']['Payments periodicity']
+        return str(fac['Ref']['Payments periodicity'])
     except Exception as exc:
         print(exc)
         return "None"
                             
 def no_installment(fac):
     try:
-        return fac['Ref']['Total number of installments']
+        return str(fac['Ref']['Total number of installments'])
     except Exception as exc:
         print(exc)
         return "None"             
 
 def no_installment_paid(fac):
-    
     try:
-        paid_ins = (fac['Ref']['Total number of installments']) - (fac['Ref']['Remaining installments Number'])                  
-        return paid_ins
+        return str((fac['Ref']['Total number of installments']) - (fac['Ref']['Remaining installments Number']))
     except Exception as exc:
         print(exc)
         return "None"
 
 def remaining_ins(fac):
     try:
-        return fac['Ref']['Remaining installments Number']
+        return str(fac['Ref']['Remaining installments Number'])
     except Exception as exc:
         print(exc)
         return "None"
@@ -224,14 +231,14 @@ def remaining_ins(fac):
 
 def pay_period(fac):
     try:
-        return fac['Ref']['Payments periodicity']
+        return str(fac['Ref']['Payments periodicity'])
     except Exception as exc:
         print(exc)
         return "None"
 
 def reorganized_credit(fac):
     try:
-        return fac['Ref']['Reorganized credit']
+        return str(fac['Ref']['Reorganized credit'])
     except Exception as exc:
         print(exc)
         return "None"
@@ -240,7 +247,7 @@ def default(fac):
     try: 
         if isStayOrder(fac):
             return "None"
-        return fac['Contract History'].Default[0]
+        return str(fac['Contract History'].Default[0])
     except Exception as exc:
         print(exc)
         return "None"
@@ -248,7 +255,7 @@ def default(fac):
 def get_remarks(fac: dict):
     try: 
         if fac['Ref']['Remarks'] is not None:
-            return fac['Ref']['Remarks']
+            return str(fac['Ref']['Remarks'])
         return "None" 
     except Exception as exc:
         print(exc)
@@ -271,7 +278,6 @@ def funded_nonins(cib_list:list):
                         row = [facility_name(fac),funded_non_ins(fac), get_outstanding(fac),  funded_non_ins_overdue(fac),
                             start_date(fac), end_date(fac),' ' , ' ', ' ',' ', ' ', ' ', ' ', ' ', 
                             get_status(fac), get_worst_status(fac), reorganized_credit(fac),  get_remarks(fac)]
-        
                         table.append(row)
                         
     table = pd.DataFrame(table, columns = columns)
