@@ -12,7 +12,6 @@ def borrowing_com_per(cib_list):
     except:
         return []
 
-
 def a_overdraft(cib_list):
     try:
         total_loan = []
@@ -48,7 +47,6 @@ def a_overdue(cib_list):
         return total_overdue
     except:
         return []
-            
 
 def b_time_loan(cib_list):
     try:
@@ -63,8 +61,7 @@ def b_time_loan(cib_list):
             total_loan.append(str(amount))
         return total_loan
     except:
-        return []
-                                   
+        return []                                 
 
 def b_overdue(cib_list):
     try:
@@ -80,6 +77,7 @@ def b_overdue(cib_list):
         return total_overdue 
     except:
         return []
+    
 def c_ltr(cib_list):
     try:
         total_loan = []
