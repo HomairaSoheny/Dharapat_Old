@@ -135,7 +135,8 @@ def no_installment(fac):
                             
 
 def no_installment_paid(fac):
-    return str(fac['Ref']['Total number of installments']) - (fac['Ref']['Remaining installments Number'])                        
+    
+    return str((fac['Ref']['Total number of installments']) - (fac['Ref']['Remaining installments Number']))
 
 def remaining_ins(fac):
     return str(fac['Ref']['Remaining installments Number'])
@@ -152,7 +153,7 @@ def default(fac):
     return str(fac['Contract History'].Default[0])
 
 def get_remarks(fac: dict):
-    if fac['Ref']['Remarks'] is not "None":
+    if fac['Ref']['Remarks'] is not None:
         return str(fac['Ref']['Remarks'])
     return "None"
 
@@ -262,7 +263,6 @@ def funded_ins_guran(cib_list:list):
             for fac in cib_data.installment_facility:
                  if fac['Ref']['Role'] == "Guarantor": 
                     if is_living(fac) == True and isNonFunded(fac) != True:
-                        
                         row = [facility_name(fac),funded_ins(fac),get_outstanding(fac),  funded_ins_overdue(fac),
                             start_date(fac), end_date(fac), funded_ins_amount(fac), pay_period(fac), no_installment(fac),
                             no_installment_paid(fac), remaining_ins(fac), last_pay_date(fac), get_NPI(fac), default(fac), 
