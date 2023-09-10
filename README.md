@@ -1,6 +1,45 @@
-# dharapat_analytics_cib_analyzer_prime_bank_backend
+# Dharapat PBL CIB Analyzer Analytics
 
-## To view logs from azure portal
+## How to Load an Instance of the CIB Data Class
+```
+import json
+from cib_data_class import cib_class
+
+cib_path = '...'
+with open(cib_path) as f:
+	cib_data = cib_class(json.load(f))
+	cib_data.perform_sanity_check()
+
+## Map of CIB data class variables
+
+|Field Name in CIB Report|Variable Name|Return Type|
+|---|---|---|
+|Credit Information Bureau - Bangladesh Bank|cib_header|<class 'pandas.core.frame.DataFrame'>|
+|INQUIRED|inquired|<class 'dict'>|
+|SUBJECT INFORMATION|subject_info|<class 'dict'>|
+|ADDRESS|address|<class 'pandas.core.frame.DataFrame'>|
+|OWNERS LIST|owners_list|<class 'pandas.core.frame.DataFrame'>|
+|COMPANY(S) LIST|company_list|<class 'pandas.core.frame.DataFrame'>|
+|LINKED PROPRIETORSHIP(S) LIST|linked_prop_list|<class 'list'>|
+|1. SUMMARY OF FACILITY(S) AS BORROWER & CO-BORROWER|summary_1|<class 'dict'>|
+|1.(A) SUMMARY OF THE FUNDED FACILITIES AS BORROWER & CO-BORROWER|summary_1A|<class 'pandas.core.frame.DataFrame'>|
+|1.(B) SUMMARY OF THE NON-FUNDED FACILITIES AS BORROWER & CO-BORROWER|summary_1B|<class 'pandas.core.frame.DataFrame'>|
+|2. SUMMARY OF FACILITY(S) AS GUARANTOR|summary_2|<class 'dict'>|
+|2.(A) SUMMARY OF THE FUNDED FACILITIES AS GUARANTOR|summary_2A|<class 'pandas.core.frame.DataFrame'>|
+|2.(B) SUMMARY OF THE NON-FUNDED FACILITIES AS GUARANTOR|summary_2B|<class 'pandas.core.frame.DataFrame'>|
+|REQUESTED CONTRACT DETAILS|req_contracts|<class 'pandas.core.frame.DataFrame'>|
+|DETAILS OF INSTALLMENT FACILITY(S)|installment_facility|<class 'list'>|
+|DETAILS OF CREDIT CARD FACILITY(S)|credit_card_facility|<class 'list'>|
+|DETAILS OF NONINSTALLMENT FACILITY(S)|noninstallment_facility|<class 'list'>|
+
+
+## Creating Production/UAT Image:
+
+* Change rabbitmq connection address from `consumer_rabbitmq.py`
+* Go to `build.sh` and change the image version.
+* Run `sh build.sh` in terminal.
+
+## Check Azure Portal Log:
 
 ### **For Analytics:**
 
@@ -20,10 +59,12 @@
 kubectl logs -f --selector app=cib-analyser-consumer -n cib-analyser-services
 ```
 
-## Running rabbitmq locally
+## Running it locally:
 
-* Stop k8-analytics-backend-dev cluster from portal.azure.com dashboard.
-* Run python consumer_rabbitmq.py on terminal.
+* Change rabbitmq connection address to blank from `consumer_rabbitmq.py` then push to GitHub and deploy in the Azure Cluster. It will turn the repository off from online.
+* Fix the rabbitmq connection address to blank from `consumer_rabbitmq.py` but don't push it or deploy it.
+* Run `python consumer_rabbitmq.py` in terminal.
+* To deploy it again undu the previous steps and then push to GitHub and deploy to Azure Cluster.
 
 ## Deployment: GitHub Actions Secret Keys
 
