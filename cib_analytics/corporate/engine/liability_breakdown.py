@@ -5,13 +5,12 @@ def borrowing_com_per(cib_list):
         name = []
         for cib_data in cib_list:
             if cib_data.subject_info['Type of subject'].lower() == 'individual':
-                name.append(cib_data.subject_info['Title, Name'])
+                name.append(str(cib_data.subject_info['Title, Name']))
             else:
-                name.append(cib_data.subject_info['Trade Name'])
+                name.append(str(cib_data.subject_info['Trade Name']))
         return name
     except:
         return []
-
 
 def a_overdraft(cib_list):
     try:
@@ -48,7 +47,6 @@ def a_overdue(cib_list):
         return total_overdue
     except:
         return []
-            
 
 def b_time_loan(cib_list):
     try:
@@ -60,11 +58,10 @@ def b_time_loan(cib_list):
                     if not isStayOrder(fac) and is_living(fac) is True:
                         if ('time loan' in fac['Ref']['Facility'].lower()):
                             amount += 1
-            total_loan.append(amount)
+            total_loan.append(str(amount))
         return total_loan
     except:
-        return []
-                                   
+        return []                                 
 
 def b_overdue(cib_list):
     try:
@@ -76,10 +73,11 @@ def b_overdue(cib_list):
                     if not isStayOrder(fac) and is_living(fac) is True:
                         if ('time loan' in fac['Ref']['Facility'].lower()):
                             amount += 1
-            total_overdue.append(amount)
+            total_overdue.append(str(amount))
         return total_overdue 
     except:
         return []
+    
 def c_ltr(cib_list):
     try:
         total_loan = []
@@ -90,10 +88,11 @@ def c_ltr(cib_list):
                     if not isStayOrder(fac) and is_living(fac) is True:
                         if ('ltr' in fac['Ref']['Facility'].lower()):
                             amount += 1
-            total_loan.append(amount)
+            total_loan.append(str(amount))
         return total_loan
     except:
         return []
+    
 def c_overdue(cib_list):
     try:
         total_overdue = []
@@ -104,10 +103,11 @@ def c_overdue(cib_list):
                     if not isStayOrder(fac) and is_living(fac) is True:
                         if ('ltr' in fac['Ref']['Facility'].lower()):
                             amount += 1
-            total_overdue.append(amount)
+            total_overdue.append(str(amount))
         return total_overdue
     except:
         return []
+    
 def d_other_non_installment(cib_list):
     try:
         total_no_loan = []
@@ -122,6 +122,7 @@ def d_other_non_installment(cib_list):
         return total_no_loan
     except: 
         return []
+    
 def d_overdue(cib_list):
     try:
         total_overdue = []

@@ -6,46 +6,38 @@ from ...general_helpers import is_living, isNonFunded, isStayOrder
 def get_class_from_set(classes : set):
     for classification in ('BLW', 'BL', 'DF', 'SS', 'SMA', 'UC', "STD"):
         if classification in classes:
-            return classification
-    return None
+            return str(classification)
+    return "None"
 
 def get_worst_status(facility : dict):
     if not isStayOrder(facility):
         return get_class_from_set(set(facility["Contract History"].Status))
-
-    return None
+    return "None"
 
 def get_concern_name(cibs):
     try: 
         name = []
         for cib in cibs:
             if 'Trade Name' in cib.subject_info.keys():
-                name.append(cib.subject_info['Trade Name'])
+                name.append(str(cib.subject_info['Trade Name']))
             else:
-                name.append(cib.subject_info['Title, Name'])
+                name.append(str(cib.subject_info['Title, Name']))
         return name
     except:
         return []
 
 
 def get_outs_fund_ins(cibs):
-    
     try:
-    
         installment_list = []
-
         for cib in cibs:
             installment = 0
             if type(cib.installment_facility) == list:
-                        
                 for facility in cib.installment_facility:
-
                     if is_living(facility) == True:
-
                         if isNonFunded(facility) is False:  
-
                             installment += (facility["Contract History"]["Outstanding"][0])
-            installment_list.append(installment)
+            installment_list.append(float(installment))
         return installment_list
     except:
          return []
@@ -53,27 +45,20 @@ def get_outs_fund_ins(cibs):
 def get_outs_fund_non_ins(cibs):
     try:
         non_installment_list = []
-    
         for cib in cibs:
             non_installment = 0
-
             if type(cib.noninstallment_facility ) == list:
-                        
                 for facility in cib.noninstallment_facility:
-
                     if is_living(facility) == True:
-
                         if isNonFunded(facility) == False:  
-
                             non_installment += (facility["Contract History"]["Outstand"][0])
-            non_installment_list.append(non_installment)
+            non_installment_list.append(float(non_installment))
         return non_installment_list
     except:
          return []
      
 def get_total_fund_out(cibs):
     try:
-      
         fund_ins_outs = get_outs_fund_ins(cibs)
         fund_non_ins_outs = get_outs_fund_non_ins(cibs)  
         return [sum(n) for n in zip_longest(fund_ins_outs, fund_non_ins_outs, fillvalue=0)]
@@ -117,7 +102,7 @@ def get_overdue(cibs):
                         if (fac['Ref']['Phase']) == 'Living':
                             if isNonFunded(fac):  
                                 overdue += ((fac["Contract History"]).sort_values("Date", ascending=False).Overdue[0])
-            list_overdue.append( overdue)
+            list_overdue.append(float(overdue))
         return list_overdue 
     except:
         return []
@@ -137,14 +122,11 @@ def current_status(cib):
     summary_1B: 'Stay order_No.'
     summary_1A: 'Stay Order_No.'->BLW_No.'->'BL_No.'->'DF_No.'->'SS_No.'->'SMA_No.'
     '''
-
     if cib.summary_1B['Stay order_No.'].sum() > 0 or cib.summary_2B['Stay order_No.'].sum() > 0:
         return "Stay Order"
-
     for column in ('Stay Order_No.', 'BLW_No.', 'BL_No.', 'DF_No.', 'SS_No.', 'SMA_No.'):
         if cib.summary_1A[column].sum() > 0 or cib.summary_2A[column].sum() > 0:
             return column.replace('_No.', '')
-
     return cib.get_UC_or_STD() 
    
 def get_status(cibs):

@@ -5,19 +5,19 @@ def tot_fund_terminated_loan(facility):
     for fac in facility:
         if is_living(fac) is False and isNonFunded(fac) is False:
             no_ter_loan += 1   
-    return no_ter_loan
+    return float(no_ter_loan)
 
 def tot_nonfund_terminated_loan(facility):
     no_ter_loan  = 0
     for fac in facility:
         if is_living(fac) is False and isNonFunded(fac) is True:
             no_ter_loan += 1
-    return no_ter_loan
+    return float(no_ter_loan)
 
 def get_class_from_set(classes : set):
     for classification in ('BLW', 'BL', 'DF', 'SS', 'SMA', 'UC', "STD"):
         if classification in classes:
-            return classification
+            return str(classification)
     return "None"
 
 def get_worst_status(facility : dict):
@@ -30,7 +30,7 @@ def funded_ins_limit(cibs):
         for cib in cibs:
             if type(cib.installment_facility) == list:
                 for fac in cib.installment_facility:                    
-                    if is_living(fac) == False and isNonFunded(fac) != True:                            
+                    if is_living(fac) == False and isNonFunded(fac) != True:
                         installment.append(str(fac['Ref']['Sanction Limit']))
         return installment
     except Exception as exc:
@@ -156,7 +156,7 @@ def term_total_funded_loan(cibs):
                 terminated_loan += (tot_fund_terminated_loan(cib.installment_facility))                
             if type(cib.noninstallment_facility) == list:                
                 terminated_loan += (tot_fund_terminated_loan(cib.noninstallment_facility))  
-        return terminated_loan 
+        return float(terminated_loan) 
     except Exception as exc:
         print("term_total_funded_loan: ",exc)
         return "None"
@@ -169,7 +169,7 @@ def term_total_nonfunded_loan(cibs):
                 terminated_loan += (tot_nonfund_terminated_loan(cib.installment_facility))
             if type(cib.noninstallment_facility) == list:    
                 terminated_loan += (tot_nonfund_terminated_loan(cib.noninstallment_facility))
-        return terminated_loan
+        return str(terminated_loan)
     except Exception as exc:
         print("term_total_nonfunded_loan: ",exc)
         return "None" 
