@@ -91,7 +91,7 @@ def summary_of_reschedule_loan(cibs):
         return response
     
     except Exception as exc:
-        print("Error on CIB summary of Reschedule Loan Table")
+        print("Error on summary_of_reschedule_loan")
         print(exc)
         return []
     
@@ -105,7 +105,7 @@ def summary_of_stay_order(cibs):
         return response
     
     except Exception as exc:
-        print("Error on CIB summary of Stay order Table")
+        print("Error on summary_of_stay_order")
         print(exc)
         return []
     
@@ -121,7 +121,7 @@ def summary_of_expired_but_showing_live(cib_list):
         }
         return response
     except Exception as exc:
-        print("Error on CIB summary of expired but showing live Table")
+        print("Error on summary_of_expired_but_showing_live")
         print(exc)
         return []
     
@@ -151,7 +151,7 @@ def summary_of_funded_terminated_loan(cib_list):
             })
         return response
     except Exception as exc:
-        print("Error on CIB summary of terminated loan table")
+        print("Error on summary_of_funded_terminated_loan")
         print(exc)
         return []
     
@@ -171,7 +171,7 @@ def summary_of_nonfunded_terminated_loan(cib_list):
             })
         return response
     except Exception as exc:
-        print("Error on CIB summary of terminated loan table")
+        print("Error on CIB summary of non funded terminated loan table")
         print(exc)
         return []
     
@@ -188,7 +188,7 @@ def summary_of_requested_loan(cib_list):
         }
         return response
     except Exception as exc:
-        print("Error on CIB summary of facility Table")
+        print("Error on summary of requested loan")
         print(exc)
         return []
     
