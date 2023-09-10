@@ -1,14 +1,15 @@
 import pandas as pd
+
 def isStayOrder(fac):
     if type(fac['Contract History']) == dict and 'Stay Order' in fac['Contract History'].keys():
         return True
     else: 
         return False
+    
 def get_title_trade_name(cib):
     if 'Trade Name' in cib.subject_info.keys():
-        return cib.subject_info['Trade Name']
-
-    return cib.subject_info['Title, Name']
+        return str(cib.subject_info['Trade Name'])
+    return str(cib.subject_info['Title, Name'])
 
 
 def isNonFunded(fac):
@@ -22,25 +23,23 @@ def isNonFunded(fac):
         'letter of credit' in fac["Ref"]["Facility"].lower() or
         'guarantee' in fac["Ref"]["Facility"].lower() or
         'other indirect facility' in fac["Ref"]["Facility"].lower() ):
-
         return True
-
     return False
-def fac_name(fac):
 
+def fac_name(fac):
     if isNonFunded(fac) == True:
-        return ('Non funded')
+        return 'Non funded'
     else: 
-        return ('Funded')
+        return 'Funded'
     
 def remarks(fac):
     if fac['Ref']['Remarks'] is not None:
-        return fac['Ref']['Remarks']
+        return str(fac['Ref']['Remarks'])
     else: 
-        return ('--')
+        return ('-')
     
 def Stayorder_amount(fac):
-    return fac['Ref']['Security Amount']
+    return str(fac['Ref']['Security Amount'])
 
 def stay_order_borrower(cib_list:list):
     '''
