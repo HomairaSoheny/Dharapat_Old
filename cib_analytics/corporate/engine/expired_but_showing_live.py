@@ -23,7 +23,7 @@ def start_date(fac):
     if date is not None:
         return date
     else:
-        return None
+        return "None"
 
 def get_status(fac : dict):
     try:
