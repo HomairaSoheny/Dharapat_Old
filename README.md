@@ -9,6 +9,7 @@ cib_path = '...'
 with open(cib_path) as f:
 	cib_data = cib_class(json.load(f))
 	cib_data.perform_sanity_check()
+```
 
 ## Map of CIB data class variables
 
