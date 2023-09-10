@@ -1,12 +1,13 @@
 import pandas as pd
+
 def requested_loan(cibs):
 
     req_loan = {
         "Type of Contract": ['Credit card'],
-        "Facility": [None],
-        "Role": [None],
-        "Total Requested Amount": [None],
-        "Request date": [None]}
+        "Facility": ["None"],
+        "Role": ["None"],
+        "Total Requested Amount": ["None"],
+        "Request date": ["None"]}
 
     req_loan = pd.DataFrame(req_loan)
     columns_to_keep =["Type of Contract","Facility","Role", "Total Requested Amount", "Request date"]
