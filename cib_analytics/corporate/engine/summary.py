@@ -102,42 +102,60 @@ def get_std(cib):
 
 def get_sma(cib):
     try:
-        return cib.summary_1A["SMA_Amount"].tolist()[:3] + cib.summary_2A["SMA_Amount"].tolist()[:3]
+        response = []
+        for i in cib.summary_1A["SMA_Amount"].tolist()[:3] + cib.summary_2A["SMA_Amount"].tolist()[:3]:
+            response.append(str(i))
+        return response
     except:
         return []
 
 def get_ss(cib):
     try:
-        return cib.summary_1A["SS_Amount"].tolist()[:3] + cib.summary_2A["SS_Amount"].tolist()[:3]
+        response = []
+        for i in cib.summary_1A["SS_Amount"].tolist()[:3] + cib.summary_2A["SS_Amount"].tolist()[:3]:
+            response.append(str(i))
+        return response
     except:
         return []
 
 def get_df(cib):
     try:
-        return cib.summary_1A["DF_Amount"].tolist()[:3] + cib.summary_2A["DF_Amount"].tolist()[:3]
+        response = []
+        for i in cib.summary_1A["DF_Amount"].tolist()[:3] + cib.summary_2A["DF_Amount"].tolist()[:3]:
+            response.append(str(i))
+        return response
     except:
         return []
     
 def get_bl(cib):
     try:
-        return cib.summary_1A["BL_Amount"].tolist()[:3] + cib.summary_2A["BL_Amount"].tolist()[:3]
+        response =[]
+        for i in cib.summary_1A["BL_Amount"].tolist()[:3] + cib.summary_2A["BL_Amount"].tolist()[:3]:
+            response.append(str(i))
+        return response
     except:
         return []
 
 def get_blw(cib):
     try:
-        return cib.summary_1A["BLW_Amount"].tolist()[:3] + cib.summary_2A["BLW_Amount"].tolist()[:3]
+        response = []
+        for i in cib.summary_1A["BLW_Amount"].tolist()[:3] + cib.summary_2A["BLW_Amount"].tolist()[:3]:
+            response.append(str(i))
+        return response
     except:
         return []
 
 def get_stay_order(cib):
     try:
-        return cib.summary_1A["Stay Order_Amount"].tolist()[:3] + cib.summary_2A["Stay Order_Amount"].tolist()[:3]
+        response = []
+        for i in cib.summary_1A["Stay Order_Amount"].tolist()[:3] + cib.summary_2A["Stay Order_Amount"].tolist()[:3]:
+            response.append(str(i))
+        return response
     except:
         return []
 
 def get_remarks(cib):
     try:
-        return cib.subject_info["Remarks"]
+        return str(cib.subject_info["Remarks"])
     except:
         return []
