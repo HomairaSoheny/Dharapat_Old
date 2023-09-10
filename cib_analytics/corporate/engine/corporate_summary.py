@@ -37,7 +37,7 @@ def get_outs_fund_ins(cibs):
                     if is_living(facility) == True:
                         if isNonFunded(facility) is False:  
                             installment += (facility["Contract History"]["Outstanding"][0])
-            installment_list.append(str(installment))
+            installment_list.append(float(installment))
         return installment_list
     except:
          return []
@@ -52,7 +52,7 @@ def get_outs_fund_non_ins(cibs):
                     if is_living(facility) == True:
                         if isNonFunded(facility) == False:  
                             non_installment += (facility["Contract History"]["Outstand"][0])
-            non_installment_list.append(str(non_installment))
+            non_installment_list.append(float(non_installment))
         return non_installment_list
     except:
          return []
@@ -102,7 +102,7 @@ def get_overdue(cibs):
                         if (fac['Ref']['Phase']) == 'Living':
                             if isNonFunded(fac):  
                                 overdue += ((fac["Contract History"]).sort_values("Date", ascending=False).Overdue[0])
-            list_overdue.append(str(overdue))
+            list_overdue.append(float(overdue))
         return list_overdue 
     except:
         return []
