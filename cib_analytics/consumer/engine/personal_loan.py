@@ -65,7 +65,7 @@ def app_business(cibs):
         '''
         list_buisness = []
         if cibs.company_list is None:
-            return None
+            return []
         else:
             list_buisness = (cibs.company_list['CIB subject code']).unique()
             return list_buisness

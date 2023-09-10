@@ -48,7 +48,6 @@ def get_outs_fund_ins(cibs):
             installment_list.append(installment)
         return installment_list
     except:
-
          return []
     
 def get_outs_fund_non_ins(cibs):
@@ -70,43 +69,32 @@ def get_outs_fund_non_ins(cibs):
             non_installment_list.append(non_installment)
         return non_installment_list
     except:
-
          return []
+     
 def get_total_fund_out(cibs):
     try:
       
         fund_ins_outs = get_outs_fund_ins(cibs)
-        fund_non_ins_outs = get_outs_fund_non_ins(cibs)
-       
+        fund_non_ins_outs = get_outs_fund_non_ins(cibs)  
         return [sum(n) for n in zip_longest(fund_ins_outs, fund_non_ins_outs, fillvalue=0)]
-        
-        
     except:
-
          return []
+     
 def get_outs_non_fund(cibs):
     try:
-    
         non_fund_list = []
-
         for cib in cibs:
             non_fund = 0
-            
             if type(cib.noninstallment_facility ) == list:
-                        
                 for facility in cib.noninstallment_facility:
-
                     if is_living(facility) == True:
-
                         if isNonFunded(facility):  
-
                             non_fund += (facility["Contract History"]["Outstand"][0])
-                                
             non_fund_list.append(non_fund)
         return non_fund_list
-
     except:
         return []
+    
 def get_outs_total(cibs):
     try:
         fund  = get_total_fund_out(cibs)
@@ -114,25 +102,21 @@ def get_outs_total(cibs):
         total_outs = []
         for i in range(len(fund)):
             total_outs.append(fund[i]+non_fund[i])
-
         return [sum(n) for n in zip_longest(fund,non_fund, fillvalue=0)]
     except:
         return []
+    
 def get_overdue(cibs):
     try:
         list_overdue = []
-
         for cib in cibs:
-            
             overdue = 0
-        
             for fac_type in (cib.installment_facility,cib.noninstallment_facility,cib.credit_card_facility):
                 if fac_type is not None:
                     for fac in fac_type:
                         if (fac['Ref']['Phase']) == 'Living':
                             if isNonFunded(fac):  
                                 overdue += ((fac["Contract History"]).sort_values("Date", ascending=False).Overdue[0])
-            
             list_overdue.append( overdue)
         return list_overdue 
     except:
@@ -146,6 +130,7 @@ def get_UC_or_STD(self):
             return "UC"
         else:
             return "STD"
+        
 def current_status(cib):
     '''
     Sequence of checking *must* be:
@@ -160,7 +145,8 @@ def current_status(cib):
         if cib.summary_1A[column].sum() > 0 or cib.summary_2A[column].sum() > 0:
             return column.replace('_No.', '')
 
-    return cib.get_UC_or_STD()    
+    return cib.get_UC_or_STD() 
+   
 def get_status(cibs):
     try: 
         status_list = []

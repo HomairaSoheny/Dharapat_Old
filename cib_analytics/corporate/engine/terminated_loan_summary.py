@@ -18,7 +18,7 @@ def get_class_from_set(classes : set):
     for classification in ('BLW', 'BL', 'DF', 'SS', 'SMA', 'UC', "STD"):
         if classification in classes:
             return classification
-    return None
+    return "None"
 
 def get_worst_status(facility : dict):
     return get_class_from_set(set(facility["Contract History"].Status.tolist()))
@@ -159,7 +159,7 @@ def term_total_funded_loan(cibs):
         return terminated_loan 
     except Exception as exc:
         print("term_total_funded_loan: ",exc)
-        return None
+        return "None"
     
 def term_total_nonfunded_loan(cibs):
     try: 
@@ -172,7 +172,7 @@ def term_total_nonfunded_loan(cibs):
         return terminated_loan
     except Exception as exc:
         print("term_total_nonfunded_loan: ",exc)
-        return None 
+        return "None" 
     
     
 def nonfunded_facility_name(cibs):     
@@ -227,7 +227,7 @@ def nonfunded_worse_cl_status(cibs):
     
     except Exception as exc:
         print("nonfunded_worse_cl_status: ",exc)
-        return None 
+        return "None" 
     
     
     
@@ -246,7 +246,7 @@ def nonfunded_date_of_class(cibs):
         return date
     except Exception as exc:
             print("nonfunded_date_of_class: ",exc)
-            return None
+            return "None"
     
 
 
