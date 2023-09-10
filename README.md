@@ -69,11 +69,12 @@ kubectl logs -f --selector app=cib-analyser-consumer -n cib-analyser-services
 
 ## Deployment: GitHub Actions Secret Keys
 
-* **AZURE_REGISTRY_2:** Azure Portal > Registry
-* **AZURE_REGISTRY_USERNAME_2:** Azure Portal > Cluster > Credential > Username
-* **AZURE_REGISTRY_PASSWORD_2:** Azure Portal > Cluster > Credential > Username
-* **AZURE_CLUSTER_NAME_2:** Azure Portal > Cluster Name
-* **AZURE_CREDENTIALS_2 :**
+* **AZURE_CLUSTER_NAME:** `https://portal.azure.com` > Cluster (Deployment Cluster) > Cluster Name
+* **AZURE_LOGIN_SERVER:** `https://portal.azure.com` > Container Registry > Access Keys > Login Server
+* **AZURE_REGISTRY_USERNAME:** `https://portal.azure.com` > Container Registry > Access Keys > Username
+* **AZURE_REGISTRY_PASSWORD:** `https://portal.azure.com` > Container Registry > Access Keys > Password
+* **AZURE_RESOURCE_GROUP:** `https://portal.azure.com` > Container Registry > Overview > Resource Group
+* **AZURE_CREDENTIALS :**
   Format:
 
   ```{
@@ -90,9 +91,7 @@ kubectl logs -f --selector app=cib-analyser-consumer -n cib-analyser-services
   	"managementEndpointUrl": "https://management.core.windows.net/"
   }
   ```
-  * **ClientID:** Azure Portal>App Registration>App>Client ID
-  * **ClientSecret:** Azure Portal>App Registration>App>Client credentials>Client Secrets
-  * **SubscriptionId:** Azure Portal>Container Registry> Container (Dharapat)> Subscription ID
-  * **TenantId:** Azure Portal>App Registration>App>Tenant ID
-* **AZURE_CLUSTER_TOKEN_2:** Azure Portal > Cluster > Cluster Token
-* **AZURE_CLUSTER_URL_2:** Azure Portal > Cluster > URL
+  * **ClientID:** `https://portal.azure.com` > App Registration > App > Client ID
+  * **ClientSecret:** `https://portal.azure.com`> App Registration > App > Client credentials > Client Secret
+  * **SubscriptionId:** `https://portal.azure.com`> Container Registry > Overview > Subscription ID
+  * **TenantId:** `https://portal.azure.com`> App Registration > App > Tenant ID
