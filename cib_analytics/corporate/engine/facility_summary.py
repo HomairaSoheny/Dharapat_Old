@@ -1,20 +1,20 @@
 import pandas as pd
 from ...general_helpers import is_living, isNonFunded, isStayOrder
     
-def get_status(fac : dict):
+def get_status(fac: dict):
     if not isStayOrder(fac):
-        return fac["Contract History"].Status[0]
+        return str(fac["Contract History"].Status[0])
     return "None" 
 
-def get_class_from_set(classes : set):
+def get_class_from_set(classes: set):
     for classification in ('BLW', 'BL', 'DF', 'SS', 'SMA', 'UC', "STD"):
         if classification in classes:
-            return classification
+            return str(classification)
     return "None"
 
 def get_worst_status(fac: dict):
     if not isStayOrder(fac):
-        return get_class_from_set(set(fac["Contract History"].Status))
+        return str(get_class_from_set(set(fac["Contract History"].Status)))
     return "None"
 
 def start_date(fac):
@@ -30,7 +30,7 @@ def start_date(fac):
         date = 'Not present'
     else:
         date = fac['Ref']['Starting date']
-        date = (date.strftime("%d")+'-'+date.strftime("%b")+'-'+date.strftime("%y"))
+        date = str(date.strftime("%d")+'-'+date.strftime("%b")+'-'+date.strftime("%y"))
     return date
 
 def end_date(fac):
@@ -45,7 +45,7 @@ def end_date(fac):
         date = 'Not present'
     else:
         date = fac['Ref']['End date of contract']
-        date = (date.strftime("%d")+'-'+date.strftime("%b")+'-'+date.strftime("%y"))
+        date = str(date.strftime("%d")+'-'+date.strftime("%b")+'-'+date.strftime("%y"))
     return date
 
 
@@ -61,7 +61,7 @@ def last_pay_date(fac):
     else:
         date = fac['Ref']['Date of last payment']
         date = (date.strftime("%d")+'-'+date.strftime("%b")+'-'+date.strftime("%y"))
-    return date
+    return str(date)
 
 def get_NPI(fac : dict):
     '''
@@ -71,7 +71,7 @@ def get_NPI(fac : dict):
     
     '''
     if not isStayOrder(fac):
-        return fac["Contract History"].NPI[0]
+        return str(fac["Contract History"].NPI[0])
     return "None"
 
 def funded_ins(fac):
@@ -83,7 +83,7 @@ def funded_ins(fac):
     
     """
     if not isStayOrder(fac):
-        return fac['Ref']['Sanction Limit']
+        return str(fac['Ref']['Sanction Limit'])
     return "None"    
 
 def funded_non_ins(fac):
@@ -94,13 +94,12 @@ def funded_non_ins(fac):
             for Non-Installment facilities with Stay Order (No contract history), returns <None>
         
     """
-      
     if not isStayOrder(fac):
-        return fac["Contract History"].SancLmt.values[0]
+        return str(fac["Contract History"].SancLmt.values[0])
     return "None"
 
 def facility_name(fac):                    
-    return fac['Ref']['Facility']
+    return str(fac['Ref']['Facility'])
 
 def get_outstanding(fac):
     """
@@ -111,55 +110,50 @@ def get_outstanding(fac):
     """
     if not isStayOrder(fac):
         if "Outstand" in fac["Contract History"].columns:
-            return fac["Contract History"].Outstand[0]
-
-        return fac["Contract History"].Outstanding[0]
-
+            return str(fac["Contract History"].Outstand[0])
+        return str(fac["Contract History"].Outstanding[0])
     return "None"
 
 def funded_ins_overdue(fac):
     if not isStayOrder(fac):
-        return fac['Contract History']['Overdue'][0]
+        return str(fac['Contract History']['Overdue'][0])
     return "None"
 
 def funded_non_ins_overdue(fac):
     if not isStayOrder(fac):
-        return fac['Contract History'].sort_values('Date', ascending=False).Overdue [0]
+        return str(fac['Contract History'].sort_values('Date', ascending=False).Overdue[0])
     return "None"
-
-
                         
 def funded_ins_amount(fac):
-    return fac['Ref']['Installment Amount']
+    return str(fac['Ref']['Installment Amount'])
                             
 def funded_pay_period(fac):
-    return fac['Ref']['Payments periodicity']
+    return str(fac['Ref']['Payments periodicity'])
 
 def no_installment(fac):
-    return fac['Ref']['Total number of installments']
+    return str(fac['Ref']['Total number of installments'])
                             
 
 def no_installment_paid(fac):
-    paid_ins = (fac['Ref']['Total number of installments']) - (fac['Ref']['Remaining installments Number'])                        
-    return paid_ins
+    return str(fac['Ref']['Total number of installments']) - (fac['Ref']['Remaining installments Number'])                        
 
 def remaining_ins(fac):
-    return fac['Ref']['Remaining installments Number']
+    return str(fac['Ref']['Remaining installments Number'])
 
 def pay_period(fac): 
-    return fac['Ref']['Payments periodicity']
+    return str(fac['Ref']['Payments periodicity'])
                         
 def reorganized_credit(fac):
-    return fac['Ref']['Reorganized credit']
+    return str(fac['Ref']['Reorganized credit'])
      
 def default(fac):
     if isStayOrder(fac):
         return "None"
-    return fac['Contract History'].Default[0]
+    return str(fac['Contract History'].Default[0])
 
 def get_remarks(fac: dict):
     if fac['Ref']['Remarks'] is not "None":
-        return fac['Ref']['Remarks']
+        return str(fac['Ref']['Remarks'])
     return "None"
 
 def funded_ins_borrow(cib_list:list):
