@@ -21,13 +21,13 @@ def requested_loan(cibs):
     requested_loan_res = requested_loan_res.sort_values("Type of Contract")
     requested_loan_res = requested_loan_res.reset_index(drop=True)
     
-    response = {
-        "Type of Contract": requested_loan_res["Type of Contract"].to_list(),
-        "Facility": requested_loan_res["Facility"].to_list(),
-        "Role": requested_loan_res["Role"].to_list(),
-        "Total Requested Amount": requested_loan_res["Total Requested Amount"].to_list(),
-        "Request date": requested_loan_res["Request date"].to_list()
-    }
+    # response = {
+    #     "Type of Contract": requested_loan_res["Type of Contract"].to_list(),
+    #     "Facility": requested_loan_res["Facility"].to_list(),
+    #     "Role": requested_loan_res["Role"].to_list(),
+    #     "Total Requested Amount": requested_loan_res["Total Requested Amount"].to_list(),
+    #     "Request date": requested_loan_res["Request date"].to_list()
+    # }
 
-    return response
+    return requested_loan_res
 
