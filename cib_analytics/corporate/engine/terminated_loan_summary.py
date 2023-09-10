@@ -5,14 +5,14 @@ def tot_fund_terminated_loan(facility):
     for fac in facility:
         if is_living(fac) is False and isNonFunded(fac) is False:
             no_ter_loan += 1   
-    return str(no_ter_loan)
+    return float(no_ter_loan)
 
 def tot_nonfund_terminated_loan(facility):
     no_ter_loan  = 0
     for fac in facility:
         if is_living(fac) is False and isNonFunded(fac) is True:
             no_ter_loan += 1
-    return str(no_ter_loan)
+    return float(no_ter_loan)
 
 def get_class_from_set(classes : set):
     for classification in ('BLW', 'BL', 'DF', 'SS', 'SMA', 'UC', "STD"):
@@ -156,7 +156,7 @@ def term_total_funded_loan(cibs):
                 terminated_loan += (tot_fund_terminated_loan(cib.installment_facility))                
             if type(cib.noninstallment_facility) == list:                
                 terminated_loan += (tot_fund_terminated_loan(cib.noninstallment_facility))  
-        return str(terminated_loan) 
+        return float(terminated_loan) 
     except Exception as exc:
         print("term_total_funded_loan: ",exc)
         return "None"
