@@ -1,6 +1,9 @@
 # Dharapat PBL CIB Analyzer Analytics
 
+**[Development Server URL](https://dharapat-cib-prime-bank.web.app/login)**
+
 ## How to Load an Instance of the CIB Data Class
+
 ```
 import json
 from cib_data_class import cib_class
@@ -13,26 +16,25 @@ with open(cib_path) as f:
 
 ## Map of CIB data class variables
 
-|Field Name in CIB Report|Variable Name|Return Type|
-|---|---|---|
-|Credit Information Bureau - Bangladesh Bank|cib_header|<class 'pandas.core.frame.DataFrame'>|
-|INQUIRED|inquired|<class 'dict'>|
-|SUBJECT INFORMATION|subject_info|<class 'dict'>|
-|ADDRESS|address|<class 'pandas.core.frame.DataFrame'>|
-|OWNERS LIST|owners_list|<class 'pandas.core.frame.DataFrame'>|
-|COMPANY(S) LIST|company_list|<class 'pandas.core.frame.DataFrame'>|
-|LINKED PROPRIETORSHIP(S) LIST|linked_prop_list|<class 'list'>|
-|1. SUMMARY OF FACILITY(S) AS BORROWER & CO-BORROWER|summary_1|<class 'dict'>|
-|1.(A) SUMMARY OF THE FUNDED FACILITIES AS BORROWER & CO-BORROWER|summary_1A|<class 'pandas.core.frame.DataFrame'>|
-|1.(B) SUMMARY OF THE NON-FUNDED FACILITIES AS BORROWER & CO-BORROWER|summary_1B|<class 'pandas.core.frame.DataFrame'>|
-|2. SUMMARY OF FACILITY(S) AS GUARANTOR|summary_2|<class 'dict'>|
-|2.(A) SUMMARY OF THE FUNDED FACILITIES AS GUARANTOR|summary_2A|<class 'pandas.core.frame.DataFrame'>|
-|2.(B) SUMMARY OF THE NON-FUNDED FACILITIES AS GUARANTOR|summary_2B|<class 'pandas.core.frame.DataFrame'>|
-|REQUESTED CONTRACT DETAILS|req_contracts|<class 'pandas.core.frame.DataFrame'>|
-|DETAILS OF INSTALLMENT FACILITY(S)|installment_facility|<class 'list'>|
-|DETAILS OF CREDIT CARD FACILITY(S)|credit_card_facility|<class 'list'>|
-|DETAILS OF NONINSTALLMENT FACILITY(S)|noninstallment_facility|<class 'list'>|
-
+| Field Name in CIB Report                                             | Variable Name           | Return Type                           |
+| -------------------------------------------------------------------- | ----------------------- | ------------------------------------- |
+| Credit Information Bureau - Bangladesh Bank                          | cib_header              | <class 'pandas.core.frame.DataFrame'> |
+| INQUIRED                                                             | inquired                | <class 'dict'>                        |
+| SUBJECT INFORMATION                                                  | subject_info            | <class 'dict'>                        |
+| ADDRESS                                                              | address                 | <class 'pandas.core.frame.DataFrame'> |
+| OWNERS LIST                                                          | owners_list             | <class 'pandas.core.frame.DataFrame'> |
+| COMPANY(S) LIST                                                      | company_list            | <class 'pandas.core.frame.DataFrame'> |
+| LINKED PROPRIETORSHIP(S) LIST                                        | linked_prop_list        | <class 'list'>                        |
+| 1. SUMMARY OF FACILITY(S) AS BORROWER & CO-BORROWER                  | summary_1               | <class 'dict'>                        |
+| 1.(A) SUMMARY OF THE FUNDED FACILITIES AS BORROWER & CO-BORROWER     | summary_1A              | <class 'pandas.core.frame.DataFrame'> |
+| 1.(B) SUMMARY OF THE NON-FUNDED FACILITIES AS BORROWER & CO-BORROWER | summary_1B              | <class 'pandas.core.frame.DataFrame'> |
+| 2. SUMMARY OF FACILITY(S) AS GUARANTOR                               | summary_2               | <class 'dict'>                        |
+| 2.(A) SUMMARY OF THE FUNDED FACILITIES AS GUARANTOR                  | summary_2A              | <class 'pandas.core.frame.DataFrame'> |
+| 2.(B) SUMMARY OF THE NON-FUNDED FACILITIES AS GUARANTOR              | summary_2B              | <class 'pandas.core.frame.DataFrame'> |
+| REQUESTED CONTRACT DETAILS                                           | req_contracts           | <class 'pandas.core.frame.DataFrame'> |
+| DETAILS OF INSTALLMENT FACILITY(S)                                   | installment_facility    | <class 'list'>                        |
+| DETAILS OF CREDIT CARD FACILITY(S)                                   | credit_card_facility    | <class 'list'>                        |
+| DETAILS OF NONINSTALLMENT FACILITY(S)                                | noninstallment_facility | <class 'list'>                        |
 
 ## Creating Production/UAT Image:
 
