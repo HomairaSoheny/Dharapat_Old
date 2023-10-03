@@ -77,8 +77,27 @@ def get_personal_loan_table(cib):
         print(exc)
         return []
 
+def get_cib_owner_info(cib):
+    try:
+        cib_report_of = cib.subject_info['Title, Name']
+    except:
+        cib_report_of = cib.subject_info['Title']
+    try:
+        nid = cib.subject_info["NID"]
+    except:
+        nid = "-"
+    current_status = "-"
+    return {
+        "CIB Report of": cib_report_of,
+        "NID Number": nid,
+        "Current Status": current_status
+    }
+    
 def get_consumer_dashboard(cib):
+    
     consumer_response = {
+        
+        "basic_info": get_cib_owner_info(cib),
         "credit_facilities_is_the_name_of_applicant_for_personal_loan_car_loan_home_loan": get_loan_table(cib),
         "credit_facilities_in_the_name_of_applicant_for_credit_card": get_credit_card_table(cib),
         "credit_facilities_in_the_name_of_applicants_business_for_personal_loan_car_loan_home_loan_credit_card": get_personal_loan_table(cib),
