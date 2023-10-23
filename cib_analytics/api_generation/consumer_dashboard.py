@@ -79,9 +79,16 @@ def get_personal_loan_table(cib):
 
 def get_cib_owner_info(cib):
     try:
-        cib_report_of = cib.subject_info['Title, Name']
+        for key in ['Title, Name', 'Title', 'Name']:
+            if key in cib.subject_info.keys():
+                cib_report_of = cib.subject_info[key]
+                break
+            else:
+                cib_report_of = "Couldn't read the name"
+                print(cib.subject_info.keys())
     except:
-        cib_report_of = cib.subject_info['Title']
+        cib_report_of = "Couldn't read the name"
+    
     try:
         nid = cib.subject_info["NID"]
     except:

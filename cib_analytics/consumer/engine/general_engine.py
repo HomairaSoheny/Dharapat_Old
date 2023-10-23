@@ -13,7 +13,11 @@ def borrowers_name(cibs)->list:
                     
                     if  (i["Ref"]['Role']) == 'Borrower':
                         if cibs.subject_info['Type of subject'].lower() == 'individual':
-                            title_ = cibs.subject_info['Title, Name']
+                            for key in ['Title, Name', 'Title', 'Name']:
+                                if key in cibs.subject_info.keys():
+                                    title_ = cibs.subject_info[key]
+                                else:
+                                    title_ = str(cibs.subject_info)
                         else: # Company cib
                             title_ = cibs.subject_info['Trade Name']
                         
