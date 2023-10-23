@@ -62,7 +62,14 @@ class cib_class:
             self.cib_id = "id"
             self.cib_category = str(np.random.choice(["Type a", "Type b", "Type c", "Type d", "Type e", "Type f", "Type g", "Type h", "Type i"]))
         
-        self.cib_header = parsing_helpers.parse_cib_header(self.cib_raw['Credit Information Bureau - Bangladesh Bank'])
+        try:
+            self.cib_header = parsing_helpers.parse_cib_header(
+                self.cib_raw['Credit Information Bureau - Bangladesh Bank']
+                )
+        except:
+            self.cib_header = parsing_helpers.parse_cib_header(
+                self.cib_raw['Credit Information Report']
+            )
         self.cib_header = type_converters.convert_cib_header(self.cib_header)
 
         self.inquired = parsing_helpers.handle_inquired(self.cib_raw['INQUIRED'])

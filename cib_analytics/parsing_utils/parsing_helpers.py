@@ -30,7 +30,16 @@ def handle_inquired(raw_list: list):
         k,v = raw_list[1][0].split(':')
         return {k:v}
     else:
-        return raw_to_dict(raw_list)
+        try:
+          return raw_to_dict(raw_list)
+        except:
+            response_dict = {}
+            for lst in raw_list:
+                for row in lst:
+                    if ":" in row:
+                        response_dict[row.split(":")[0]] = row.split(":")[1]
+            return response_dict
+                        
 
 def parse_address(raw_list:list):
     return pd.DataFrame(raw_list[2:], columns=raw_list[1])

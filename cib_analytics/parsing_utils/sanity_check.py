@@ -6,7 +6,10 @@ def sanity_check(cib_obj):
     assert len(cib_obj.inquired)  in (1,5,9,13), 'Expecting INQUIRED shape 1, 5, 9 or 13, got shape: '+str(len(cib_obj.inquired))
 
     #SUBJECT INFORMATION
-    assert len(cib_obj.subject_info)  in (10, 13, 20), 'Expecting SUBJECT INFORMATION shape 10, 13 or 20, got shape: '+str(len(cib_obj.subject_info))
+    try:
+        assert len(cib_obj.subject_info)  in (10, 13, 20), 'Expecting SUBJECT INFORMATION shape 10, 13 or 20, got shape: '+str(len(cib_obj.subject_info))
+    except:
+        assert len(cib_obj.subject_info)  in (10, 13, 21), 'Expecting SUBJECT INFORMATION shape 10, 13 or 20, got shape: '+str(len(cib_obj.subject_info))
 
     #ADDRESS
     assert cib_obj.address.shape[1]==5, 'Expecting 5 columns in ADDRESS, got shape: '+str(cib_obj.address.shape)
@@ -53,7 +56,7 @@ def sanity_check(cib_obj):
     #DETAILS OF INSTALLMENT FACILITY(S)
     if not type(cib_obj.installment_facility) == type(None):
         for i, fac in enumerate(cib_obj.installment_facility):
-            assert len(fac['Ref'])==30, 'Expecting 30 keys in INSTALLMENT FACILITY '+str(i)+', got shape: '+str(len(fac['Ref']))
+            assert len(fac['Ref']) in [30, 35], 'Expecting 30/35 keys in INSTALLMENT FACILITY '+str(i)+', got shape: '+str(len(fac['Ref']))
             if type(fac['Contract History']) == pd.DataFrame:
                 assert fac['Contract History'].shape[1]==6, 'Expecting 6 columns in INSTALLMENT FACILITY '+str(i)+' Contract History, got shape: '+str(fac['Contract History'].shape)
             else:
@@ -64,7 +67,7 @@ def sanity_check(cib_obj):
     #DETAILS OF NONINSTALLMENT FACILITY(S)
     if not type(cib_obj.noninstallment_facility) == type(None):
         for i, fac in enumerate(cib_obj.noninstallment_facility):
-            assert len(fac['Ref'])==23, 'Expecting 23 keys in NONINSTALLMENT FACILITY '+str(i)+', got shape: '+str(len(fac['Ref']))
+            assert len(fac['Ref']) in [23, 27], 'Expecting 23/27 keys in NONINSTALLMENT FACILITY '+str(i)+', got shape: '+str(len(fac['Ref']))
             if type(fac['Contract History']) == pd.DataFrame:
                 assert fac['Contract History'].shape[1]==6, 'Expecting 6 columns in NONINSTALLMENT FACILITY '+str(i)+' Contract History, got shape: '+str(fac['Contract History'].shape)
             else:
@@ -75,7 +78,7 @@ def sanity_check(cib_obj):
     #DETAILS OF DETAILS OF CREDIT CARD FACILITY(S)
     if not type(cib_obj.credit_card_facility) == type(None):
         for i, fac in enumerate(cib_obj.credit_card_facility):
-            assert len(fac['Ref'])==25, 'Expecting 25 keys in CREDIT CARD FACILITY '+str(i)+', got shape: '+str(len(fac['Ref']))
+            assert len(fac['Ref'])==25 or len(fac['Ref'])==30, 'Expecting 25 keys in CREDIT CARD FACILITY '+str(i)+', got shape: '+str(len(fac['Ref']))
             if type(fac['Contract History']) == pd.DataFrame:
                 assert fac['Contract History'].shape[1]==7, 'Expecting 7 columns in CREDIT CARD FACILITY '+str(i)+' Contract History, got shape: '+str(fac['Contract History'].shape)
             else:

@@ -9,13 +9,14 @@ import pandas as pd
 from datetime import datetime
 import copy
 from typing import Union
+import re
 
 def handle_date(date: str):
     if date == '-':
             return None
     else:
         if date != '':
-            return datetime.strptime(date, '%d/%m/%Y').date()
+            return datetime.strptime(re.sub("[^0-9/]", "", date), '%d/%m/%Y').date()
 
     #if value is '', keep as is
     return None
