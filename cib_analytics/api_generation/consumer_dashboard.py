@@ -85,12 +85,18 @@ def get_cib_owner_info(cib):
                 break
             else:
                 cib_report_of = "Couldn't read the name"
-                print(cib.subject_info.keys())
+                # print(cib.subject_info.keys())
     except:
         cib_report_of = "Couldn't read the name"
     
     try:
-        nid = cib.subject_info["NID"]
+        for key in ['NID', 'NID (10 Digit)', 'NID (17 Digit)']:
+            if key in cib.subject_info.keys():
+                nid = cib.subject_info[key]
+                break
+            else:
+                nid = "Couldn't read the NID"
+                # print(cib.subject_info.keys())
     except:
         nid = "-"
     current_status = "-"
