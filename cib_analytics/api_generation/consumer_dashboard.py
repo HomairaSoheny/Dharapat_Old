@@ -1,6 +1,7 @@
 from ..consumer.LoanClass import Loan
 from ..consumer.CreditCardClass import CreditCard
 from ..consumer.PersonalLoanClass import PersonalLoan
+from ..general_helpers import isStayOrder
 
 def get_loan_table(cib):
     try:
@@ -77,6 +78,18 @@ def get_personal_loan_table(cib):
         print(exc)
         return []
 
+def get_class_from_set(classes : set):
+    for classification in ('BLW', 'BL', 'DF', 'SS', 'SMA', 'UC', "STD"):
+        if classification in classes:
+            return classification
+    return None
+
+def get_worst_status(facility : dict):
+    if not isStayOrder(facility):
+        return get_class_from_set(set(facility["Contract History"].Status))
+    return None
+
+
 def get_cib_owner_info(cib):
     try:
         for key in ['Title, Name', 'Title', 'Name']:
@@ -99,7 +112,19 @@ def get_cib_owner_info(cib):
                 # print(cib.subject_info.keys())
     except:
         nid = "-"
-    current_status = "-"
+    try:
+        current_status = []
+        if cib.installment_facility != None:
+            current_status.append(get_worst_status(cib.installment_facility[-1]))
+        if cib.credit_card_facility != None:
+            current_status.append(get_worst_status(cib.credit_card_facility[-1]))
+        if cib.noninstallment_facility != None:
+            current_status.append(get_worst_status(cib.noninstallment_facility[-1]))
+        return get_class_from_set(set(current_status))
+    except:
+        current_status = "-"
+        
+        
     return {
         "CIB Report of": cib_report_of,
         "NID Number": nid,
