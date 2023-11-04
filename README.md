@@ -38,7 +38,7 @@ with open(cib_path) as f:
 
 ## Creating Production/UAT Image:
 
-* Change rabbitmq connection address from `consumer_rabbitmq.py`
+* Change rabbitmq connection address from `main.py`
 * Go to `build.sh` and change the image version.
 * Run `sh build.sh` in terminal.
 
@@ -64,9 +64,9 @@ kubectl logs -f --selector app=cib-analyser-consumer -n cib-analyser-services
 
 ## Running it locally:
 
-* Change rabbitmq connection address to blank from `consumer_rabbitmq.py` then push to GitHub and deploy in the Azure Cluster. It will turn the repository off from online.
-* Fix the rabbitmq connection address to blank from `consumer_rabbitmq.py` but don't push it or deploy it.
-* Run `python consumer_rabbitmq.py` in terminal.
+* Change rabbitmq connection address to blank from `main.py` then push to GitHub and deploy in the Azure Cluster. It will turn the repository off from online.
+* Fix the rabbitmq connection address to blank from `main.py` but don't push it or deploy it.
+* Run `python main.py` in terminal.
 * To deploy it again undu the previous steps and then push to GitHub and deploy to Azure Cluster.
 
 ## Deployment: GitHub Actions Secret Keys
