@@ -82,17 +82,20 @@ def get_class_from_set(classes : set):
     for classification in ('BLW', 'BL', 'DF', 'SS', 'SMA', 'UC', "STD"):
         if classification in classes:
             return classification
-    return None
+    return "None"
 
 def get_worst_status(facility : dict):
     if not isStayOrder(facility):
         return get_class_from_set(set(facility["Contract History"].Status))
-    return None
+    return "None"
 
 
 def get_cib_owner_info(cib):
+    cib_report_of = "None"
+    nid = "None"
+    current_status = "None"
     try:
-        for key in ['Title, Name', 'Title', 'Name']:
+        for key in ['Title, Name', 'Title', 'Name', 'name']:
             if key in cib.subject_info.keys():
                 cib_report_of = cib.subject_info[key]
                 break
@@ -112,6 +115,7 @@ def get_cib_owner_info(cib):
                 # print(cib.subject_info.keys())
     except:
         nid = "-"
+        
     try:
         current_status = []
         if cib.installment_facility != None:
@@ -120,7 +124,7 @@ def get_cib_owner_info(cib):
             current_status.append(get_worst_status(cib.credit_card_facility[-1]))
         if cib.noninstallment_facility != None:
             current_status.append(get_worst_status(cib.noninstallment_facility[-1]))
-        return get_class_from_set(set(current_status))
+        current_status = get_class_from_set(set(current_status))
     except:
         current_status = "-"
         
@@ -132,7 +136,6 @@ def get_cib_owner_info(cib):
     }
     
 def get_consumer_dashboard(cib):
-    
     consumer_response = {
         
         "basic_info": get_cib_owner_info(cib),
@@ -140,5 +143,8 @@ def get_consumer_dashboard(cib):
         "credit_facilities_in_the_name_of_applicant_for_credit_card": get_credit_card_table(cib),
         "credit_facilities_in_the_name_of_applicants_business_for_personal_loan_car_loan_home_loan_credit_card": get_personal_loan_table(cib),
     }
+    print("___________________________________________")
+    print(consumer_response["basic_info"])
+    print("___________________________________________")
     
     return consumer_response
