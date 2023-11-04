@@ -9,7 +9,7 @@ def get_loan_table(cib):
         response = []
         for i in range(len(loan_class.borrowers_name)):
             response.append({
-                    "FI Name": 'will be inputted manually',
+                    "FI Name": 'Prime Bank Limited',
                     "Borrower Name": str(loan_class.borrowers_name[i]),
                     "Applicants Role": str(loan_class.applicants_role[i]),
                     "Nature of Facility": str(loan_class.loan_investment_request[i]),
@@ -34,7 +34,7 @@ def get_credit_card_table(cib):
         response = []
         for i in range(len(credit_card_class.borrowers_name)):
             response.append({
-                    "FI Name": 'will be inputted manually',
+                    "FI Name": 'Prime Bank Limited',
                     "Borrower Name": str(credit_card_class.borrowers_name[i]),
                     "Applicants Role": str(credit_card_class.applicants_Role[i]),
                     "Nature of Facility": str(credit_card_class.facility_name[i]),
