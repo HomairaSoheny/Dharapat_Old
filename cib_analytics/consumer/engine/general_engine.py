@@ -13,14 +13,18 @@ def borrowers_name(cibs)->list:
                     
                     if  (i["Ref"]['Role']) == 'Borrower':
                         if cibs.subject_info['Type of subject'].lower() == 'individual':
-                            for key in ['Title, Name', 'Title', 'Name']:
+                            for key in ['Title, Name', 'Title', 'Name', 'Title, Name']:
                                 if key in cibs.subject_info.keys():
                                     title_ = cibs.subject_info[key]
                                 else:
-                                    title_ = str(cibs.subject_info)
+                                    try:
+                                        title_ = cibs.subject_info['Title, Name']
+                                    except:
+                                        print("___________________________________")
+                                        print(cibs.subject_info.keys())
+                                        print(cibs.subject_info['Title, Name'])
                         else: # Company cib
                             title_ = cibs.subject_info['Trade Name']
-                        
                         borrow_name.append(title_)
             
                     elif i['Other subjects linked to the same contract'] is not None:
@@ -28,7 +32,7 @@ def borrowers_name(cibs)->list:
                             if (i['Other subjects linked to the same contract'].iloc[j]["Role"]) == "Borrower":
                                 borrow_name.append(i['Other subjects linked to the same contract'].iloc[j]["Name"])
                     else:    
-                        borrow_name.append("Not given")            
+                        borrow_name.append("Not given")
     return borrow_name
 
 def get_applicants_role(cibs):
