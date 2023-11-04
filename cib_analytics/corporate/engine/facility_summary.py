@@ -1,21 +1,5 @@
 import pandas as pd
-from ...general_helpers import is_living, isNonFunded, isStayOrder
-    
-def get_status(fac: dict):
-    if not isStayOrder(fac):
-        return str(fac["Contract History"].Status[0])
-    return "None" 
-
-def get_class_from_set(classes: set):
-    for classification in ('BLW', 'BL', 'DF', 'SS', 'SMA', 'UC', "STD"):
-        if classification in classes:
-            return str(classification)
-    return "None"
-
-def get_worst_status(fac: dict):
-    if not isStayOrder(fac):
-        return str(get_class_from_set(set(fac["Contract History"].Status)))
-    return "None"
+from ...general_helpers import is_living, isNonFunded, isStayOrder, get_worst_status, get_status
 
 def start_date(fac):
     

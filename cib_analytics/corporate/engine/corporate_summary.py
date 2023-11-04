@@ -1,18 +1,5 @@
 from itertools import zip_longest
-from ...general_helpers import is_living, isNonFunded, isStayOrder
-
-
-
-def get_class_from_set(classes : set):
-    for classification in ('BLW', 'BL', 'DF', 'SS', 'SMA', 'UC', "STD"):
-        if classification in classes:
-            return str(classification)
-    return "None"
-
-def get_worst_status(facility : dict):
-    if not isStayOrder(facility):
-        return get_class_from_set(set(facility["Contract History"].Status))
-    return "None"
+from ...general_helpers import is_living, isNonFunded
 
 def get_concern_name(cibs):
     try: 
@@ -127,15 +114,4 @@ def current_status(cib):
     for column in ('Stay Order_No.', 'BLW_No.', 'BL_No.', 'DF_No.', 'SS_No.', 'SMA_No.'):
         if cib.summary_1A[column].sum() > 0 or cib.summary_2A[column].sum() > 0:
             return column.replace('_No.', '')
-    return cib.get_UC_or_STD() 
-   
-def get_status(cibs):
-    try: 
-        status_list = []
-        for cib in cibs:
-            status_list.append(current_status(cib))
-        return status_list
-    except:
-        return []
-
-
+    return cib.get_UC_or_STD()

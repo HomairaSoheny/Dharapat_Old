@@ -1,3 +1,19 @@
+def get_status(fac: dict):
+    if not isStayOrder(fac):
+        return str(fac["Contract History"].Status[0])
+    return "None" 
+
+def get_class_from_set(classes : set):
+    for classification in ('BLW', 'BL', 'DF', 'SS', 'SMA', 'UC', "STD"):
+        if classification in classes:
+            return classification
+    return "None"
+
+def get_worst_status(facility : dict):
+    if not isStayOrder(facility):
+        return get_class_from_set(set(facility["Contract History"].Status))
+    return "None"
+
 def is_living(facility):
     if facility["Ref"]["Phase"] == "Living":
         return True

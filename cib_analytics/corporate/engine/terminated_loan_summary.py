@@ -1,4 +1,4 @@
-from ...general_helpers import is_living, isNonFunded
+from ...general_helpers import is_living, isNonFunded, get_worst_status
     
 def tot_fund_terminated_loan(facility):
     no_ter_loan  = 0
@@ -13,16 +13,6 @@ def tot_nonfund_terminated_loan(facility):
         if is_living(fac) is False and isNonFunded(fac) is True:
             no_ter_loan += 1
     return float(no_ter_loan)
-
-def get_class_from_set(classes : set):
-    for classification in ('BLW', 'BL', 'DF', 'SS', 'SMA', 'UC', "STD"):
-        if classification in classes:
-            return str(classification)
-    return "None"
-
-def get_worst_status(facility : dict):
-    return get_class_from_set(set(facility["Contract History"].Status.tolist()))
-
 
 def funded_ins_limit(cibs):
     try:

@@ -1,69 +1,54 @@
 import pandas as pd
-from ...general_helpers import is_living, isNonFunded, isStayOrder
-    
+from ...general_helpers import is_living, isNonFunded, isStayOrder, get_worst_status, get_status
+
+
 def expired_live_loan_check(fac, date_of_inquiry):
-    if fac['Ref']['End date of contract'] is not None and ((fac['Ref']['End date of contract'])<(date_of_inquiry)):
+    if fac["Ref"]["End date of contract"] is not None and (
+        (fac["Ref"]["End date of contract"]) < (date_of_inquiry)
+    ):
         return True
     return False
 
+
 def start_date(fac):
-    
-    '''
+    """
     Helper function to extract starting date
-    
+
     Output : day-month-year
-    
-    '''
-    
-    if (fac['Ref']['Starting date']) is None:
-        date = 'Not present'
+
+    """
+
+    if (fac["Ref"]["Starting date"]) is None:
+        date = "Not present"
     else:
-        date = fac['Ref']['Starting date']
-        date = str(date.strftime("%d")+'-'+date.strftime("%b")+'-'+date.strftime("%y"))
+        date = fac["Ref"]["Starting date"]
+        date = str(
+            date.strftime("%d") + "-" + date.strftime("%b") + "-" + date.strftime("%y")
+        )
     if date is not None:
         return date
     else:
         return "None"
 
-def get_status(fac : dict):
-    try:
-        if not isStayOrder(fac):
-            return str(fac["Contract History"].Status[0])
-        return "None" 
-    except Exception as exc:
-        print(exc)
-        return "None"
-    
-def get_class_from_set(classes : set):
-    for classification in ('BLW', 'BL', 'DF', 'SS', 'SMA', 'UC', "STD"):
-        if classification in classes:
-            return str(classification)
-    return "None"
-    
-def get_worst_status(fac: dict):
-    try:
-        if not isStayOrder(fac):
-            return get_class_from_set(set(fac["Contract History"].Status))
-        return "None"
-    except Exception as exc:
-        print(exc)
-        return "None"
-    
-
 def end_date(fac):
-    
-    '''
+    """
     Helper function to extract starting date
-    
+
     Output : day-month-year
-    
-    '''
-    try: 
-        if (fac['Ref']['End date of contract']) is None:
-            date = 'Not present'
+
+    """
+    try:
+        if (fac["Ref"]["End date of contract"]) is None:
+            date = "Not present"
         else:
-            date = fac['Ref']['End date of contract']
-            date = str(date.strftime("%d")+'-'+date.strftime("%b")+'-'+date.strftime("%y"))
+            date = fac["Ref"]["End date of contract"]
+            date = str(
+                date.strftime("%d")
+                + "-"
+                + date.strftime("%b")
+                + "-"
+                + date.strftime("%y")
+            )
         if date is not None:
             return date
         else:
@@ -74,19 +59,24 @@ def end_date(fac):
 
 
 def last_pay_date(fac):
-    
-    '''
+    """
     Helper function to extract date of last payment
-    
+
     Output : day-month-year
-    
-    '''
+
+    """
     try:
-        if (fac['Ref']['Date of last payment']) is None:
-            date = 'Not present'
+        if (fac["Ref"]["Date of last payment"]) is None:
+            date = "Not present"
         else:
-            date = fac['Ref']['Date of last payment']
-            date = str(date.strftime("%d")+'-'+date.strftime("%b")+'-'+date.strftime("%y"))
+            date = fac["Ref"]["Date of last payment"]
+            date = str(
+                date.strftime("%d")
+                + "-"
+                + date.strftime("%b")
+                + "-"
+                + date.strftime("%y")
+            )
         if date is not None:
             return date
         else:
@@ -94,15 +84,16 @@ def last_pay_date(fac):
     except Exception as exc:
         print(exc)
         return "None"
-    
-def get_NPI(fac : dict):
-    '''
-    Return 
+
+
+def get_NPI(fac: dict):
+    """
+    Return
     ----------
     Npi from NPI column of installment facility
-    
-    '''
-    try: 
+
+    """
+    try:
         if not isStayOrder(fac):
             return str(fac["Contract History"].NPI[0])
         return "None"
@@ -111,32 +102,34 @@ def get_NPI(fac : dict):
         return "None"
 
     return False
+
+
 def funded_ins(fac):
     """
     returns
     -------
         Installment Facility : Latest value of "Sanction Limit" from "Contract History"
             for Installment facilities with Stay Order (No contract history), returns <None>
-    
+
     """
-    try: 
+    try:
         if not isStayOrder(fac):
-            return str(fac['Ref']['Sanction Limit'])
-        return "None"  
+            return str(fac["Ref"]["Sanction Limit"])
+        return "None"
     except Exception as exc:
         print(exc)
         return "None"
 
-    
+
 def funded_non_ins(fac):
     """
     returns
     -------
         Non-Installment Facility : Latest value of "SancLmt" from "Contract History"
             for Non-Installment facilities with Stay Order (No contract history), returns <None>
-        
+
     """
-    try:  
+    try:
         if not isStayOrder(fac):
             return str(fac["Contract History"].SancLmt.values[0])
         return "None"
@@ -145,19 +138,18 @@ def funded_non_ins(fac):
         return "None"
 
 
-def facility_name(fac):                    
+def facility_name(fac):
     try:
-        return str(fac['Ref']['Facility'])
+        return str(fac["Ref"]["Facility"])
     except Exception as exc:
         print(exc)
         return "None"
 
-    
 
 def get_outstanding(fac):
     """
     if not Stay Order
-        Installment Facility : latest Outstand value from Contract History 
+        Installment Facility : latest Outstand value from Contract History
         Non-Installment Facility : lastest Outstand value from Contract History
         Credit Card Facility : lastest Outstanding value from Contract History
     """
@@ -175,55 +167,63 @@ def get_outstanding(fac):
 def funded_ins_overdue(fac):
     try:
         if not isStayOrder(fac):
-            return str(fac['Contract History']['Overdue'][0])
+            return str(fac["Contract History"]["Overdue"][0])
         return "None"
     except Exception as exc:
         print(exc)
         return "None"
-    
+
 
 def funded_non_ins_overdue(fac):
     try:
         if not isStayOrder(fac):
-            return str(fac['Contract History'].sort_values('Date', ascending=False).Overdue[0])
+            return str(
+                fac["Contract History"].sort_values("Date", ascending=False).Overdue[0]
+            )
         return "None"
     except Exception as exc:
         print(exc)
         return "None"
 
 
-                        
 def funded_ins_amount(fac):
     try:
-        return str(fac['Ref']['Installment Amount'])
+        return str(fac["Ref"]["Installment Amount"])
     except Exception as exc:
         print(exc)
         return "None"
-                            
+
+
 def funded_pay_period(fac):
     try:
-        return str(fac['Ref']['Payments periodicity'])
+        return str(fac["Ref"]["Payments periodicity"])
     except Exception as exc:
         print(exc)
         return "None"
-                            
+
+
 def no_installment(fac):
     try:
-        return str(fac['Ref']['Total number of installments'])
+        return str(fac["Ref"]["Total number of installments"])
     except Exception as exc:
         print(exc)
-        return "None"             
+        return "None"
+
 
 def no_installment_paid(fac):
     try:
-        return str((fac['Ref']['Total number of installments']) - (fac['Ref']['Remaining installments Number']))
+        return str(
+            (fac["Ref"]["Total number of installments"])
+            - (fac["Ref"]["Remaining installments Number"])
+        )
     except Exception as exc:
         print(exc)
         return "None"
 
+
 def remaining_ins(fac):
     try:
-        return str(fac['Ref']['Remaining installments Number'])
+        return str(fac["Ref"]["Remaining installments Number"])
     except Exception as exc:
         print(exc)
         return "None"
@@ -231,56 +231,94 @@ def remaining_ins(fac):
 
 def pay_period(fac):
     try:
-        return str(fac['Ref']['Payments periodicity'])
+        return str(fac["Ref"]["Payments periodicity"])
     except Exception as exc:
         print(exc)
         return "None"
+
 
 def reorganized_credit(fac):
     try:
-        return str(fac['Ref']['Reorganized credit'])
-    except Exception as exc:
-        print(exc)
-        return "None"
-    
-def default(fac):
-    try: 
-        if isStayOrder(fac):
-            return "None"
-        return str(fac['Contract History'].Default[0])
-    except Exception as exc:
-        print(exc)
-        return "None"
-    
-def get_remarks(fac: dict):
-    try: 
-        if fac['Ref']['Remarks'] is not None:
-            return str(fac['Ref']['Remarks'])
-        return "None" 
+        return str(fac["Ref"]["Reorganized credit"])
     except Exception as exc:
         print(exc)
         return "None"
 
-def funded_nonins(cib_list:list):
-    '''
-    Summary of funded (non-installment facility) facility table for borrower, co-borrower and gurantor 
-    '''
-    columns = ['Non Installment', 'Limit', 'Outstanding', 'Overdue', 'Start Date','End Date of Contract', 'Installment amount', 'Payment Period', 
-              'Total No. of Installment', 'Total no. of Installment paid', 'No. of Remaining Installment','Date of Last Payment', 'NPI (No.)',
-              'Default ', 'Current Status','Worst Status', 'Reorganized Credit', 'Remarks']
+
+def default(fac):
+    try:
+        if isStayOrder(fac):
+            return "None"
+        return str(fac["Contract History"].Default[0])
+    except Exception as exc:
+        print(exc)
+        return "None"
+
+
+def get_remarks(fac: dict):
+    try:
+        if fac["Ref"]["Remarks"] is not None:
+            return str(fac["Ref"]["Remarks"])
+        return "None"
+    except Exception as exc:
+        print(exc)
+        return "None"
+
+
+def funded_nonins(cib_list: list):
+    """
+    Summary of funded (non-installment facility) facility table for borrower, co-borrower and gurantor
+    """
+    columns = [
+        "Non Installment",
+        "Limit",
+        "Outstanding",
+        "Overdue",
+        "Start Date",
+        "End Date of Contract",
+        "Installment amount",
+        "Payment Period",
+        "Total No. of Installment",
+        "Total no. of Installment paid",
+        "No. of Remaining Installment",
+        "Date of Last Payment",
+        "NPI (No.)",
+        "Default ",
+        "Current Status",
+        "Worst Status",
+        "Reorganized Credit",
+        "Remarks",
+    ]
     table = []
-    for cib_data in cib_list: 
-        date_of_inquiry =  cib_data.cib_header['Date of Inquiry'][0].date() 
+    for cib_data in cib_list:
+        date_of_inquiry = cib_data.cib_header["Date of Inquiry"][0].date()
         if type(cib_data.noninstallment_facility) == list:
             for fac in cib_data.noninstallment_facility:
                 if is_living(fac) == True and isNonFunded(fac) != True:
-                    if expired_live_loan_check(fac,date_of_inquiry) == True:    
-                        row = [facility_name(fac),funded_non_ins(fac), get_outstanding(fac),  funded_non_ins_overdue(fac),
-                            start_date(fac), end_date(fac),' ' , ' ', ' ',' ', ' ', ' ', ' ', ' ', 
-                            get_status(fac), get_worst_status(fac), reorganized_credit(fac),  get_remarks(fac)]
+                    if expired_live_loan_check(fac, date_of_inquiry) == True:
+                        row = [
+                            facility_name(fac),
+                            funded_non_ins(fac),
+                            get_outstanding(fac),
+                            funded_non_ins_overdue(fac),
+                            start_date(fac),
+                            end_date(fac),
+                            " ",
+                            " ",
+                            " ",
+                            " ",
+                            " ",
+                            " ",
+                            " ",
+                            " ",
+                            get_status(fac),
+                            get_worst_status(fac),
+                            reorganized_credit(fac),
+                            get_remarks(fac),
+                        ]
                         table.append(row)
-                        
-    table = pd.DataFrame(table, columns = columns)
+
+    table = pd.DataFrame(table, columns=columns)
     response = {
         "Non Installment": table["Non Installment"].tolist(),
         "Limit": table["Limit"].tolist(),
@@ -291,7 +329,9 @@ def funded_nonins(cib_list:list):
         "Installment amount": table["Installment amount"].tolist(),
         "Payment Period": table["Payment Period"].tolist(),
         "Total No. of Installment": table["Total No. of Installment"].tolist(),
-        "Total no. of Installment paid": table["Total no. of Installment paid"].tolist(),
+        "Total no. of Installment paid": table[
+            "Total no. of Installment paid"
+        ].tolist(),
         "No. of Remaining Installment": table["No. of Remaining Installment"].tolist(),
         "Date of Last Payment": table["Date of Last Payment"].tolist(),
         "NPI (No.)": table["NPI (No.)"].tolist(),
@@ -301,80 +341,149 @@ def funded_nonins(cib_list:list):
         "Reorganized Credit": table["Reorganized Credit"].tolist(),
         "Remarks": table["Remarks"].tolist(),
     }
-                        
-    #return pd.DataFrame(table, columns=columns)
+
+    # return pd.DataFrame(table, columns=columns)
     return response
 
 
-def nonfunded_details(cib_list:list):
-    '''
-    Summary of Non funded (installment and non-installment facility) facility table for borrower 
-    '''
-    
-    columns = ['Non Installment', 'Limit', 'Outstanding', 'Overdue', 'Start Date','End Date of Contract', 'Installment amount', 'Payment Period', 
-              'Total No. of Installment', 'Total no. of Installment paid', 'No. of Remaining Installment','Date of Last Payment', 'NPI (No.)',
-              'Default ', 'Current Status','Worst Status', 'Reorganized Credit', 'Remarks']
-    table = []
-    for cib_data in cib_list:  
-        date_of_inquiry =  cib_data.cib_header['Date of Inquiry'][0].date() 
-        if type(cib_data.noninstallment_facility) == list:
-            for fac in cib_data.noninstallment_facility: 
-                if is_living(fac) == True and isNonFunded(fac) == True:
-                    if expired_live_loan_check(fac,date_of_inquiry) == True:    
-                        row = [facility_name(fac),funded_non_ins(fac), get_outstanding(fac),  funded_non_ins_overdue(fac),
-                            start_date(fac), end_date(fac),' ' , ' ', ' ',' ', ' ', ' ', ' ', ' ', 
-                            get_status(fac), get_worst_status(fac), reorganized_credit(fac),  get_remarks(fac)]
-                        table.append(row)
-                        
-    table = pd.DataFrame(table, columns = columns)
-    response = {
-        "Non Installment": table["Non Installment"].tolist(),
-        "Limit": table["Limit"].tolist(),
-        "Outstanding": table["Outstanding"].tolist(),
-        "Overdue": table["Overdue"].tolist(),
-        "Start Date": table["Start Date"].tolist(),
-        "End Date of Contract": table["End Date of Contract"].tolist(),
-        "Installment amount": table["Installment amount"].tolist(),
-        "Payment Period": table["Payment Period"].tolist(),
-        "Total No. of Installment": table["Total No. of Installment"].tolist(),
-        "Total no. of Installment paid": table["Total no. of Installment paid"].tolist(),
-        "No. of Remaining Installment": table["No. of Remaining Installment"].tolist(),
-        "Date of Last Payment": table["Date of Last Payment"].tolist(),
-        "NPI (No.)": table["NPI (No.)"].tolist(),
-        "Default ": table["Default "].tolist(),
-        "Current Status": table["Current Status"].tolist(),
-        "Worst Status": table["Worst Status"].tolist(),
-        "Reorganized Credit": table["Reorganized Credit"].tolist(),
-        "Remarks": table["Remarks"].tolist(),
-    }
-                        
-    #return pd.DataFrame(table, columns=columns)
-    return response
+def nonfunded_details(cib_list: list):
+    """
+    Summary of Non funded (installment and non-installment facility) facility table for borrower
+    """
 
-def funded_ins_details(cib_list:list):
-    '''
-    Summary of funded (installment and non-installment facility) facility table for borrower 
-    '''
-    
-    columns = ['Installment', 'Limit', 'Outstanding', 'Overdue', 'Start Date','End Date of Contract', 'Installment amount', 'Payment Period', 
-              'Total No. of Installment', 'Total no. of Installment paid', 'No. of Remaining Installment','Date of Last Payment', 'NPI (No.)',
-              'Default ', 'Current Status','Worst Status', 'Reorganized Credit', 'Remarks']
+    columns = [
+        "Non Installment",
+        "Limit",
+        "Outstanding",
+        "Overdue",
+        "Start Date",
+        "End Date of Contract",
+        "Installment amount",
+        "Payment Period",
+        "Total No. of Installment",
+        "Total no. of Installment paid",
+        "No. of Remaining Installment",
+        "Date of Last Payment",
+        "NPI (No.)",
+        "Default ",
+        "Current Status",
+        "Worst Status",
+        "Reorganized Credit",
+        "Remarks",
+    ]
     table = []
     for cib_data in cib_list:
-        date_of_inquiry = cib_data.cib_header['Date of Inquiry'][0].date() 
-        
-        if type(cib_data.installment_facility) == list:
-            for fac in cib_data.installment_facility: 
-                if is_living(fac) == True and isNonFunded(fac) != True:
-                    if expired_live_loan_check(fac,date_of_inquiry) == True:   
-                        row = [facility_name(fac),funded_ins(fac),get_outstanding(fac),  funded_ins_overdue(fac),
-                            start_date(fac), end_date(fac), funded_ins_amount(fac), pay_period(fac), no_installment(fac),
-                            no_installment_paid(fac), remaining_ins(fac), last_pay_date(fac), get_NPI(fac), default(fac), 
-                            get_status(fac), get_worst_status(fac), reorganized_credit(fac),  get_remarks(fac)]
-        
-                            
+        date_of_inquiry = cib_data.cib_header["Date of Inquiry"][0].date()
+        if type(cib_data.noninstallment_facility) == list:
+            for fac in cib_data.noninstallment_facility:
+                if is_living(fac) == True and isNonFunded(fac) == True:
+                    if expired_live_loan_check(fac, date_of_inquiry) == True:
+                        row = [
+                            facility_name(fac),
+                            funded_non_ins(fac),
+                            get_outstanding(fac),
+                            funded_non_ins_overdue(fac),
+                            start_date(fac),
+                            end_date(fac),
+                            " ",
+                            " ",
+                            " ",
+                            " ",
+                            " ",
+                            " ",
+                            " ",
+                            " ",
+                            get_status(fac),
+                            get_worst_status(fac),
+                            reorganized_credit(fac),
+                            get_remarks(fac),
+                        ]
                         table.append(row)
-                    
+
+    table = pd.DataFrame(table, columns=columns)
+    response = {
+        "Non Installment": table["Non Installment"].tolist(),
+        "Limit": table["Limit"].tolist(),
+        "Outstanding": table["Outstanding"].tolist(),
+        "Overdue": table["Overdue"].tolist(),
+        "Start Date": table["Start Date"].tolist(),
+        "End Date of Contract": table["End Date of Contract"].tolist(),
+        "Installment amount": table["Installment amount"].tolist(),
+        "Payment Period": table["Payment Period"].tolist(),
+        "Total No. of Installment": table["Total No. of Installment"].tolist(),
+        "Total no. of Installment paid": table[
+            "Total no. of Installment paid"
+        ].tolist(),
+        "No. of Remaining Installment": table["No. of Remaining Installment"].tolist(),
+        "Date of Last Payment": table["Date of Last Payment"].tolist(),
+        "NPI (No.)": table["NPI (No.)"].tolist(),
+        "Default ": table["Default "].tolist(),
+        "Current Status": table["Current Status"].tolist(),
+        "Worst Status": table["Worst Status"].tolist(),
+        "Reorganized Credit": table["Reorganized Credit"].tolist(),
+        "Remarks": table["Remarks"].tolist(),
+    }
+
+    # return pd.DataFrame(table, columns=columns)
+    return response
+
+
+def funded_ins_details(cib_list: list):
+    """
+    Summary of funded (installment and non-installment facility) facility table for borrower
+    """
+
+    columns = [
+        "Installment",
+        "Limit",
+        "Outstanding",
+        "Overdue",
+        "Start Date",
+        "End Date of Contract",
+        "Installment amount",
+        "Payment Period",
+        "Total No. of Installment",
+        "Total no. of Installment paid",
+        "No. of Remaining Installment",
+        "Date of Last Payment",
+        "NPI (No.)",
+        "Default ",
+        "Current Status",
+        "Worst Status",
+        "Reorganized Credit",
+        "Remarks",
+    ]
+    table = []
+    for cib_data in cib_list:
+        date_of_inquiry = cib_data.cib_header["Date of Inquiry"][0].date()
+
+        if type(cib_data.installment_facility) == list:
+            for fac in cib_data.installment_facility:
+                if is_living(fac) == True and isNonFunded(fac) != True:
+                    if expired_live_loan_check(fac, date_of_inquiry) == True:
+                        row = [
+                            facility_name(fac),
+                            funded_ins(fac),
+                            get_outstanding(fac),
+                            funded_ins_overdue(fac),
+                            start_date(fac),
+                            end_date(fac),
+                            funded_ins_amount(fac),
+                            pay_period(fac),
+                            no_installment(fac),
+                            no_installment_paid(fac),
+                            remaining_ins(fac),
+                            last_pay_date(fac),
+                            get_NPI(fac),
+                            default(fac),
+                            get_status(fac),
+                            get_worst_status(fac),
+                            reorganized_credit(fac),
+                            get_remarks(fac),
+                        ]
+
+                        table.append(row)
+
     table = pd.DataFrame(table, columns=columns)
     response = {
         "Installment": table["Installment"].tolist(),
@@ -386,7 +495,9 @@ def funded_ins_details(cib_list:list):
         "Installment amount": table["Installment amount"].tolist(),
         "Payment Period": table["Payment Period"].tolist(),
         "Total No. of Installment": table["Total No. of Installment"].tolist(),
-        "Total no. of Installment paid": table["Total no. of Installment paid"].tolist(),
+        "Total no. of Installment paid": table[
+            "Total no. of Installment paid"
+        ].tolist(),
         "No. of Remaining Installment": table["No. of Remaining Installment"].tolist(),
         "Date of Last Payment": table["Date of Last Payment"].tolist(),
         "NPI (No.)": table["NPI (No.)"].tolist(),
@@ -397,4 +508,3 @@ def funded_ins_details(cib_list:list):
         "Remarks": table["Remarks"].tolist(),
     }
     return response
-

@@ -1,4 +1,5 @@
 from .engine import corporate_summary
+from ..general_helpers import get_status
 class Summary():
     def __init__(self, cibs):
             
@@ -9,7 +10,7 @@ class Summary():
             self.non_funded_amount = corporate_summary.get_outs_non_fund(cibs)
             self.total_amount = corporate_summary.get_outs_total(cibs)
             self.overdue_amount = corporate_summary.get_overdue(cibs)
-            self.status = corporate_summary.get_status(cibs)
+            self.status = get_status(cibs)
                        
     def __repr__(self):
         return '\n'.join([(str(k)+' : '+str(v)) for k,v in self.__dict__.items() if k!='config'])

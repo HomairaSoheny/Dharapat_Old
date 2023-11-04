@@ -1,7 +1,7 @@
 from ..consumer.LoanClass import Loan
 from ..consumer.CreditCardClass import CreditCard
 from ..consumer.PersonalLoanClass import PersonalLoan
-from ..general_helpers import isStayOrder
+from ..general_helpers import get_worst_status
 
 def get_loan_table(cib):
     try:
@@ -77,18 +77,6 @@ def get_personal_loan_table(cib):
         print("Error on personal loan table")
         print(exc)
         return []
-
-def get_class_from_set(classes : set):
-    for classification in ('BLW', 'BL', 'DF', 'SS', 'SMA', 'UC', "STD"):
-        if classification in classes:
-            return classification
-    return "None"
-
-def get_worst_status(facility : dict):
-    if not isStayOrder(facility):
-        return get_class_from_set(set(facility["Contract History"].Status))
-    return "None"
-
 
 def get_cib_owner_info(cib):
     cib_report_of = "None"
