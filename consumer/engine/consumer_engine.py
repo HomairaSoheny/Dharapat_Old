@@ -7,20 +7,30 @@ def getBorrowersName(cib):
 def getFacilityType(cib_data):
     return None
 
-def getSanctionedLimit(cib_data):
-    return None
+def getSanctionLimit(fac):
+    for key in ['Sanction Limit', 'Credit limit']:
+        if key in fac['Ref'].keys():
+            return fac['Ref'][key]
 
-def getFacilityStartDate(cib_data):
-    return None
+def getFacilityStartDate(fac):
+    for key in ['Starting date']:
+        if key in fac['Ref'].keys():
+            return fac['Ref'][key]
 
-def getLoanExpiryDate(cib_data):
-    return None
+def getLoanExpiryDate(fac):
+    for key in ['End date of contract']:
+        if key in fac['Ref'].keys():
+            return fac['Ref'][key]
 
-def getOutstanding(cib_data):
-    return None
+def getOutstanding(fac):
+    for key in ['Outstand', 'Outstanding']:
+        if key in fac['Contract History'].keys():
+            return fac['Contract History'].sort_values('Date', ascending=False)[key][0]
 
-def getEMI(cib_data):
-    return None
+def getEMI(fac):
+    for key in ['Monthly instalment amount', 'Installment Amount']:
+        if key in fac['Ref'].keys():
+            return fac['Ref'][key]
 
 def getTotalEMI(cib_data):
     return None
@@ -31,8 +41,10 @@ def getRemainingEMI(cib_data):
 def getAvgOutstandingLast12Months(cib_data):
     return None
 
-def getOverdue(cib_data):
-    return None
+def getOverdue(fac):
+    for key in ['Overdue']:
+        if key in fac['Contract History'].keys():
+            return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
 
 def getCurrentCLStatus(cib_data):
     return None
@@ -44,9 +56,6 @@ def getWorstCLStatusInLast12Months(cib_data):
     return None
 
 def getCurrentNPI(cib_data):
-    return None
-
-def getNoOfNPI(cib_data, time_frame):
     return None
 
 def getNoOfNPI(cib_data, time_frame):
