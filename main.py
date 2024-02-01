@@ -6,7 +6,7 @@ import json
 from cib_analytics.parsing_utils.data_preparation import process_response
 from cib_analytics.api_generation.generate_full_response import generate_full_response
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "cib_analyzer.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "core.settings")
 
 import django
 django.setup()

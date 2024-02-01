@@ -16,6 +16,6 @@ COPY . .
 
 
 ENV PYTHONPATH "${PYTHONPATH}:/code"
-ENV PYTHONPATH "${PYTHONPATH}:/code/cib_analyzer"
+ENV PYTHONPATH "${PYTHONPATH}:/code/core"
 
 CMD [ "python", "main.py" ]
