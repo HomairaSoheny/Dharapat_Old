@@ -1,4 +1,6 @@
 import pandas as pd
+import numpy as np
+from datetime import  datetime, timedelta
 
 def getBorrowersName(subject_info):
     keys = ['Title', 'Name', 'Title, Name', 'Trade Name']
@@ -58,7 +60,10 @@ def getRemainingEMI(fac):
             return fac['Ref'][key]
 
 def getAvgOutstandingLast12Months(fac):
-    return None
+    for key in ['Outstanding', 'Outstand']:
+        if key in fac['Contract History'].keys():
+            df = (fac['Contract History']).sort_values('Date', ascending=False)[["Date", key]]
+            return sum(df[df['Date'] > np.datetime64(datetime.utcnow().date() - timedelta(days=365))][key])/12
 
 def getOverdue(fac):
     for key in ['Overdue']:
@@ -70,7 +75,7 @@ def getCurrentCLStatus(fac):
         if key in fac['Contract History'].keys():
             return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
 
-def percentOfCreditCardLimit12Outstanding(fac):
+def percentOfCreditCardLimitOutstanding(fac):
     return None
 
 def isStayOrder(facility):
@@ -90,10 +95,16 @@ def getWorstCLStatusInLast12Months(facility : dict):
     return "None"
 
 def getCurrentNPI(fac):
-    return None
+    for key in ['NPI']:
+        if key in fac['Contract History'].keys():
+            return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
 
 def getNoOfNPI(fac, time_frame):
-    return None
+    for key in ['NPI']:
+        if key in fac['Contract History'].keys():
+            df = (fac['Contract History']).sort_values('Date', ascending=False)[["Date", key]]
+            df = df[df[key] != 0]
+            return df[df['Date'] > np.datetime64(datetime.utcnow().date() - timedelta(days=time_frame*30))][key].shape[0]
 
 def getConsumerDataFrame(cibs):
     df = pd.DataFrame()
@@ -118,12 +129,12 @@ def getConsumerDataFrame(cibs):
                         "Average Outstanding Last 12 Months": getAvgOutstandingLast12Months(fac),
                         "Overdue": getOverdue(fac),
                         "Current CL Status": getCurrentCLStatus(fac),
-                        'Percent of Credit Card Limit Outstanding': percentOfCreditCardLimit12Outstanding(fac),
+                        'Percent of Credit Card Limit Outstanding': percentOfCreditCardLimitOutstanding(fac),
                         'Worst CL Status in Last 12 Months': getWorstCLStatusInLast12Months(fac),
-                        'Current NPI': getCurrentNPI(cib),
-                        'No of NPI Last 3 Months': getNoOfNPI(cib, 3),
-                        'No of NPI Last 6 Months': getNoOfNPI(cib, 6),
-                        'No of NPI Last 12 Months': getNoOfNPI(cib, 12),
+                        'Current NPI': getCurrentNPI(fac),
+                        'No of NPI Last 3 Months': getNoOfNPI(fac, 3),
+                        'No of NPI Last 6 Months': getNoOfNPI(fac, 6),
+                        'No of NPI Last 12 Months': getNoOfNPI(fac, 12),
                     })
             df = pd.concat([df, pd.DataFrame(response)], ignore_index=True)
     return df
