@@ -8,6 +8,14 @@ def getBorrowersName(cib):
                 continue
             return cib.subject_info[key]
 
+def isBusiness(cib):
+    keys = ['Trade Name']
+    for key in keys:
+        if key in cib.subject_info.keys():
+            if len(cib.subject_info[key]) > 0:
+                return True
+    return False
+
 def getFacilityType(fac):
     for key in ['Facility']:
         if key in fac['Ref'].keys():
@@ -83,6 +91,7 @@ def getConsumerDataFrame(cibs):
                         "Facility Type": getFacilityType(fac),
                         "Phase": fac["Ref"]["Phase"],
                         "Role": fac["Ref"]["Role"],
+                        "Business": isBusiness(cib),
                         "Santioned Limit": getSanctionLimit(fac),
                         "Facility Start Date": getFacilityStartDate(fac),
                         "Loan Expiry Date": getLoanExpiryDate(fac),
