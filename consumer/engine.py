@@ -29,12 +29,12 @@ def getSanctionLimit(fac):
 def getFacilityStartDate(fac):
     for key in ['Starting date']:
         if key in fac['Ref'].keys():
-            return fac['Ref'][key]
+            return str(fac['Ref'][key])
 
 def getLoanExpiryDate(fac):
     for key in ['End date of contract']:
         if key in fac['Ref'].keys():
-            return fac['Ref'][key]
+            return str(fac['Ref'][key])
 
 def getOutstanding(fac):
     for key in ['Outstand', 'Outstanding']:

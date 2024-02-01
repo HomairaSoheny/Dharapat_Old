@@ -4,7 +4,8 @@ import sys
 import os
 import json
 from cib_analytics.parsing_utils.data_preparation import process_response
-from cib_analytics.api_generation.generate_full_response import generate_full_response
+from consumer.consumer import getConsumerDashboard
+from cib_analytics.api_generation.corporate_dashboard import get_corporate_dashboard
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "core.settings")
 
@@ -51,7 +52,8 @@ def main():
                 final['metaData'] = metadata
                 print(metadata)
                 print("----------------------------------")
-                dashboard_data = generate_full_response(cib_list, metadata['cibType'])
+                dashboard_data = get_corporate_dashboard(cib_list) if metadata['cibType'] == 'corporate' else getConsumerDashboard(cib_list)
+                # dashboard_data = generate_full_response(cib_list, metadata['cibType'])
                 final['score'] = scorecard
                 final['dashboard'] = dashboard_data
                 final['message'] = 'Ok'
