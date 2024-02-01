@@ -1,18 +1,18 @@
 import pandas as pd
 
-def getBorrowersName(cib):
+def getBorrowersName(subject_info):
     keys = ['Title', 'Name', 'Title, Name', 'Trade Name']
     for key in keys:
-        if key in cib.subject_info.keys():
-            if len(cib.subject_info[key]) == 0:
+        if key in subject_info.keys():
+            if len(subject_info[key]) == 0:
                 continue
-            return cib.subject_info[key]
+            return subject_info[key]
 
-def isBusiness(cib):
+def isBusiness(subject_info):
     keys = ['Trade Name']
     for key in keys:
-        if key in cib.subject_info.keys():
-            if len(cib.subject_info[key]) > 0:
+        if key in subject_info.keys():
+            if len(subject_info[key]) > 0:
                 return True
     return False
 
@@ -47,7 +47,10 @@ def getEMI(fac):
             return fac['Ref'][key]
 
 def getTotalEMI(fac):
-    return None
+    EMI = getEMI(fac)
+    for key in ['Total number of installments']:
+        if key in fac['Ref'].keys():
+            return int(fac['Ref'][key]) * int(EMI)
 
 def getRemainingEMI(fac):
     for key in ['Remaining Amount', 'Remaining installments Amount']:
@@ -86,10 +89,6 @@ def getWorstCLStatusInLast12Months(facility : dict):
         return getClassFromSet(set(facility["Contract History"].Status))
     return "None"
 
-
-def getWorstCLStatusInLast12Months(fac):
-    return None
-
 def getCurrentNPI(fac):
     return None
 
@@ -104,11 +103,11 @@ def getConsumerDataFrame(cibs):
             if fac_type is not None:
                 for fac in fac_type:
                     response.append({
-                        "Borrowers Name": getBorrowersName(cib),
+                        "Borrowers Name": getBorrowersName(cib.subject_info),
                         "Facility Type": getFacilityType(fac),
                         "Phase": fac["Ref"]["Phase"],
                         "Role": fac["Ref"]["Role"],
-                        "Business": isBusiness(cib),
+                        "Business": isBusiness(cib.subject_info),
                         "Santioned Limit": getSanctionLimit(fac),
                         "Facility Start Date": getFacilityStartDate(fac),
                         "Loan Expiry Date": getLoanExpiryDate(fac),
