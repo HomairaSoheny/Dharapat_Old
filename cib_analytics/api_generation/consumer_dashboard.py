@@ -1,7 +1,7 @@
 from ..consumer.LoanClass import Loan
 from ..consumer.CreditCardClass import CreditCard
 from ..consumer.PersonalLoanClass import PersonalLoan
-from ..general_helpers import get_worst_status
+from ..general_helpers import get_worst_status, get_class_from_set
 
 def get_loan_table(cib):
     try:
