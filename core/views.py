@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from rest_framework.views import APIView
-from cib_analytics.spreadsheet_generation.report_dashboard import create_report_dashboard
+from report.report_download import createReportDashboard
 
 import json
 import os
@@ -12,16 +12,12 @@ class GeneralDashboardReportApiView(APIView):
             body_unicode = request.body.decode('utf-8')
             body = json.loads(body_unicode)
             raw_data = body
-            
-            print(body)
 
             cib_data_list = []
             for each in raw_data:
                 cib_data_list.append(each)
-                
-            path = os.path.join(abs_path)
 
-            writer, io = create_report_dashboard(cib_data_list, path)
+            writer, io = createReportDashboard(cib_data_list)
             writer.close()
             
             rFile = io.getvalue()
