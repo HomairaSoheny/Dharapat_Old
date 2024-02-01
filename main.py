@@ -3,7 +3,7 @@ import pika
 import sys
 import os
 import json
-from cib_analytics.parsing_utils.data_preparation import process_response
+from utils.parsing_utils.data_preparation import process_response
 from consumer.consumer import getConsumerDashboard
 from cib_analytics.api_generation.corporate_dashboard import get_corporate_dashboard
 

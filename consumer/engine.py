@@ -70,6 +70,23 @@ def getCurrentCLStatus(fac):
 def percentOfCreditCardLimit12Outstanding(fac):
     return None
 
+def isStayOrder(facility):
+    if type(facility['Contract History']) == dict and 'Stay Order' in facility['Contract History'].keys():
+        return True
+    return False
+
+def getClassFromSet(classes : set):
+    for classification in ('BLW', 'BL', 'DF', 'SS', 'SMA', 'UC', "STD"):
+        if classification in classes:
+            return classification
+    return "None"
+
+def getWorstCLStatusInLast12Months(facility : dict):
+    if not isStayOrder(facility):
+        return getClassFromSet(set(facility["Contract History"].Status))
+    return "None"
+
+
 def getWorstCLStatusInLast12Months(fac):
     return None
 
