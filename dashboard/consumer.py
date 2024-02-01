@@ -1,5 +1,5 @@
-from consumer.engine import getConsumerDataFrame
-from consumer.columns import *
+from dashboard.engines.engine import getConsumerDataFrame
+from dashboard.columns import *
 
 def tableFilter(df, facility_type, phase, role, columns, exclude_facility_type = False, exclude_phase = False, check_business = False):
     df = df[~df['Business'] == False] if check_business else df[df['Business'] == False]
