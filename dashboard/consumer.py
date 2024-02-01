@@ -1,4 +1,4 @@
-from dashboard.engines.engine import getConsumerDataFrame
+from dashboard.engines.engine import getConsumerDataFrame, getBorrowersName, getNID, getFathersName, getClassFromSet
 from dashboard.columns import *
 
 def tableFilter(df, facility_type, phase, role, columns, exclude_facility_type = False, exclude_phase = False, check_business = False):
@@ -11,6 +11,15 @@ def tableFilter(df, facility_type, phase, role, columns, exclude_facility_type =
 def getConsumerDashboard(cibs):
     response = {}
     df = getConsumerDataFrame(cibs)
+    
+    response['CIB Report of'] = getBorrowersName(cibs[0].subject_info)
+    response['NID Number'] = getNID(cibs[0].subject_info)
+    response["Fathers Name"] = getFathersName(cibs[0].subject_info)
+    response["No of Living Contracts"] = df[df['Phase'] == 'Living'].shape[0]
+    response["Total Outstanding"] = sum(df[df['Phase'] == 'Living']['Outstanding'])
+    response["Total Overdue"] = sum(df[df['Phase'] == 'Living']['Overdue'])
+    response["Current Status"] = getClassFromSet(set(df[df['Phase'] == 'Living']['Current CL Status'].tolist()))
+    response["Overall Worst Status"] = getClassFromSet(set(df[df['Phase'] == 'Living']['Worst CL Status in Last 12 Months'].tolist()))
     
     response["Credit Facilities as Applicant - Live (As Borrower)"] = {
         "Term Loan": tableFilter(df=df, facility_type=['Term Loan'], phase=['Living'], role=['Borrower', 'Co-Borrower', 'Co- Borrower'], columns=TERM_LOAN_COLUMNS),

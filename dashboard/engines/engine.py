@@ -2,6 +2,18 @@ import pandas as pd
 import numpy as np
 from datetime import  datetime, timedelta
 
+def getNID(subject_info):
+    keys = ['NID']
+    for key in keys:
+        if key in subject_info.keys():
+            return subject_info[key]
+        
+def getFathersName(subject_info):
+    keys = ["Title, Father's name"]
+    for key in keys:
+        if key in subject_info.keys():
+            return subject_info[key]
+        
 def getBorrowersName(subject_info):
     keys = ['Title', 'Name', 'Title, Name', 'Trade Name']
     for key in keys:
