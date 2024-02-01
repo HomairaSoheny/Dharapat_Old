@@ -4,8 +4,10 @@ def getBorrowersName(cib):
         if key in cib.subject_info.keys():
             return cib.subject_info[key]
 
-def getFacilityType(cib_data):
-    return None
+def getFacilityType(fac):
+    for key in ['Facility']:
+        if key in fac['Ref'].keys():
+            return fac['Ref'][key]
 
 def getSanctionLimit(fac):
     for key in ['Sanction Limit', 'Credit limit']:
@@ -32,13 +34,15 @@ def getEMI(fac):
         if key in fac['Ref'].keys():
             return fac['Ref'][key]
 
-def getTotalEMI(cib_data):
+def getTotalEMI(fac):
     return None
 
-def getRemainingEMI(cib_data):
-    return None
+def getRemainingEMI(fac):
+    for key in ['Remaining Amount', 'Remaining installments Amount']:
+        if key in fac['Ref'].keys():
+            return fac['Ref'][key]
 
-def getAvgOutstandingLast12Months(cib_data):
+def getAvgOutstandingLast12Months(fac):
     return None
 
 def getOverdue(fac):
@@ -46,17 +50,19 @@ def getOverdue(fac):
         if key in fac['Contract History'].keys():
             return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
 
-def getCurrentCLStatus(cib_data):
+def getCurrentCLStatus(fac):
+    for key in ['Status']:
+        if key in fac['Contract History'].keys():
+            return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
+
+def percentOfCreditCardLimit12Outstanding(fac):
     return None
 
-def percentOfCreditCardLimit12Outstanding(cib_data):
+def getWorstCLStatusInLast12Months(fac):
     return None
 
-def getWorstCLStatusInLast12Months(cib_data):
+def getCurrentNPI(fac):
     return None
 
-def getCurrentNPI(cib_data):
-    return None
-
-def getNoOfNPI(cib_data, time_frame):
+def getNoOfNPI(fac, time_frame):
     return None
