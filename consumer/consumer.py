@@ -1,8 +1,5 @@
 from consumer.engine import getConsumerDataFrame
-
-TERM_LOAN_COLUMNS = ["Borrowers Name", "Facility Type", "Santioned Limit", "Facility Start Date", "Loan Expiry Date", "Outstanding", "EMI", "Total EMI", "Remaining EMI", "Overdue", "Current CL Status", "Worst CL Status in Last 12 Months", 'Current NPI', 'No of NPI Last 3 Months', 'No of NPI Last 6 Months', 'No of NPI Last 12 Months']
-CREDIT_CARD_COLUMNS = ["Borrowers Name", "Facility Type", "Santioned Limit", "Facility Start Date", "Loan Expiry Date", "Outstanding", "Average Outstanding Last 12 Months", "Overdue", "Current CL Status", "Percent of Credit Card Limit Outstanding" ,"Worst CL Status in Last 12 Months", 'Current NPI', 'No of NPI Last 3 Months', 'No of NPI Last 6 Months', 'No of NPI Last 12 Months']
-OTHER_COLUMNS = ["Borrowers Name", "Facility Type", "Santioned Limit", "Facility Start Date", "Loan Expiry Date", "Outstanding", "Average Outstanding Last 12 Months", "Overdue", "Current CL Status", "Percent of Credit Card Limit Outstanding" ,"Worst CL Status in Last 12 Months", 'Current NPI', 'No of NPI Last 3 Months', 'No of NPI Last 6 Months', 'No of NPI Last 12 Months']
+from consumer.columns import *
 
 def tableFilter(df, facility_type, phase, role, columns, exclude_facility_type = False, exclude_phase = False, check_business = False):
     df = df[~df['Business'] == False] if check_business else df[df['Business'] == False]
