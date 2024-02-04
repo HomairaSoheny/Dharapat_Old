@@ -42,3 +42,8 @@ def getTotalNumberOfInstallment(fac):
     for key in ['Total number of installments']:
         if key in fac['Ref'].keys():
             return fac['Ref'][key]
+        
+def getNoOfRemainingInstallment(fac):
+    for key in ['Remaining installments Number']:
+        if key in fac['Ref'].keys():
+            return fac['Ref'][key]
