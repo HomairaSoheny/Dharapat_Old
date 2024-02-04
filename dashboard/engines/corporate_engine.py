@@ -27,3 +27,8 @@ def getEndDateOfContract(fac):
     for key in ['End date of contract']:
         if key in fac['Ref'].keys():
             return fac['Ref'][key]
+        
+def getRemarks(fac):
+    for key in ['Remarks']:
+        if key in fac['Ref'].keys():
+            return fac['Ref'][key]
