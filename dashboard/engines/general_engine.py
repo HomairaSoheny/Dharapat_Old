@@ -33,3 +33,8 @@ def getCurrentCLStatus(fac):
     for key in ['Status']:
         if key in fac['Contract History'].keys():
             return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
+
+def getLimit(fac):
+    for key in ['Sanction Limit', 'Credit limit']:
+        if key in fac['Ref'].keys():
+            return fac['Ref'][key]

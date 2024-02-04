@@ -28,11 +28,6 @@ def getFacilityType(fac):
         if key in fac['Ref'].keys():
             return fac['Ref'][key]
 
-def getSanctionLimit(fac):
-    for key in ['Sanction Limit', 'Credit limit']:
-        if key in fac['Ref'].keys():
-            return fac['Ref'][key]
-
 def getFacilityStartDate(fac):
     for key in ['Starting date']:
         if key in fac['Ref'].keys():
@@ -109,7 +104,7 @@ def getConsumerDataFrame(cibs):
                         "Phase": general_engine.getPhase(fac),
                         "Role": general_engine.getRole(fac),
                         "Business": isBusiness(cib.subject_info),
-                        "Santioned Limit": getSanctionLimit(fac),
+                        "Santioned Limit": general_engine.getLimit(fac),
                         "Facility Start Date": getFacilityStartDate(fac),
                         "Loan Expiry Date": getLoanExpiryDate(fac),
                         "Outstanding": general_engine.getOutstanding(fac),
