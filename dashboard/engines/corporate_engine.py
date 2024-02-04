@@ -12,3 +12,8 @@ def getCIBCategory(cib):
     }
 
     return category_mapping.get(cib.cib_category, None)
+
+def getDateOfClassification(fac):
+    for key in ['Date of classification']:
+        if key in fac['Ref'].keys():
+            return fac['Ref'][key]
