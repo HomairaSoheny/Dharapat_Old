@@ -1,14 +1,14 @@
 def getCIBCategory(cib):
     category_mapping = {
-        "Type a": "Type a",
-        "Type b": "Type b",
-        "Type c": "Type c",
-        "Type d": "Type d",
-        "Type e": "Type e",
-        "Type f": "Type f",
-        "Type g": "Type g",
-        "Type h": "Type h",
-        "Type i": "Type i"
+        "Type a": "Concerns of primary borrower with PBL",
+        "Type b": "Other sister concerns of primary borrower",
+        "Type c": "Other concerns due to common shareholdings/directorship",
+        "Type d": "Directors CIB",
+        "Type e": "20% plus shareholder other than director",
+        "Type f": "Guarantors CIB (Personal)",
+        "Type g": "Corporate Guarantor",
+        "Type h": "Related party of Guarantor",
+        "Type i": "Other concerns/persons not related to the company"
     }
 
     return category_mapping.get(cib.cib_category, None)
