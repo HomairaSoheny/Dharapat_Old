@@ -12,7 +12,8 @@ def generateConsumerSpreadsheet(writer, cib_report):
         "bold": True,
         "text_wrap": True,
         "valign": "top",
-        "fg_color": "#D7E4BC",
+        "fg_color": "#051094",
+        "font_color": "white",
         "border": 1,
         'font_size': 14
     })
@@ -110,3 +111,5 @@ def generateConsumerSpreadsheet(writer, cib_report):
     worksheet.write('B8', cib_report['Overall Worst Status'], title_format)
 
     worksheet.autofit()
+    
+    return workbook
