@@ -22,3 +22,8 @@ def getOverdue(fac):
     for key in ['Overdue']:
         if key in fac['Contract History'].keys():
             return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
+
+def getCurrentCLStatus(fac):
+    for key in ['Status']:
+        if key in fac['Contract History'].keys():
+            return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
