@@ -66,7 +66,7 @@ def getAvgOutstandingLast12Months(fac):
             return sum(df[df['Date'] > np.datetime64(datetime.utcnow().date() - timedelta(days=365))][key])/12
 
 def percentOfCreditCardLimitOutstanding(fac):
-    return None
+    return "Not Implemented"
 
 def isStayOrder(facility):
     if type(facility['Contract History']) == dict and 'Stay Order' in facility['Contract History'].keys():
