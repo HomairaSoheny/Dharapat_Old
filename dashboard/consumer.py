@@ -1,6 +1,6 @@
 from dashboard.engines.consumer_engine import getConsumerDataFrame, getNID, getFathersName, getClassFromSet
 from dashboard.engines.general_engine import getBorrowersName
-from dashboard.columns import *
+from dashboard.engines.columns import *
 
 def tableFilter(df, facility_type, phase, role, columns, exclude_facility_type = False, exclude_phase = False, check_business = False):
     df = df[~df['Business'] == False] if check_business else df[df['Business'] == False]

@@ -1,2 +1,5 @@
+from dashboard.engines.corporate_engine import getCorporateDataFrame
+
 def getCorporateDashboard(cibs):
-    return None
+    response = {}
+    df = getCorporateDataFrame(cibs)
