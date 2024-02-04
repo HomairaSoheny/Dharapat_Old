@@ -47,3 +47,9 @@ def getNoOfRemainingInstallment(fac):
     for key in ['Remaining installments Number']:
         if key in fac['Ref'].keys():
             return fac['Ref'][key]
+        
+def getDateOfLastPayment(fac):
+    for key in ['Date of last payment']:
+        if key in fac['Ref'].keys():
+            return fac['Ref'][key]
+        
