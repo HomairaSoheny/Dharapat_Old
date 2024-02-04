@@ -54,3 +54,8 @@ def getWorstCLStatus(facility : dict):
     if not isStayOrder(facility):
         return getClassFromSet(set(facility["Contract History"].Status))
     return "None"
+
+def getFacilityType(fac):
+    for key in ['Facility']:
+        if key in fac['Ref'].keys():
+            return fac['Ref'][key]

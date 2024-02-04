@@ -23,11 +23,6 @@ def isBusiness(subject_info):
                 return True
     return False
 
-def getFacilityType(fac):
-    for key in ['Facility']:
-        if key in fac['Ref'].keys():
-            return fac['Ref'][key]
-
 def getFacilityStartDate(fac):
     for key in ['Starting date']:
         if key in fac['Ref'].keys():
