@@ -15,7 +15,7 @@ class CIB:
         except:
             self.pdf_name = "fileName"
             self.cib_id = "id"
-            self.cib_category = str(np.random.choice(["Type a", "Type b", "Type c", "Type d", "Type e", "Type f", "Type g", "Type h", "Type i"]))
+            self.cib_category = str(np.random.choice(["Type a"]))
         try:
             self.cib_header = parsing_helpers.parse_cib_header(self.cib_raw['Credit Information Bureau - Bangladesh Bank'])
         except:
