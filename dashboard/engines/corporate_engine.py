@@ -32,3 +32,13 @@ def getRemarks(fac):
     for key in ['Remarks']:
         if key in fac['Ref'].keys():
             return fac['Ref'][key]
+        
+def getPaymentPeriod(fac):
+    for key in ['Payments Periodicity', 'Payments periodicity',]:
+        if key in fac['Ref'].keys():
+            return fac['Ref'][key]
+
+def getTotalNumberOfInstallment(fac):
+    for key in ['Total number of installments']:
+        if key in fac['Ref'].keys():
+            return fac['Ref'][key]
