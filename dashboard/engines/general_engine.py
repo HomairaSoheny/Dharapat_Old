@@ -17,3 +17,8 @@ def getOutstanding(fac):
     for key in ['Outstand', 'Outstanding']:
         if key in fac['Contract History'].keys():
             return fac['Contract History'].sort_values('Date', ascending=False)[key][0]
+
+def getOverdue(fac):
+    for key in ['Overdue']:
+        if key in fac['Contract History'].keys():
+            return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]

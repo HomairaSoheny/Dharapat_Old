@@ -65,11 +65,6 @@ def getAvgOutstandingLast12Months(fac):
             df = (fac['Contract History']).sort_values('Date', ascending=False)[["Date", key]]
             return sum(df[df['Date'] > np.datetime64(datetime.utcnow().date() - timedelta(days=365))][key])/12
 
-def getOverdue(fac):
-    for key in ['Overdue']:
-        if key in fac['Contract History'].keys():
-            return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
-
 def getCurrentCLStatus(fac):
     for key in ['Status']:
         if key in fac['Contract History'].keys():
@@ -127,7 +122,7 @@ def getConsumerDataFrame(cibs):
                         "Total EMI": getTotalEMI(fac),
                         "Remaining EMI": getRemainingEMI(fac),
                         "Average Outstanding Last 12 Months": getAvgOutstandingLast12Months(fac),
-                        "Overdue": getOverdue(fac),
+                        "Overdue": general_engine.getOverdue(fac),
                         "Current CL Status": getCurrentCLStatus(fac),
                         'Percent of Credit Card Limit Outstanding': percentOfCreditCardLimitOutstanding(fac),
                         'Worst CL Status in Last 12 Months': getWorstCLStatusInLast12Months(fac),
