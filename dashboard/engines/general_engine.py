@@ -49,3 +49,8 @@ def getClassFromSet(classes : set):
         if classification in classes:
             return classification
     return "None"
+
+def getWorstCLStatus(facility : dict):
+    if not isStayOrder(facility):
+        return getClassFromSet(set(facility["Contract History"].Status))
+    return "None"
