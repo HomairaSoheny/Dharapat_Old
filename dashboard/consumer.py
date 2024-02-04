@@ -1,4 +1,5 @@
-from dashboard.engines.engine import getConsumerDataFrame, getBorrowersName, getNID, getFathersName, getClassFromSet
+from dashboard.engines.consumer_engine import getConsumerDataFrame, getNID, getFathersName, getClassFromSet
+from dashboard.engines.general_engine import getBorrowersName
 from dashboard.columns import *
 
 def tableFilter(df, facility_type, phase, role, columns, exclude_facility_type = False, exclude_phase = False, check_business = False):

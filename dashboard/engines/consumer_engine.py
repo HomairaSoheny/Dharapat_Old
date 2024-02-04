@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from datetime import  datetime, timedelta
+from dashboard.engines import general_engine
 
 def getNID(subject_info):
     keys = ['NID']
@@ -12,14 +13,6 @@ def getFathersName(subject_info):
     keys = ["Title, Father's name"]
     for key in keys:
         if key in subject_info.keys():
-            return subject_info[key]
-        
-def getBorrowersName(subject_info):
-    keys = ['Title', 'Name', 'Title, Name', 'Trade Name']
-    for key in keys:
-        if key in subject_info.keys():
-            if len(subject_info[key]) == 0:
-                continue
             return subject_info[key]
 
 def isBusiness(subject_info):
@@ -126,7 +119,7 @@ def getConsumerDataFrame(cibs):
             if fac_type is not None:
                 for fac in fac_type:
                     response.append({
-                        "Borrowers Name": getBorrowersName(cib.subject_info),
+                        "Borrowers Name": general_engine.getBorrowersName(cib.subject_info),
                         "Facility Type": getFacilityType(fac),
                         "Phase": fac["Ref"]["Phase"],
                         "Role": fac["Ref"]["Role"],
