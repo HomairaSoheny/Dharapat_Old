@@ -106,8 +106,8 @@ def getConsumerDataFrame(cibs):
                     response.append({
                         "Borrowers Name": general_engine.getBorrowersName(cib.subject_info),
                         "Facility Type": getFacilityType(fac),
-                        "Phase": fac["Ref"]["Phase"],
-                        "Role": fac["Ref"]["Role"],
+                        "Phase": general_engine.getPhase(fac),
+                        "Role": general_engine.getRole(fac),
                         "Business": isBusiness(cib.subject_info),
                         "Santioned Limit": getSanctionLimit(fac),
                         "Facility Start Date": getFacilityStartDate(fac),
