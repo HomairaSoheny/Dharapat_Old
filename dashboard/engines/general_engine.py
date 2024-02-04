@@ -12,3 +12,8 @@ def getBorrowersName(subject_info):
             if len(subject_info[key]) == 0:
                 continue
             return subject_info[key]
+
+def getOutstanding(fac):
+    for key in ['Outstand', 'Outstanding']:
+        if key in fac['Contract History'].keys():
+            return fac['Contract History'].sort_values('Date', ascending=False)[key][0]

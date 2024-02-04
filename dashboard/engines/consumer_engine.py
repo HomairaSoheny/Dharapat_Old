@@ -43,11 +43,6 @@ def getLoanExpiryDate(fac):
         if key in fac['Ref'].keys():
             return str(fac['Ref'][key])
 
-def getOutstanding(fac):
-    for key in ['Outstand', 'Outstanding']:
-        if key in fac['Contract History'].keys():
-            return fac['Contract History'].sort_values('Date', ascending=False)[key][0]
-
 def getEMI(fac):
     for key in ['Monthly instalment amount', 'Installment Amount']:
         if key in fac['Ref'].keys():
@@ -127,7 +122,7 @@ def getConsumerDataFrame(cibs):
                         "Santioned Limit": getSanctionLimit(fac),
                         "Facility Start Date": getFacilityStartDate(fac),
                         "Loan Expiry Date": getLoanExpiryDate(fac),
-                        "Outstanding": getOutstanding(fac),
+                        "Outstanding": general_engine.getOutstanding(fac),
                         "EMI": getEMI(fac),
                         "Total EMI": getTotalEMI(fac),
                         "Remaining EMI": getRemainingEMI(fac),
