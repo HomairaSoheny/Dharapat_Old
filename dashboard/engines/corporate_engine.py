@@ -17,3 +17,8 @@ def getDateOfClassification(fac):
     for key in ['Date of classification']:
         if key in fac['Ref'].keys():
             return fac['Ref'][key]
+        
+def getStartDate(fac):
+    for key in ['Starting date']:
+        if key in fac['Ref'].keys():
+            return fac['Ref'][key]
