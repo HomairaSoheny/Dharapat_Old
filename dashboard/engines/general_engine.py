@@ -38,3 +38,14 @@ def getLimit(fac):
     for key in ['Sanction Limit', 'Credit limit']:
         if key in fac['Ref'].keys():
             return fac['Ref'][key]
+
+def isStayOrder(facility):
+    if type(facility['Contract History']) == dict and 'Stay Order' in facility['Contract History'].keys():
+        return True
+    return False
+
+def getClassFromSet(classes : set):
+    for classification in ('BLW', 'BL', 'DF', 'SS', 'SMA', 'UC', "STD"):
+        if classification in classes:
+            return classification
+    return "None"
