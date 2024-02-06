@@ -75,35 +75,34 @@ def getNoOfNPI(fac, time_frame):
             df = df[df[key] != 0]
             return df[df['Date'] > np.datetime64(datetime.utcnow().date() - timedelta(days=time_frame*30))][key].shape[0]
 
-def getConsumerDataFrame(cibs):
-    df = pd.DataFrame()
-    for cib in cibs:
-        for fac_type in (cib.installment_facility, cib.noninstallment_facility, cib.credit_card_facility):
-            response = []
-            if fac_type is not None:
-                for fac in fac_type:
-                    response.append({
-                        "Borrowers Name": general_engine.getBorrowersName(cib.subject_info),
-                        "Facility Type": general_engine.getFacilityType(fac),
-                        "Phase": general_engine.getPhase(fac),
-                        "Role": general_engine.getRole(fac),
-                        "Business": isBusiness(cib.subject_info),
-                        "Santioned Limit": general_engine.getLimit(fac),
-                        "Facility Start Date": getFacilityStartDate(fac),
-                        "Loan Expiry Date": getLoanExpiryDate(fac),
-                        "Outstanding": general_engine.getOutstanding(fac),
-                        "EMI": getEMI(fac),
-                        "Total EMI": getTotalEMI(fac),
-                        "Remaining EMI": getRemainingEMI(fac),
-                        "Average Outstanding Last 12 Months": getAvgOutstandingLast12Months(fac),
-                        "Overdue": general_engine.getOverdue(fac),
-                        "Current CL Status": general_engine.getCurrentCLStatus(fac),
-                        'Percent of Credit Card Limit Outstanding': percentOfCreditCardLimitOutstanding(fac),
-                        'Worst CL Status in Last 12 Months': getWorstCLStatusInLast12Months(fac),
-                        'Current NPI': getCurrentNPI(fac),
-                        'No of NPI Last 3 Months': getNoOfNPI(fac, 3),
-                        'No of NPI Last 6 Months': getNoOfNPI(fac, 6),
-                        'No of NPI Last 12 Months': getNoOfNPI(fac, 12),
-                    })
-            df = pd.concat([df, pd.DataFrame(response)], ignore_index=True)
+def getConsumerDataFrame(cib):
+    df = pd.DataFrame(columns = ['Borrowers Name', 'Facility Type', 'Phase', 'Role', 'Business', 'Santioned Limit', 'Facility Start Date', 'Loan Expiry Date', 'Outstanding', 'EMI', 'Total EMI', 'Remaining EMI', 'Average Outstanding Last 12 Months', 'Overdue', 'Current CL Status', 'Percent of Credit Card Limit Outstanding', 'Worst CL Status in Last 12 Months', 'Current NPI', 'No of NPI Last 3 Months', 'No of NPI Last 6 Months', 'No of NPI Last 12 Months'])
+    for fac_type in (cib.installment_facility, cib.noninstallment_facility, cib.credit_card_facility):
+        response = []
+        if fac_type is not None:
+            for fac in fac_type:
+                response.append({
+                    "Borrowers Name": general_engine.getBorrowersName(cib.subject_info),
+                    "Facility Type": general_engine.getFacilityType(fac),
+                    "Phase": general_engine.getPhase(fac),
+                    "Role": general_engine.getRole(fac),
+                    "Business": isBusiness(cib.subject_info),
+                    "Santioned Limit": general_engine.getLimit(fac),
+                    "Facility Start Date": getFacilityStartDate(fac),
+                    "Loan Expiry Date": getLoanExpiryDate(fac),
+                    "Outstanding": general_engine.getOutstanding(fac),
+                    "EMI": getEMI(fac),
+                    "Total EMI": getTotalEMI(fac),
+                    "Remaining EMI": getRemainingEMI(fac),
+                    "Average Outstanding Last 12 Months": getAvgOutstandingLast12Months(fac),
+                    "Overdue": general_engine.getOverdue(fac),
+                    "Current CL Status": general_engine.getCurrentCLStatus(fac),
+                    'Percent of Credit Card Limit Outstanding': percentOfCreditCardLimitOutstanding(fac),
+                    'Worst CL Status in Last 12 Months': getWorstCLStatusInLast12Months(fac),
+                    'Current NPI': getCurrentNPI(fac),
+                    'No of NPI Last 3 Months': getNoOfNPI(fac, 3),
+                    'No of NPI Last 6 Months': getNoOfNPI(fac, 6),
+                    'No of NPI Last 12 Months': getNoOfNPI(fac, 12),
+                })
+        df = pd.concat([df, pd.DataFrame(response)], ignore_index=True)
     return df
