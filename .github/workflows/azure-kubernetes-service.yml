@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_CONTAINER_REGISTRY: ${{secrets.AZURE_REGISTRY}}
+  AZURE_LOGIN_SERVER: ${{secrets.AZURE_LOGIN_SERVER}}
   CONTAINER_NAME: ${{secrets.AZURE_REGISTRY_USERNAME}}
   CONTAINER_PASSWORD: ${{secrets.AZURE_REGISTRY_PASSWORD}}
   IMAGE_NAME: dharapat-prime-bank-cib
@@ -36,15 +36,15 @@ jobs:
       - name: Login to Container Registry
         uses: azure/docker-login@v1
         with:
-          login-server: ${{ env.AZURE_CONTAINER_REGISTRY }}
+          login-server: ${{ env.AZURE_LOGIN_SERVER }}
           username: ${{ env.CONTAINER_NAME }}
           password: ${{ env.CONTAINER_PASSWORD }}
       
       - name: Push Docker image to Azure Container Registry
         run: |
-          echo ${{env.AZURE_CONTAINER_REGISTRY}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
-          docker tag ${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} ${{env.AZURE_CONTAINER_REGISTRY}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
-          docker push ${{env.AZURE_CONTAINER_REGISTRY}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
+          echo ${{env.AZURE_LOGIN_SERVER}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
+          docker tag ${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} ${{env.AZURE_LOGIN_SERVER}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
+          docker push ${{env.AZURE_LOGIN_SERVER}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
 
   deploy:
     permissions:
@@ -79,7 +79,7 @@ jobs:
       # Deploys application based on given manifest file
       - name: Update deployment YAML file
         run: |
-          sed -i "s|image: docker-image|image: ${{env.AZURE_CONTAINER_REGISTRY}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}|" ${{ env.DEPLOYMENT_MANIFEST_PATH }}/2-deployment.yaml
+          sed -i "s|image: docker-image|image: ${{env.AZURE_LOGIN_SERVER}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}|" ${{ env.DEPLOYMENT_MANIFEST_PATH }}/2-deployment.yaml
 
       - name: Deploys application
         uses: Azure/k8s-deploy@v4
@@ -87,5 +87,5 @@ jobs:
           action: deploy
           manifests: ${{ env.DEPLOYMENT_MANIFEST_PATH }}
           images: |
-            ${{env.AZURE_CONTAINER_REGISTRY}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
+            ${{env.AZURE_LOGIN_SERVER}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
           namespace: dev-cib-analytics
