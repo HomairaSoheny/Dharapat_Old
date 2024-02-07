@@ -42,7 +42,7 @@ def getConsumerDashboard(cibs):
             }
         
         analysis["Credit Facilities as Guarantor - Live (As Guarantor)"] = {
-            "Term Loan": tableFilter(df=df, facility_type=["Term Loan"], phase=["Living"], role=["Guarantor"], columns=TERM_LOAN_COLUMNS),
+            "Term Loan": tableFilter(df=df, facility_type=["Term Loan"], phase=["Living"], role=["Guarantor"], columns=TERM_LOAN_COLUMNS_FOR_GURANTOR_ROLE),
             "Credit Card": tableFilter(df=df, facility_type=["Credit Card (Revolving)"], phase=["Living"], role=["Guarantor"], columns=CREDIT_CARD_COLUMNS),
             "Others": tableFilter(df=df, facility_type=["Term Loan", "Credit Card (Revolving)"], phase=["Living"], role=["Guarantor"], columns=OTHER_COLUMNS, exclude_facility_type=True),
             }
