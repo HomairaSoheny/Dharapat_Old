@@ -83,6 +83,7 @@ def getConsumerDataFrame(cib):
             for fac in fac_type:
                 response.append({
                     "Borrowers Name": general_engine.getBorrowersName(cib.subject_info),
+                    "Borrower Name": general_engine.getConditionalBorrowerName(fac),
                     "Facility Type": general_engine.getFacilityType(fac),
                     "Phase": general_engine.getPhase(fac),
                     "Role": general_engine.getRole(fac),
