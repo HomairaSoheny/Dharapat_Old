@@ -6,7 +6,7 @@ import json
 from utils.parsing_utils.data_preparation import process_response
 from dashboard.consumer import getConsumerDashboard
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "core.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "report.settings")
 
 import django
 django.setup()
