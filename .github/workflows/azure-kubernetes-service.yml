@@ -7,15 +7,13 @@ on:
 
 env:
   AZURE_LOGIN_SERVER: ${{secrets.AZURE_LOGIN_SERVER}}
-  CONTAINER_NAME: ${{secrets.AZURE_REGISTRY_USERNAME}}
-  CONTAINER_PASSWORD: ${{secrets.AZURE_REGISTRY_PASSWORD}}
+  AZURE_REGISTRY_USERNAME: ${{secrets.AZURE_REGISTRY_USERNAME}}
+  AZURE_REGISTRY_PASSWORD: ${{secrets.AZURE_REGISTRY_PASSWORD}}
   IMAGE_NAME: dharapat-prime-bank-cib
   IMAGE_TAG: ${{ github.run_number }}
   RESOURCE_GROUP: ${{secrets.AZURE_REGISTRY_USERNAME}}
-  CLUSTER_NAME: ${{secrets.AZURE_CLUSTER_NAME}}
+  AZURE_CLUSTER_NAME: ${{secrets.AZURE_CLUSTER_NAME}}
   AZURE_CREDENTIALS: ${{secrets.AZURE_CREDENTIALS}}
-  # AZURE_CLUSTER_TOKEN: ${{secrets.AZURE_CLUSTER_TOKEN}}
-  # AZURE_CLUSTER_URL: ${{secrets.AZURE_CLUSTER_URL}}
   DEPLOYMENT_MANIFEST_PATH: ${{github.workspace}}/k8s/templates/
 
 jobs:
@@ -37,8 +35,8 @@ jobs:
         uses: azure/docker-login@v1
         with:
           login-server: ${{ env.AZURE_LOGIN_SERVER }}
-          username: ${{ env.CONTAINER_NAME }}
-          password: ${{ env.CONTAINER_PASSWORD }}
+          username: ${{ env.AZURE_REGISTRY_USERNAME }}
+          password: ${{ env.AZURE_REGISTRY_PASSWORD }}
       
       - name: Push Docker image to Azure Container Registry
         run: |
@@ -70,9 +68,9 @@ jobs:
       - name: Get K8s context
         uses: azure/aks-set-context@v3
         with:
-          subscription: ${{ env.AZURE_SUBSCRIPTION_ID }}
+          # subscription: ${{ env.AZURE_SUBSCRIPTION_ID }}
           resource-group: ${{ env.RESOURCE_GROUP }}
-          cluster-name: ${{ env.CLUSTER_NAME }}
+          cluster-name: ${{ env.AZURE_CLUSTER_NAME }}
           admin: 'false'
           use-kubelogin: 'false'
 
