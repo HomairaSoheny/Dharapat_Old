@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: dev-cib-deployments
-  namespace: dev-cib-analytics
+  namespace: pbl-cib-analytics
 spec:
   replicas: 1
   selector:
