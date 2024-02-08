@@ -17,7 +17,7 @@ TERM_LOAN_COLUMNS = [
     "No of NPI Last 12 Months",
 ]
 TERM_LOAN_COLUMNS_FOR_GURANTOR_ROLE = [
-    "Borrower Name",
+    "Borrowers Name",
     "Facility Type",
     "Santioned Limit",
     "Facility Start Date",
