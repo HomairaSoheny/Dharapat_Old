@@ -10,7 +10,7 @@ def getNID(subject_info):
             return subject_info[key]
         
 def getFathersName(subject_info):
-    keys = ["Title, Father's name"]
+    keys = ["Title, Father's name", "Father's name"]
     for key in keys:
         if key in subject_info.keys():
             return subject_info[key]
