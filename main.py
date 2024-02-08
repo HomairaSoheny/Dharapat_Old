@@ -63,8 +63,7 @@ def main():
             traceback.print_exc()
 
             try:
-                # raw_json = json.loads(body, strict=False)
-                raw_json = ast.literal_eval(body)
+                raw_json = json.loads(body, strict=False)
                 metadata = raw_json['metaData']
             except:
                 metadata = []

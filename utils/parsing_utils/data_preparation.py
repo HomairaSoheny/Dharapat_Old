@@ -5,8 +5,7 @@ from utils.cib_data_class import CIB
 from beeprint import pp
 
 def process_response(body):
-    # raw_json = json.loads(body)
-    raw_json = ast.literal_eval(body)
+    raw_json = json.loads(body)
     metadata = raw_json['metaData']
     default_cib = metadata['defaultCib']
     error_message = ''
