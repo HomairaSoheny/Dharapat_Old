@@ -1,6 +1,7 @@
 import json
 import time
 from utils.cib_data_class import CIB
+from beepring import pp
 
 def process_response(body):
     raw_json = json.loads(body)
@@ -25,6 +26,10 @@ def process_response(body):
             start = time.time()
             req_cib = CIB(each)
             total_time+=(time.time())-start
+            print("Raw CIB File:")
+            print("\n\n___________________________________________________\n\n")
+            pp(each)
+            print("\n\n___________________________________________________\n\n")
             print("cib processed in : {}".format((time.time())-start))
         else:
             start = time.time()

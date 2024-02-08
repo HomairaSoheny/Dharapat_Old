@@ -18,8 +18,6 @@ def getBorrowersName(subject_info, fac = None):
             if len(subject_info[key]) == 0:
                 continue
             return subject_info[key]
-        
-    
 
 def isNonFunded(fac):
     keywords = ['non funded', 'letter of credit', 'gurantee', 'other indirect facility']
