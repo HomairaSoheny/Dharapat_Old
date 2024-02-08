@@ -82,7 +82,7 @@ def getConsumerDataFrame(cib):
         if fac_type is not None:
             for fac in fac_type:
                 response.append({
-                    "Borrowers Name": general_engine.getBorrowersName(cib.subject_info, fac),
+                    "Borrower Name": general_engine.getBorrowersName(cib.subject_info, fac),
                     "Facility Type": general_engine.getFacilityType(fac),
                     "Phase": general_engine.getPhase(fac),
                     "Role": general_engine.getRole(fac),
