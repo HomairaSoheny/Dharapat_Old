@@ -10,8 +10,12 @@ def tableFilter(df, facility_type, phase, role, columns, exclude_facility_type =
     df = df[~df["Phase"].isin(phase)] if exclude_phase else df[df["Phase"].isin(phase)]
     df = df[df["Role"].isin(role)]
     
+    if df.shape[0] == 0:
+        return []
+    
     for i, row in df[columns].iterrows():
         response.append(row.to_dict())
+        
     return response
 
 def getConsumerDashboard(cibs):
