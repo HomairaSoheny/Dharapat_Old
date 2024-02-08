@@ -16,6 +16,6 @@ COPY . .
 
 
 ENV PYTHONPATH "${PYTHONPATH}:/code"
-ENV PYTHONPATH "${PYTHONPATH}:/code/core"
+ENV PYTHONPATH "${PYTHONPATH}:/code/report"
 
 CMD [ "python", "main.py" ]
