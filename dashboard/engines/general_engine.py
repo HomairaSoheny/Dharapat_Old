@@ -16,8 +16,8 @@ def isNonFunded(fac):
     keywords = ['non funded', 'letter of credit', 'gurantee', 'other indirect facility']
     for key in keywords:
         if key in fac["Ref"]["Facility"].lower():
-            return True
-    return False
+            return "Yes"
+    return "No"
 
 def getOutstanding(fac):
     for key in ['Outstand', 'Outstanding']:
