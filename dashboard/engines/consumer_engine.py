@@ -20,8 +20,8 @@ def isBusiness(subject_info):
     for key in keys:
         if key in subject_info.keys():
             if len(subject_info[key]) > 0:
-                return True
-    return False
+                return "Yes"
+    return "No"
 
 def getFacilityStartDate(fac):
     for key in ['Starting date']:
