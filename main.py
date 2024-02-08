@@ -11,7 +11,6 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "report.settings")
 
 import django
 django.setup()
- 
 
 def main():
     #dev
