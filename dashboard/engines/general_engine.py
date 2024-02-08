@@ -16,8 +16,8 @@ def isNonFunded(fac):
     keywords = ['non funded', 'letter of credit', 'gurantee', 'other indirect facility']
     for key in keywords:
         if key in fac["Ref"]["Facility"].lower():
-            return True
-    return False
+            return "Yes"
+    return "No"
 
 def getOutstanding(fac):
     for key in ['Outstand', 'Outstanding']:
@@ -59,3 +59,16 @@ def getFacilityType(fac):
     for key in ['Facility']:
         if key in fac['Ref'].keys():
             return fac['Ref'][key]
+
+
+def getConditionalBorrowerName(fac):
+    
+    """
+    For Applicants role as Gurantor, the name of the Borrower
+
+    """
+    
+    if fac['Other subjects linked to the same contract'] is not None:
+        for ind, Role in enumerate(fac['Other subjects linked to the same contract']["Role"]):
+            if Role == "Borrower":
+                return fac['Other subjects linked to the same contract']["Name"][ind]

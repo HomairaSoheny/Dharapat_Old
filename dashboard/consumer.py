@@ -5,7 +5,7 @@ from dashboard.engines.columns import *
 def tableFilter(df, facility_type, phase, role, columns, exclude_facility_type = False, exclude_phase = False, check_business = False):
     response = []
     
-    df = df[~df["Business"] == False] if check_business else df[df["Business"] == False]
+    df = df[~df["Business"].isin(["No"])] if check_business else df[df["Business"].isin(["No"])]
     df = df[~df["Facility Type"].isin(facility_type)] if exclude_facility_type else df[df["Facility Type"].isin(facility_type)]
     df = df[~df["Phase"].isin(phase)] if exclude_phase else df[df["Phase"].isin(phase)]
     df = df[df["Role"].isin(role)]
@@ -42,7 +42,7 @@ def getConsumerDashboard(cibs):
             }
         
         analysis["Credit Facilities as Guarantor - Live (As Guarantor)"] = {
-            "Term Loan": tableFilter(df=df, facility_type=["Term Loan"], phase=["Living"], role=["Guarantor"], columns=TERM_LOAN_COLUMNS),
+            "Term Loan": tableFilter(df=df, facility_type=["Term Loan"], phase=["Living"], role=["Guarantor"], columns=TERM_LOAN_COLUMNS_FOR_GURANTOR_ROLE),
             "Credit Card": tableFilter(df=df, facility_type=["Credit Card (Revolving)"], phase=["Living"], role=["Guarantor"], columns=CREDIT_CARD_COLUMNS),
             "Others": tableFilter(df=df, facility_type=["Term Loan", "Credit Card (Revolving)"], phase=["Living"], role=["Guarantor"], columns=OTHER_COLUMNS, exclude_facility_type=True),
             }
