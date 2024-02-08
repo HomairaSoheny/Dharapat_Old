@@ -13,7 +13,7 @@ def getFathersName(subject_info):
     keys = ["Title, Father's name", "Father's name"]
     for key in keys:
         if key in subject_info.keys():
-            return subject_info[key]
+            return subject_info[key] 
 
 def isBusiness(subject_info):
     keys = ['Trade Name']
