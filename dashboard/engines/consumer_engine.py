@@ -4,7 +4,7 @@ from datetime import  datetime, timedelta
 from dashboard.engines import general_engine
 
 def getNID(subject_info):
-    keys = ['NID']
+    keys = ['NID','NID (10 Digit)', 'NID no', 'NID (17 Digit) No', 'NID (10 Digit) No', 'NID (10 or 17 Digit)', 'NID (17 Digit)']
     for key in keys:
         if key in subject_info.keys():
             return subject_info[key]
