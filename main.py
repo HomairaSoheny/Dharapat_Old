@@ -2,6 +2,7 @@ import traceback
 import pika
 import sys
 import os
+import ast
 import json
 from utils.parsing_utils.data_preparation import process_response
 from dashboard.consumer import getConsumerDashboard
@@ -62,7 +63,8 @@ def main():
             traceback.print_exc()
 
             try:
-                raw_json = json.loads(body, strict=False)
+                # raw_json = json.loads(body, strict=False)
+                raw_json = ast.literal_eval(body)
                 metadata = raw_json['metaData']
             except:
                 metadata = []
