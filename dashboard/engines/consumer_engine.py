@@ -10,7 +10,7 @@ def getNID(subject_info):
             return subject_info[key]
         
 def getFathersName(subject_info):
-    keys = ["Title, Father's name"]
+    keys = ["Title, Father's name", "Father's name"]
     for key in keys:
         if key in subject_info.keys():
             return subject_info[key]
@@ -82,8 +82,7 @@ def getConsumerDataFrame(cib):
         if fac_type is not None:
             for fac in fac_type:
                 response.append({
-                    "Borrowers Name": general_engine.getBorrowersName(cib.subject_info),
-                    "Borrower Name": general_engine.getConditionalBorrowerName(fac),
+                    "Borrowers Name": general_engine.getBorrowersName(cib.subject_info, fac),
                     "Facility Type": general_engine.getFacilityType(fac),
                     "Phase": general_engine.getPhase(fac),
                     "Role": general_engine.getRole(fac),
