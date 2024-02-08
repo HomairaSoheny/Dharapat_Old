@@ -1,5 +1,5 @@
 TERM_LOAN_COLUMNS = [
-    "Borrowers Name",
+    "Borrower Name",
     "Facility Type",
     "Santioned Limit",
     "Facility Start Date",
@@ -17,7 +17,7 @@ TERM_LOAN_COLUMNS = [
     "No of NPI Last 12 Months",
 ]
 TERM_LOAN_COLUMNS_FOR_GURANTOR_ROLE = [
-    "Borrowers Name",
+    "Borrower Name",
     "Facility Type",
     "Santioned Limit",
     "Facility Start Date",
@@ -34,7 +34,7 @@ TERM_LOAN_COLUMNS_FOR_GURANTOR_ROLE = [
 ]
 
 CREDIT_CARD_COLUMNS = [
-    "Borrowers Name",
+    "Borrower Name",
     "Facility Type",
     "Santioned Limit",
     "Facility Start Date",
@@ -51,7 +51,7 @@ CREDIT_CARD_COLUMNS = [
     "No of NPI Last 12 Months",
 ]
 OTHER_COLUMNS = [
-    "Borrowers Name",
+    "Borrower Name",
     "Facility Type",
     "Santioned Limit",
     "Facility Start Date",
