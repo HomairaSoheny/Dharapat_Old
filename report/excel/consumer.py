@@ -112,5 +112,3 @@ def generateConsumerSpreadsheet(writer, cib_report):
         worksheet.write('B8', cib['Overall Worst Status'], title_format)
 
         worksheet.autofit()
-    
-    return workbook
