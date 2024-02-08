@@ -10,6 +10,6 @@ def createReportDashboard(cib_datas):
     # if "summary of cib liability" in cib_datas[0]:
     #     generate_corporate_spreadsheet(writer, cib_datas[0])
     # else:
-    generateConsumerSpreadsheet(writer, cib_datas[0])
+    generateConsumerSpreadsheet(writer, cib_datas)
     
     return writer, io
