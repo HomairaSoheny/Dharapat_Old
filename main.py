@@ -13,9 +13,9 @@ django.setup()
 
 
 def main():
-    #development_server
+    #dev
     connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq-temp1.centralindia.azurecontainer.io', heartbeat=400))
-    #production
+    #prod
     #connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq-0.rabbitmq.rabbits.svc.cluster.local', heartbeat=400))
     
     channel = connection.channel()
