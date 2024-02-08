@@ -11,13 +11,7 @@ class GeneralDashboardReportApiView(APIView):
         try:
             body_unicode = request.body.decode('utf-8')
             body = ast.literal_eval(body_unicode)
-            raw_data = body
-
-            # cib_data_list = []
-            # for each in raw_data:
-            #     cib_data_list.append(each)
-
-            writer, io = createReportDashboard(raw_data)
+            writer, io = createReportDashboard(body)
             writer.close()
             
             rFile = io.getvalue()
