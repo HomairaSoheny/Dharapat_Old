@@ -1,7 +1,7 @@
 import json
 import time
 from utils.cib_data_class import CIB
-from beepring import pp
+from beeprint import pp
 
 def process_response(body):
     raw_json = json.loads(body)
