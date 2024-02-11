@@ -48,12 +48,12 @@ with open(cib_path) as f:
 
 * Django
   ```
-  kubectl logs -f --selector app=cib-analyser -n dev-cib-analytics --container worker
+  kubectl logs -f --selector app=cib-analyser -n pbl-cib-analytics --container worker
 
   ```
 * RabbitMQ
   ```
-  kubectl logs -f --selector app=cib-analyser -n dev-cib-analytics --container cib-analyser
+  kubectl logs -f --selector app=cib-analyser -n pbl-cib-analytics --container cib-analyser
   ```
 
 ### **For AI:**

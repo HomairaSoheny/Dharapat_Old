@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: dev-cib-service
-  namespace: dev-cib-analytics
+  namespace: pbl-cib-analytics
 spec:
   selector:
     app: cib-analyser

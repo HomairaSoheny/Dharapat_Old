@@ -4,24 +4,24 @@ from datetime import  datetime, timedelta
 from dashboard.engines import general_engine
 
 def getNID(subject_info):
-    keys = ['NID']
+    keys = ['NID','NID (10 Digit)', 'NID no', 'NID (17 Digit) No', 'NID (10 Digit) No', 'NID (10 or 17 Digit)', 'NID (17 Digit)']
     for key in keys:
         if key in subject_info.keys():
             return subject_info[key]
         
 def getFathersName(subject_info):
-    keys = ["Title, Father's name"]
+    keys = ["Title, Father's name", "Father's name"]
     for key in keys:
         if key in subject_info.keys():
-            return subject_info[key]
+            return subject_info[key] 
 
 def isBusiness(subject_info):
     keys = ['Trade Name']
     for key in keys:
         if key in subject_info.keys():
             if len(subject_info[key]) > 0:
-                return True
-    return False
+                return "Yes"
+    return "No"
 
 def getFacilityStartDate(fac):
     for key in ['Starting date']:
@@ -53,7 +53,7 @@ def getAvgOutstandingLast12Months(fac):
     for key in ['Outstanding', 'Outstand']:
         if key in fac['Contract History'].keys():
             df = (fac['Contract History']).sort_values('Date', ascending=False)[["Date", key]]
-            return sum(df[df['Date'] > np.datetime64(datetime.utcnow().date() - timedelta(days=365))][key])/12
+            return format(sum(df[df['Date'] > np.datetime64(datetime.utcnow().date() - timedelta(days=365))][key])/12, ".2f")
 
 def percentOfCreditCardLimitOutstanding(fac):
     return "Not Implemented"
@@ -82,7 +82,7 @@ def getConsumerDataFrame(cib):
         if fac_type is not None:
             for fac in fac_type:
                 response.append({
-                    "Borrowers Name": general_engine.getBorrowersName(cib.subject_info),
+                    "Borrower Name": general_engine.getBorrowersName(cib.subject_info, fac),
                     "Facility Type": general_engine.getFacilityType(fac),
                     "Phase": general_engine.getPhase(fac),
                     "Role": general_engine.getRole(fac),
