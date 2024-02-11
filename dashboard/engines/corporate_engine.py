@@ -84,6 +84,9 @@ def getNonFundedOutstanding(df):
 def getTotalOutstanding(df):
     return float(format(getFundedOutstandingTotal(df) + getNonFundedOutstanding(df), '.3f'))
 
+def getOverdue(df):
+    return float(format(df['Overdue'].sum()/1000000, ".3f"))
+
 def getDefault(fac):
     return "Yes" if "Yes" in fac['Contract History']['Default'].tolist() else "No"
 

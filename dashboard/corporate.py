@@ -15,6 +15,7 @@ def getSummaryTable(df):
                 "Funded Outstanding Total": getFundedOutstandingTotal(temp_df),
                 "Non-Funded Outstanding": getNonFundedOutstanding(temp_df),
                 "Total Outstanding": getTotalOutstanding(temp_df),
+                "Overdue": getOverdue(temp_df),
                 "CL Status": general_engine.getClassFromSet(set(temp_df['CL Status'].tolist())),
                 "Default": "Yes" if "Yes" in set(temp_df['Default'].tolist()) else "No",
                 "Updated Overdue and CL Status": "Need More Clarification"
@@ -29,6 +30,7 @@ def getSummaryTable(df):
             "Funded Outstanding Total": float(format(sub_total_df['Funded Outstanding Total'].sum(), '.3f')),
             "Non-Funded Outstanding": float(format(sub_total_df['Non-Funded Outstanding'].sum(), '.3f')),
             "Total Outstanding": float(format(sub_total_df['Total Outstanding'].sum(), '.3f')),
+            "Overdue": float(format(sub_total_df['Overdue'].sum(), '.3f')),
             "CL Status": general_engine.getClassFromSet(set(sub_total_df['CL Status'].tolist())),
             "Default": "Yes" if "Yes" in set(sub_total_df['Default'].tolist()) else "No",
             "Updated Overdue and CL Status": "Need More Clarification"
@@ -43,6 +45,7 @@ def getSummaryTable(df):
             "Funded Outstanding Total": float(format(total_df['Funded Outstanding Total'].sum(), '.3f')),
             "Non-Funded Outstanding": float(format(total_df['Non-Funded Outstanding'].sum(), '.3f')),
             "Total Outstanding": float(format(total_df['Total Outstanding'].sum(), '.3f')),
+            "Overdue": float(format(sub_total_df['Overdue'].sum(), '.3f')),
             "CL Status": general_engine.getClassFromSet(set(total_df['CL Status'].tolist())),
             "Default": "Yes" if "Yes" in set(total_df['Default'].tolist()) else "No",
             "Updated Overdue and CL Status": "Need More Clarification"
