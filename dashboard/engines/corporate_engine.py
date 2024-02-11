@@ -67,22 +67,22 @@ def getFacilityType(i):
 def getFundedOutstandingInstallment(df):
     df = df[df['Is Funded'] == 'Yes']
     df = df[df['Facility Type'] == 'Installment']
-    return format(df['Outstanding'].sum()/1000000, ".3f")
+    return float(format(df['Outstanding'].sum()/1000000, ".3f"))
 
 def getFundedOutstandingNonInstallment(df):
     df = df[df['Is Funded'] == 'Yes']
     df = df[df['Facility Type'] == 'No Installment']
-    return format(df['Outstanding'].sum()/1000000, ".3f")
+    return float(format(df['Outstanding'].sum()/1000000, ".3f"))
 
 def getFundedOutstandingTotal(df):
-    return getFundedOutstandingInstallment(df) + getFundedOutstandingNonInstallment(df)
+    return float(format(getFundedOutstandingInstallment(df) + getFundedOutstandingNonInstallment(df), '.3f'))
 
 def getNonFundedOutstanding(df):
     df = df[df['Is Funded'] == 'No']
-    return format(df['Outstanding'].sum()/1000000, ".3f")
+    return float(format(df['Outstanding'].sum()/1000000, ".3f"))
 
 def getTotalOutstanding(df):
-    return getFundedOutstandingTotal(df) + getNonFundedOutstanding(df)
+    return float(format(getFundedOutstandingTotal(df) + getNonFundedOutstanding(df), '.3f'))
 
 def getDefault(fac):
     return "Yes" if "Yes" in fac['Contract History']['Default'].tolist() else "No"

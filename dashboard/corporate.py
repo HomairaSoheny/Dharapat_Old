@@ -24,11 +24,11 @@ def getSummaryTable(df):
         response.append({
             "CIB Category": category,
             "Name of Concern": "Sub Total",
-            "Funded Outstanding Installment": sub_total_df['Funded Outstanding Installment'].sum(),
-            "Funded Outstanding Non Installment": sub_total_df['Funded Outstanding Non Installment'].sum(),
-            "Funded Outstanding Total": sub_total_df['Funded Outstanding Total'].sum(),
-            "Non-Funded Outstanding": sub_total_df['Non-Funded Outstanding'].sum(),
-            "Total Outstanding": sub_total_df['Total Outstanding'].sum(),
+            "Funded Outstanding Installment": float(format(sub_total_df['Funded Outstanding Installment'].sum(), '.3f')),
+            "Funded Outstanding Non Installment": float(format(sub_total_df['Funded Outstanding Non Installment'].sum(), '.3f')),
+            "Funded Outstanding Total": float(format(sub_total_df['Funded Outstanding Total'].sum(), '.3f')),
+            "Non-Funded Outstanding": float(format(sub_total_df['Non-Funded Outstanding'].sum(), '.3f')),
+            "Total Outstanding": float(format(sub_total_df['Total Outstanding'].sum(), '.3f')),
             "CL Status": general_engine.getClassFromSet(set(sub_total_df['CL Status'].tolist())),
             "Default": "Yes" if "Yes" in set(sub_total_df['Default'].tolist()) else "No",
             "Updated Overdue and CL Status": "Need More Clarification"
@@ -38,11 +38,11 @@ def getSummaryTable(df):
     response.append({
             "CIB Category": category,
             "Name of Concern": "Grand Total",
-            "Funded Outstanding Installment": total_df['Funded Outstanding Installment'].sum(),
-            "Funded Outstanding Non Installment": total_df['Funded Outstanding Non Installment'].sum(),
-            "Funded Outstanding Total": total_df['Funded Outstanding Total'].sum(),
-            "Non-Funded Outstanding": total_df['Non-Funded Outstanding'].sum(),
-            "Total Outstanding": total_df['Total Outstanding'].sum(),
+            "Funded Outstanding Installment": float(format(total_df['Funded Outstanding Installment'].sum(), '.3f')),
+            "Funded Outstanding Non Installment": float(format(total_df['Funded Outstanding Non Installment'].sum(), '.3f')),
+            "Funded Outstanding Total": float(format(total_df['Funded Outstanding Total'].sum(), '.3f')),
+            "Non-Funded Outstanding": float(format(total_df['Non-Funded Outstanding'].sum(), '.3f')),
+            "Total Outstanding": float(format(total_df['Total Outstanding'].sum(), '.3f')),
             "CL Status": general_engine.getClassFromSet(set(total_df['CL Status'].tolist())),
             "Default": "Yes" if "Yes" in set(total_df['Default'].tolist()) else "No",
             "Updated Overdue and CL Status": "Need More Clarification"
