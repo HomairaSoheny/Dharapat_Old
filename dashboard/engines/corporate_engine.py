@@ -56,10 +56,41 @@ def getDateOfLastPayment(fac):
         if key in fac['Ref'].keys():
             return fac['Ref'][key]
 
+def getFacilityType(i):
+    facility_types = {
+        0: "Installment",
+        1: "No Installment",
+        2: "Credit Card"
+    }
+    return facility_types.get(i, "Unknown")
+
+def getFundedOutstandingInstallment(df):
+    df = df[df['Is Funded'] == 'Yes']
+    df = df[df['Facility Type'] == 'Installment']
+    return float(format(df['Outstanding'].sum()/1000000, ".3f"))
+
+def getFundedOutstandingNonInstallment(df):
+    df = df[df['Is Funded'] == 'Yes']
+    df = df[df['Facility Type'] == 'No Installment']
+    return float(format(df['Outstanding'].sum()/1000000, ".3f"))
+
+def getFundedOutstandingTotal(df):
+    return float(format(getFundedOutstandingInstallment(df) + getFundedOutstandingNonInstallment(df), '.3f'))
+
+def getNonFundedOutstanding(df):
+    df = df[df['Is Funded'] == 'No']
+    return float(format(df['Outstanding'].sum()/1000000, ".3f"))
+
+def getTotalOutstanding(df):
+    return float(format(getFundedOutstandingTotal(df) + getNonFundedOutstanding(df), '.3f'))
+
+def getDefault(fac):
+    return "Yes" if "Yes" in fac['Contract History']['Default'].tolist() else "No"
+
 def getCorporateDataFrame(cibs):
     df = pd.DataFrame()
     for cib in cibs:
-        for fac_type in (cib.installment_facility, cib.noninstallment_facility, cib.credit_card_facility):
+        for i, fac_type in enumerate((cib.installment_facility, cib.noninstallment_facility, cib.credit_card_facility)):
             response = []
             if fac_type is not None:
                 for fac in fac_type:
@@ -69,12 +100,12 @@ def getCorporateDataFrame(cibs):
                         "Facility Type": general_engine.getFacilityType(fac),
                         "Phase": general_engine.getPhase(fac),
                         "Role": general_engine.getRole(fac),
-                        "Is Non Funded": general_engine.isNonFunded(fac),
-                        "Facility Type": "Installment/No Installment (Not Implemented)",
+                        "Is Funded": general_engine.isFunded(fac),
+                        "Facility Type": getFacilityType(i),
                         "Outstanding": general_engine.getOutstanding(fac),
                         "Overdue": general_engine.getOverdue(fac),
                         "CL Status": general_engine.getCurrentCLStatus(fac),
-                        "Default": "Not Implemented",
+                        "Default": getDefault(fac),
                         "Limit": general_engine.getLimit(fac),
                         "Loan/Limit (days of adjustment before/after)": "Need elaboration",
                         "Worse Classification Status": general_engine.getWorstCLStatus(fac),
@@ -92,7 +123,7 @@ def getCorporateDataFrame(cibs):
                         "Total No of Installment": getTotalNumberOfInstallment(fac),
                         "No of Remaining Installment": getNoOfRemainingInstallment(fac),
                         "Date of Last Payment": getDateOfLastPayment(fac),
-                        "NPL": "Need Elaboration"
+                        "NPI": general_engine.getCurrentNPI(fac)
                     })
             df = pd.concat([df, pd.DataFrame(response)], ignore_index=True)
     return df
