@@ -67,19 +67,19 @@ def getFacilityType(i):
 def getFundedOutstandingInstallment(df):
     df = df[df['Is Funded'] == 'Yes']
     df = df[df['Facility Type'] == 'Installment']
-    return df['Outstanding'].sum()
+    return format(df['Outstanding'].sum()/1000000, ".3f")
 
 def getFundedOutstandingNonInstallment(df):
     df = df[df['Is Funded'] == 'Yes']
     df = df[df['Facility Type'] == 'No Installment']
-    return df['Outstanding'].sum()
+    return format(df['Outstanding'].sum()/1000000, ".3f")
 
 def getFundedOutstandingTotal(df):
     return getFundedOutstandingInstallment(df) + getFundedOutstandingNonInstallment(df)
 
 def getNonFundedOutstanding(df):
     df = df[df['Is Funded'] == 'No']
-    return df['Outstanding'].sum()
+    return format(df['Outstanding'].sum()/1000000, ".3f")
 
 def getTotalOutstanding(df):
     return getFundedOutstandingTotal(df) + getNonFundedOutstanding(df)
