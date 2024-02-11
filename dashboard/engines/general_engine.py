@@ -19,12 +19,12 @@ def getBorrowersName(subject_info, fac = None):
                 continue
             return subject_info[key]
 
-def isNonFunded(fac):
+def isFunded(fac):
     keywords = ['non funded', 'letter of credit', 'gurantee', 'other indirect facility']
     for key in keywords:
         if key in fac["Ref"]["Facility"].lower():
-            return "Yes"
-    return "No"
+            return "No"
+    return "Yes"
 
 def getOutstanding(fac):
     for key in ['Outstand', 'Outstanding']:

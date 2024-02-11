@@ -56,10 +56,18 @@ def getDateOfLastPayment(fac):
         if key in fac['Ref'].keys():
             return fac['Ref'][key]
 
+def getFacilityType(i):
+    if i == 0:
+        return "Installment"
+    if i == 1:
+        return "No Installment"
+    if i == 2:
+        return "Credit Card"
+
 def getCorporateDataFrame(cibs):
     df = pd.DataFrame()
     for cib in cibs:
-        for fac_type in (cib.installment_facility, cib.noninstallment_facility, cib.credit_card_facility):
+        for i, fac_type in enumerate((cib.installment_facility, cib.noninstallment_facility, cib.credit_card_facility)):
             response = []
             if fac_type is not None:
                 for fac in fac_type:
@@ -69,8 +77,8 @@ def getCorporateDataFrame(cibs):
                         "Facility Type": general_engine.getFacilityType(fac),
                         "Phase": general_engine.getPhase(fac),
                         "Role": general_engine.getRole(fac),
-                        "Is Non Funded": general_engine.isNonFunded(fac),
-                        "Facility Type": "Installment/No Installment (Not Implemented)",
+                        "Is Funded": general_engine.isFunded(fac),
+                        "Facility Type": getFacilityType(i),
                         "Outstanding": general_engine.getOutstanding(fac),
                         "Overdue": general_engine.getOverdue(fac),
                         "CL Status": general_engine.getCurrentCLStatus(fac),
