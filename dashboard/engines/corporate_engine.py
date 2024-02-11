@@ -84,6 +84,9 @@ def getNonFundedOutstanding(df):
 def getTotalOutstanding(df):
     return getFundedOutstandingTotal(df) + getNonFundedOutstanding(df)
 
+def getDefault(fac):
+    return "Yes" if "Yes" in fac['Contract History']['Default'].tolist() else "No"
+
 def getCorporateDataFrame(cibs):
     df = pd.DataFrame()
     for cib in cibs:
@@ -102,7 +105,7 @@ def getCorporateDataFrame(cibs):
                         "Outstanding": general_engine.getOutstanding(fac),
                         "Overdue": general_engine.getOverdue(fac),
                         "CL Status": general_engine.getCurrentCLStatus(fac),
-                        "Default": "Not Implemented",
+                        "Default": getDefault(fac),
                         "Limit": general_engine.getLimit(fac),
                         "Loan/Limit (days of adjustment before/after)": "Need elaboration",
                         "Worse Classification Status": general_engine.getWorstCLStatus(fac),

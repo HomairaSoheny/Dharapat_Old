@@ -16,7 +16,7 @@ def getSummaryTable(df):
                 "Non-Funded Outstanding": getNonFundedOutstanding(temp_df),
                 "Total Outstanding": getTotalOutstanding(temp_df),
                 "CL Status": general_engine.getClassFromSet(set(temp_df['CL Status'].tolist())),
-                "Default": "Not Implemented",
+                "Default": "Yes" if "Yes" in set(temp_df['Default'].tolist()) else "No",
                 "Updated Overdue and CL Status": "Need More Clarification"
             })
         sub_total_df = pd.DataFrame(response)
