@@ -63,11 +63,6 @@ def getWorstCLStatusInLast12Months(facility : dict):
         return general_engine.getClassFromSet(set(facility["Contract History"].Status))
     return "None"
 
-def getCurrentNPI(fac):
-    for key in ['NPI']:
-        if key in fac['Contract History'].keys():
-            return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
-
 def getNoOfNPI(fac, time_frame):
     for key in ['NPI']:
         if key in fac['Contract History'].keys():
@@ -99,7 +94,7 @@ def getConsumerDataFrame(cib):
                     "Current CL Status": general_engine.getCurrentCLStatus(fac),
                     'Percent of Credit Card Limit Outstanding': percentOfCreditCardLimitOutstanding(fac),
                     'Worst CL Status in Last 12 Months': getWorstCLStatusInLast12Months(fac),
-                    'Current NPI': getCurrentNPI(fac),
+                    'Current NPI': general_engine.getCurrentNPI(fac),
                     'No of NPI Last 3 Months': getNoOfNPI(fac, 3),
                     'No of NPI Last 6 Months': getNoOfNPI(fac, 6),
                     'No of NPI Last 12 Months': getNoOfNPI(fac, 12),

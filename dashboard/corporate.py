@@ -6,3 +6,4 @@ def summaryTable1(df):
 def getCorporateDashboard(cibs):
     response = {}
     df = getCorporateDataFrame(cibs)
+    return df
