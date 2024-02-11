@@ -1,9 +1,56 @@
-from dashboard.engines.corporate_engine import getCorporateDataFrame
+from dashboard.engines.corporate_engine import *
+from dashboard.engines import general_engine
 
-def summaryTable1(df):
-    return df
+def getSummaryTable(df):
+    response = []
+    for category in df['CIB Category'].unique():
+        cat_df = df[df['CIB Category'] == category]
+        for concern_name in df['Name'].unique():
+            temp_df = cat_df[cat_df['Name'] == concern_name]
+            response.append({
+                "CIB Category": category,
+                "Name of Concern": concern_name,
+                "Funded Outstanding Installment": getFundedOutstandingInstallment(temp_df),
+                "Funded Outstanding Non Installment": getFundedOutstandingNonInstallment(temp_df),
+                "Funded Outstanding Total": getFundedOutstandingTotal(temp_df),
+                "Non-Funded Outstanding": getNonFundedOutstanding(temp_df),
+                "Total Outstanding": getTotalOutstanding(temp_df),
+                "CL Status": general_engine.getClassFromSet(set(temp_df['CL Status'].tolist())),
+                "Default": "Not Implemented",
+                "Updated Overdue and CL Status": "Need More Clarification"
+            })
+        sub_total_df = pd.DataFrame(response)
+        sub_total_df = sub_total_df[sub_total_df['CIB Category'] == category]
+        response.append({
+            "CIB Category": category,
+            "Name of Concern": "Sub Total",
+            "Funded Outstanding Installment": sub_total_df['Funded Outstanding Installment'].sum(),
+            "Funded Outstanding Non Installment": sub_total_df['Funded Outstanding Non Installment'].sum(),
+            "Funded Outstanding Total": sub_total_df['Funded Outstanding Total'].sum(),
+            "Non-Funded Outstanding": sub_total_df['Non-Funded Outstanding'].sum(),
+            "Total Outstanding": sub_total_df['Total Outstanding'].sum(),
+            "CL Status": general_engine.getClassFromSet(set(sub_total_df['CL Status'].tolist())),
+            "Default": "Yes" if "Yes" in set(sub_total_df['Default'].tolist()) else "No",
+            "Updated Overdue and CL Status": "Need More Clarification"
+        })
+    total_df = pd.DataFrame(response)
+    total_df = total_df[total_df['Name of Concern'] == "Sub Total"]
+    response.append({
+            "CIB Category": category,
+            "Name of Concern": "Grand Total",
+            "Funded Outstanding Installment": total_df['Funded Outstanding Installment'].sum(),
+            "Funded Outstanding Non Installment": total_df['Funded Outstanding Non Installment'].sum(),
+            "Funded Outstanding Total": total_df['Funded Outstanding Total'].sum(),
+            "Non-Funded Outstanding": total_df['Non-Funded Outstanding'].sum(),
+            "Total Outstanding": total_df['Total Outstanding'].sum(),
+            "CL Status": general_engine.getClassFromSet(set(total_df['CL Status'].tolist())),
+            "Default": "Yes" if "Yes" in set(total_df['Default'].tolist()) else "No",
+            "Updated Overdue and CL Status": "Need More Clarification"
+        })
+    return response
 
 def getCorporateDashboard(cibs):
     response = {}
     df = getCorporateDataFrame(cibs)
-    return df
+    response['Summary Table - 1'] = getSummaryTable(df)
+    return response
