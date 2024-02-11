@@ -64,6 +64,26 @@ def getFacilityType(i):
     if i == 2:
         return "Credit Card"
 
+def getFundedOutstandingInstallment(df):
+    df = df[df['Is Funded'] == 'Yes']
+    df = df[df['Facility Type'] == 'Installment']
+    return df['Outstanding'].sum()
+
+def getFundedOutstandingNonInstallment(df):
+    df = df[df['Is Funded'] == 'Yes']
+    df = df[df['Facility Type'] == 'No Installment']
+    return df['Outstanding'].sum()
+
+def getFundedOutstandingTotal(df):
+    return getFundedOutstandingInstallment(df) + getFundedOutstandingNonInstallment(df)
+
+def getNonFundedOutstanding(df):
+    df = df[df['Is Funded'] == 'No']
+    return df['Outstanding'].sum()
+
+def getTotalOutstanding(df):
+    return getFundedOutstandingTotal(df) + getNonFundedOutstanding(df)
+
 def getCorporateDataFrame(cibs):
     df = pd.DataFrame()
     for cib in cibs:
