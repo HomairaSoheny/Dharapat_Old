@@ -66,12 +66,12 @@ def getFacilityType(i):
 
 def getFundedOutstandingInstallment(df):
     df = df[df['Is Funded'] == 'Yes']
-    df = df[df['Facility Type'] == 'Installment']
+    df = df[df['Installment Type'] == 'Installment']
     return float(format(df['Outstanding'].sum()/1000000, ".3f"))
 
 def getFundedOutstandingNonInstallment(df):
     df = df[df['Is Funded'] == 'Yes']
-    df = df[df['Facility Type'] == 'No Installment']
+    df = df[df['Installment Type'] == 'No Installment']
     return float(format(df['Outstanding'].sum()/1000000, ".3f"))
 
 def getFundedOutstandingTotal(df):
@@ -101,7 +101,7 @@ def getCorporateDataFrame(cibs):
                         "Phase": general_engine.getPhase(fac),
                         "Role": general_engine.getRole(fac),
                         "Is Funded": general_engine.isFunded(fac),
-                        "Facility Type": getFacilityType(i),
+                        "Installment Type": getFacilityType(i),
                         "Outstanding": general_engine.getOutstanding(fac),
                         "Overdue": general_engine.getOverdue(fac),
                         "CL Status": general_engine.getCurrentCLStatus(fac),
