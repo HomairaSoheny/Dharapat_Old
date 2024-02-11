@@ -92,7 +92,7 @@ def getCorporateDataFrame(cibs):
                         "Total No of Installment": getTotalNumberOfInstallment(fac),
                         "No of Remaining Installment": getNoOfRemainingInstallment(fac),
                         "Date of Last Payment": getDateOfLastPayment(fac),
-                        "NPI": general_engine.getNPI
+                        "NPI": general_engine.getCurrentNPI(fac)
                     })
             df = pd.concat([df, pd.DataFrame(response)], ignore_index=True)
     return df
