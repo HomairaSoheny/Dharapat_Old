@@ -49,8 +49,18 @@ def getSummaryTable(df):
         })
     return response
 
+def getSummaryOfTerminatedFacilityFunded(df):
+    response = []
+    return response
+
+def getSummaryOfTerminatedFacilityNonFunded(df):
+    response = []
+    return response
+
 def getCorporateDashboard(cibs):
     response = {}
     df = getCorporateDataFrame(cibs)
     response['Summary Table - 1'] = getSummaryTable(df)
+    response['Summary of terminated facility (Funded)'] = getSummaryOfTerminatedFacilityFunded(df)
+    response['Summary of terminated facility (Non Funded)'] = getSummaryOfTerminatedFacilityNonFunded(df)
     return response
