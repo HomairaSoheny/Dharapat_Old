@@ -3,7 +3,6 @@ from report.excel.general_helper import align_center
 
 def generateCorporateSpreadsheet(writer, analysis_report):
     workbook = writer.book
-    start_row = 11
     
     header_format = workbook.add_format(
         {
@@ -31,8 +30,9 @@ def generateCorporateSpreadsheet(writer, analysis_report):
     
     summary_table_1 = analysis_report['Summary Table - 1']
     summary_table_1 = pd.DataFrame(summary_table_1)
-    summary_table_1.style.apply(align_center, axis=0).to_excel(writer, sheet_name="Summary Table - 1", startrow=start_row, index=False, header=True)
+    summary_table_1.style.apply(align_center, axis=0).to_excel(writer, sheet_name="Summary Table - 1", startrow=3, index=False, header=True)
     worksheet = writer.sheets["Summary Table - 1"]
-    worksheet.write("A0", "Summary Table - 1", header_format)
+    worksheet.write("A1", "Summary Table - 1", bold)
+    worksheet.write("A2", "BDT in Million")
     
     worksheet.autofit()
