@@ -1,11 +1,9 @@
 import pandas as pd
+from report.excel.general_helper import align_center
 
-def align_center(x):
-    return ['text-align: left' for x in x]
-
-def generateConsumerSpreadsheet(writer, cib_report):
+def generateConsumerSpreadsheet(writer, analysis_report):
     workbook = writer.book
-    for cib in cib_report:    
+    for cib in analysis_report:    
         start_row = 13
         
         header_format = workbook.add_format(

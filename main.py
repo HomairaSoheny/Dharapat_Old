@@ -6,6 +6,7 @@ import warnings
 import json
 from utils.parsing_utils.data_preparation import process_response
 from dashboard.consumer import getConsumerDashboard
+from dashboard.corporate import getCorporateDashboard
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "report.settings")
@@ -48,7 +49,7 @@ def main():
                 scorecard = []
                 final['metaData'] = metadata
                 # dashboard_data = get_corporate_dashboard(cib_list) if metadata['cibType'] == 'corporate' else getConsumerDashboard(cib_list)
-                dashboard_data = getConsumerDashboard(cibs)
+                dashboard_data = getCorporateDashboard(cibs) if metadata['cibType'] == 'corporate' else getConsumerDashboard(cibs)
                 final['score'] = scorecard
                 final['dashboard'] = dashboard_data
                 final['message'] = 'Ok'

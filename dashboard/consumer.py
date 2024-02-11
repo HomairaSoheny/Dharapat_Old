@@ -25,6 +25,7 @@ def getConsumerDashboard(cibs):
         df = getConsumerDataFrame(cib)
         
         analysis["pdf_name"] = cib.pdf_name
+        analysis['analysis type'] = "Consumer"
         analysis["CIB Report of"] = getBorrowersName(cib.subject_info)
         analysis["NID Number"] = getNID(cib.subject_info)
         analysis["Fathers Name"] = getFathersName(cib.subject_info)
