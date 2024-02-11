@@ -57,12 +57,12 @@ def getDateOfLastPayment(fac):
             return fac['Ref'][key]
 
 def getFacilityType(i):
-    if i == 0:
-        return "Installment"
-    if i == 1:
-        return "No Installment"
-    if i == 2:
-        return "Credit Card"
+    facility_types = {
+        0: "Installment",
+        1: "No Installment",
+        2: "Credit Card"
+    }
+    return facility_types.get(i, "Unknown")
 
 def getFundedOutstandingInstallment(df):
     df = df[df['Is Funded'] == 'Yes']
