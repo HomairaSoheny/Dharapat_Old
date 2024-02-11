@@ -2,11 +2,12 @@ import traceback
 import pika
 import sys
 import os
-import ast
+import warnings
 import json
 from utils.parsing_utils.data_preparation import process_response
 from dashboard.consumer import getConsumerDashboard
 
+warnings.simplefilter(action='ignore', category=FutureWarning)
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "report.settings")
 
 import django

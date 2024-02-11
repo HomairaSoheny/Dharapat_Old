@@ -53,7 +53,7 @@ def getAvgOutstandingLast12Months(fac):
     for key in ['Outstanding', 'Outstand']:
         if key in fac['Contract History'].keys():
             df = (fac['Contract History']).sort_values('Date', ascending=False)[["Date", key]]
-            return sum(df[df['Date'] > np.datetime64(datetime.utcnow().date() - timedelta(days=365))][key])/12
+            return format(sum(df[df['Date'] > np.datetime64(datetime.utcnow().date() - timedelta(days=365))][key])/12, ".2f")
 
 def percentOfCreditCardLimitOutstanding(fac):
     return "Not Implemented"
