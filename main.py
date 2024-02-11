@@ -2,21 +2,21 @@ import traceback
 import pika
 import sys
 import os
+import warnings
 import json
 from utils.parsing_utils.data_preparation import process_response
 from dashboard.consumer import getConsumerDashboard
-from cib_analytics.api_generation.corporate_dashboard import get_corporate_dashboard
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "core.settings")
+warnings.simplefilter(action='ignore', category=FutureWarning)
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "report.settings")
 
 import django
 django.setup()
 
-
 def main():
-    #development_server
+    #dev
     connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq-temp1.centralindia.azurecontainer.io', heartbeat=400))
-    #production
+    #prod
     #connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq-0.rabbitmq.rabbits.svc.cluster.local', heartbeat=400))
     
     channel = connection.channel()
@@ -38,17 +38,17 @@ def main():
                 channel1.basic_publish(exchange='', routing_key='prime_bank_cib_extracted_download', body=json.dumps(final))
 
             else:
-                cib_list = []
-                cib_list.append(req_cib)
+                cibs = []
+                cibs.append(req_cib)
 
                 for each in group_cib_list:
-                    cib_list.append(each)
+                    cibs.append(each)
 
                 final = {}
                 scorecard = []
                 final['metaData'] = metadata
-                dashboard_data = get_corporate_dashboard(cib_list) if metadata['cibType'] == 'corporate' else getConsumerDashboard(cib_list)
-                # dashboard_data = generate_full_response(cib_list, metadata['cibType'])
+                # dashboard_data = get_corporate_dashboard(cib_list) if metadata['cibType'] == 'corporate' else getConsumerDashboard(cib_list)
+                dashboard_data = getConsumerDashboard(cibs)
                 final['score'] = scorecard
                 final['dashboard'] = dashboard_data
                 final['message'] = 'Ok'

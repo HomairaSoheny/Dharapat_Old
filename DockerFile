@@ -1,5 +1,5 @@
 # set base image (host OS)
-FROM python:3.9
+FROM python:3.11.3
 
 # set the working directory in the container
 RUN mkdir /code
@@ -16,6 +16,6 @@ COPY . .
 
 
 ENV PYTHONPATH "${PYTHONPATH}:/code"
-ENV PYTHONPATH "${PYTHONPATH}:/code/core"
+ENV PYTHONPATH "${PYTHONPATH}:/code/report"
 
 CMD [ "python", "main.py" ]

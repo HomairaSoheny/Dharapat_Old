@@ -1,32 +1,3 @@
-# This workflow will build and push an application to a Azure Kubernetes Service (AKS) cluster when you push your code
-#
-# This workflow assumes you have already created the target AKS cluster and have created an Azure Container Registry (ACR)
-# The ACR should be attached to the AKS cluster
-# For instructions see:
-#   - https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough-portal
-#   - https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
-#   - https://learn.microsoft.com/en-us/azure/aks/cluster-container-registry-integration?tabs=azure-cli#configure-acr-integration-for-existing-aks-clusters
-#   - https://github.com/Azure/aks-create-action
-#
-# To configure this workflow:
-#
-# 1. Set the following secrets in your repository (instructions for getting these can be found at https://docs.microsoft.com/en-us/azure/developer/github/connect-from-azure?tabs=azure-cli%2Clinux):
-#    - AZURE_CLIENT_ID
-#    - AZURE_TENANT_ID
-#    - AZURE_SUBSCRIPTION_ID
-#
-# 2. Set the following environment variables (or replace the values below):
-#    - AZURE_CONTAINER_REGISTRY (name of your container registry / ACR)
-#    - RESOURCE_GROUP (where your cluster is deployed)
-#    - CLUSTER_NAME (name of your AKS cluster)
-#    - CONTAINER_NAME (name of the container image you would like to push up to your ACR)
-#    - IMAGE_PULL_SECRET_NAME (name of the ImagePullSecret that will be created to pull your ACR image)
-#    - DEPLOYMENT_MANIFEST_PATH (path to the manifest yaml for your deployment)
-#
-# For more information on GitHub Actions for Azure, refer to https://github.com/Azure/Actions
-# For more samples to get started with GitHub Action workflows to deploy to Azure, refer to https://github.com/Azure/actions-workflow-samples
-# For more options with the actions used below please refer to https://github.com/Azure/login
-
 name: Build and deploy an app to AKS
 
 on:
@@ -35,17 +6,14 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_CONTAINER_REGISTRY: ${{secrets.AZURE_REGISTRY_2}}
-  CONTAINER_NAME: ${{secrets.AZURE_REGISTRY_USERNAME}}
-  CONTAINER_PASSWORD: ${{secrets.AZURE_REGISTRY_PASSWORD_2}}
+  AZURE_LOGIN_SERVER: ${{secrets.AZURE_LOGIN_SERVER}}
+  AZURE_REGISTRY_USERNAME: ${{secrets.AZURE_REGISTRY_USERNAME}}
+  AZURE_REGISTRY_PASSWORD: ${{secrets.AZURE_REGISTRY_PASSWORD}}
   IMAGE_NAME: dharapat-prime-bank-cib
-  # IMAGE_TAG: v1.0.7
   IMAGE_TAG: ${{ github.run_number }}
-  RESOURCE_GROUP: ${{secrets.AZURE_REGISTRY_USERNAME_2}}
-  CLUSTER_NAME: ${{secrets.AZURE_CLUSTER_NAME_2}}
-  AZURE_CREDENTIALS: ${{secrets.AZURE_CREDENTIALS_2}}
-  AZURE_CLUSTER_TOKEN: ${{secrets.AZURE_CLUSTER_TOKEN_2}}
-  AZURE_CLUSTER_URL: ${{secrets.AZURE_CLUSTER_URL_2}}
+  RESOURCE_GROUP: ${{secrets.AZURE_REGISTRY_USERNAME}}
+  AZURE_CLUSTER_NAME: ${{secrets.AZURE_CLUSTER_NAME}}
+  AZURE_CREDENTIALS: ${{secrets.AZURE_CREDENTIALS}}
   DEPLOYMENT_MANIFEST_PATH: ${{github.workspace}}/k8s/templates/
 
 jobs:
@@ -66,15 +34,15 @@ jobs:
       - name: Login to Container Registry
         uses: azure/docker-login@v1
         with:
-          login-server: ${{ env.AZURE_CONTAINER_REGISTRY }}
-          username: ${{ env.CONTAINER_NAME }}
-          password: ${{ env.CONTAINER_PASSWORD }}
+          login-server: ${{ env.AZURE_LOGIN_SERVER }}
+          username: ${{ env.AZURE_REGISTRY_USERNAME }}
+          password: ${{ env.AZURE_REGISTRY_PASSWORD }}
       
       - name: Push Docker image to Azure Container Registry
         run: |
-          echo ${{env.AZURE_CONTAINER_REGISTRY}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
-          docker tag ${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} ${{env.AZURE_CONTAINER_REGISTRY}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
-          docker push ${{env.AZURE_CONTAINER_REGISTRY}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
+          echo ${{env.AZURE_LOGIN_SERVER}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
+          docker tag ${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} ${{env.AZURE_LOGIN_SERVER}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
+          docker push ${{env.AZURE_LOGIN_SERVER}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
 
   deploy:
     permissions:
@@ -95,23 +63,21 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ env.AZURE_CREDENTIALS }}
-          # cluster-name: ${{env.CLUSTER_NAME}}
-          # resource-group: ${{env.RESOURCE_GROUP}}
 
       # Retrieves your Azure Kubernetes Service cluster's kubeconfig file
       - name: Get K8s context
         uses: azure/aks-set-context@v3
         with:
-          subscription: ${{ env.AZURE_SUBSCRIPTION_ID }}
+          # subscription: ${{ env.AZURE_SUBSCRIPTION_ID }}
           resource-group: ${{ env.RESOURCE_GROUP }}
-          cluster-name: ${{ env.CLUSTER_NAME }}
+          cluster-name: ${{ env.AZURE_CLUSTER_NAME }}
           admin: 'false'
           use-kubelogin: 'false'
 
       # Deploys application based on given manifest file
       - name: Update deployment YAML file
         run: |
-          sed -i "s|image: docker-image|image: ${{env.AZURE_CONTAINER_REGISTRY}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}|" ${{ env.DEPLOYMENT_MANIFEST_PATH }}/2-deployment.yaml
+          sed -i "s|image: docker-image|image: ${{env.AZURE_LOGIN_SERVER}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}|" ${{ env.DEPLOYMENT_MANIFEST_PATH }}/2-deployment.yaml
 
       - name: Deploys application
         uses: Azure/k8s-deploy@v4
@@ -119,5 +85,5 @@ jobs:
           action: deploy
           manifests: ${{ env.DEPLOYMENT_MANIFEST_PATH }}
           images: |
-            ${{env.AZURE_CONTAINER_REGISTRY}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
-          namespace: dev-cib-analytics
+            ${{env.AZURE_LOGIN_SERVER}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
+          namespace: pbl-cib-analytics

@@ -2,22 +2,29 @@ def getPhase(fac):
     return fac["Ref"]["Phase"]
 
 def getRole(fac):
-    return fac["Ref"]["Role"]
+    if fac is not None:
+        return fac["Ref"]["Role"]
 
-def getBorrowersName(subject_info):
+def getBorrowersName(subject_info, fac = None):
     keys = ['Title', 'Name', 'Title, Name', 'Trade Name']
+    if getRole(fac) in ['Guarantor']:
+        if fac['Other subjects linked to the same contract'] is not None:
+            for ind, Role in enumerate(fac['Other subjects linked to the same contract']["Role"]):
+                if Role == "Borrower":
+                    return fac['Other subjects linked to the same contract']["Name"][ind]
+        return ""
     for key in keys:
         if key in subject_info.keys():
             if len(subject_info[key]) == 0:
                 continue
             return subject_info[key]
 
-def isNonFunded(fac):
+def isFunded(fac):
     keywords = ['non funded', 'letter of credit', 'gurantee', 'other indirect facility']
     for key in keywords:
         if key in fac["Ref"]["Facility"].lower():
-            return True
-    return False
+            return "No"
+    return "Yes"
 
 def getOutstanding(fac):
     for key in ['Outstand', 'Outstanding']:
@@ -59,3 +66,8 @@ def getFacilityType(fac):
     for key in ['Facility']:
         if key in fac['Ref'].keys():
             return fac['Ref'][key]
+
+def getCurrentNPI(fac):
+    for key in ['NPI']:
+        if key in fac['Contract History'].keys():
+            return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
