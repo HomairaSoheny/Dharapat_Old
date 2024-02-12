@@ -72,13 +72,7 @@ def getFundedOutstandingNonInstallment(df):
 
 
 def getFundedOutstandingTotal(df):
-    return float(
-        format(
-            getFundedOutstandingInstallment(df)
-            + getFundedOutstandingNonInstallment(df),
-            ".3f",
-        )
-    )
+    return float(format(getFundedOutstandingInstallment(df) + getFundedOutstandingNonInstallment(df),".3f",))
 
 
 def getNonFundedOutstanding(df):
@@ -87,9 +81,7 @@ def getNonFundedOutstanding(df):
 
 
 def getTotalOutstanding(df):
-    return float(
-        format(getFundedOutstandingTotal(df) + getNonFundedOutstanding(df), ".3f")
-    )
+    return float(format(getFundedOutstandingTotal(df) + getNonFundedOutstanding(df), ".3f"))
 
 
 def getOverdue(df):
@@ -104,12 +96,12 @@ def getSummaryTableFields(category, concern_name, df):
     return {
         "CIB Category": category,
         "Name of Concern": concern_name,
-        "Funded Outstanding Installment": getFundedOutstandingInstallment(df),
-        "Funded Outstanding Non Installment": getFundedOutstandingNonInstallment(df),
-        "Funded Outstanding Total": getFundedOutstandingTotal(df),
-        "Non-Funded Outstanding": getNonFundedOutstanding(df),
-        "Total Outstanding": getTotalOutstanding(df),
-        "Overdue": getOverdue(df),
+        "Funded Outstanding Installment": float(getFundedOutstandingInstallment(df)),
+        "Funded Outstanding Non Installment": float(getFundedOutstandingNonInstallment(df)),
+        "Funded Outstanding Total": float(getFundedOutstandingTotal(df)),
+        "Non-Funded Outstanding": float(getNonFundedOutstanding(df)),
+        "Total Outstanding": float(getTotalOutstanding(df)),
+        "Overdue": float(getOverdue(df)),
         "CL Status": general_engine.getClassFromSet(set(df["CL Status"].tolist())),
         "Default": "Yes" if "Yes" in set(df["Default"].tolist()) else "No",
         "Updated Overdue and CL Status": "Need More Clarification",
@@ -120,18 +112,10 @@ def getSummaryTableSum(category, concern_name, df):
     return {
         "CIB Category": category,
         "Name of Concern": concern_name,
-        "Funded Outstanding Installment": float(
-            format(df["Funded Outstanding Installment"].sum(), ".3f")
-        ),
-        "Funded Outstanding Non Installment": float(
-            format(df["Funded Outstanding Non Installment"].sum(), ".3f")
-        ),
-        "Funded Outstanding Total": float(
-            format(df["Funded Outstanding Total"].sum(), ".3f")
-        ),
-        "Non-Funded Outstanding": float(
-            format(df["Non-Funded Outstanding"].sum(), ".3f")
-        ),
+        "Funded Outstanding Installment": float(format(df["Funded Outstanding Installment"].sum(), ".3f")),
+        "Funded Outstanding Non Installment": float(format(df["Funded Outstanding Non Installment"].sum(), ".3f")),
+        "Funded Outstanding Total": float(format(df["Funded Outstanding Total"].sum(), ".3f")),
+        "Non-Funded Outstanding": float(format(df["Non-Funded Outstanding"].sum(), ".3f")),
         "Total Outstanding": float(format(df["Total Outstanding"].sum(), ".3f")),
         "Overdue": float(format(df["Overdue"].sum(), ".3f")),
         "CL Status": general_engine.getClassFromSet(set(df["CL Status"].tolist())),
@@ -145,30 +129,18 @@ def getSummaryOfFundedFacilityFields(row, i, installment):
         "SL": "B1.1 - " + str(i + 1) if installment else "B2.1 - " + str(i + 1),
         "Nature of Facility": row["Facility Type"],
         "Installment Type": row["Installment Type"],
-        "Limit": row["Limit"],
-        "Outstanding": row["Outstanding"],
-        "Overdue": row["Overdue"],
-        "Start Date": row["Start Date"],
-        "End Date of Contract": row["End Date of Contract"],
-        "Installment Amount": (
-            row["Installment Amount"] if installment else "Not Applicable"
-        ),
-        "Payment Period": (
-            row["Payment Period (Monthly/Quarterly)"]
-            if installment
-            else "Not Applicable"
-        ),
-        "Total No. of Installment": (
-            row["Total No of Installment"] if installment else "Not Applicable"
-        ),
-        "Total no. of Installment paid": (
-            "Not Implemented" if installment else "Not Applicable"
-        ),
-        "No. of Remaining Installment": (
-            row["No of Remaining Installment"] if installment else "Not Applicable"
-        ),
-        "Date of Last Payment": row["Date of Last Payment"],
-        "NPI": row["NPI"] if installment else "Not Applicable",
+        "Limit": float(row["Limit"]),
+        "Outstanding": float(row["Outstanding"]),
+        "Overdue": float(row["Overdue"]),
+        "Start Date": str(row["Start Date"]),
+        "End Date of Contract": str(row["End Date of Contract"]),
+        "Installment Amount": (float(row["Installment Amount"]) if installment else "Not Applicable"),
+        "Payment Period": (row["Payment Period (Monthly/Quarterly)"] if installment else "Not Applicable"),
+        "Total No. of Installment": (row["Total No of Installment"] if installment else "Not Applicable"),
+        "Total no. of Installment paid": ("Not Implemented" if installment else "Not Applicable"),
+        "No. of Remaining Installment": (int(row["No of Remaining Installment"]) if installment else "Not Applicable"),
+        "Date of Last Payment": str(row["Date of Last Payment"]),
+        "NPI": int(row["NPI"]) if installment else "Not Applicable",
         "Default": row["Default"],
     }
 
@@ -177,18 +149,18 @@ def getSummaryOfFundedFacilitySum(df, total_type, installment_type):
         "SL": "-",
         "Nature of Facility": total_type,
         "Installment Type": installment_type,
-        "Limit": df["Limit"].sum(),
-        "Outstanding": df['Outstanding'].sum(),
-        "Overdue": df["Overdue"].sum(),
+        "Limit": float(df["Limit"].sum()),
+        "Outstanding": (df['Outstanding'].sum()),
+        "Overdue": float(df["Overdue"].sum()),
         "Start Date": "-",
         "End Date of Contract": "-",
-        "Installment Amount": df['Installment Amount'].sum(),
+        "Installment Amount": float(df['Installment Amount'].sum()),
         "Payment Period": "-",
-        "Total No. of Installment": df['Total No of Installment'].sum(),
+        "Total No. of Installment": float(df['Total No of Installment'].sum()),
         "Total no. of Installment paid": "Not Implemented",
-        "No. of Remaining Installment": df['No of Remaining Installment'].sum(),
+        "No. of Remaining Installment": float(df['No of Remaining Installment'].sum()),
         "Date of Last Payment": "-",
-        "NPI": df['NPI'].sum(),
+        "NPI": int(df['NPI'].sum()),
         "Default": "Yes" if "Yes" in set(df['Default'].tolist()) else "No",
     }
 
@@ -222,9 +194,7 @@ def getCorporateDataFrame(cibs):
                             "Limit": general_engine.getLimit(fac),
                             "Loan/Limit (days of adjustment before/after)": "Need elaboration",
                             "Installment Amount": general_engine.getEMI(fac),
-                            "Worse Classification Status": general_engine.getWorstCLStatus(
-                                fac
-                            ),
+                            "Worse Classification Status": general_engine.getWorstCLStatus(fac),
                             "Date of Classification": getDateOfClassification(fac),
                             "Start Date": getStartDate(fac),
                             "End Date of Contract": getEndDateOfContract(fac),
@@ -237,9 +207,7 @@ def getCorporateDataFrame(cibs):
                             "Remarks": getRemarks(fac),
                             "Payment Period (Monthly/Quarterly)": getPaymentPeriod(fac),
                             "Total No of Installment": getTotalNumberOfInstallment(fac),
-                            "No of Remaining Installment": getNoOfRemainingInstallment(
-                                fac
-                            ),
+                            "No of Remaining Installment": getNoOfRemainingInstallment(fac),
                             "Date of Last Payment": getDateOfLastPayment(fac),
                             "NPI": general_engine.getCurrentNPI(fac),
                         }
