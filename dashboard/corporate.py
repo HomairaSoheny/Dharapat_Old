@@ -35,7 +35,7 @@ def getSummaryOfFundedFacility(df):
 
     for i, row in non_installment.iterrows():
         response.append(getSummaryOfFundedFacilityFields(row, i, False))
-    response.append(getSummaryOfFundedFacilitySum(installment, "Sub Total", "No Installment"))
+    response.append(getSummaryOfFundedFacilitySum(non_installment, "Sub Total", "No Installment"))
     
     return response
 
