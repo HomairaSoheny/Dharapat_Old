@@ -33,13 +33,8 @@ def getLoanExpiryDate(fac):
         if key in fac['Ref'].keys():
             return str(fac['Ref'][key])
 
-def getEMI(fac):
-    for key in ['Monthly instalment amount', 'Installment Amount']:
-        if key in fac['Ref'].keys():
-            return fac['Ref'][key]
-
 def getTotalEMI(fac):
-    EMI = getEMI(fac)
+    EMI = general_engine.getEMI(fac)
     for key in ['Total number of installments']:
         if key in fac['Ref'].keys():
             return int(fac['Ref'][key]) * int(EMI)
@@ -86,7 +81,7 @@ def getConsumerDataFrame(cib):
                     "Facility Start Date": getFacilityStartDate(fac),
                     "Loan Expiry Date": getLoanExpiryDate(fac),
                     "Outstanding": general_engine.getOutstanding(fac),
-                    "EMI": getEMI(fac),
+                    "EMI": general_engine.getEMI(fac),
                     "Total EMI": getTotalEMI(fac),
                     "Remaining EMI": getRemainingEMI(fac),
                     "Average Outstanding Last 12 Months": getAvgOutstandingLast12Months(fac),

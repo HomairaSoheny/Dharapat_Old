@@ -135,15 +135,76 @@ def getSummaryTableSum(category, concern_name, df):
     return {
         "CIB Category": category,
         "Name of Concern": concern_name,
-        "Funded Outstanding Installment": float(format(df["Funded Outstanding Installment"].sum(), ".3f")),
-        "Funded Outstanding Non Installment": float(format(df["Funded Outstanding Non Installment"].sum(), ".3f")),
-        "Funded Outstanding Total": float(format(df["Funded Outstanding Total"].sum(), ".3f")),
-        "Non-Funded Outstanding": float(format(df["Non-Funded Outstanding"].sum(), ".3f")),
+        "Funded Outstanding Installment": float(
+            format(df["Funded Outstanding Installment"].sum(), ".3f")
+        ),
+        "Funded Outstanding Non Installment": float(
+            format(df["Funded Outstanding Non Installment"].sum(), ".3f")
+        ),
+        "Funded Outstanding Total": float(
+            format(df["Funded Outstanding Total"].sum(), ".3f")
+        ),
+        "Non-Funded Outstanding": float(
+            format(df["Non-Funded Outstanding"].sum(), ".3f")
+        ),
         "Total Outstanding": float(format(df["Total Outstanding"].sum(), ".3f")),
         "Overdue": float(format(df["Overdue"].sum(), ".3f")),
         "CL Status": general_engine.getClassFromSet(set(df["CL Status"].tolist())),
         "Default": "Yes" if "Yes" in set(df["Default"].tolist()) else "No",
         "Updated Overdue and CL Status": "Need More Clarification",
+    }
+
+
+def getSummaryOfFundedFacilityFields(row, i, installment):
+    return {
+        "SL": "B1.1 - " + str(i + 1),
+        "Nature of Facility": row["Facility Type"],
+        "Installment Type": row["Installment Type"],
+        "Limit": row["Limit"],
+        "Outstanding": row["Outstanding"],
+        "Overdue": row["Overdue"],
+        "Start Date": row["Start Date"],
+        "End Date of Contract": row["End Date of Contract"],
+        "Installment Amount": (
+            row["Installment Amount"] if installment else "Not Applicable"
+        ),
+        "Payment Period": (
+            row["Payment Period (Monthly/Quarterly)"]
+            if installment
+            else "Not Applicable"
+        ),
+        "Total No. of Installment": (
+            row["Total No of Installment"] if installment else "Not Applicable"
+        ),
+        "Total no. of Installment paid": (
+            "Not Implemented" if installment else "Not Applicable"
+        ),
+        "No. of Remaining Installment": (
+            row["No of Remaining Installment"] if installment else "Not Applicable"
+        ),
+        "Date of Last Payment": row["Date of Last Payment"],
+        "NPI": row["NPI"] if installment else "Not Applicable",
+        "Default": row["Default"],
+    }
+
+def getSummaryOfFundedFacilitySum(df, total_type, installment_type):
+    return {
+        "SL": "-",
+        "Nature of Facility": total_type,
+        "Installment Type": installment_type,
+        "Limit": df["Limit"].sum(),
+        "Outstanding": df['Outstanding'].sum(),
+        "Overdue": df["Overdue"].sum(),
+        "Start Date": "-",
+        "End Date of Contract": "-",
+        "Installment Amount": df['Installment Amount'].sum(),
+        "Payment Period": "-",
+        "Total No. of Installment": df['Total No of Installment'].sum(),
+        "Total no. of Installment paid": "Not Implemented",
+        "No. of Remaining Installment": df['No of Remaining Installment'].sum(),
+        "Date of Last Payment": "-",
+        "NPI": df['NPI'].sum(),
+        "Default": "Yes" if "Yes" in set(df['Default'].tolist()) else "No",
     }
 
 
@@ -175,6 +236,7 @@ def getCorporateDataFrame(cibs):
                             "Default": getDefault(fac),
                             "Limit": general_engine.getLimit(fac),
                             "Loan/Limit (days of adjustment before/after)": "Need elaboration",
+                            "Installment Amount": general_engine.getEMI(fac),
                             "Worse Classification Status": general_engine.getWorstCLStatus(
                                 fac
                             ),

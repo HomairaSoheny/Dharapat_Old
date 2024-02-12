@@ -71,3 +71,9 @@ def getCurrentNPI(fac):
     for key in ['NPI']:
         if key in fac['Contract History'].keys():
             return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
+
+
+def getEMI(fac):
+    for key in ['Monthly instalment amount', 'Installment Amount']:
+        if key in fac['Ref'].keys():
+            return fac['Ref'][key]
