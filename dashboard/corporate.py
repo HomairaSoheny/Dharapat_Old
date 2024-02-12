@@ -1,4 +1,5 @@
 from dashboard.engines.corporate_engine import *
+from utils.general_helper import *
 
 def getSummaryTable(df):
     response = []
@@ -24,10 +25,10 @@ def getSummaryOfTerminatedFacilityFunded(df):
     for i, row in df.iterrows():
         response.append({
             "Installment": row['Facility Type'],
-            "Limit": row["Limit"],
+            "Limit": convertToFloat(row["Limit"]),
             "Loan/Limit (days of adjustment before/after)": "Not Implemented",
             "Worse Classification Status": row["CL Status"],
-            "Date of Classification": row["Date of Classification"]
+            "Date of Classification": convertToString(row["Date of Classification"])
         })
     return response
 
@@ -40,10 +41,10 @@ def getSummaryOfTerminatedFacilityNonFunded(df):
     for i, row in df.iterrows():
         response.append({
             "Non-Installment": row['Facility Type'],
-            "Limit": row["Limit"],
+            "Limit": convertToFloat(row["Limit"]),
             "Loan/Limit (days of adjustment before/after)": "Not Implemented",
             "Worse Classification Status": row["CL Status"],
-            "Date of Classification": row["Date of Classification"]
+            "Date of Classification": convertToString(row["Date of Classification"])
         })
     return response
     
@@ -70,10 +71,10 @@ def getSummaryOfNonFundedFacility(df):
     for i, row in df.iterrows():
         response.append({
             "Nature of Facility": row['Facility Type'],
-            "Limit": row["Limit"],
-            "Outstanding": row["Outstanding"],
-            "Start Date": row["Start Date"],
-            "End Date of Contract": row["End Date of Contract"],
+            "Limit": convertToFloat(row["Limit"]),
+            "Outstanding": convertToFloat(row["Outstanding"]),
+            "Start Date": convertToString(row["Start Date"]),
+            "End Date of Contract": convertToString(row["End Date of Contract"]),
             "Default": row["Default"]
         })
     return response
