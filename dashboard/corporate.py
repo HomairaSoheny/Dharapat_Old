@@ -28,7 +28,7 @@ def getSummaryOfFundedFacility(df):
     df = df[df['Is Funded'] == 'Yes']
     installment = df[df['Installment Type'] == 'Installment']
     non_installment = df[df['Installment Type'] == 'No Installment']
-    
+
     for i, row in installment.iterrows():
         response.append(getSummaryOfFundedFacilityFields(row, i, True))
     response.append(getSummaryOfFundedFacilitySum(installment, "Sub Total", "Installment"))
@@ -39,12 +39,31 @@ def getSummaryOfFundedFacility(df):
     
     return response
 
+def getSummaryOfNonFundedFacility(df):
+    response = []
+    return response
+
+def getSummaryOfFacilities(df):
+    response = {}
+    response['Summary of terminated facility (Funded)'] = getSummaryOfTerminatedFacilityFunded(df)
+    response['Summary of terminated facility (Non Funded)'] = getSummaryOfTerminatedFacilityNonFunded(df)
+    summary_of_funded_facility = {}
+    summary_of_non_funded_facility = {}
+    
+    for cib_type in df['CIB Category'].unique():
+        temp_df = df[df['CIB Category'] == cib_type]
+        summary_of_funded_facility[cib_type] = getSummaryOfFundedFacility(temp_df)
+        summary_of_non_funded_facility[cib_type] = getSummaryOfNonFundedFacility(temp_df)
+
+    response['Summary of funded facility'] = summary_of_funded_facility
+    response['Summary of non funded facility'] = summary_of_non_funded_facility
+    return response
+
 def getCorporateDashboard(cibs):
     response = {}
     df = getCorporateDataFrame(cibs)
     response['analysis type'] = "Corporate"
     response['Summary Table - 1'] = getSummaryTable(df)
-    response['Summary of terminated facility (Funded)'] = getSummaryOfTerminatedFacilityFunded(df)
-    response['Summary of terminated facility (Non Funded)'] = getSummaryOfTerminatedFacilityNonFunded(df)
-    response['Summary of funded facility'] = getSummaryOfFundedFacility(df)
+    response['Summary of Facilities'] = getSummaryOfFacilities(df)
+    
     return response
