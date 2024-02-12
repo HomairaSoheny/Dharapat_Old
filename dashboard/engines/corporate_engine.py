@@ -1,77 +1,62 @@
 import pandas as pd
 from dashboard.engines import general_engine
+from dashboard.engines.keywords import *
 
 
 def getCIBCategory(cib):
-    category_mapping = {
-        "Type a": "Concerns of primary borrower with PBL",
-        "Type b": "Other sister concerns of primary borrower",
-        "Type c": "Other concerns due to common shareholdings/directorship",
-        "Type d": "Directors CIB",
-        "Type e": "20% plus shareholder other than director",
-        "Type f": "Guarantors CIB (Personal)",
-        "Type g": "Corporate Guarantor",
-        "Type h": "Related party of Guarantor",
-        "Type i": "Other concerns/persons not related to the company",
-    }
-
-    return category_mapping.get(cib.cib_category, None)
+    return CATEGORY_MAPPING.get(cib.cib_category, None)
 
 
 def getDateOfClassification(fac):
-    for key in ["Date of classification"]:
+    for key in DATE_OF_CLASSIFICATION:
         if key in fac["Ref"].keys():
             return fac["Ref"][key]
 
 
 def getStartDate(fac):
-    for key in ["Starting date"]:
+    for key in STARTING_DATE:
         if key in fac["Ref"].keys():
             return fac["Ref"][key]
 
 
 def getEndDateOfContract(fac):
-    for key in ["End date of contract"]:
+    for key in END_DATE_OF_CONTRACT:
         if key in fac["Ref"].keys():
             return fac["Ref"][key]
 
 
 def getRemarks(fac):
-    for key in ["Remarks"]:
+    for key in REMARKS:
         if key in fac["Ref"].keys():
             return fac["Ref"][key]
 
 
 def getPaymentPeriod(fac):
-    for key in [
-        "Payments Periodicity",
-        "Payments periodicity",
-    ]:
+    for key in PAYMENT_PERIOD:
         if key in fac["Ref"].keys():
             return fac["Ref"][key]
 
 
 def getTotalNumberOfInstallment(fac):
-    for key in ["Total number of installments"]:
+    for key in TOTAL_NUMBER_OF_INSTALLMENT:
         if key in fac["Ref"].keys():
             return fac["Ref"][key]
 
 
 def getNoOfRemainingInstallment(fac):
-    for key in ["Remaining installments Number"]:
+    for key in REMAINING_INSTALLMENT_NUMBER:
         if key in fac["Ref"].keys():
             return fac["Ref"][key]
 
 
 def getDateOfLastPayment(fac):
-    for key in ["Date of last payment"]:
+    for key in DATE_OF_LAST_PAYMENT:
         if key in fac["Ref"].keys():
             return fac["Ref"][key]
 
 
 def getFacilityType(i):
-    facility_types = {0: "Installment", 1: "No Installment", 2: "Credit Card"}
-    return facility_types.get(i, "Unknown")
+    return FACILITY_CATEGORIES.get(i, "Unknown")
 
 
 def getFundedOutstandingInstallment(df):
