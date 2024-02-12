@@ -127,20 +127,20 @@ def getSummaryTableSum(category, concern_name, df):
 
 def getSummaryOfFundedFacilityFields(row, i, installment):
     return {
-        "SL": "B1.1 - " + str(i + 1) if installment else "B2.1 - " + str(i + 1),
+        "SL": "B1.1 - " + convertToString(i + 1) if installment else "B2.1 - " + convertToString(i + 1),
         "Nature of Facility": row["Facility Type"],
         "Installment Type": row["Installment Type"],
         "Limit": convertToFloat(row["Limit"]),
         "Outstanding": convertToFloat(row["Outstanding"]),
         "Overdue": convertToFloat(row["Overdue"]),
-        "Start Date": str(row["Start Date"]),
-        "End Date of Contract": str(row["End Date of Contract"]),
+        "Start Date": convertToString(row["Start Date"]),
+        "End Date of Contract": convertToString(row["End Date of Contract"]),
         "Installment Amount": (convertToFloat(row["Installment Amount"]) if installment else "Not Applicable"),
         "Payment Period": (row["Payment Period (Monthly/Quarterly)"] if installment else "Not Applicable"),
         "Total No. of Installment": (row["Total No of Installment"] if installment else "Not Applicable"),
         "Total no. of Installment paid": ("Not Implemented" if installment else "Not Applicable"),
         "No. of Remaining Installment": (int(row["No of Remaining Installment"]) if installment else "Not Applicable"),
-        "Date of Last Payment": str(row["Date of Last Payment"]),
+        "Date of Last Payment": convertToString(row["Date of Last Payment"]),
         "NPI": int(row["NPI"]) if installment else "Not Applicable",
         "Default": row["Default"],
     }
