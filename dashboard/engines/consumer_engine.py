@@ -15,12 +15,9 @@ def getFathersName(subject_info):
         if key in subject_info.keys():
             return subject_info[key] 
 
-def isBusiness(subject_info):
-    keys = ['Trade Name']
-    for key in keys:
-        if key in subject_info.keys():
-            if len(subject_info[key]) > 0:
-                return "Yes"
+def isBusiness(fac):
+    if fac['Ref']['Ref'][0] != "1":
+        return "Yes"
     return "No"
 
 def getFacilityStartDate(fac):
@@ -76,7 +73,7 @@ def getConsumerDataFrame(cib):
                     "Facility Type": general_engine.getFacilityType(fac),
                     "Phase": general_engine.getPhase(fac),
                     "Role": general_engine.getRole(fac),
-                    "Business": isBusiness(cib.subject_info),
+                    "Business": isBusiness(fac),
                     "Santioned Limit": general_engine.getLimit(fac),
                     "Facility Start Date": getFacilityStartDate(fac),
                     "Loan Expiry Date": getLoanExpiryDate(fac),
