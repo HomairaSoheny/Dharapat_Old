@@ -17,11 +17,36 @@ def getSummaryTable(df):
 
 def getSummaryOfTerminatedFacilityFunded(df):
     response = []
+    df = df[df['Phase'] != 'Living']
+    df = df[df['Is Funded'] == "Yes"]
+    df = df[df['Installment Type'] == 'Installment']
+    
+    for i, row in df.iterrows():
+        response.append({
+            "Installment": row['Facility Type'],
+            "Limit": row["Limit"],
+            "Loan/Limit (days of adjustment before/after)": "Not Implemented",
+            "Worse Classification Status": row["CL Status"],
+            "Date of Classification": row["Date of Classification"]
+        })
     return response
 
 def getSummaryOfTerminatedFacilityNonFunded(df):
     response = []
+    df = df[df['Phase'] != 'Living']
+    df = df[df['Is Funded'] == "No"]
+    df = df[df['Installment Type'] == 'No Installment']
+    
+    for i, row in df.iterrows():
+        response.append({
+            "Non-Installment": row['Facility Type'],
+            "Limit": row["Limit"],
+            "Loan/Limit (days of adjustment before/after)": "Not Implemented",
+            "Worse Classification Status": row["CL Status"],
+            "Date of Classification": row["Date of Classification"]
+        })
     return response
+    
 
 def getSummaryOfFundedFacility(df):
     response = []
