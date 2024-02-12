@@ -41,6 +41,16 @@ def getSummaryOfFundedFacility(df):
 
 def getSummaryOfNonFundedFacility(df):
     response = []
+    df = df[df['Is Funded'] == 'No']
+    for i, row in df.iterrows():
+        response.append({
+            "Nature of Facility": row['Facility Type'],
+            "Limit": row["Limit"],
+            "Outstanding": row["Outstanding"],
+            "Start Date": row["Start Date"],
+            "End Date of Contract": row["End Date of Contract"],
+            "Default": row["Default"]
+        })
     return response
 
 def getSummaryOfFacilities(df):

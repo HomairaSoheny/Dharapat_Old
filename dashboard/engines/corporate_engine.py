@@ -157,7 +157,7 @@ def getSummaryTableSum(category, concern_name, df):
 
 def getSummaryOfFundedFacilityFields(row, i, installment):
     return {
-        "SL": "B1.1 - " + str(i + 1),
+        "SL": "B1.1 - " + str(i + 1) if installment else "B2.1 - " + str(i + 1),
         "Nature of Facility": row["Facility Type"],
         "Installment Type": row["Installment Type"],
         "Limit": row["Limit"],
