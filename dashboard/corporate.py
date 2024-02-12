@@ -80,8 +80,6 @@ def getSummaryOfNonFundedFacility(df):
 
 def getSummaryOfFacilities(df):
     response = {}
-    response['Summary of terminated facility (Funded)'] = getSummaryOfTerminatedFacilityFunded(df)
-    response['Summary of terminated facility (Non Funded)'] = getSummaryOfTerminatedFacilityNonFunded(df)
     summary_of_funded_facility = {}
     summary_of_non_funded_facility = {}
     
@@ -99,6 +97,10 @@ def getCorporateDashboard(cibs):
     df = getCorporateDataFrame(cibs)
     response['analysis type'] = "Corporate"
     response['Summary Table - 1'] = getSummaryTable(df)
-    response['Summary of Facilities'] = getSummaryOfFacilities(df)
+    response['A. Summary of Terminated Facilities'] = {
+        "Funded": getSummaryOfTerminatedFacilityFunded(df),
+        "Non Funded": getSummaryOfTerminatedFacilityNonFunded(df)
+    }
+    response['B. Summary of Facilities'] = getSummaryOfFacilities(df)
     
     return response
