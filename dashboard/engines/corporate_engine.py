@@ -1,6 +1,7 @@
 import pandas as pd
 from dashboard.engines import general_engine
 from dashboard.engines.keywords import *
+from utils.general_helper import *
 
 
 def getCIBCategory(cib):
@@ -62,30 +63,30 @@ def getFacilityType(i):
 def getFundedOutstandingInstallment(df):
     df = df[df["Is Funded"] == "Yes"]
     df = df[df["Installment Type"] == "Installment"]
-    return float(format(df["Outstanding"].sum() / 1000000, ".3f"))
+    return convertToMillion(df["Outstanding"].sum())
 
 
 def getFundedOutstandingNonInstallment(df):
     df = df[df["Is Funded"] == "Yes"]
     df = df[df["Installment Type"] == "No Installment"]
-    return float(format(df["Outstanding"].sum() / 1000000, ".3f"))
+    return convertToMillion(df["Outstanding"].sum())
 
 
 def getFundedOutstandingTotal(df):
-    return float(format(getFundedOutstandingInstallment(df) + getFundedOutstandingNonInstallment(df),".3f",))
+    return convertToFloat(getFundedOutstandingInstallment(df) + getFundedOutstandingNonInstallment(df))
 
 
 def getNonFundedOutstanding(df):
     df = df[df["Is Funded"] == "No"]
-    return float(format(df["Outstanding"].sum() / 1000000, ".3f"))
+    return convertToMillion(df["Outstanding"].sum())
 
 
 def getTotalOutstanding(df):
-    return float(format(getFundedOutstandingTotal(df) + getNonFundedOutstanding(df), ".3f"))
+    return convertToFloat(getFundedOutstandingTotal(df) + getNonFundedOutstanding(df))
 
 
 def getOverdue(df):
-    return float(format(df["Overdue"].sum() / 1000000, ".3f"))
+    return convertToMillion(df["Overdue"].sum())
 
 
 def getDefault(fac):
@@ -96,12 +97,12 @@ def getSummaryTableFields(category, concern_name, df):
     return {
         "CIB Category": category,
         "Name of Concern": concern_name,
-        "Funded Outstanding Installment": float(getFundedOutstandingInstallment(df)),
-        "Funded Outstanding Non Installment": float(getFundedOutstandingNonInstallment(df)),
-        "Funded Outstanding Total": float(getFundedOutstandingTotal(df)),
-        "Non-Funded Outstanding": float(getNonFundedOutstanding(df)),
-        "Total Outstanding": float(getTotalOutstanding(df)),
-        "Overdue": float(getOverdue(df)),
+        "Funded Outstanding Installment": convertToFloat(getFundedOutstandingInstallment(df)),
+        "Funded Outstanding Non Installment": convertToFloat(getFundedOutstandingNonInstallment(df)),
+        "Funded Outstanding Total": convertToFloat(getFundedOutstandingTotal(df)),
+        "Non-Funded Outstanding": convertToFloat(getNonFundedOutstanding(df)),
+        "Total Outstanding": convertToFloat(getTotalOutstanding(df)),
+        "Overdue": convertToFloat(getOverdue(df)),
         "CL Status": general_engine.getClassFromSet(set(df["CL Status"].tolist())),
         "Default": "Yes" if "Yes" in set(df["Default"].tolist()) else "No",
         "Updated Overdue and CL Status": "Need More Clarification",
@@ -112,12 +113,12 @@ def getSummaryTableSum(category, concern_name, df):
     return {
         "CIB Category": category,
         "Name of Concern": concern_name,
-        "Funded Outstanding Installment": float(format(df["Funded Outstanding Installment"].sum(), ".3f")),
-        "Funded Outstanding Non Installment": float(format(df["Funded Outstanding Non Installment"].sum(), ".3f")),
-        "Funded Outstanding Total": float(format(df["Funded Outstanding Total"].sum(), ".3f")),
-        "Non-Funded Outstanding": float(format(df["Non-Funded Outstanding"].sum(), ".3f")),
-        "Total Outstanding": float(format(df["Total Outstanding"].sum(), ".3f")),
-        "Overdue": float(format(df["Overdue"].sum(), ".3f")),
+        "Funded Outstanding Installment": convertToFloat(df["Funded Outstanding Installment"].sum()),
+        "Funded Outstanding Non Installment": convertToFloat(df["Funded Outstanding Non Installment"].sum()),
+        "Funded Outstanding Total": convertToFloat(df["Funded Outstanding Total"].sum()),
+        "Non-Funded Outstanding": convertToFloat(df["Non-Funded Outstanding"].sum()),
+        "Total Outstanding": convertToFloat(df["Total Outstanding"].sum()),
+        "Overdue": convertToFloat(df["Overdue"].sum()),
         "CL Status": general_engine.getClassFromSet(set(df["CL Status"].tolist())),
         "Default": "Yes" if "Yes" in set(df["Default"].tolist()) else "No",
         "Updated Overdue and CL Status": "Need More Clarification",
@@ -129,12 +130,12 @@ def getSummaryOfFundedFacilityFields(row, i, installment):
         "SL": "B1.1 - " + str(i + 1) if installment else "B2.1 - " + str(i + 1),
         "Nature of Facility": row["Facility Type"],
         "Installment Type": row["Installment Type"],
-        "Limit": float(row["Limit"]),
-        "Outstanding": float(row["Outstanding"]),
-        "Overdue": float(row["Overdue"]),
+        "Limit": convertToFloat(row["Limit"]),
+        "Outstanding": convertToFloat(row["Outstanding"]),
+        "Overdue": convertToFloat(row["Overdue"]),
         "Start Date": str(row["Start Date"]),
         "End Date of Contract": str(row["End Date of Contract"]),
-        "Installment Amount": (float(row["Installment Amount"]) if installment else "Not Applicable"),
+        "Installment Amount": (convertToFloat(row["Installment Amount"]) if installment else "Not Applicable"),
         "Payment Period": (row["Payment Period (Monthly/Quarterly)"] if installment else "Not Applicable"),
         "Total No. of Installment": (row["Total No of Installment"] if installment else "Not Applicable"),
         "Total no. of Installment paid": ("Not Implemented" if installment else "Not Applicable"),
@@ -149,18 +150,18 @@ def getSummaryOfFundedFacilitySum(df, total_type, installment_type):
         "SL": "-",
         "Nature of Facility": total_type,
         "Installment Type": installment_type,
-        "Limit": float(df["Limit"].sum()),
-        "Outstanding": (df['Outstanding'].sum()),
-        "Overdue": float(df["Overdue"].sum()),
+        "Limit": convertToFloat(df["Limit"].sum()),
+        "Outstanding": convertToFloat(df['Outstanding'].sum()),
+        "Overdue": convertToFloat(df["Overdue"].sum()),
         "Start Date": "-",
         "End Date of Contract": "-",
-        "Installment Amount": float(df['Installment Amount'].sum()),
+        "Installment Amount": convertToFloat(df['Installment Amount'].sum()),
         "Payment Period": "-",
-        "Total No. of Installment": float(df['Total No of Installment'].sum()),
+        "Total No. of Installment": convertToFloat(df['Total No of Installment'].sum()),
         "Total no. of Installment paid": "Not Implemented",
-        "No. of Remaining Installment": float(df['No of Remaining Installment'].sum()),
+        "No. of Remaining Installment": convertToFloat(df['No of Remaining Installment'].sum()),
         "Date of Last Payment": "-",
-        "NPI": int(df['NPI'].sum()),
+        "NPI": convertToInteger(df['NPI'].sum()),
         "Default": "Yes" if "Yes" in set(df['Default'].tolist()) else "No",
     }
 
