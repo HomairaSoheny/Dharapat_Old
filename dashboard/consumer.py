@@ -1,4 +1,4 @@
-import json
+from utils.general_helper import convertToString
 from dashboard.engines.consumer_engine import getConsumerDataFrame, getNID, getFathersName
 from dashboard.engines.general_engine import getBorrowersName, getClassFromSet
 from dashboard.engines.columns import *
@@ -15,7 +15,11 @@ def tableFilter(df, facility_type, phase, role, columns, exclude_facility_type =
         return []
     
     for i, row in df[columns].iterrows():
-        response.append(row.to_dict())
+        analysis_dict = {}
+        row_dict = row.to_dict()
+        for key in row_dict:
+            analysis_dict[key] = convertToString(row_dict[key])
+        response.append(analysis_dict)
         
     return response
 
@@ -25,16 +29,16 @@ def getConsumerDashboard(cibs):
         analysis = {}
         df = getConsumerDataFrame(cib)
         
-        analysis["pdf_name"] = cib.pdf_name
+        analysis["pdf_name"] = convertToString(cib.pdf_name)
         analysis['analysis type'] = "Consumer"
-        analysis["CIB Report of"] = getBorrowersName(cib.subject_info)
-        analysis["NID Number"] = getNID(cib.subject_info)
-        analysis["Fathers Name"] = getFathersName(cib.subject_info)
-        analysis["No of Living Contracts"] = df[df["Phase"] == "Living"].shape[0]
-        analysis["Total Outstanding"] = sum(df[df["Phase"] == "Living"]["Outstanding"])
-        analysis["Total Overdue"] = sum(df[df["Phase"] == "Living"]["Overdue"])
-        analysis["Current Status"] = getClassFromSet(set(df[df["Phase"] == "Living"]["Current CL Status"].tolist()))
-        analysis["Overall Worst Status"] = getClassFromSet(set(df[df["Phase"] == "Living"]["Worst CL Status in Last 12 Months"].tolist()))
+        analysis["CIB Report of"] = convertToString(getBorrowersName(cib.subject_info))
+        analysis["NID Number"] = convertToString(getNID(cib.subject_info))
+        analysis["Fathers Name"] = convertToString(getFathersName(cib.subject_info))
+        analysis["No of Living Contracts"] = convertToString(df[df["Phase"] == "Living"].shape[0])
+        analysis["Total Outstanding"] = convertToString(sum(df[df["Phase"] == "Living"]["Outstanding"]))
+        analysis["Total Overdue"] = convertToString(sum(df[df["Phase"] == "Living"]["Overdue"]))
+        analysis["Current Status"] = convertToString(getClassFromSet(set(df[df["Phase"] == "Living"]["Current CL Status"].tolist())))
+        analysis["Overall Worst Status"] = convertToString(getClassFromSet(set(df[df["Phase"] == "Living"]["Worst CL Status in Last 12 Months"].tolist())))
         
         analysis["Credit Facilities as Applicant - Live (As Borrower)"] = {
             "Term Loan": tableFilter(df=df, facility_type=["Term Loan"], phase=["Living"], role=["Borrower", "Co-Borrower", "Co- Borrower"], columns=TERM_LOAN_COLUMNS),
