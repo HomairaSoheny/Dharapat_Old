@@ -61,4 +61,4 @@ def getConsumerDashboard(cibs):
             }
         response.append(analysis)
     
-    return json.dumps(response)
+    return response
