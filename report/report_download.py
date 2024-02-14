@@ -5,7 +5,6 @@ from report.excel.consumer import generateConsumerSpreadsheet
 from report.excel.corporate import generateCorporateSpreadsheet
 
 def createReportDashboard(analysis_report):
-    print("Entered report dashboard")
     io = BytesIO()
     writer = pd.ExcelWriter(io, engine='xlsxwriter', )
     if type(analysis_report) == list:
