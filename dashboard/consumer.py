@@ -1,3 +1,4 @@
+import json
 from dashboard.engines.consumer_engine import getConsumerDataFrame, getNID, getFathersName
 from dashboard.engines.general_engine import getBorrowersName, getClassFromSet
 from dashboard.engines.columns import *
@@ -60,4 +61,4 @@ def getConsumerDashboard(cibs):
             }
         response.append(analysis)
     
-    return response
+    return json.dumps(response)
