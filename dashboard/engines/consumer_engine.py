@@ -48,7 +48,14 @@ def getAvgOutstandingLast12Months(fac):
             return format(sum(df[df['Date'] > np.datetime64(datetime.utcnow().date() - timedelta(days=365))][key])/12, ".2f")
 
 def percentOfCreditCardLimitOutstanding(fac):
-    return "Not Implemented"
+    for key in ['Credit limit']:
+        if key in fac['Ref'].keys():
+            credit = (fac['Ref']['Credit limit'])  
+            outstand = (fac['Contract History'].sort_values('Date', ascending=False).Outstanding[0])
+            if round(credit*(.6)) >= outstand :
+                return (round(credit*.02))
+            else:
+                return (outstand*(.05))
 
 def getWorstCLStatusInLast12Months(facility : dict):
     if not general_engine.isStayOrder(facility):
