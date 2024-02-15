@@ -32,7 +32,7 @@ def getConsumerDashboard(cibs):
         analysis["pdf_name"] = convertToString(cib.pdf_name)
         analysis['analysis type'] = "Consumer"
         analysis["CIB Report of"] = convertToString(getBorrowersName(cib.subject_info))
-        analysis["NID Number"] = convertToString(getNID(cib.subject_info))
+        analysis["NID Number"] = convertToString(getNID(cib.subject_info, cib.inquired))
         analysis["Fathers Name"] = convertToString(getFathersName(cib.subject_info))
         analysis["No of Living Contracts"] = convertToString(df[df["Phase"] == "Living"].shape[0])
         analysis["Total Outstanding"] = convertToString(sum(df[df["Phase"] == "Living"]["Outstanding"]))
