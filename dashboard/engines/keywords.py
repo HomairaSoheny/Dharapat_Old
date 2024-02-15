@@ -24,7 +24,36 @@ TOTAL_NUMBER_OF_INSTALLMENT = ["Total number of installments"]
 
 REMAINING_INSTALLMENT_NUMBER = ["Remaining installments Number"]
 
+REMAINING_INSTALLMENT_AMOUNT = ['Remaining Amount', 'Remaining installments Amount']
+
 DATE_OF_LAST_PAYMENT = ["Date of last payment"]
 
 FACILITY_CATEGORIES = {0: "Installment", 1: "No Installment", 2: "Credit Card"}
 
+NID = ['NID','NID (10 Digit)', 'NID no', 'NID (17 Digit) No', 'NID (10 Digit) No', 'NID (10 or 17 Digit)', 'NID (17 Digit)']
+
+FATHER_NAME = ["Title, Father's name", "Father's name"]
+
+OUTSTANDING = ['Outstanding', 'Outstand']
+
+CREDIT_LIMIT = ['Credit limit']
+
+NPI = ['NPI']
+
+BORROWER_NAME = ['Title', 'Name', 'Title, Name', 'Trade Name']
+
+NON_FUNDED = ['non funded', 'letter of credit', 'gurantee', 'other indirect facility']
+
+OVERDUE = ['Overdue']
+
+STATUS = ['Status']
+
+LIMIT = ['Sanction Limit', 'Credit limit']
+
+CL_STATUS = ('BLW', 'BL', 'DF', 'SS', 'SMA', 'UC', "STD")
+
+FACILITY = ['Facility']
+
+EMI = ['Monthly instalment amount', 'Installment Amount']
+
+GUARANTOR = ['Guarantor']

@@ -2,18 +2,17 @@ import pandas as pd
 import numpy as np
 from datetime import  datetime, timedelta
 from dashboard.engines import general_engine
+from dashboard.engines.keywords import *
 
-def getNID(subject_info, inquired):
-    keys = ['NID','NID (10 Digit)', 'NID no', 'NID (17 Digit) No', 'NID (10 Digit) No', 'NID (10 or 17 Digit)', 'NID (17 Digit)']
-    for key in keys:
+def getNID(subject_info, inquired):    
+    for key in NID:
         if key in subject_info.keys():
             return subject_info[key]
         if key in inquired.keys():
             return inquired[key]
         
 def getFathersName(subject_info):
-    keys = ["Title, Father's name", "Father's name"]
-    for key in keys:
+    for key in FATHER_NAME:
         if key in subject_info.keys():
             return subject_info[key] 
 
@@ -23,34 +22,34 @@ def isBusiness(fac):
     return "No"
 
 def getFacilityStartDate(fac):
-    for key in ['Starting date']:
+    for key in STARTING_DATE:
         if key in fac['Ref'].keys():
             return str(fac['Ref'][key])
 
 def getLoanExpiryDate(fac):
-    for key in ['End date of contract']:
+    for key in END_DATE_OF_CONTRACT:
         if key in fac['Ref'].keys():
             return str(fac['Ref'][key])
 
 def getTotalEMI(fac):
     EMI = general_engine.getEMI(fac)
-    for key in ['Total number of installments']:
+    for key in TOTAL_NUMBER_OF_INSTALLMENT:
         if key in fac['Ref'].keys():
             return int(fac['Ref'][key]) * int(EMI)
 
 def getRemainingEMI(fac):
-    for key in ['Remaining Amount', 'Remaining installments Amount']:
+    for key in REMAINING_INSTALLMENT_AMOUNT:
         if key in fac['Ref'].keys():
             return fac['Ref'][key]
 
 def getAvgOutstandingLast12Months(fac):
-    for key in ['Outstanding', 'Outstand']:
+    for key in OUTSTANDING:
         if key in fac['Contract History'].keys():
             df = (fac['Contract History']).sort_values('Date', ascending=False)[["Date", key]]
             return format(sum(df[df['Date'] > np.datetime64(datetime.utcnow().date() - timedelta(days=365))][key])/12, ".2f")
 
 def percentOfCreditCardLimitOutstanding(fac):
-    for key in ['Credit limit']:
+    for key in CREDIT_LIMIT:
         if key in fac['Ref'].keys():
             credit = (fac['Ref']['Credit limit'])  
             outstand = (fac['Contract History'].sort_values('Date', ascending=False).Outstanding[0])
@@ -65,7 +64,7 @@ def getWorstCLStatusInLast12Months(facility : dict):
     return "None"
 
 def getNoOfNPI(fac, time_frame):
-    for key in ['NPI']:
+    for key in NPI:
         if key in fac['Contract History'].keys():
             df = (fac['Contract History']).sort_values('Date', ascending=False)[["Date", key]]
             df = df[df[key] != 0]
