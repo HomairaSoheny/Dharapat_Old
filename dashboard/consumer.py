@@ -34,11 +34,11 @@ def getConsumerDashboard(cibs):
         analysis["CIB Report of"] = convertToString(getBorrowersName(cib.subject_info))
         analysis["NID Number"] = convertToString(getNID(cib.subject_info, cib.inquired))
         analysis["Fathers Name"] = convertToString(getFathersName(cib.subject_info))
-        analysis["No of Living Contracts"] = convertToString(df[df["Phase"] == "Living"].shape[0])
-        analysis["Total Outstanding"] = convertToString(sum(df[df["Phase"] == "Living"]["Outstanding"]))
-        analysis["Total Overdue"] = convertToString(sum(df[df["Phase"] == "Living"]["Overdue"]))
-        analysis["Current Status"] = convertToString(getClassFromSet(set(df[df["Phase"] == "Living"]["Current CL Status"].tolist())))
-        analysis["Overall Worst Status"] = convertToString(getClassFromSet(set(df[df["Phase"] == "Living"]["Worst CL Status in Last 12 Months"].tolist())))
+        analysis["No of Living Contracts"] = convertToString(df[(df["Phase"] == "Living") & df['Role'].isin(["Borrower", "Co-Borrower", "Co- Borrower"])].shape[0])
+        analysis["Total Outstanding"] = convertToString(sum(df[(df["Phase"] == "Living") & df['Role'].isin(["Borrower", "Co-Borrower", "Co- Borrower"])]["Outstanding"]))
+        analysis["Total Overdue"] = convertToString(sum(df[(df["Phase"] == "Living") & df['Role'].isin(["Borrower", "Co-Borrower", "Co- Borrower"])]["Overdue"]))
+        analysis["Current Status"] = convertToString(getClassFromSet(set(df[(df["Phase"] == "Living") & df['Role'].isin(["Borrower", "Co-Borrower", "Co- Borrower"])]["Current CL Status"].tolist())))
+        analysis["Overall Worst Status"] = convertToString(getClassFromSet(set(df[(df["Phase"] == "Living") & df['Role'].isin(["Borrower", "Co-Borrower", "Co- Borrower"])]["Worst CL Status in Last 12 Months"].tolist())))
         
         analysis["Credit Facilities as Applicant - Live (As Borrower)"] = {
             "Term Loan": tableFilter(df=df, facility_type=["Term Loan"], phase=["Living"], role=["Borrower", "Co-Borrower", "Co- Borrower"], columns=TERM_LOAN_COLUMNS),
