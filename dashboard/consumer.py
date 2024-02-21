@@ -42,26 +42,26 @@ def getConsumerDashboard(cibs):
         analysis["Overall Worst Status"] = convertToString(getClassFromSet(set(df[(df["Phase"] == "Living") & df['Role'].isin(BORROWER)]["Worst CL Status in Last 12 Months"].tolist())))
         
         analysis["Credit Facilities as Applicant - Live (As Borrower)"] = {
-            "Term Loan": tableFilter(df=df, facility_type=["Term Loan"], phase=["Living"], role=BORROWER, columns=TERM_LOAN_COLUMNS),
-            "Credit Card": tableFilter(df=df, facility_type=["Credit Card (Revolving)"], phase=["Living"], role=BORROWER, columns=CREDIT_CARD_COLUMNS),
+            "Term Loan": tableFilter(df=df, facility_type=TERM_LOAN, phase=["Living"], role=BORROWER, columns=TERM_LOAN_COLUMNS),
+            "Credit Card": tableFilter(df=df, facility_type=CREDIT_CARD, phase=["Living"], role=BORROWER, columns=CREDIT_CARD_COLUMNS),
             "Others": tableFilter(df=df, facility_type=["Term Loan", "Credit Card (Revolving)"], phase=["Living"], role=BORROWER, columns=OTHER_COLUMNS, exclude_facility_type=True),
             }
         
         analysis["Credit Facilities as Applicant - Terminated - Last 12 Months (As Borrower)"] = {
-            "Term Loan": tableFilter(df=df, facility_type=["Term Loan"], phase=["Living"], role=BORROWER, columns=TERM_LOAN_COLUMNS, exclude_phase=True),
-            "Credit Card": tableFilter(df=df, facility_type=["Credit Card (Revolving)"], phase=["Living"], role=BORROWER, columns=CREDIT_CARD_COLUMNS, exclude_phase=True),
+            "Term Loan": tableFilter(df=df, facility_type=TERM_LOAN, phase=["Living"], role=BORROWER, columns=TERM_LOAN_COLUMNS, exclude_phase=True),
+            "Credit Card": tableFilter(df=df, facility_type=CREDIT_CARD, phase=["Living"], role=BORROWER, columns=CREDIT_CARD_COLUMNS, exclude_phase=True),
             "Others": tableFilter(df=df, facility_type=["Term Loan", "Credit Card (Revolving)"], phase=["Living"], role=BORROWER, columns=OTHER_COLUMNS, exclude_facility_type=True, exclude_phase=True),
             }
         
         analysis["Credit Facilities as Guarantor - Live (As Guarantor)"] = {
-            "Term Loan": tableFilter(df=df, facility_type=["Term Loan"], phase=["Living"], role=["Guarantor"], columns=TERM_LOAN_COLUMNS_FOR_GURANTOR_ROLE),
-            "Credit Card": tableFilter(df=df, facility_type=["Credit Card (Revolving)"], phase=["Living"], role=["Guarantor"], columns=CREDIT_CARD_COLUMNS),
+            "Term Loan": tableFilter(df=df, facility_type=TERM_LOAN, phase=["Living"], role=["Guarantor"], columns=TERM_LOAN_COLUMNS_FOR_GURANTOR_ROLE),
+            "Credit Card": tableFilter(df=df, facility_type=CREDIT_CARD, phase=["Living"], role=["Guarantor"], columns=CREDIT_CARD_COLUMNS),
             "Others": tableFilter(df=df, facility_type=["Term Loan", "Credit Card (Revolving)"], phase=["Living"], role=["Guarantor"], columns=OTHER_COLUMNS, exclude_facility_type=True),
             }
         
         analysis["Credit Facilities in the Name of Business - Live"] = {
-            "Term Loan": tableFilter(df=df, facility_type=["Term Loan"], phase=["Living"], role=BORROWER, columns=TERM_LOAN_COLUMNS, check_business=True),
-            "Credit Card": tableFilter(df=df, facility_type=["Credit Card (Revolving)"], phase=["Living"], role=BORROWER, columns=CREDIT_CARD_COLUMNS, check_business=True),
+            "Term Loan": tableFilter(df=df, facility_type=TERM_LOAN, phase=["Living"], role=BORROWER, columns=TERM_LOAN_COLUMNS, check_business=True),
+            "Credit Card": tableFilter(df=df, facility_type=CREDIT_CARD, phase=["Living"], role=BORROWER, columns=CREDIT_CARD_COLUMNS, check_business=True),
             "Others": tableFilter(df=df, facility_type=["Term Loan", "Credit Card (Revolving)"], phase=["Living"], role=BORROWER, columns=OTHER_COLUMNS, exclude_facility_type=True, check_business=True),
             }
         response.append(analysis)
