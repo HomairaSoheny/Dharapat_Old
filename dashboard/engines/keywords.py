@@ -1,3 +1,8 @@
+BORROWER = ["Borrower", "Co-Borrower", "Co- Borrower"]
+CREDIT_CARD = ["Credit Card (Revolving)"]
+TERM_LOAN = ["Term Loan"]
+
+
 CATEGORY_MAPPING = {
         "Type a": "Concerns of primary borrower with PBL",
         "Type b": "Other sister concerns of primary borrower",
