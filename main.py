@@ -18,7 +18,7 @@ def main():
     #dev
     connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq-temp1.centralindia.azurecontainer.io', heartbeat=400))
     #prod
-    #connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq-0.rabbitmq.rabbits.svc.cluster.local', heartbeat=400))
+    # connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq-0.rabbitmq.rabbits.svc.cluster.local', heartbeat=400))
     
     channel = connection.channel()
     channel.queue_declare(queue='prime_bank_cib_response')
