@@ -159,6 +159,12 @@ def generateFundedTerminatedFacilityTableWorksheet(writer, workbook, funded_term
             "text_wrap": True
         }
     )
+    normal_bold_format = workbook.add_format(
+        {
+            "bold": True,
+            "font_size": 12,
+        }
+    )
 
     
     worksheet = writer.sheets["Summary-terminated facility"]
@@ -180,6 +186,104 @@ def generateFundedTerminatedFacilityTableWorksheet(writer, workbook, funded_term
         worksheet.write("D" + str(i), row["Worse Classification Status"], normal_format)
         worksheet.write("E" + str(i), row["Date of Classification"], normal_format)
 
+    data = funded_terminated_facility_summary_table['Funded']
+    worksheet.write(f'A{len(data)+4}','Sub Total',normal_bold_format)
+    total_formula = f'SUM(B4:B{len(data)+3})'
+    worksheet.write_formula(f'B{len(data)+4}', f'={total_formula}', normal_bold_format)
+
+
+def generateNonFundedTerminatedFacilityTableWorksheet(writer, workbook, terminated_facility_summary_table):
+    title_format = workbook.add_format(
+        {
+            "bold": True,
+            "border": 2,
+            "align": "center",
+            "valign": "vcenter",
+            # "fg_color": "#051094",
+            "font_size": 17,
+            # "font_color": "white",
+            # "border_color": "white",
+            'text_wrap':True
+        }
+    )
+    
+    header_bold_center = workbook.add_format(
+        {
+            "bold": True,
+            "align": 'center',
+            "valign": 'vcenter',
+            "font_size": 12,
+            "border": 1,
+            'text_wrap':True
+            # "fg_color": "#051094",
+            # "font_color": "white",
+            # "border_color": "white",
+        }
+    )
+
+    header_non_bold = workbook.add_format(
+        {
+            "align": 'center',
+            "font_size": 12,
+            "border": 1,
+            "valign": 'vcenter',
+            'text_wrap':True
+            # "fg_color": "#051094",
+            # "font_color": "white",
+            # "border_color": "white",
+        }
+    )
+
+    header_format = workbook.add_format(
+        {
+            "bold": True,
+            "font_size": 12,
+            "border": 1,
+            "valign": 'vcenter',
+            'text_wrap':True
+            # "fg_color": "#051094",
+            # "font_color": "white",
+            # "border_color": "white",
+        }
+    )
+
+    normal_format = workbook.add_format(
+        {
+            "font_size": 12,
+        }
+    )
+    normal_bold_format = workbook.add_format(
+        {
+            "bold": True,
+            "font_size": 12,
+        }
+    )
+
+
+    worksheet = writer.sheets["Summary-terminated facility"]
+    worksheet.set_column(7, 13, 30)
+    worksheet.merge_range("G1:K1", "Summary of terminated facility (Non-Funded)", title_format)
+    worksheet.merge_range("G2:J2", "Total number of non funded terminated loan", header_format)
+    worksheet.write("K2", "BDT in Million", header_non_bold)
+    worksheet.write("G3", "Non-Installment", header_format)
+    worksheet.write("H3", "Limit", header_format)
+    worksheet.write("I3", "Loan/Limit (days of adjustment before/after)", header_format)
+    worksheet.write("J3", "Worse Classification status", header_format)
+    worksheet.write("K3", "Date of classification", header_format)
+
+    for idx, row in enumerate(terminated_facility_summary_table['Non Funded']):
+        i = idx+4
+        worksheet.write("G" + str(i), row["Non-Installment"], normal_format)
+        worksheet.write("H" + str(i), row["Limit"], normal_format)
+        worksheet.write("I" + str(i), row["Loan/Limit (days of adjustment before/after)"], normal_format)
+        worksheet.write("J" + str(i), row["Worse Classification Status"], normal_format)
+        worksheet.write("K" + str(i), row["Date of Classification"], normal_format)
+
+    data = terminated_facility_summary_table['Non Funded']
+    worksheet.write(f'G{len(data)+4}','Sub Total',normal_bold_format)
+    total_formula = f'SUM(H4:H{len(data)+3})'
+    worksheet.write_formula(f'H{len(data)+4}', f'={total_formula}', normal_bold_format)
+
 
 def generateCorporateSpreadsheet(writer, analysis_report):
     workbook = writer.book
@@ -190,5 +294,6 @@ def generateCorporateSpreadsheet(writer, analysis_report):
     worksheet = workbook.add_worksheet("Summary-terminated facility")
     funded_terminated_facility_summary_table = analysis_report["A - Summary of Terminated Facilities"]
     generateFundedTerminatedFacilityTableWorksheet(writer,workbook,funded_terminated_facility_summary_table)
+    generateNonFundedTerminatedFacilityTableWorksheet(writer,workbook,funded_terminated_facility_summary_table)
 
     worksheet.autofit()
