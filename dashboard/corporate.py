@@ -16,6 +16,21 @@ def getSummaryTable(df):
     response.append(getSummaryTableSum(category, "Grand Total", total_df))
     return response
 
+def getSummaryTableTwo(df):
+    response = []
+    for category in df['CIB Category'].unique():
+        cat_df = df[df['CIB Category'] == category]
+        for concern_name in df['Name'].unique():
+            temp_df = cat_df[cat_df['Name'] == concern_name]
+            response.append(getSummaryTableTwoFields(category, concern_name, temp_df))
+        sub_total_df = pd.DataFrame(response)
+        sub_total_df = sub_total_df[sub_total_df['CIB Category'] == category]
+        response.append(getSummaryTableTwoSum(category, "Sub Total", sub_total_df))
+    total_df = pd.DataFrame(response)
+    total_df = total_df[total_df['Name of Concern'] == "Sub Total"]
+    response.append(getSummaryTableTwoSum(category, "Grand Total", total_df))
+    return response
+
 def getSummaryOfTerminatedFacilityFunded(df):
     response = []
     df = df[df['Phase'] != 'Living']
@@ -150,5 +165,7 @@ def getCorporateDashboard(cibs):
         "Guarantor": getSummaryOfRescheduleLoan(df, GUARANTOR) 
     }
     response['D - Summary of Requested Loan'] = getSummaryOfRequestedLoan(cibs)
+    
+    response['Summary Table - 2'] = getSummaryTableTwo(df)
     
     return response
