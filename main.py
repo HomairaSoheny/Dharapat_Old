@@ -7,6 +7,7 @@ import json
 from utils.parsing_utils.data_preparation import process_response
 from dashboard.consumer import getConsumerDashboard
 from dashboard.corporate import getCorporateDashboard
+from utils.env import RABBITMQ_LINK
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "report.settings")
@@ -15,10 +16,7 @@ import django
 django.setup()
 
 def main():
-    #dev
-    connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq-temp1.centralindia.azurecontainer.io', heartbeat=400))
-    #prod
-    # connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq-0.rabbitmq.rabbits.svc.cluster.local', heartbeat=400))
+    connection = pika.BlockingConnection(pika.ConnectionParameters(RABBITMQ_LINK, heartbeat=400))
     
     channel = connection.channel()
     channel.queue_declare(queue='prime_bank_cib_response')

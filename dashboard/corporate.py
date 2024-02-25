@@ -137,7 +137,7 @@ def getSummaryOfRequestedLoan(cibs):
         if cib.req_contracts is not None:
             temp_cib = cib.req_contracts
             temp_cib['Role'] = getCIBCategory(cib)
-            temp_cib['Link'] = LINK + cib.pdf_name
+            temp_cib['Link'] = PDF_LINK + cib.pdf_name
             df = pd.concat([df, temp_cib])
     for i, row in df.iterrows():
         response.append({
