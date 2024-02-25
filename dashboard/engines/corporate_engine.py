@@ -99,6 +99,12 @@ def getTypeOfReschedule(fac):
             return fac['Ref'][key]
     return "Not Rescheduled"
 
+def getDateOfLastReschedule(fac):
+    for key in LAST_RESCHEDULING_DATE:
+        if key in fac['Ref'].keys():
+            return fac['Ref'][key]
+    return "Not Rescheduled"
+
 def getSummaryTableFields(category, concern_name, df):
     return {
         "CIB Category": category,
@@ -211,7 +217,8 @@ def getCorporateDataFrame(cibs):
                             "No of Remaining Installment": getNoOfRemainingInstallment(fac),
                             "Date of Last Payment": getDateOfLastPayment(fac),
                             "NPI": general_engine.getCurrentNPI(fac),
-                            
+                            "Reschedule Type": getTypeOfReschedule(fac),
+                            "Last Date of Reschedule": getDateOfLastReschedule(fac),
                             "CIB Link": LINK + cib.pdf_name
                         }
                     )
