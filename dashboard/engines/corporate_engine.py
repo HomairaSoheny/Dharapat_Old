@@ -93,6 +93,11 @@ def getOverdue(df):
 def getDefault(fac):
     return "Yes" if "Yes" in fac["Contract History"]["Default"].tolist() else "No"
 
+def getTypeOfReschedule(fac):
+    for key in RESCHEDULE_LOAN:
+        if key in fac['Ref'].keys():
+            return fac['Ref'][key]
+    return "Not Rescheduled"
 
 def getSummaryTableFields(category, concern_name, df):
     return {
@@ -170,13 +175,7 @@ def getSummaryOfFundedFacilitySum(df, total_type, installment_type):
 def getCorporateDataFrame(cibs):
     df = pd.DataFrame()
     for cib in cibs:
-        for i, fac_type in enumerate(
-            (
-                cib.installment_facility,
-                cib.noninstallment_facility,
-                cib.credit_card_facility,
-            )
-        ):
+        for i, fac_type in enumerate((cib.installment_facility, cib.noninstallment_facility, cib.credit_card_facility)):
             response = []
             if fac_type is not None:
                 for fac in fac_type:
@@ -212,6 +211,7 @@ def getCorporateDataFrame(cibs):
                             "No of Remaining Installment": getNoOfRemainingInstallment(fac),
                             "Date of Last Payment": getDateOfLastPayment(fac),
                             "NPI": general_engine.getCurrentNPI(fac),
+                            
                             "CIB Link": LINK + cib.pdf_name
                         }
                     )
