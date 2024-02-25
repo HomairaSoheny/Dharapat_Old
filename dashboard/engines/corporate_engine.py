@@ -2,6 +2,7 @@ import pandas as pd
 from dashboard.engines import general_engine
 from dashboard.engines.keywords import *
 from utils.general_helper import *
+from utils.env import LINK
 
 
 def getCIBCategory(cib):
@@ -211,6 +212,7 @@ def getCorporateDataFrame(cibs):
                             "No of Remaining Installment": getNoOfRemainingInstallment(fac),
                             "Date of Last Payment": getDateOfLastPayment(fac),
                             "NPI": general_engine.getCurrentNPI(fac),
+                            "CIB Link": LINK + cib.pdf_name
                         }
                     )
             df = pd.concat([df, pd.DataFrame(response)], ignore_index=True)
