@@ -143,6 +143,52 @@ def getSummaryTableSum(category, concern_name, df):
         "Updated Overdue and CL Status": "Need More Clarification",
     }
 
+def getSummaryTableTwoFields(category, concern_name, df):
+    return {
+        "CIB Category": category,
+        "Name of Concern": concern_name,
+        "Funded Installment": convertToFloat(getFundedOutstandingInstallment(df)),
+        "Funded Non Installment": convertToFloat(getFundedOutstandingNonInstallment(df)),
+        "Funded Total": convertToFloat(getFundedOutstandingTotal(df)),
+        "Non-Funded": convertToFloat(getNonFundedOutstanding(df)),
+        "Total": convertToFloat(getTotalOutstanding(df)),
+        "Overdue": convertToFloat(getOverdue(df)),
+        "Worst CL Status": general_engine.getClassFromSet(set(df["CL Status"].tolist())),
+        "Default": "Yes" if "Yes" in set(df["Default"].tolist()) else "No",
+        "Rescheduled Loan": "Not Implemented",
+        "Loan STD": convertToFloat(df[df['CL Status'] == 'STD']['Outstanding'].sum()),
+        "Loan SMA": convertToFloat(df[df['CL Status'] == 'SMA']['Outstanding'].sum()),
+        "Loan SS": convertToFloat(df[df['CL Status'] == 'SS']['Outstanding'].sum()),
+        "Loan DF": convertToFloat(df[df['CL Status'] == 'DF']['Outstanding'].sum()),
+        "Loan BL": convertToFloat(df[df['CL Status'] == 'BL']['Outstanding'].sum()),
+        "Loan BLW": convertToFloat(df[df['CL Status'] == 'BLW']['Outstanding'].sum()),
+        "Loan Stay Order": "Need More Clarification",
+        "Remarks": str(list(df['Remarks'])),
+    }
+
+def getSummaryTableTwoSum(category, concern_name, df):
+    return {
+        "CIB Category": category,
+        "Name of Concern": concern_name,
+        "Funded Installment": convertToFloat(df["Funded Installment"].sum()),
+        "Funded Non Installment": convertToFloat(df["Funded Non Installment"].sum()),
+        "Funded Total": convertToFloat(df["Funded Total"].sum()),
+        "Non-Funded": convertToFloat(df["Non-Funded"].sum()),
+        "Total": convertToFloat(df["Total"].sum()),
+        "Overdue": convertToFloat(df["Overdue"].sum()),
+        "Worst CL Status": general_engine.getClassFromSet(set(df["Worst CL Status"].tolist())),
+        "Default": "Yes" if "Yes" in set(df["Default"].tolist()) else "No",
+        "Rescheduled Loan": "Not Implemented",
+        "Loan STD": convertToFloat(df["Loan STD"].sum()),
+        "Loan SMA": convertToFloat(df["Loan SMA"].sum()),
+        "Loan SS": convertToFloat(df["Loan SS"].sum()),
+        "Loan DF": convertToFloat(df["Loan DF"].sum()),
+        "Loan BL": convertToFloat(df["Loan BL"].sum()),
+        "Loan BLW": convertToFloat(df["Loan BLW"].sum()),
+        "Loan Stay Order": "Need More Clarification",
+        "Remarks": "-",
+    }
+
 
 def getSummaryOfFundedFacilityFields(row, i, installment):
     return {
