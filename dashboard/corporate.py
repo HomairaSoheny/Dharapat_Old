@@ -98,10 +98,10 @@ def getCorporateDashboard(cibs):
     df = getCorporateDataFrame(cibs)
     response['analysis type'] = "Corporate"
     response['Summary Table - 1'] = getSummaryTable(df)
-    response['A. Summary of Terminated Facilities'] = {
+    response['A - Summary of Terminated Facilities'] = {
         "Funded": getSummaryOfTerminatedFacilityFunded(df),
         "Non Funded": getSummaryOfTerminatedFacilityNonFunded(df)
     }
-    response['B. Summary of Facilities'] = getSummaryOfFacilities(df)
+    response['B - Summary of Facilities'] = getSummaryOfFacilities(df)
     
     return response
