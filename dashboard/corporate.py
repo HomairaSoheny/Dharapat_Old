@@ -103,7 +103,7 @@ def getSummaryOfRescheduleLoan(df, role):
             "Expiry of Reschedule Loan": convertToString(row['End Date of Contract']),
             "Amount": row['Total Disbursement Amount'],
             "Date of Last Rescheduling": row['Last Date of Reschedule'],
-            "Link": row['Link']
+            "Link": row['CIB Link']
         })
     response.append({
         "Name of Account": "Sub Total",
