@@ -98,11 +98,97 @@ def generateSummaryTableWorksheet(writer, workbook, summary_table):
         worksheet.write("L" + str(i), row["Updated Overdue and CL Status"], format)
 
 
+def generateFundedTerminatedFacilityTableWorksheet(writer, workbook, funded_terminated_facility_summary_table):
+    title_format = workbook.add_format(
+        {
+            "bold": True,
+            "border": 2,
+            "align": "center",
+            "valign": "vcenter",
+            # "fg_color": "#051094",
+            "font_size": 17,
+            # "font_color": "white",
+            # "border_color": "white",
+            'text_wrap':True
+        }
+    )
+    
+    header_bold_center = workbook.add_format(
+        {
+            "bold": True,
+            "align": 'center',
+            "valign": 'vcenter',
+            "font_size": 12,
+            "border": 1,
+            'text_wrap':True
+            # "fg_color": "#051094",
+            # "font_color": "white",
+            # "border_color": "white",
+        }
+    )
+
+    header_non_bold = workbook.add_format(
+        {
+            "align": 'center',
+            "font_size": 12,
+            "border": 1,
+            "valign": 'vcenter',
+            'text_wrap':True
+            # "fg_color": "#051094",
+            # "font_color": "white",
+            # "border_color": "white",
+        }
+    )
+
+    header_format = workbook.add_format(
+        {
+            "bold": True,
+            "font_size": 12,
+            "border": 1,
+            "valign": 'vcenter',
+            'text_wrap':True
+            # "fg_color": "#051094",
+            # "font_color": "white",
+            # "border_color": "white",
+        }
+    )
+
+    normal_format = workbook.add_format(
+        {
+            "font_size": 12,
+            "text_wrap": True
+        }
+    )
+
+    
+    worksheet = writer.sheets["Summary-terminated facility"]
+    worksheet.set_column(0, 5, 30)
+    worksheet.merge_range("A1:E1", "Summary of terminated facility (Funded)", title_format)
+    worksheet.merge_range("A2:D2", "Total number of funded terminated loan", header_format)
+    worksheet.write("E2", "BDT in Million", header_non_bold)
+    worksheet.write("A3", "Installment", header_format)
+    worksheet.write("B3", "Limit", header_format)
+    worksheet.write("C3", "Loan/Limit (days of adjustment before/after)", header_format)
+    worksheet.write("D3", "Worse Classification status", header_format)
+    worksheet.write("E3", "Date of classification", header_format)
+
+    for idx, row in enumerate(funded_terminated_facility_summary_table['Funded']):
+        i = idx+4
+        worksheet.write("A" + str(i), row["Installment"], normal_format)
+        worksheet.write("B" + str(i), row["Limit"], normal_format)
+        worksheet.write("C" + str(i), row["Loan/Limit (days of adjustment before/after)"], normal_format)
+        worksheet.write("D" + str(i), row["Worse Classification Status"], normal_format)
+        worksheet.write("E" + str(i), row["Date of Classification"], normal_format)
+
+
 def generateCorporateSpreadsheet(writer, analysis_report):
     workbook = writer.book
 
     worksheet = workbook.add_worksheet("Summary Table - 1")
     summary_table_1 = analysis_report["Summary Table - 1"]
     generateSummaryTableWorksheet(writer, workbook, summary_table_1)
+    worksheet = workbook.add_worksheet("Summary-terminated facility")
+    funded_terminated_facility_summary_table = analysis_report["A. Summary of Terminated Facilities"]
+    generateFundedTerminatedFacilityTableWorksheet(writer,workbook,funded_terminated_facility_summary_table)
 
     worksheet.autofit()
