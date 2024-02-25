@@ -188,7 +188,7 @@ def generateCorporateSpreadsheet(writer, analysis_report):
     summary_table_1 = analysis_report["Summary Table - 1"]
     generateSummaryTableWorksheet(writer, workbook, summary_table_1)
     worksheet = workbook.add_worksheet("Summary-terminated facility")
-    funded_terminated_facility_summary_table = analysis_report["A. Summary of Terminated Facilities"]
+    funded_terminated_facility_summary_table = analysis_report["A - Summary of Terminated Facilities"]
     generateFundedTerminatedFacilityTableWorksheet(writer,workbook,funded_terminated_facility_summary_table)
 
     worksheet.autofit()
