@@ -93,6 +93,27 @@ def getSummaryOfFacilities(df):
     response['Summary of non funded facility'] = summary_of_non_funded_facility
     return response
 
+def getSummaryOfRescheduleLoan(df, role):
+    response = []
+    df = df[(df['Reschedule Type'] != "Not Rescheduled") & df['Role'].isin(role)]
+    for i, row in df.iterrows():
+        response.append({
+            "Name of Account": row['Facility Type'],
+            "Type of Reschedule": row['Reschedule Type'],
+            "Expiry of Reschedule Loan": convertToString(row['End Date of Contract']),
+            "Amount": row['Total Disbursement Amount'],
+            "Date of Last Rescheduling": row['Last Date of Reschedule'],
+            "Link": row['Link']
+        })
+    response.append({
+        "Name of Account": "Sub Total",
+        "Type of Reschedule": "-",
+        "Expiry of Reschedule Loan": "-",
+        "Amount": convertToInteger(df['Total Disbursement Amount'].sum),
+        "Date of Last Rescheduling": "-",
+        "Link": "-"
+    })
+    return response
 
 def getSummaryOfRequestedLoan(cibs):
     response = []
@@ -124,7 +145,10 @@ def getCorporateDashboard(cibs):
         "Non Funded": getSummaryOfTerminatedFacilityNonFunded(df)
     }
     response['B - Summary of Facilities'] = getSummaryOfFacilities(df)
-    
+    response['C - Summary of Reschedule Loan'] = {
+        "Borrower": getSummaryOfRescheduleLoan(df, BORROWER),
+        "Guarantor": getSummaryOfRescheduleLoan(df, GUARANTOR) 
+    }
     response['D - Summary of Requested Loan'] = getSummaryOfRequestedLoan(cibs)
     
     return response
