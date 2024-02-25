@@ -62,3 +62,9 @@ FACILITY = ['Facility']
 EMI = ['Monthly instalment amount', 'Installment Amount']
 
 GUARANTOR = ['Guarantor']
+
+RESCHEDULE_LOAN = ['Number of time(s) rescheduled', 'Number of time(s)    rescheduled']
+
+LAST_RESCHEDULING_DATE = ['Date of last rescheduling']
+
+TOTAL_DISBURSEMENT_AMOUNT = ['Total Disbursement Amount']

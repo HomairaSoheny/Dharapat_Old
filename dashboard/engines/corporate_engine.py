@@ -2,6 +2,7 @@ import pandas as pd
 from dashboard.engines import general_engine
 from dashboard.engines.keywords import *
 from utils.general_helper import *
+from utils.env import LINK
 
 
 def getCIBCategory(cib):
@@ -92,6 +93,22 @@ def getOverdue(df):
 def getDefault(fac):
     return "Yes" if "Yes" in fac["Contract History"]["Default"].tolist() else "No"
 
+def getTypeOfReschedule(fac):
+    for key in RESCHEDULE_LOAN:
+        if key in fac['Ref'].keys():
+            return fac['Ref'][key]
+    return "Not Rescheduled"
+
+def getDateOfLastReschedule(fac):
+    for key in LAST_RESCHEDULING_DATE:
+        if key in fac['Ref'].keys():
+            return fac['Ref'][key]
+    return "Not Rescheduled"
+
+def getTotalDisbursementAmount(fac):
+    for key in TOTAL_DISBURSEMENT_AMOUNT:
+        if key in fac['Ref'].keys():
+            return fac['Ref'][key]
 
 def getSummaryTableFields(category, concern_name, df):
     return {
@@ -105,6 +122,7 @@ def getSummaryTableFields(category, concern_name, df):
         "Overdue": convertToFloat(getOverdue(df)),
         "CL Status": general_engine.getClassFromSet(set(df["CL Status"].tolist())),
         "Default": "Yes" if "Yes" in set(df["Default"].tolist()) else "No",
+        "CIB PDF View": list(set(list(df['CIB Link']))),
         "Updated Overdue and CL Status": "Need More Clarification",
     }
 
@@ -121,6 +139,7 @@ def getSummaryTableSum(category, concern_name, df):
         "Overdue": convertToFloat(df["Overdue"].sum()),
         "CL Status": general_engine.getClassFromSet(set(df["CL Status"].tolist())),
         "Default": "Yes" if "Yes" in set(df["Default"].tolist()) else "No",
+        "CIB PDF View": "-",
         "Updated Overdue and CL Status": "Need More Clarification",
     }
 
@@ -169,13 +188,7 @@ def getSummaryOfFundedFacilitySum(df, total_type, installment_type):
 def getCorporateDataFrame(cibs):
     df = pd.DataFrame()
     for cib in cibs:
-        for i, fac_type in enumerate(
-            (
-                cib.installment_facility,
-                cib.noninstallment_facility,
-                cib.credit_card_facility,
-            )
-        ):
+        for i, fac_type in enumerate((cib.installment_facility, cib.noninstallment_facility, cib.credit_card_facility)):
             response = []
             if fac_type is not None:
                 for fac in fac_type:
@@ -199,11 +212,6 @@ def getCorporateDataFrame(cibs):
                             "Date of Classification": getDateOfClassification(fac),
                             "Start Date": getStartDate(fac),
                             "End Date of Contract": getEndDateOfContract(fac),
-                            "Type of Reschedule": "Need Elaboration",
-                            "Reschedule Amount": "Need Elaboration",
-                            "Date of Last Rescheduling": "Need Elaboration",
-                            "Requested Amount": "Need Elaboration",
-                            "Date of Request": "Need Elaboration",
                             "Writ no": "Need Elaboration",
                             "Remarks": getRemarks(fac),
                             "Payment Period (Monthly/Quarterly)": getPaymentPeriod(fac),
@@ -211,6 +219,10 @@ def getCorporateDataFrame(cibs):
                             "No of Remaining Installment": getNoOfRemainingInstallment(fac),
                             "Date of Last Payment": getDateOfLastPayment(fac),
                             "NPI": general_engine.getCurrentNPI(fac),
+                            "Reschedule Type": getTypeOfReschedule(fac),
+                            "Last Date of Reschedule": getDateOfLastReschedule(fac),
+                            "Total Disbursement Amount": getTotalDisbursementAmount(fac),
+                            "CIB Link": LINK + cib.pdf_name
                         }
                     )
             df = pd.concat([df, pd.DataFrame(response)], ignore_index=True)
