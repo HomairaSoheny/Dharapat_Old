@@ -105,6 +105,11 @@ def getDateOfLastReschedule(fac):
             return fac['Ref'][key]
     return "Not Rescheduled"
 
+def getTotalDisbursementAmount(fac):
+    for key in TOTAL_DISBURSEMENT_AMOUNT:
+        if key in fac['Ref'].keys():
+            return fac['Ref'][key]
+
 def getSummaryTableFields(category, concern_name, df):
     return {
         "CIB Category": category,
@@ -205,11 +210,6 @@ def getCorporateDataFrame(cibs):
                             "Date of Classification": getDateOfClassification(fac),
                             "Start Date": getStartDate(fac),
                             "End Date of Contract": getEndDateOfContract(fac),
-                            "Type of Reschedule": "Need Elaboration",
-                            "Reschedule Amount": "Need Elaboration",
-                            "Date of Last Rescheduling": "Need Elaboration",
-                            "Requested Amount": "Need Elaboration",
-                            "Date of Request": "Need Elaboration",
                             "Writ no": "Need Elaboration",
                             "Remarks": getRemarks(fac),
                             "Payment Period (Monthly/Quarterly)": getPaymentPeriod(fac),
@@ -219,6 +219,7 @@ def getCorporateDataFrame(cibs):
                             "NPI": general_engine.getCurrentNPI(fac),
                             "Reschedule Type": getTypeOfReschedule(fac),
                             "Last Date of Reschedule": getDateOfLastReschedule(fac),
+                            "Total Disbursement Amount": getTotalDisbursementAmount(fac),
                             "CIB Link": LINK + cib.pdf_name
                         }
                     )
