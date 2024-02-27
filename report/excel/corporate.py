@@ -351,7 +351,7 @@ def generateSummaryFundedFacilitiesInstallmentWorksheet(writer,workbook,funded_f
 
     worksheet.merge_range("A1:P1", "Summary of funded facility for same type of concerns classified in summary table:1 - for individual contract: sub-total for same loan to be provided", title_format)
     worksheet.merge_range("A2:P2", "Installments", header_format)
-    worksheet.set_column(0, 0, 15)
+    worksheet.set_column(0, 0, 10)
     worksheet.set_column(2, 15, 30)
 
     worksheet.write("A3", "Name of Concern", header_format)
@@ -399,6 +399,131 @@ def generateSummaryFundedFacilitiesInstallmentWorksheet(writer,workbook,funded_f
                 
         
             row += len(facility_list) 
+    return row
+
+def generateSummaryFundedFacilitiesNonInstallmentWorksheet(writer,workbook,funded_facility_table, starting_row):
+    title_format = workbook.add_format(
+        {
+            "bold": True,
+            "border": 2,
+            # "fg_color": "#051094",
+            "font_size": 17,
+            # "font_color": "white",
+            # "border_color": "white",
+            'text_wrap':True
+        }
+    )
+
+    header_bold_center = workbook.add_format(
+        {
+            "bold": True,
+            "align": 'center',
+            "valign": 'vcenter',
+            "font_size": 12,
+            "border": 1,
+            'text_wrap':True
+            # "fg_color": "#051094",
+            # "font_color": "white",
+            # "border_color": "white",
+        }
+    )
+
+    header_non_bold = workbook.add_format(
+        {
+            "align": 'center',
+            "font_size": 12,
+            "border": 1,
+            "valign": 'vcenter',
+            'text_wrap':True
+            # "fg_color": "#051094",
+            # "font_color": "white",
+            # "border_color": "white",
+        }
+    )
+
+    header_format = workbook.add_format(
+        {
+            "bold": True,
+            "font_size": 12,
+            "border": 1,
+            "valign": 'vcenter',
+            'text_wrap':True
+            # "fg_color": "#051094",
+            # "font_color": "white",
+            # "border_color": "white",
+        }
+    )
+
+    normal_format = workbook.add_format(
+        {
+            "font_size": 12,
+        }
+    )
+    normal_bold_format = workbook.add_format(
+        {
+            "bold": True,
+            "font_size": 12,
+        }
+    )
+
+
+    worksheet = writer.sheets["Summary- funded facility"]
+
+    starting_row+=1
+
+    worksheet.merge_range(f"A{starting_row}:P{starting_row}", "Summary of funded facility for same type of concerns classified in summary table:1 - for individual contract: sub-total for same loan to be provided", title_format)
+    worksheet.merge_range(f"A{starting_row+1}:P{starting_row+1}", "Non Installments", title_format)
+    
+
+    worksheet.write(f"A{starting_row+2}", "Name of Concern", header_format)
+    worksheet.write(f"B{starting_row+2}", "B", header_format)
+    worksheet.write(f"C{starting_row+2}", "Summary of Funded Facility", header_format)
+    worksheet.write(f"D{starting_row+2}", "Limit", header_format)
+    worksheet.write(f"E{starting_row+2}", "Outstanding", header_format)
+    worksheet.write(f"F{starting_row+2}", "Overdue", header_format)
+    worksheet.write(f"G{starting_row+2}", "Start Date", header_format)
+    worksheet.write(f"H{starting_row+2}", "End Date of Contract", header_format)
+    worksheet.write(f"I{starting_row+2}", "Installment Amount", header_format)
+    worksheet.write(f"J{starting_row+2}", "Payment Period (Monthly/ Quarterly/ Half yearly/ Annually)", header_format)
+    worksheet.write(f"K{starting_row+2}", "Total no. of Installment", header_format)
+    worksheet.write(f"L{starting_row+2}", "Total no. of Installment paid", header_format)
+    worksheet.write(f"M{starting_row+2}", "No. of Remaining Installment", header_format)
+    worksheet.write(f"N{starting_row+2}", "Date of last payment", header_format)
+    worksheet.write(f"O{starting_row+2}", "NPI (No.)", header_format)
+    worksheet.write(f"P{starting_row+2}", "Default (Yes/No)", header_format)
+
+    row = starting_row + 3
+    
+    for concern_type in funded_facility_table.keys():
+        if concern_type !=None:
+            facility_list = [item for item in funded_facility_table[concern_type] if item['Installment Type'] == 'No Installment']
+            worksheet.merge_range(f"A{row}:A{row+len(facility_list)-1}",concern_type,header_format)
+            for idx,item in enumerate(facility_list):
+                if item["Nature of Facility"] =='Sub Total':
+                    format = header_format
+                else:
+                    format = normal_format
+                worksheet.write("B" + str(idx+row), item["SL"], format)
+                worksheet.write("C" + str(idx+row), item["Nature of Facility"], format)
+                worksheet.write("D" + str(idx+row), item["Limit"], format)
+                worksheet.write("E" + str(idx+row), item["Outstanding"], format)
+                worksheet.write("F" + str(idx+row), item["Overdue"], format)
+                worksheet.write("G" + str(idx+row), item["Start Date"], format)
+                worksheet.write("H" + str(idx+row), item["End Date of Contract"], format)
+                worksheet.write("I" + str(idx+row), item["Installment Amount"], format)
+                worksheet.write("J" + str(idx+row), item["Payment Period"], format)
+                worksheet.write("K" + str(idx+row), item["Total No. of Installment"], format)
+                worksheet.write("L" + str(idx+row), item["Total No. of Installment"], format)
+                worksheet.write("M" + str(idx+row), item["No. of Remaining Installment"], format)
+                worksheet.write("N" + str(idx+row), item["Date of Last Payment"], format)
+                worksheet.write("O" + str(idx+row), item["NPI"], format)
+                worksheet.write("P" + str(idx+row), item["Default"], format)
+        
+            row += len(facility_list) 
+    
+
+    
+
 
     
 
@@ -416,6 +541,7 @@ def generateCorporateSpreadsheet(writer, analysis_report):
     generateNonFundedTerminatedFacilityTableWorksheet(writer,workbook,funded_terminated_facility_summary_table)
     worksheet = workbook.add_worksheet("Summary- funded facility")
     funded_facility_table = analysis_report['B - Summary of Facilities']['Summary of funded facility']
-    generateSummaryFundedFacilitiesInstallmentWorksheet(writer,workbook,funded_facility_table)
+    row = generateSummaryFundedFacilitiesInstallmentWorksheet(writer,workbook,funded_facility_table)
+    generateSummaryFundedFacilitiesNonInstallmentWorksheet(writer,workbook,funded_facility_table,row+1)
 
     worksheet.autofit()
