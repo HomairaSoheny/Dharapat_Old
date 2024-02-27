@@ -2,7 +2,7 @@ import pandas as pd
 from dashboard.engines import general_engine
 from dashboard.engines.keywords import *
 from utils.general_helper import *
-from utils.env import LINK
+from utils.env import PDF_LINK
 
 
 def getCIBCategory(cib):
@@ -268,7 +268,7 @@ def getCorporateDataFrame(cibs):
                             "Reschedule Type": getTypeOfReschedule(fac),
                             "Last Date of Reschedule": getDateOfLastReschedule(fac),
                             "Total Disbursement Amount": getTotalDisbursementAmount(fac),
-                            "CIB Link": LINK + cib.pdf_name
+                            "CIB Link": PDF_LINK + cib.pdf_name
                         }
                     )
             df = pd.concat([df, pd.DataFrame(response)], ignore_index=True)
