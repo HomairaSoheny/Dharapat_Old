@@ -6,3 +6,4 @@ test_files
 *.xlsx
 db.sqlite3
 venv
+BRD

@@ -1,60 +1,12 @@
+from report.excel.general_helper import *
+
 def generateSummaryTableWorksheet(writer, workbook, summary_table):
 
-    title_format = workbook.add_format(
-        {
-            "bold": True,
-            "border": 2,
-            "align": "center",
-            "valign": "vcenter",
-            # "fg_color": "#051094",
-            "font_size": 17,
-            # "font_color": "white",
-            # "border_color": "white",
-        }
-    )
-    
-    header_bold_center = workbook.add_format(
-        {
-            "bold": True,
-            "align": 'center',
-            "valign": 'vcenter',
-            "font_size": 12,
-            "border": 1,
-            # "fg_color": "#051094",
-            # "font_color": "white",
-            # "border_color": "white",
-        }
-    )
-    
-    header_non_bold = workbook.add_format(
-        {
-            "align": 'center',
-            "font_size": 12,
-            "border": 1,
-            "valign": 'vcenter',
-            # "fg_color": "#051094",
-            # "font_color": "white",
-            # "border_color": "white",
-        }
-    )
-
-    header_format = workbook.add_format(
-        {
-            "bold": True,
-            "font_size": 12,
-            "border": 1,
-            "valign": 'vcenter',
-            # "fg_color": "#051094",
-            # "font_color": "white",
-            # "border_color": "white",
-        }
-    )
-    
-    normal_format = workbook.add_format(
-        {
-            "font_size": 12,
-        }
-    )
+    title_format = getTitleFormat(workbook)
+    header_bold_center = getHeaderBoldCenter(workbook)
+    header_non_bold = headerNonBold(workbook)
+    header_format = getHeaderFormat(workbook)    
+    normal_format = getNormalFormat(workbook)
 
     worksheet = writer.sheets["Summary Table - 1"]
     worksheet.merge_range("A1:J1", "Summary Table - 1", title_format)
@@ -99,72 +51,12 @@ def generateSummaryTableWorksheet(writer, workbook, summary_table):
 
 
 def generateFundedTerminatedFacilityTableWorksheet(writer, workbook, funded_terminated_facility_summary_table):
-    title_format = workbook.add_format(
-        {
-            "bold": True,
-            "border": 2,
-            "align": "center",
-            "valign": "vcenter",
-            # "fg_color": "#051094",
-            "font_size": 17,
-            # "font_color": "white",
-            # "border_color": "white",
-            'text_wrap':True
-        }
-    )
-    
-    header_bold_center = workbook.add_format(
-        {
-            "bold": True,
-            "align": 'center',
-            "valign": 'vcenter',
-            "font_size": 12,
-            "border": 1,
-            'text_wrap':True
-            # "fg_color": "#051094",
-            # "font_color": "white",
-            # "border_color": "white",
-        }
-    )
-
-    header_non_bold = workbook.add_format(
-        {
-            "align": 'center',
-            "font_size": 12,
-            "border": 1,
-            "valign": 'vcenter',
-            'text_wrap':True
-            # "fg_color": "#051094",
-            # "font_color": "white",
-            # "border_color": "white",
-        }
-    )
-
-    header_format = workbook.add_format(
-        {
-            "bold": True,
-            "font_size": 12,
-            "border": 1,
-            "valign": 'vcenter',
-            'text_wrap':True
-            # "fg_color": "#051094",
-            # "font_color": "white",
-            # "border_color": "white",
-        }
-    )
-
-    normal_format = workbook.add_format(
-        {
-            "font_size": 12,
-            "text_wrap": True
-        }
-    )
-    normal_bold_format = workbook.add_format(
-        {
-            "bold": True,
-            "font_size": 12,
-        }
-    )
+    title_format = getTitleFormat(workbook)
+    header_bold_center = getHeaderBoldCenter(workbook)
+    header_non_bold = headerNonBold(workbook)
+    header_format = getHeaderFormat(workbook)
+    normal_format = getNormalFormat(workbook)
+    normal_bold_format = getNormalBoldFormat(workbook)
 
     
     worksheet = writer.sheets["Summary-terminated facility"]
@@ -193,71 +85,12 @@ def generateFundedTerminatedFacilityTableWorksheet(writer, workbook, funded_term
 
 
 def generateNonFundedTerminatedFacilityTableWorksheet(writer, workbook, terminated_facility_summary_table):
-    title_format = workbook.add_format(
-        {
-            "bold": True,
-            "border": 2,
-            "align": "center",
-            "valign": "vcenter",
-            # "fg_color": "#051094",
-            "font_size": 17,
-            # "font_color": "white",
-            # "border_color": "white",
-            'text_wrap':True
-        }
-    )
-    
-    header_bold_center = workbook.add_format(
-        {
-            "bold": True,
-            "align": 'center',
-            "valign": 'vcenter',
-            "font_size": 12,
-            "border": 1,
-            'text_wrap':True
-            # "fg_color": "#051094",
-            # "font_color": "white",
-            # "border_color": "white",
-        }
-    )
-
-    header_non_bold = workbook.add_format(
-        {
-            "align": 'center',
-            "font_size": 12,
-            "border": 1,
-            "valign": 'vcenter',
-            'text_wrap':True
-            # "fg_color": "#051094",
-            # "font_color": "white",
-            # "border_color": "white",
-        }
-    )
-
-    header_format = workbook.add_format(
-        {
-            "bold": True,
-            "font_size": 12,
-            "border": 1,
-            "valign": 'vcenter',
-            'text_wrap':True
-            # "fg_color": "#051094",
-            # "font_color": "white",
-            # "border_color": "white",
-        }
-    )
-
-    normal_format = workbook.add_format(
-        {
-            "font_size": 12,
-        }
-    )
-    normal_bold_format = workbook.add_format(
-        {
-            "bold": True,
-            "font_size": 12,
-        }
-    )
+    title_format = getTitleFormat(workbook)
+    header_bold_center = getHeaderBoldCenter(workbook)
+    header_non_bold = headerNonBold(workbook)
+    header_format = getHeaderFormat(workbook)
+    normal_format = getNormalFormat(workbook)
+    normal_bold_format = getNormalBoldFormat(workbook)
 
 
     worksheet = writer.sheets["Summary-terminated facility"]
@@ -286,66 +119,11 @@ def generateNonFundedTerminatedFacilityTableWorksheet(writer, workbook, terminat
 
 
 def generateSummaryFundedFacilitiesInstallmentWorksheet(writer,workbook,funded_facility_table):
-    title_format = workbook.add_format(
-        {
-            "bold": True,
-            "border": 2,
-            "align": "center",
-            "valign": "vcenter",
-            # "fg_color": "#051094",
-            "font_size": 17,
-            # "font_color": "white",
-            # "border_color": "white",
-            'text_wrap':True
-        }
-    )
-
-    header_bold_center = workbook.add_format(
-        {
-            "bold": True,
-            "align": 'center',
-            "valign": 'vcenter',
-            "font_size": 12,
-            "border": 1,
-            'text_wrap':True
-            # "fg_color": "#051094",
-            # "font_color": "white",
-            # "border_color": "white",
-        }
-    )
-
-    header_non_bold = workbook.add_format(
-        {
-            "align": 'center',
-            "font_size": 12,
-            "border": 1,
-            "valign": 'vcenter',
-            'text_wrap':True
-            # "fg_color": "#051094",
-            # "font_color": "white",
-            # "border_color": "white",
-        }
-    )
-
-    header_format = workbook.add_format(
-        {
-            "bold": True,
-            "font_size": 12,
-            "border": 1,
-            "valign": 'vcenter',
-            'text_wrap':True
-            # "fg_color": "#051094",
-            # "font_color": "white",
-            # "border_color": "white",
-        }
-    )
-
-    normal_format = workbook.add_format(
-        {
-            "font_size": 12,
-        }
-    )
-
+    title_format = getTitleFormat(workbook)
+    header_bold_center = getHeaderBoldCenter(workbook)
+    header_non_bold = headerNonBold(workbook)
+    header_format = getHeaderFormat(workbook)
+    normal_format = getNormalFormat(workbook)
 
     worksheet = writer.sheets["Summary- funded facility"]
 
@@ -402,70 +180,12 @@ def generateSummaryFundedFacilitiesInstallmentWorksheet(writer,workbook,funded_f
     return row
 
 def generateSummaryFundedFacilitiesNonInstallmentWorksheet(writer,workbook,funded_facility_table, starting_row):
-    title_format = workbook.add_format(
-        {
-            "bold": True,
-            "border": 2,
-            # "fg_color": "#051094",
-            "font_size": 17,
-            # "font_color": "white",
-            # "border_color": "white",
-            'text_wrap':True
-        }
-    )
-
-    header_bold_center = workbook.add_format(
-        {
-            "bold": True,
-            "align": 'center',
-            "valign": 'vcenter',
-            "font_size": 12,
-            "border": 1,
-            'text_wrap':True
-            # "fg_color": "#051094",
-            # "font_color": "white",
-            # "border_color": "white",
-        }
-    )
-
-    header_non_bold = workbook.add_format(
-        {
-            "align": 'center',
-            "font_size": 12,
-            "border": 1,
-            "valign": 'vcenter',
-            'text_wrap':True
-            # "fg_color": "#051094",
-            # "font_color": "white",
-            # "border_color": "white",
-        }
-    )
-
-    header_format = workbook.add_format(
-        {
-            "bold": True,
-            "font_size": 12,
-            "border": 1,
-            "valign": 'vcenter',
-            'text_wrap':True
-            # "fg_color": "#051094",
-            # "font_color": "white",
-            # "border_color": "white",
-        }
-    )
-
-    normal_format = workbook.add_format(
-        {
-            "font_size": 12,
-        }
-    )
-    normal_bold_format = workbook.add_format(
-        {
-            "bold": True,
-            "font_size": 12,
-        }
-    )
-
+    title_format = getTitleFormat(workbook)
+    header_bold_center = getHeaderBoldCenter(workbook)
+    header_non_bold = headerNonBold(workbook)
+    header_format = getHeaderFormat(workbook)
+    normal_format = getNormalFormat(workbook)
+    normal_bold_format = getNormalBoldFormat(workbook)
 
     worksheet = writer.sheets["Summary- funded facility"]
 
