@@ -46,7 +46,7 @@ def generateSummaryTableWorksheet(writer, workbook, summary_table):
         worksheet.write("H" + str(i), row["Overdue"], format)
         worksheet.write("I" + str(i), row["CL Status"], format)
         worksheet.write("J" + str(i), row["Default"], format)
-        worksheet.write("K" + str(i), "N/A", format)
+        worksheet.write("K" + str(i), row["CIB PDF View"], format)
         worksheet.write("L" + str(i), row["Updated Overdue and CL Status"], format)
 
 def generateSummaryTableTwoWorksheet(writer, workbook, summary_table_two):

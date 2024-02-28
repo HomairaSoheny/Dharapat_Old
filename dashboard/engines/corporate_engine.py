@@ -122,7 +122,7 @@ def getSummaryTableFields(category, concern_name, df):
         "Overdue": convertToFloat(getOverdue(df)),
         "CL Status": general_engine.getClassFromSet(set(df["CL Status"].tolist())),
         "Default": "Yes" if "Yes" in set(df["Default"].tolist()) else "No",
-        "CIB PDF View": list(set(list(df['CIB Link']))),
+        "CIB PDF View": str(list(set(list(df['CIB Link'])))),
         "Updated Overdue and CL Status": "Need More Clarification",
     }
 
