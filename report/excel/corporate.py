@@ -49,6 +49,70 @@ def generateSummaryTableWorksheet(writer, workbook, summary_table):
         worksheet.write("K" + str(i), "N/A", format)
         worksheet.write("L" + str(i), row["Updated Overdue and CL Status"], format)
 
+def generateSummaryTableTwoWorksheet(writer, workbook, summary_table_two):
+    title_format = getTitleFormat(workbook)
+    header_bold_center = getHeaderBoldCenter(workbook)
+    header_non_bold = headerNonBold(workbook)
+    header_format = getHeaderFormat(workbook)    
+    normal_format = getNormalFormat(workbook)
+    
+    
+    worksheet = writer.sheets["Summary Table - 2"]
+    worksheet.merge_range("A1:Q1", "Summary Table - 2", title_format)
+    worksheet.write("A2", "Position as on", header_format)
+    worksheet.merge_range("B2:J2", "BDT in Million", header_non_bold)
+    worksheet.merge_range("B3:B4", "Concern Name", header_format)
+    worksheet.merge_range("C3:E3", "Funded", header_bold_center)
+    worksheet.write("C4", "Installment", header_format)
+    worksheet.write("D4", "Non Installment", header_format)
+    worksheet.write("E4", "Total", header_format)
+    worksheet.merge_range("F3:F4", "Non-Funded", header_format)
+    worksheet.merge_range("G3:G4", "Total", header_format)
+    worksheet.merge_range("H3:H4", "Overdue", header_format)
+    worksheet.merge_range("I3:I4", "Worst CL Status", header_format)
+    worksheet.merge_range("J3:J4", "Rescheduled Loan (Amount)", header_format)
+    worksheet.merge_range("K3:Q3", "Loan Amount", header_format)
+    worksheet.write("K4", "STD", header_format)
+    worksheet.write("L4", "SMA", header_format)
+    worksheet.write("M4", "SS", header_format)
+    worksheet.write("N4", "DF", header_format)
+    worksheet.write("O4", "BL", header_format)
+    worksheet.write("P4", "BLW", header_format)
+    worksheet.write("Q4", "Stay Order", header_format)
+    worksheet.merge_range("R3:R4", "Remarks (CIB) related to classified liability", header_format)
+    
+    range_checker = (5, summary_table_two[0]["CIB Category"])
+    
+    for idx, row in enumerate(summary_table_two):
+        format = header_format if row["Name of Concern"] in ("Sub Total", "Grand Total") else normal_format
+        i = idx + 5
+        if row['CIB Category'] != range_checker[1]:
+            worksheet.merge_range("A"+str(range_checker[0])+":A"+str(i-1), summary_table_two[idx-1]['CIB Category'], header_format)
+            range_checker = (i, row['CIB Category'])
+        
+        if row['Name of Concern'] == 'Grand Total':
+            worksheet.merge_range("A"+str(range_checker[0])+":A"+str(i-1), summary_table_two[idx-1]['CIB Category'], header_format)
+        
+        worksheet.write("B" + str(i), row["Name of Concern"], format)
+        worksheet.write("C" + str(i), row["Funded Installment"], format)
+        worksheet.write("D" + str(i), row["Funded Non Installment"], format)
+        worksheet.write("E" + str(i), row["Funded Total"], format)
+        worksheet.write("F" + str(i), row["Non-Funded"], format)
+        worksheet.write("G" + str(i), row["Total"], format)
+        worksheet.write("H" + str(i), row["Overdue"], format)
+        worksheet.write("I" + str(i), row["Worst CL Status"], format)
+        worksheet.write("J" + str(i), row["Rescheduled Loan"], format)
+        worksheet.write("K" + str(i), row["Loan STD"], format)
+        worksheet.write("L" + str(i), row["Loan SMA"], format)
+        worksheet.write("M" + str(i), row["Loan SS"], format)
+        worksheet.write("N" + str(i), row["Loan DF"], format)
+        worksheet.write("O" + str(i), row["Loan BL"], format)
+        worksheet.write("P" + str(i), row["Loan BLW"], format)
+        worksheet.write("Q" + str(i), row["Loan Stay Order"], format)
+        worksheet.write("R" + str(i), row["Remarks"], format)
+        
+    
+
 
 def generateFundedTerminatedFacilityTableWorksheet(writer, workbook, funded_terminated_facility_summary_table):
     title_format = getTitleFormat(workbook)
@@ -255,13 +319,19 @@ def generateCorporateSpreadsheet(writer, analysis_report):
     worksheet = workbook.add_worksheet("Summary Table - 1")
     summary_table_1 = analysis_report["Summary Table - 1"]
     generateSummaryTableWorksheet(writer, workbook, summary_table_1)
+    
     worksheet = workbook.add_worksheet("Summary-terminated facility")
     funded_terminated_facility_summary_table = analysis_report["A - Summary of Terminated Facilities"]
     generateFundedTerminatedFacilityTableWorksheet(writer,workbook,funded_terminated_facility_summary_table)
     generateNonFundedTerminatedFacilityTableWorksheet(writer,workbook,funded_terminated_facility_summary_table)
+    
     worksheet = workbook.add_worksheet("Summary- funded facility")
     funded_facility_table = analysis_report['B - Summary of Facilities']['Summary of funded facility']
     row = generateSummaryFundedFacilitiesInstallmentWorksheet(writer,workbook,funded_facility_table)
     generateSummaryFundedFacilitiesNonInstallmentWorksheet(writer,workbook,funded_facility_table,row+1)
+    
+    worksheet = workbook.add_worksheet("Summary Table - 2")
+    summary_table_2 = analysis_report["Summary Table - 2"]
+    generateSummaryTableTwoWorksheet(writer, workbook, summary_table_2)
 
     worksheet.autofit()
