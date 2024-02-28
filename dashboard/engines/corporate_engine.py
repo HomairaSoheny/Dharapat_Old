@@ -1,9 +1,9 @@
+import re
 import pandas as pd
 from dashboard.engines import general_engine
 from dashboard.engines.keywords import *
 from utils.general_helper import *
 from utils.env import PDF_LINK
-
 
 def getCIBCategory(cib):
     return CATEGORY_MAPPING.get(cib.cib_category, None)
@@ -122,7 +122,7 @@ def getSummaryTableFields(category, concern_name, df):
         "Overdue": convertToFloat(getOverdue(df)),
         "CL Status": general_engine.getClassFromSet(set(df["CL Status"].tolist())),
         "Default": "Yes" if "Yes" in set(df["Default"].tolist()) else "No",
-        "CIB PDF View": list(set(list(df['CIB Link']))),
+        "CIB PDF View": re.sub(r'[,\[\]]', '', str(list(df['CIB Link']))).replace("'", ''),
         "Updated Overdue and CL Status": "Need More Clarification",
     }
 
@@ -163,7 +163,7 @@ def getSummaryTableTwoFields(category, concern_name, df):
         "Loan BL": convertToFloat(df[df['CL Status'] == 'BL']['Outstanding'].sum()),
         "Loan BLW": convertToFloat(df[df['CL Status'] == 'BLW']['Outstanding'].sum()),
         "Loan Stay Order": "Need More Clarification",
-        "Remarks": str(list(df['Remarks'])),
+        "Remarks": re.sub(r'[,\[\]]', '', str(list(df['Remarks']))).replace("'", ''),
     }
 
 def getSummaryTableTwoSum(category, concern_name, df):
