@@ -31,6 +31,7 @@ def generateConsumerSpreadsheet(writer, analysis_report):
             })
         
         df = pd.DataFrame(cib["Credit Facilities as Applicant - Live (As Borrower)"]['Term Loan'])
+        df = df.rename(columns={"Total EMI": "No. of EMI", "Remaining EMI": "No. of Remaining EMI"})
         df.style.apply(align_center, axis=0).to_excel(writer, sheet_name=sheet_name, startrow=start_row, index=False, header=True)
         worksheet = writer.sheets[sheet_name]
         worksheet.write("A"+str(start_row), 'Term Loan', header_format)
@@ -48,6 +49,7 @@ def generateConsumerSpreadsheet(writer, analysis_report):
         start_row += df.shape[0] + 6
         
         df = pd.DataFrame(cib["Credit Facilities as Applicant - Terminated - Last 12 Months (As Borrower)"]['Term Loan'])
+        df = df.rename(columns={"Total EMI": "No. of EMI", "Remaining EMI": "No. of Remaining EMI"})
         df.style.apply(align_center, axis=0).to_excel(writer, sheet_name=sheet_name, startrow=start_row, index=False)
         worksheet.write("A"+str(start_row), 'Term Loan', header_format)
         worksheet.write("A"+str(start_row-1), 'Credit Facilities as Applicant - Terminated - Last 12 Months (As Borrower)', bold)
@@ -64,6 +66,7 @@ def generateConsumerSpreadsheet(writer, analysis_report):
         start_row += df.shape[0] + 6
         
         df = pd.DataFrame(cib["Credit Facilities as Guarantor - Live (As Guarantor)"]['Term Loan'])
+        df = df.rename(columns={"Total EMI": "No. of EMI", "Remaining EMI": "No. of Remaining EMI"})
         df.style.apply(align_center, axis=0).to_excel(writer, sheet_name=sheet_name, startrow=start_row, index=False)
         worksheet.write("A"+str(start_row), 'Term Loan', header_format)
         worksheet.write("A"+str(start_row-1), 'Credit Facilities as Guarantor - Live (As Guarantor)', bold)
@@ -80,17 +83,20 @@ def generateConsumerSpreadsheet(writer, analysis_report):
         start_row += df.shape[0] + 6
         
         df = pd.DataFrame(cib["Credit Facilities in the Name of Business - Live"]['Term Loan'])
+        df = df.rename(columns={"Total EMI": "No. of EMI", "Remaining EMI": "No. of Remaining EMI", "Borrower Name": "Trade Name"})
         df.style.apply(align_center, axis=0).to_excel(writer, sheet_name=sheet_name, startrow=start_row, index=False)
         worksheet.write("A"+str(start_row), 'Term Loan', header_format)
         worksheet.write("A"+str(start_row-1), 'Credit Facilities in the Name of Business - Live', bold)
         start_row += df.shape[0] + 6
         
         df = pd.DataFrame(cib["Credit Facilities in the Name of Business - Live"]['Credit Card'])
+        df = df.rename(columns={"Borrower Name": "Trade Name"})
         df.style.apply(align_center, axis=0).to_excel(writer, sheet_name=sheet_name, startrow=start_row, index=False)
         worksheet.write("A"+str(start_row), 'Credit Card', header_format)
         start_row += df.shape[0] + 6
         
         df = pd.DataFrame(cib["Credit Facilities in the Name of Business - Live"]['Others'])
+        df = df.rename(columns={"Borrower Name": "Trade Name"})
         df.style.apply(align_center, axis=0).to_excel(writer, sheet_name=sheet_name, startrow=start_row, index=False)
         worksheet.write("A"+str(start_row), 'Other', header_format)
 
