@@ -308,6 +308,44 @@ def generateSummaryFundedFacilitiesNonInstallmentWorksheet(writer,workbook,funde
 
     
 
+def generateSummaryNonFundedFacilitiesWorksheet(writer,workbook,non_funded_facility_table):
+    title_format = getTitleFormat(workbook)
+    header_bold_center = getHeaderBoldCenter(workbook)
+    header_non_bold = headerNonBold(workbook)
+    header_format = getHeaderFormat(workbook)
+    normal_format = getNormalFormat(workbook)
+
+    worksheet = writer.sheets["Summary-non funded facility"]
+
+    worksheet.merge_range("A1:P2", "Summary of non funded facility for same type of concerns classified in summary table:1 - for individual contract: sub-total for same loan to be provided", title_format)
+    worksheet.set_column(0, 8, 20)
+
+
+    worksheet.write("A3", "Name of Concern", header_format)
+    worksheet.write("B3", "Facility Name", header_format)
+    worksheet.write("C3", "Limit", header_format)
+    worksheet.write("D3", "Outstanding", header_format)
+    worksheet.write("E3", "Start Date", header_format)
+    worksheet.write("F3", "End Date of Contract", header_format)
+    worksheet.write("G3", "Default (Yes/No)", header_format)
+
+    format = normal_format
+    row = 4
+    for concern_type in non_funded_facility_table.keys():
+        if concern_type !=None:
+            facility_list = [item for item in non_funded_facility_table[concern_type]]
+            worksheet.merge_range(f"A{row}:A{row+len(facility_list)-1}",concern_type,header_format)
+
+            for idx,item in enumerate(facility_list):
+                worksheet.write("B" + str(idx+row), item["Nature of Facility"], format)
+                worksheet.write("C" + str(idx+row), item["Limit"], format)
+                worksheet.write("D" + str(idx+row), item["Outstanding"], format)
+                worksheet.write("E" + str(idx+row), item["Start Date"], format)
+                worksheet.write("F" + str(idx+row), item["End Date of Contract"], format)
+                worksheet.write("G" + str(idx+row), item["Default"], format)
+                
+        
+            row += len(facility_list) 
 
     
 
@@ -329,6 +367,10 @@ def generateCorporateSpreadsheet(writer, analysis_report):
     funded_facility_table = analysis_report['B - Summary of Facilities']['Summary of funded facility']
     row = generateSummaryFundedFacilitiesInstallmentWorksheet(writer,workbook,funded_facility_table)
     generateSummaryFundedFacilitiesNonInstallmentWorksheet(writer,workbook,funded_facility_table,row+1)
+
+    worksheet = workbook.add_worksheet("Summary-non funded facility")
+    funded_facility_table = analysis_report['B - Summary of Facilities']['Summary of non funded facility']
+    generateSummaryNonFundedFacilitiesWorksheet(writer,workbook,funded_facility_table)
     
     worksheet = workbook.add_worksheet("Summary Table - 2")
     summary_table_2 = analysis_report["Summary Table - 2"]
