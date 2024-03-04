@@ -38,8 +38,8 @@ def getSummaryTableThree(df):
         cat_df = df[df['CIB Category'] == category]
         for concern_name in df['Name'].unique():
             temp_df = cat_df[cat_df['Name'] == concern_name]
-            funded.append(getSummaryTableThreeFundedFields(category, concern_name, temp_df))
-            non_funded.append(getSummaryTableThreeNonFundedFields(category, concern_name, temp_df))
+            funded.append(getSummaryTableThreeFundedFields(category, concern_name, temp_df[temp_df['Is Funded'] == "Yes"]))
+            non_funded.append(getSummaryTableThreeNonFundedFields(category, concern_name, temp_df[temp_df['Is Funded'] == "No"]))
         funded_sub_total_df = pd.DataFrame(funded)
         funded_sub_total_df = funded_sub_total_df[funded_sub_total_df['CIB Category'] == category]
         funded.append(getSummaryTableThreeFundedSum(category, "Sub Total", funded_sub_total_df))
