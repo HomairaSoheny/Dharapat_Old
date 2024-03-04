@@ -243,8 +243,8 @@ def getSummaryTableThreeNonFundedFields(category, concern_name, df):
     return {
         "CIB Category": category,
         "Borrowing Company - Person": concern_name,
-        "Total LC": "",
-        "Total BTB LC": "",
+        "Total LC": convertToFloat(df[df['Facility Type'].isin(LC)]['Outstanding'].sum()),
+        "Total BTB LC": convertToFloat(df[df['Facility Type'].isin(BTB_LC)]['Outstanding'].sum()),
         "Total Indirect Liability": "",
         "Total BG": ""
     }

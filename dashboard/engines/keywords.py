@@ -76,3 +76,7 @@ TIME_LOAN = []
 LTR = ['Loan Against Imported Merchandise (LTR)']
 
 TERM_LOAN = ['Term Loan', 'Partially Secured Term Loan']
+
+LC = ["Letter of credit (non funded)"]
+
+BTB_LC = []
