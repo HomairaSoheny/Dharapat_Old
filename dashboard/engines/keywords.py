@@ -69,7 +69,7 @@ LAST_RESCHEDULING_DATE = ['Date of last rescheduling']
 
 TOTAL_DISBURSEMENT_AMOUNT = ['Total Disbursement Amount']
 
-OVERDRAFT = ['Overdraft']
+OVERDRAFT = ['Overdraft', 'Cash Credit against Hypothecation']
 
 TIME_LOAN = []
 
