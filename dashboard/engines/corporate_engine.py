@@ -189,6 +189,76 @@ def getSummaryTableTwoSum(category, concern_name, df):
         "Remarks": "-",
     }
 
+def getOtherNonInstallmentST3(df):
+    df = df[~df['Facility Type'].isin([OVERDRAFT+TIME_LOAN+LTR+TERM_LOAN])]
+    df = df[df['Installment Type'] == "No Installment"]
+    return {"Outstanding": convertToFloat(df['Outstanding'].sum()), "Overdue": convertToFloat(df['Overdue'].sum())}
+
+def getOtherInstallmentST3(df):
+    df = df[~df['Facility Type'].isin([OVERDRAFT+TIME_LOAN+LTR+TERM_LOAN])]
+    df = df[df['Installment Type'] == "Installment"]
+    return {"Outstanding": convertToFloat(df['Outstanding'].sum()), "Overdue": convertToFloat(df['Overdue'].sum()), "EMI": convertToFloat(df['Installment Amount'])}
+
+def getSummaryTableThreeFundedFields(category, concern_name, df):
+    return {
+        "CIB Category": category,
+        "Borrowing Company - Person": concern_name,
+        "A - Overdraft - Cash Credit": convertToFloat(df[df['Facility Type'].isin(OVERDRAFT)]['Outstanding'].sum()),
+        "Overdue - EOL of A": convertToFloat(df[df['Facility Type'].isin(OVERDRAFT)]['Overdue'].sum()),
+        "B - Time Loan": convertToFloat(df[df['Facility Type'].isin(TIME_LOAN)]['Outstanding'].sum()),
+        "Overdue - EOL of B": convertToFloat(df[df['Facility Type'].isin(TIME_LOAN)]['Overdue'].sum()),
+        "C - LTR": convertToFloat(df[df['Facility Type'].isin(LTR)]['Outstanding'].sum()),
+        "Overdue - EOL of C": convertToFloat(df[df['Facility Type'].isin(LTR)]['Overdue'].sum()),
+        "D - Other Non Installment": getOtherNonInstallmentST3(df)['Outstanding'],
+        "Overdue - EOL of D": getOtherNonInstallmentST3(df)['Overdue'],
+        "E - Term Loan": convertToFloat(df[df['Facility Type'].isin(TERM_LOAN)]['Outstanding'].sum()),
+        "EMI of E": convertToFloat(df[df['Facility Type'].isin(TERM_LOAN)]['Installment Amount'].sum()),
+        "Overdue - EOL of E": convertToFloat(df[df['Facility Type'].isin(TERM_LOAN)]['Overdue'].sum()),
+        "F - Other Installment Loan": getOtherInstallmentST3(df)['Outstanding'],
+        "EMI of F": getOtherInstallmentST3(df)['Overdue'],
+        "Overdue - EOL of F": getOtherInstallmentST3(df)['EMI'],
+    }
+
+def getSummaryTableThreeFundedSum(category, concern_name, df):
+    return {
+        "CIB Category": category,
+        "Borrowing Company - Person": concern_name,
+        "A - Overdraft - Cash Credit": convertToFloat(df["A - Overdraft - Cash Credit"].sum()),
+        "Overdue - EOL of A": convertToFloat(df["Overdue - EOL of A"].sum()),
+        "B - Time Loan": convertToFloat(df["B - Time Loan"].sum()),
+        "Overdue - EOL of B": convertToFloat(df["Overdue - EOL of B"].sum()),
+        "C - LTR": convertToFloat(df["C - LTR"].sum()),
+        "Overdue - EOL of C": convertToFloat(df["Overdue - EOL of C"].sum()),
+        "D - Other Non Installment": convertToFloat(df["D - Other Non Installment"].sum()),
+        "Overdue - EOL of D": convertToFloat(df["Overdue - EOL of D"].sum()),
+        "E - Term Loan": convertToFloat(df["E - Term Loan"].sum()),
+        "EMI of E": convertToFloat(df["EMI of E"].sum()),
+        "Overdue - EOL of E": convertToFloat(df["Overdue - EOL of E"].sum()),
+        "F - Other Installment Loan": convertToFloat(df["F - Other Installment Loan"].sum()),
+        "EMI of F": convertToFloat(df["EMI of F"].sum()),
+        "Overdue - EOL of F": convertToFloat(df["Overdue - EOL of F"].sum()),
+    }
+
+def getSummaryTableThreeNonFundedFields(category, concern_name, df):
+    return {
+        "CIB Category": category,
+        "Borrowing Company - Person": concern_name,
+        "Total LC": convertToFloat(df[df['Facility Type'].isin(LC)]['Outstanding'].sum()),
+        "Total BTB LC": convertToFloat(df[df['Facility Type'].isin(BTB_LC)]['Outstanding'].sum()),
+        "Total Indirect Liability": "",
+        "Total BG": ""
+    }
+
+def getSummaryTableThreeNonFundedSum(category, concern_name, df):
+    return {
+        "CIB Category": category,
+        "Borrowing Company - Person": concern_name,
+        "Total LC": convertToFloat(df["Total LC"].sum()),
+        "Total BTB LC": convertToFloat(df["Total BTB LC"].sum()),
+        "Total Indirect Liability": convertToFloat(df["Total Indirect Liability"].sum()),
+        "Total BG": convertToFloat(df["Total BG"].sum()),
+    }
+
 
 def getSummaryOfFundedFacilityFields(row, i, installment):
     return {

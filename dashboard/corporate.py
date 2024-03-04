@@ -31,6 +31,33 @@ def getSummaryTableTwo(df):
     response.append(getSummaryTableTwoSum(category, "Grand Total", total_df))
     return response
 
+def getSummaryTableThree(df):
+    funded = []
+    non_funded = []
+    for category in df['CIB Category'].unique():
+        cat_df = df[df['CIB Category'] == category]
+        for concern_name in df['Name'].unique():
+            temp_df = cat_df[cat_df['Name'] == concern_name]
+            funded.append(getSummaryTableThreeFundedFields(category, concern_name, temp_df[temp_df['Is Funded'] == "Yes"]))
+            non_funded.append(getSummaryTableThreeNonFundedFields(category, concern_name, temp_df[temp_df['Is Funded'] == "No"]))
+        funded_sub_total_df = pd.DataFrame(funded)
+        funded_sub_total_df = funded_sub_total_df[funded_sub_total_df['CIB Category'] == category]
+        funded.append(getSummaryTableThreeFundedSum(category, "Sub Total", funded_sub_total_df))
+        non_funded_sub_total_df = pd.DataFrame(non_funded)
+        non_funded_sub_total_df = non_funded_sub_total_df[non_funded_sub_total_df['CIB Category'] == category]
+        non_funded.append(getSummaryTableThreeNonFundedSum(category, "Sub Total", non_funded_sub_total_df))
+    funded_total_df = pd.DataFrame(funded)
+    funded_total_df = funded_total_df[funded_total_df['Borrowing Company - Person'] == "Sub Total"]
+    funded.append(getSummaryTableThreeFundedSum(category, "Grand Total", funded_total_df))
+    non_funded_total_df = pd.DataFrame(non_funded)
+    non_funded_total_df = non_funded_total_df[non_funded_total_df['Borrowing Company - Person'] == "Sub Total"]
+    non_funded.append(getSummaryTableThreeNonFundedSum(category, "Grand Total", non_funded_total_df))
+        
+    return {
+        "funded": funded,
+        "non_funded": non_funded
+    }
+
 def getSummaryOfTerminatedFacilityFunded(df):
     response = []
     df = df[df['Phase'] != 'Living']
@@ -167,5 +194,6 @@ def getCorporateDashboard(cibs):
     response['D - Summary of Requested Loan'] = getSummaryOfRequestedLoan(cibs)
     
     response['Summary Table - 2'] = getSummaryTableTwo(df)
+    response['Summary Table - 3'] = getSummaryTableThree(df)
     
     return response
