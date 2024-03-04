@@ -68,3 +68,11 @@ RESCHEDULE_LOAN = ['Number of time(s) rescheduled', 'Number of time(s)    resche
 LAST_RESCHEDULING_DATE = ['Date of last rescheduling']
 
 TOTAL_DISBURSEMENT_AMOUNT = ['Total Disbursement Amount']
+
+OVERDRAFT = ['Overdraft']
+
+TIME_LOAN = []
+
+LTR = ['Loan Against Imported Merchandise (LTR)']
+
+TERM_LOAN = ['Term Loan', 'Partially Secured Term Loan']
