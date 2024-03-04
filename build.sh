@@ -1,6 +1,5 @@
 #!/bin/bash
-# imageName=dharapat-prime-bank-cib:uat_v3.0.5
-imageName=dharapat-prime-bank-cib:uat_v3.0.5_test
+imageName=dharapat-prime-bank-cib:uat_v3.0.5
 
 echo [LOG] Building docker image...
 docker buildx build --platform linux/x86_64 --network=host -t $imageName -f DockerFile  .
