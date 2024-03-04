@@ -17,6 +17,14 @@ env:
   DEPLOYMENT_MANIFEST_PATH: ${{github.workspace}}/k8s/templates/
 
 jobs:
+  buildUATImage:
+    runs-on: [ ubuntu-latest ]
+    steps:
+      - name: Create Image
+        if: contains(github.event.head_commit.message, 'create_image')
+        run: |
+          sh build.sh
+
   buildImage:
     permissions:
       contents: read
