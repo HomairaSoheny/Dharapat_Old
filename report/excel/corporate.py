@@ -349,6 +349,40 @@ def generateSummaryNonFundedFacilitiesWorksheet(writer,workbook,non_funded_facil
 
     
 
+def generateSummaryRescheduleLoanBorrowerWorksheet(writer, workbook, reschedule_loan_summary_table):
+    title_format = getTitleFormat(workbook)
+    header_bold_center = getHeaderBoldCenter(workbook)
+    header_non_bold = headerNonBold(workbook)
+    header_format = getHeaderFormat(workbook)
+    normal_format = getNormalFormat(workbook)
+    normal_bold_format = getNormalBoldFormat(workbook)
+
+    
+    worksheet = writer.sheets["Summary-Reschedule Loan"]
+    worksheet.set_column(0, 5, 20)
+    worksheet.merge_range("A1:E1", "Summary of Reschedule Loan for Borrower", title_format)
+    worksheet.write("F1", "BDT in Million", header_non_bold)
+    worksheet.write("A2", "Name of Account", header_format)
+    worksheet.write("B2", "Type of Reschedule", header_format)
+    worksheet.write("C2", "Expiry of reschedule Loan", header_format)
+    worksheet.write("D2", "Amount", header_format)
+    worksheet.write("E2", "Date of last rescheduling", header_format)
+    worksheet.write("F2", "Link", header_format)
+
+    for idx, row in enumerate(reschedule_loan_summary_table['Borrower'][:-1]):
+        i = idx+4
+        worksheet.write("A" + str(i), row["Name of Account"], normal_format)
+        worksheet.write("B" + str(i), row["Type of Reschedule"], normal_format)
+        worksheet.write("C" + str(i), row["Expiry of Reschedule Loan"], normal_format)
+        worksheet.write("D" + str(i), row["Amount"], normal_format)
+        worksheet.write("E" + str(i), str(row["Date of Last Rescheduling"]), normal_format)
+        worksheet.write("F" + str(i), row["Link"], normal_format)
+
+    data = reschedule_loan_summary_table['Borrower']
+    worksheet.write(f'A{len(data)+4}','Sub Total',normal_bold_format)
+    total_formula = f'SUM(D4:D{len(data)+3})'
+    worksheet.write_formula(f'D{len(data)+4}', f'={total_formula}', normal_bold_format)
+
 
 
 def generateCorporateSpreadsheet(writer, analysis_report):
@@ -371,6 +405,10 @@ def generateCorporateSpreadsheet(writer, analysis_report):
     worksheet = workbook.add_worksheet("Summary-non funded facility")
     funded_facility_table = analysis_report['B - Summary of Facilities']['Summary of non funded facility']
     generateSummaryNonFundedFacilitiesWorksheet(writer,workbook,funded_facility_table)
+
+    worksheet = workbook.add_worksheet("Summary-Reschedule Loan")
+    reschedule_loan_summary_table = analysis_report['C - Summary of Reschedule Loan']
+    generateSummaryRescheduleLoanBorrowerWorksheet(writer,workbook,reschedule_loan_summary_table)
     
     worksheet = workbook.add_worksheet("Summary Table - 2")
     summary_table_2 = analysis_report["Summary Table - 2"]
