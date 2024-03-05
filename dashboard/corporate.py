@@ -146,8 +146,8 @@ def getSummaryOfNonFundedFacility(df):
     for i, row in df.iterrows():
         response.append({
             "Nature of Facility": row['Facility Type'],
-            "Limit": convertToFloat(row["Limit"]),
-            "Outstanding": convertToFloat(row["Outstanding"]),
+            "Limit": convertToMillion(row["Limit"]),
+            "Outstanding": convertToMillion(row["Outstanding"]),
             "Start Date": convertToString(row["Start Date"]),
             "End Date of Contract": convertToString(row["End Date of Contract"]),
             "Default": row["Default"]
