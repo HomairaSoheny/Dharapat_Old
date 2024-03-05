@@ -6,6 +6,8 @@ import warnings
 import json
 from utils.parsing_utils.data_preparation import process_response
 from dashboard.consumer import getConsumerDashboard
+from dashboard.corporate import getCorporateDashboard
+from utils.env import RABBITMQ_LINK
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "report.settings")
@@ -14,10 +16,7 @@ import django
 django.setup()
 
 def main():
-    #dev
-    connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq-temp1.centralindia.azurecontainer.io', heartbeat=400))
-    #prod
-    #connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq-0.rabbitmq.rabbits.svc.cluster.local', heartbeat=400))
+    connection = pika.BlockingConnection(pika.ConnectionParameters(RABBITMQ_LINK, heartbeat=400))
     
     channel = connection.channel()
     channel.queue_declare(queue='prime_bank_cib_response')
@@ -48,7 +47,7 @@ def main():
                 scorecard = []
                 final['metaData'] = metadata
                 # dashboard_data = get_corporate_dashboard(cib_list) if metadata['cibType'] == 'corporate' else getConsumerDashboard(cib_list)
-                dashboard_data = getConsumerDashboard(cibs)
+                dashboard_data = getCorporateDashboard(cibs) if metadata['cibType'] == 'corporate' else getConsumerDashboard(cibs)
                 final['score'] = scorecard
                 final['dashboard'] = dashboard_data
                 final['message'] = 'Ok'

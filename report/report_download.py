@@ -2,10 +2,16 @@ import pandas as pd
 from io import BytesIO
 
 from report.excel.consumer import generateConsumerSpreadsheet
+from report.excel.corporate import generateCorporateSpreadsheet
 
-def createReportDashboard(cib_datas):
+def createReportDashboard(analysis_report):
     io = BytesIO()
     writer = pd.ExcelWriter(io, engine='xlsxwriter', )
-    generateConsumerSpreadsheet(writer, cib_datas)
+    if type(analysis_report) == list:
+        print("Generating Consumer Analysis Report")
+        generateConsumerSpreadsheet(writer, analysis_report)
+    else:
+        print("Generating Corporate Analysis Report")
+        generateCorporateSpreadsheet(writer, analysis_report)
     
     return writer, io
