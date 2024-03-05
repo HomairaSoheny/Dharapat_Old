@@ -46,7 +46,7 @@ def getSummaryTableTwo(df):
     response = []
     for category in df['CIB Category'].unique():
         cat_df = df[df['CIB Category'] == category]
-        for concern_name in df['Name'].unique():
+        for concern_name in cat_df['Name'].unique():
             temp_df = cat_df[cat_df['Name'] == concern_name]
             response.append(getSummaryTableTwoFields(category, concern_name, temp_df))
         sub_total_df = pd.DataFrame(response)
