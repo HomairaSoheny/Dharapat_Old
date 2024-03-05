@@ -239,25 +239,23 @@ def getSummaryTableThreeFundedSum(category, concern_name, df):
         "Overdue - EOL of F": convertToFloat(df["Overdue - EOL of F"].sum()),
     }
 
-def getSummaryTableThreeNonFundedFields(category, concern_name, df):
-    return {
+def getSummaryTableThreeNonFundedFields(category, concern_name, df, non_funded_loans):
+    response = {
         "CIB Category": category,
         "Borrowing Company - Person": concern_name,
-        "Total LC": convertToFloat(df[df['Facility Type'].isin(LC)]['Outstanding'].sum()),
-        "Total BTB LC": convertToFloat(df[df['Facility Type'].isin(BTB_LC)]['Outstanding'].sum()),
-        "Total Indirect Liability": "",
-        "Total BG": ""
     }
+    for loan in non_funded_loans:
+        response[loan] = convertToFloat(df[df['Facility Type'].isin([loan])]['Outstanding'].sum())
+    return response
 
-def getSummaryTableThreeNonFundedSum(category, concern_name, df):
-    return {
+def getSummaryTableThreeNonFundedSum(category, concern_name, df, non_funded_loans):
+    response = {
         "CIB Category": category,
         "Borrowing Company - Person": concern_name,
-        "Total LC": convertToFloat(df["Total LC"].sum()),
-        "Total BTB LC": convertToFloat(df["Total BTB LC"].sum()),
-        "Total Indirect Liability": convertToFloat(df["Total Indirect Liability"].sum()),
-        "Total BG": convertToFloat(df["Total BG"].sum()),
     }
+    for loan in non_funded_loans:
+        response[loan] = convertToFloat(df[loan].sum())
+    return response
 
 
 def getSummaryOfFundedFacilityFields(row, i, installment):

@@ -34,24 +34,25 @@ def getSummaryTableTwo(df):
 def getSummaryTableThree(df):
     funded = []
     non_funded = []
+    non_funded_loans = list(df[df['Is Funded'] == "No"]["Facility Type"].unique())
     for category in df['CIB Category'].unique():
         cat_df = df[df['CIB Category'] == category]
         for concern_name in df['Name'].unique():
             temp_df = cat_df[cat_df['Name'] == concern_name]
             funded.append(getSummaryTableThreeFundedFields(category, concern_name, temp_df[temp_df['Is Funded'] == "Yes"]))
-            non_funded.append(getSummaryTableThreeNonFundedFields(category, concern_name, temp_df[temp_df['Is Funded'] == "No"]))
+            non_funded.append(getSummaryTableThreeNonFundedFields(category, concern_name, temp_df[temp_df['Is Funded'] == "No"], non_funded_loans))
         funded_sub_total_df = pd.DataFrame(funded)
         funded_sub_total_df = funded_sub_total_df[funded_sub_total_df['CIB Category'] == category]
         funded.append(getSummaryTableThreeFundedSum(category, "Sub Total", funded_sub_total_df))
         non_funded_sub_total_df = pd.DataFrame(non_funded)
         non_funded_sub_total_df = non_funded_sub_total_df[non_funded_sub_total_df['CIB Category'] == category]
-        non_funded.append(getSummaryTableThreeNonFundedSum(category, "Sub Total", non_funded_sub_total_df))
+        non_funded.append(getSummaryTableThreeNonFundedSum(category, "Sub Total", non_funded_sub_total_df, non_funded_loans))
     funded_total_df = pd.DataFrame(funded)
     funded_total_df = funded_total_df[funded_total_df['Borrowing Company - Person'] == "Sub Total"]
     funded.append(getSummaryTableThreeFundedSum(category, "Grand Total", funded_total_df))
     non_funded_total_df = pd.DataFrame(non_funded)
     non_funded_total_df = non_funded_total_df[non_funded_total_df['Borrowing Company - Person'] == "Sub Total"]
-    non_funded.append(getSummaryTableThreeNonFundedSum(category, "Grand Total", non_funded_total_df))
+    non_funded.append(getSummaryTableThreeNonFundedSum(category, "Grand Total", non_funded_total_df, non_funded_loans))
         
     return {
         "funded": funded,
@@ -177,6 +178,50 @@ def getSummaryOfRequestedLoan(cibs):
         })
     return response
 
+def getSummaryOfStayOrder(cibs):
+    response = []
+    for cib in cibs:
+        response.append({
+            "Name of account": "",
+            "Nature of facility": "",
+            "Stayorder amount": "",
+            "Writ no": "",
+            "Remarks": "",
+            "Link": ""
+        })
+    return response
+
+def getSummaryOfExpiredButShowingLiveFunded(df):
+    response = []
+    for i, row in df.iterrows():
+        response.append({
+            "Nature of Facility": "",
+            "Limit": "",
+            "Outstanding": "",
+            "Overdue": "",
+            "Start Date": "",
+            "End Date of Contract": "",
+            "Installment Amount": "",
+            "Payment Period": "",
+            "Total No of Installment": "",
+            "No of Remaining Installment": "",
+            "Date of Last Payment": "",
+            "NPL": "",
+            "Default": ""
+        })
+
+def getSummaryOfExpiredButShowingLiveNonFunded(df):
+    response = []
+    for i, row in df.iterrows():
+        response.append({
+            "Nature of Facility": "",
+            "Limit": "",
+            "Outstanding": "",
+            "Start Date": "",
+            "End Date of Contract": "",
+            "Default": ""
+        })
+
 def getCorporateDashboard(cibs):
     response = {}
     df = getCorporateDataFrame(cibs)
@@ -192,7 +237,14 @@ def getCorporateDashboard(cibs):
         "Guarantor": getSummaryOfRescheduleLoan(df, GUARANTOR) 
     }
     response['D - Summary of Requested Loan'] = getSummaryOfRequestedLoan(cibs)
-    
+    response['E - Summary of Stay Order'] = {
+        "Borrower": getSummaryOfStayOrder(cibs),
+        "Guarantor": getSummaryOfStayOrder(cibs)
+        }
+    response['F - Expired Loan But Showing Live'] = {
+        "Summary of Funded Facility": getSummaryOfExpiredButShowingLiveFunded(df),
+        "Summary of Non Funded Facility": "",
+    }
     response['Summary Table - 2'] = getSummaryTableTwo(df)
     response['Summary Table - 3'] = getSummaryTableThree(df)
     
