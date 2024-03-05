@@ -379,9 +379,47 @@ def generateSummaryRescheduleLoanBorrowerWorksheet(writer, workbook, reschedule_
         worksheet.write("F" + str(i), row["Link"], normal_format)
 
     data = reschedule_loan_summary_table['Borrower']
-    worksheet.write(f'A{len(data)+4}','Sub Total',normal_bold_format)
+    worksheet.write(f'A{len(data)+4}','Sub Total',header_format)
     total_formula = f'SUM(D4:D{len(data)+3})'
-    worksheet.write_formula(f'D{len(data)+4}', f'={total_formula}', normal_bold_format)
+    worksheet.write_formula(f'D{len(data)+4}', f'={total_formula}', header_format)
+
+    return len(data)+4
+
+
+def generateSummaryRescheduleLoanGuarantorWorksheet(writer, workbook, reschedule_loan_summary_table,starting_row):
+    title_format = getTitleFormat(workbook)
+    header_bold_center = getHeaderBoldCenter(workbook)
+    header_non_bold = headerNonBold(workbook)
+    header_format = getHeaderFormat(workbook)
+    normal_format = getNormalFormat(workbook)
+    normal_bold_format = getNormalBoldFormat(workbook)
+
+    starting_row+=1
+    worksheet = writer.sheets["Summary-Reschedule Loan"]
+    worksheet.set_column(0, 5, 20)
+    worksheet.merge_range(f"A{starting_row}:E{starting_row}", "Summary of Reschedule Loan for Guarantor", title_format)
+    worksheet.write(f'F{starting_row}', "BDT in Million", header_non_bold)
+    worksheet.write(f'A{starting_row+1}', "Name of Account", header_format)
+    worksheet.write(f'B{starting_row+1}', "Type of Reschedule", header_format)
+    worksheet.write(f'C{starting_row+1}', "Expiry of reschedule Loan", header_format)
+    worksheet.write(f'D{starting_row+1}', "Amount", header_format)
+    worksheet.write(f'E{starting_row+1}', "Date of last rescheduling", header_format)
+    worksheet.write(f'F{starting_row+1}', "Link", header_format)
+
+    starting_row+=2
+    for idx, row in enumerate(reschedule_loan_summary_table['Guarantor'][:-1]):
+        i = idx+starting_row
+        worksheet.write("A" + str(i), row["Name of Account"], normal_format)
+        worksheet.write("B" + str(i), row["Type of Reschedule"], normal_format)
+        worksheet.write("C" + str(i), row["Expiry of Reschedule Loan"], normal_format)
+        worksheet.write("D" + str(i), row["Amount"], normal_format)
+        worksheet.write("E" + str(i), str(row["Date of Last Rescheduling"]), normal_format)
+        worksheet.write("F" + str(i), row["Link"], normal_format)
+
+    data = reschedule_loan_summary_table['Guarantor'][:-1]
+    worksheet.write(f'A{len(data)+starting_row}','Sub Total',header_format)
+    total_formula = f'SUM(D4:D{len(data)+(starting_row-1)})'
+    worksheet.write_formula(f'D{len(data)+starting_row}', f'={total_formula}', header_format)
 
 
 
@@ -408,7 +446,8 @@ def generateCorporateSpreadsheet(writer, analysis_report):
 
     worksheet = workbook.add_worksheet("Summary-Reschedule Loan")
     reschedule_loan_summary_table = analysis_report['C - Summary of Reschedule Loan']
-    generateSummaryRescheduleLoanBorrowerWorksheet(writer,workbook,reschedule_loan_summary_table)
+    row = generateSummaryRescheduleLoanBorrowerWorksheet(writer,workbook,reschedule_loan_summary_table)
+    generateSummaryRescheduleLoanBorrowerWorksheet(writer,workbook,reschedule_loan_summary_table,row)
     
     worksheet = workbook.add_worksheet("Summary Table - 2")
     summary_table_2 = analysis_report["Summary Table - 2"]
