@@ -65,15 +65,15 @@ def getNormalBoldFormat(workbook):
         }
     )
 
-def getTitleFormat(workbook):
-    return workbook.add_format(
-        {
-            "bold": True,
-            "border": 2,
-            # "fg_color": "#051094",
-            "font_size": 17,
-            # "font_color": "white",
-            # "border_color": "white",
-            'text_wrap':True
-        }
-    )
+# def getTitleFormat(workbook):
+#     return workbook.add_format(
+#         {
+#             "bold": True,
+#             "border": 2,
+#             # "fg_color": "#051094",
+#             "font_size": 17,
+#             # "font_color": "white",
+#             # "border_color": "white",
+#             'text_wrap':True
+#         }
+#     )
