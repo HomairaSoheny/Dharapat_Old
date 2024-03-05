@@ -98,7 +98,7 @@ def getSummaryOfTerminatedFacilityFunded(df):
     for i, row in df.iterrows():
         response.append({
             "Installment": row['Facility Type'],
-            "Limit": convertToFloat(row["Limit"]),
+            "Limit": convertToMillion(row["Limit"]),
             "Loan/Limit (days of adjustment before/after)": "Not Implemented",
             "Worse Classification Status": row["Worse Classification Status"],
             "Date of Classification": convertToString(row["Date of Classification"])
@@ -116,7 +116,7 @@ def getSummaryOfTerminatedFacilityNonFunded(df):
     for i, row in df.iterrows():
         response.append({
             "Non-Installment": row['Facility Type'],
-            "Limit": convertToFloat(row["Limit"]),
+            "Limit": convertToMillion(row["Limit"]),
             "Loan/Limit (days of adjustment before/after)": "Not Implemented",
             "Worse Classification Status": row["Worse Classification Status"],
             "Date of Classification": convertToString(row["Date of Classification"])
