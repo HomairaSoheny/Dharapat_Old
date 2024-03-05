@@ -303,7 +303,7 @@ def getSummaryOfFundedFacilitySum(df, total_type, installment_type):
         "Installment Amount": convertToMillion(df['Installment Amount'].sum()),
         "Payment Period": "-",
         "Total No. of Installment": convertToMillion(df['Total No of Installment'].sum()),
-        "Total no. of Installment paid": convertToMillion(df['Total no. of Installment paid'].sum()),
+        "Total no. of Installment paid": convertToMillion(df['Total No of Installment'].sum()),
         "No. of Remaining Installment": convertToMillion(df['No of Remaining Installment'].sum()),
         "Date of Last Payment": "-",
         "NPI": convertToInteger(df['NPI'].sum()),

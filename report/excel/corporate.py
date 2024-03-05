@@ -35,7 +35,7 @@ def generateSummaryTableWorksheet(writer, workbook, summary_table):
             range_checker = (i, row['CIB Category'])
         
         if row['Name of Concern'] == 'Grand Total':
-            worksheet.merge_range("A"+str(range_checker[0])+":A"+str(i-1), summary_table[idx-1]['CIB Category'], header_format)
+            worksheet.merge_range("A"+str(range_checker[0])+":A"+str(i), summary_table[idx]['CIB Category'], header_format)
         
         worksheet.write("B" + str(i), row["Name of Concern"], format)
         worksheet.write("C" + str(i), row["Funded Outstanding Installment"], format)
@@ -92,7 +92,7 @@ def generateSummaryTableTwoWorksheet(writer, workbook, summary_table_two):
             range_checker = (i, row['CIB Category'])
         
         if row['Name of Concern'] == 'Grand Total':
-            worksheet.merge_range("A"+str(range_checker[0])+":A"+str(i-1), summary_table_two[idx-1]['CIB Category'], header_format)
+            worksheet.merge_range("A"+str(range_checker[0])+":A"+str(i), summary_table_two[idx]['CIB Category'], header_format)
         
         worksheet.write("B" + str(i), row["Name of Concern"], format)
         worksheet.write("C" + str(i), row["Funded Installment"], format)
