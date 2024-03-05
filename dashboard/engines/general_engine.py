@@ -27,17 +27,15 @@ def isFunded(fac):
     return "Yes"
 
 def getOutstanding(fac):
-    if type(fac['Contract History']) == dict:
-        for key in OUTSTANDING:
-            if key in fac['Contract History'].keys():
-                return fac['Contract History'].sort_values('Date', ascending=False)[key][0]
+    for key in OUTSTANDING:
+        if key in fac['Contract History'].keys():
+            return fac['Contract History'].sort_values('Date', ascending=False)[key][0]
     return 0
 
 def getOverdue(fac):
-    if type(fac['Contract History']) == dict:
-        for key in OVERDUE:
-            if key in fac['Contract History'].keys():
-                return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
+    for key in OVERDUE:
+        if key in fac['Contract History'].keys():
+            return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
     return 0
 
 def getCurrentCLStatus(fac):
@@ -53,9 +51,8 @@ def getLimit(fac):
             return fac['Ref'][key]
 
 def isStayOrder(facility):
-    if type(facility['Contract History']) == dict:
-        if type(facility['Contract History']) == dict and 'Stay Order' in facility['Contract History'].keys():
-            return True
+    if type(facility['Contract History']) == dict and 'Stay Order' in facility['Contract History'].keys():
+        return True
     return False
 
 def getClassFromSet(classes : set):
@@ -75,10 +72,9 @@ def getFacilityType(fac):
             return fac['Ref'][key]
 
 def getCurrentNPI(fac):
-    if type(fac['Contract History']) != dict:
-        for key in NPI:
-            if key in fac['Contract History'].keys():
-                return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
+    for key in NPI:
+        if key in fac['Contract History'].keys():
+            return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
     return 0
 
 
