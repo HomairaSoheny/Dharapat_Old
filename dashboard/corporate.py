@@ -187,14 +187,15 @@ def getSummaryOfRescheduleLoan(df, role):
             "Date of Last Rescheduling": row['Last Date of Reschedule'],
             "Link": row['CIB Link']
         })
-    response.append({
-        "Name of Account": "Sub Total",
-        "Type of Reschedule": "-",
-        "Expiry of Reschedule Loan": "-",
-        "Amount": convertToInteger(df['Total Disbursement Amount'].sum),
-        "Date of Last Rescheduling": "-",
-        "Link": "-"
-    })
+    if len(response) > 0:
+        response.append({
+            "Name of Account": "Sub Total",
+            "Type of Reschedule": "-",
+            "Expiry of Reschedule Loan": "-",
+            "Amount": convertToInteger(df['Total Disbursement Amount'].sum),
+            "Date of Last Rescheduling": "-",
+            "Link": "-"
+        })
     return response
 
 def getSummaryOfRequestedLoan(cibs):
