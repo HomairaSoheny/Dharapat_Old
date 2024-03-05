@@ -29,7 +29,7 @@ def getSummaryTable(cibs):
     response = []
     for category in df['CIB Category'].unique():
         cat_df = df[df['CIB Category'] == category]
-        for concern_name in df['Name of Concern'].unique():
+        for concern_name in cat_df['Name of Concern'].unique():
             temp_df = cat_df[cat_df['Name of Concern'] == concern_name]
             response.append(getSummaryTableFields(category, concern_name, temp_df))
         sub_total_df = pd.DataFrame(response)
@@ -37,7 +37,7 @@ def getSummaryTable(cibs):
         response.append(getSummaryTableFields(category, "Sub Total", sub_total_df))
     total_df = pd.DataFrame(response)
     total_df = total_df[total_df['Name of Concern'] == "Sub Total"]
-    response.append(getSummaryTableFields(category, "Grand Total", total_df))
+    response.append(getSummaryTableFields("", "Grand Total", total_df))
     return response
 
 def getSummaryTableTwo(df):
@@ -54,7 +54,7 @@ def getSummaryTableTwo(df):
         response.append(getSummaryTableTwoSum(category, "Sub Total", sub_total_df))
     total_df = pd.DataFrame(response)
     total_df = total_df[total_df['Name of Concern'] == "Sub Total"]
-    response.append(getSummaryTableTwoSum(category, "Grand Total", total_df))
+    response.append(getSummaryTableTwoSum("", "Grand Total", total_df))
     return response
 
 def getSummaryTableThree(df):
@@ -77,10 +77,10 @@ def getSummaryTableThree(df):
         non_funded.append(getSummaryTableThreeNonFundedSum(category, "Sub Total", non_funded_sub_total_df, non_funded_loans))
     funded_total_df = pd.DataFrame(funded)
     funded_total_df = funded_total_df[funded_total_df['Borrowing Company - Person'] == "Sub Total"]
-    funded.append(getSummaryTableThreeFundedSum(category, "Grand Total", funded_total_df))
+    funded.append(getSummaryTableThreeFundedSum("", "Grand Total", funded_total_df))
     non_funded_total_df = pd.DataFrame(non_funded)
     non_funded_total_df = non_funded_total_df[non_funded_total_df['Borrowing Company - Person'] == "Sub Total"]
-    non_funded.append(getSummaryTableThreeNonFundedSum(category, "Grand Total", non_funded_total_df, non_funded_loans))
+    non_funded.append(getSummaryTableThreeNonFundedSum("", "Grand Total", non_funded_total_df, non_funded_loans))
         
     return {
         "funded": funded,
