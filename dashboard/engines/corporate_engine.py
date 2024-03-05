@@ -117,13 +117,14 @@ def getDefault(fac):
 def getTypeOfReschedule(fac):
     for key in RESCHEDULE_LOAN:
         if key in fac['Ref'].keys():
-            return fac['Ref'][key]
+            if fac['Ref'][key] not in [0, "", " ", "-"]:
+                return fac['Ref'][key]
     return "Not Rescheduled"
 
 def getDateOfLastReschedule(fac):
     for key in LAST_RESCHEDULING_DATE:
         if key in fac['Ref'].keys():
-            return fac['Ref'][key]
+            return convertToString(fac['Ref'][key]).replace(" 00:00:00", "")
     return "Not Rescheduled"
 
 def getTotalDisbursementAmount(fac):
