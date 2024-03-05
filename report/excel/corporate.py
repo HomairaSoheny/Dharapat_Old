@@ -533,6 +533,71 @@ def generateSummaryStayOrderGuarantorWorksheet(writer, workbook, stay_order_summ
     worksheet.write_formula(f'C{len(data)+starting_row}', f'={total_formula}', header_format)
 
 
+def generateSummaryTable3FundedWorksheet(writer,workbook,funded_summary_table_3):
+    title_format = getTitleFormat(workbook)
+    header_bold_center = getHeaderBoldCenter(workbook)
+    header_non_bold = headerNonBold(workbook)
+    header_format = getHeaderFormat(workbook)
+    normal_format = getNormalFormat(workbook)
+
+    worksheet = writer.sheets["Summary Table 3 - Funded"]
+
+    worksheet.merge_range("A1:P2", "Summary Table- 3: Liability type wise break up (only Live contracts)", title_format)
+    worksheet.set_column(0, 16, 20)
+
+
+    worksheet.write("A3", "Type of Concern", header_format)
+    worksheet.write("B3", "Borrowing Company/ Person", header_format)
+    worksheet.write("C3", "A. Overdraft/ Cash Credit", header_format)
+    worksheet.write("D3", "Overdue/ EOL of A (link of overdue-single/ multiple)", header_format)
+    worksheet.write("E3", "B. Time Loan", header_format)
+    worksheet.write("F3", "Overdue/ EOL of B (link of overdue- single/ multiple", header_format)
+    worksheet.write("G3", "C. LTR", header_format)
+    worksheet.write("H3", "Overdue/ EOL of C (link of overdue- single/ multiple", header_format)
+    worksheet.write("I3", "D. Other Non Installment", header_format)
+    worksheet.write("J3", "Overdue/ EOL of D (link of overdue- single/ multiple", header_format)
+    worksheet.write("K3", "E. Term Loan", header_format)
+    worksheet.write("L3", "EMI of E (to be converted in month from instalment field of CIB for mentioned frequency)", header_format)
+    worksheet.write("M3", "Overdue/ EOL of E (link of overdue- single/ multiple", header_format)
+    worksheet.write("N3", "F. Other Installment Loan", header_format)
+    worksheet.write("O3", "EMI of F (to be converted in month from instalment field of CIB for mentioned frequency)", header_format)
+    worksheet.write("P3", "Overdue/ EOL of F (link of overdue- single/ multiple", header_format)
+
+    
+
+    unique_cib_categories = {json_data.get('CIB Category', '') for json_data in funded_summary_table_3 if 'CIB Category' in json_data}
+
+    row = 4
+    for concern_type in unique_cib_categories:
+        if concern_type !=None:
+            concern_list = [item for item in funded_summary_table_3 if item['CIB Category'] == concern_type]
+
+            worksheet.merge_range(f"A{row}:A{row+len(concern_list)-1}",concern_type,header_format)
+
+            for idx,item in enumerate(concern_list):
+                if item["Borrowing Company - Person"] == 'Sub Total':
+                    format = header_format
+                else:
+                    format = normal_format
+                worksheet.write("B" + str(idx+row), item["Borrowing Company - Person"], format)
+                worksheet.write("C" + str(idx+row), item["A - Overdraft - Cash Credit"], format)
+                worksheet.write("D" + str(idx+row), item["Overdue - EOL of A"], format)
+                worksheet.write("E" + str(idx+row), item["B - Time Loan"], format)
+                worksheet.write("F" + str(idx+row), item["Overdue - EOL of B"], format)
+                worksheet.write("G" + str(idx+row), item["C - LTR"], format)
+                worksheet.write("H" + str(idx+row), item["Overdue - EOL of C"], format)
+                worksheet.write("I" + str(idx+row), item["D - Other Non Installment"], format)
+                worksheet.write("J" + str(idx+row), item["Overdue - EOL of D"], format)
+                worksheet.write("K" + str(idx+row), item["E - Term Loan"], format)
+                worksheet.write("L" + str(idx+row), item["EMI of E"], format)
+                worksheet.write("M" + str(idx+row), item["Overdue - EOL of E"], format)
+                worksheet.write("N" + str(idx+row), item["F - Other Installment Loan"], format)
+                worksheet.write("O" + str(idx+row), item["EMI of F"], format)
+                worksheet.write("P" + str(idx+row), item["Overdue - EOL of F"], format)
+        
+            row += len(concern_list) 
+
+
 
 def generateCorporateSpreadsheet(writer, analysis_report):
     workbook = writer.book
@@ -568,6 +633,10 @@ def generateCorporateSpreadsheet(writer, analysis_report):
     stay_order_summary_table = analysis_report['E - Summary of Stay Order']
     row = generateSummaryStayOrderBorrowerWorksheet(writer, workbook, stay_order_summary_table)
     generateSummaryStayOrderGuarantorWorksheet(writer, workbook, stay_order_summary_table,row)
+
+    worksheet = workbook.add_worksheet("Summary Table 3 - Funded")
+    funded_summary_table_3 = analysis_report['Summary Table - 3']['funded']
+    generateSummaryTable3FundedWorksheet(writer,workbook,funded_summary_table_3)
 
     
     worksheet = workbook.add_worksheet("Summary Table - 2")
