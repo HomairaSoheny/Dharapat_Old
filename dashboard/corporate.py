@@ -215,7 +215,10 @@ def getSummaryOfRequestedLoan(cibs):
         })
     return response
 
-def getSummaryOfStayOrder(df):
+def getSummaryOfStayOrder(df, role):
+    if df.empty:
+        return []
+    df = df[df['Role'].isin(role) & (df['Is Stay Order'] == "Yes")]
     response = []
     for i, row in df.iterrows():
         response.append({
@@ -279,8 +282,8 @@ def getCorporateDashboard(cibs):
     }
     response['D - Summary of Requested Loan'] = getSummaryOfRequestedLoan(cibs)
     response['E - Summary of Stay Order'] = {
-        "Borrower": getSummaryOfStayOrder(df[df['Role'].isin(BORROWER) & (df['Is Stay Order'] == "Yes")]),
-        "Guarantor": getSummaryOfStayOrder(df[df['Role'].isin(GUARANTOR) & (df['Is Stay Order'] == "Yes")])
+        "Borrower": getSummaryOfStayOrder(df, BORROWER),
+        "Guarantor": getSummaryOfStayOrder(df, GUARANTOR)
         }
     response['F - Expired Loan But Showing Live'] = {
         "Summary of Funded Facility": getSummaryOfExpiredButShowingLiveFunded(df),

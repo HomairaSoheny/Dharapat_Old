@@ -91,24 +91,26 @@ def getOverdue(df):
 
 
 def isStayOrder(fac):
-    if type(fac['Contract History']) is dict:
+    if type(fac['Contract History']) == dict:
         return "Yes"
     return "No"
 
 
 def getStayOrder(fac):
-    if type(fac['Contract History']) is dict:
+    if type(fac['Contract History']) == dict:
         return fac['Contract History']['Stay Order']
+    return ""
     
-
+    
 def getStayOrderAmount(fac):
     for key in STAY_ORDER_AMOUNT:
         if key in fac['Ref'].keys():
             return fac['Ref'][key]
+    return 0
 
 
 def getDefault(fac):
-    if type(fac['Contract History']) is not dict:
+    if type(fac['Contract History']) != dict:
         return "Yes" if "Yes" in fac["Contract History"]["Default"].tolist() else "No"
     return ""
 
