@@ -422,6 +422,41 @@ def generateSummaryRescheduleLoanGuarantorWorksheet(writer, workbook, reschedule
     worksheet.write_formula(f'D{len(data)+starting_row}', f'={total_formula}', header_format)
 
 
+def generateSummaryRequestedLoanWorksheet(writer, workbook, requested_loan_summary_table):
+    title_format = getTitleFormat(workbook)
+    header_bold_center = getHeaderBoldCenter(workbook)
+    header_non_bold = headerNonBold(workbook)
+    header_format = getHeaderFormat(workbook)
+    normal_format = getNormalFormat(workbook)
+    normal_bold_format = getNormalBoldFormat(workbook)
+
+    
+    worksheet = writer.sheets["Summary-Requested Loan"]
+    worksheet.set_column(0, 5, 20)
+    worksheet.merge_range(f"A1:F1", "Summary of Requested Loan", title_format)
+    worksheet.write(f'A2', "Type of Loan", header_format)
+    worksheet.write(f'B2', "Facility", header_format)
+    worksheet.write(f'C2', "Role", header_format)
+    worksheet.write(f'D2', "Requested Amount", header_format)
+    worksheet.write(f'E2', "Date of Request", header_format)
+    worksheet.write(f'F2', "Link", header_format)
+
+    
+    for idx, row in enumerate(requested_loan_summary_table):
+        i = idx+3
+        worksheet.write("A" + str(i), row["Type of Loan"], normal_format)
+        worksheet.write("B" + str(i), row["Facility"], normal_format)
+        worksheet.write("C" + str(i), row["Role"], normal_format)
+        worksheet.write("D" + str(i), float(row["Requested Amount"]), normal_format)
+        worksheet.write("E" + str(i), str(row["Date of Request"]), normal_format)
+        worksheet.write("F" + str(i), row["Link"], normal_format)
+
+    data = requested_loan_summary_table
+    worksheet.write(f'A{len(data)+3}','Sub Total',header_format)
+    total_formula = f'SUM(D4:D{len(data)+2})'
+    worksheet.write_formula(f'D{len(data)+3}', f'={total_formula}', header_format)
+
+
 
 def generateCorporateSpreadsheet(writer, analysis_report):
     workbook = writer.book
@@ -448,6 +483,10 @@ def generateCorporateSpreadsheet(writer, analysis_report):
     reschedule_loan_summary_table = analysis_report['C - Summary of Reschedule Loan']
     row = generateSummaryRescheduleLoanBorrowerWorksheet(writer,workbook,reschedule_loan_summary_table)
     generateSummaryRescheduleLoanBorrowerWorksheet(writer,workbook,reschedule_loan_summary_table,row)
+
+    worksheet = workbook.add_worksheet("Summary-Requested Loan")
+    requested_loan_summary_table = analysis_report['D - Summary of Requested Loan']
+    generateSummaryRequestedLoanWorksheet(writer,workbook,requested_loan_summary_table)
     
     worksheet = workbook.add_worksheet("Summary Table - 2")
     summary_table_2 = analysis_report["Summary Table - 2"]
