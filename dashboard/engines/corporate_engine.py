@@ -110,24 +110,8 @@ def getTotalDisbursementAmount(fac):
         if key in fac['Ref'].keys():
             return fac['Ref'][key]
 
+
 def getSummaryTableFields(category, concern_name, df):
-    return {
-        "CIB Category": category,
-        "Name of Concern": concern_name,
-        "Funded Outstanding Installment": convertToFloat(getFundedOutstandingInstallment(df)),
-        "Funded Outstanding Non Installment": convertToFloat(getFundedOutstandingNonInstallment(df)),
-        "Funded Outstanding Total": convertToFloat(getFundedOutstandingTotal(df)),
-        "Non-Funded Outstanding": convertToFloat(getNonFundedOutstanding(df)),
-        "Total Outstanding": convertToFloat(getTotalOutstanding(df)),
-        "Overdue": convertToFloat(getOverdue(df)),
-        "CL Status": general_engine.getClassFromSet(set(df["CL Status"].tolist())),
-        "Default": "Yes" if "Yes" in set(df["Default"].tolist()) else "No",
-        "CIB PDF View": re.sub(r'[,\[\]]', '', str(list(df['CIB Link']))).replace("'", ''),
-        "Updated Overdue and CL Status": "Need More Clarification",
-    }
-
-
-def getSummaryTableSum(category, concern_name, df):
     return {
         "CIB Category": category,
         "Name of Concern": concern_name,

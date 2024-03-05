@@ -1,22 +1,48 @@
 from dashboard.engines.corporate_engine import *
+from dashboard.engines.general_engine import *
 from utils.general_helper import *
 
-def getSummaryTable(df):
+
+def getSummaryTable(cibs):
+    response = []
+    for cib in cibs:
+        df = getCorporateDataFrame([cib])
+        funded = cib.summary_1A
+        funded['total'] = funded[[i for i in funded.columns if 'Amount' in i]].sum(axis=1)
+        non_funded = cib.summary_1B
+        non_funded['total'] = non_funded[[i for i in non_funded.columns if 'Amount' in i]].sum(axis=1)
+        response.append({
+            "CIB Category": getCIBCategory(cib),
+            "Name of Concern": getBorrowersName(cib.subject_info),
+            "Funded Outstanding Installment": convertToFloat(funded.total.tolist()[0]),
+            "Funded Outstanding Non Installment": convertToFloat(funded.total.tolist()[1]),
+            "Funded Outstanding Total": convertToFloat(funded.total.tolist()[3]),
+            "Non-Funded Outstanding": convertToFloat(non_funded.total.tolist()[3]),
+            "Total Outstanding": convertToFloat(funded.total.tolist()[3]) + convertToFloat(non_funded.total.tolist()[3]),
+            "Overdue": cib.summary_1['Total Overdue Amount'],
+            "CL Status": "-" if df.empty else getClassFromSet(set(list(df['CL Status']))),
+            "Default": "-" if df.empty else ("Yes" if "Yes" in list(df['Default']) else "No"),
+            "CIB PDF View": PDF_LINK + cib.pdf_name,
+            "Updated Overdue and CL Status": "-" if df.empty else (re.sub(r'[,\[\]]', '', str(list(df['Remarks']))).replace("'", '')),
+        })
+    df = pd.DataFrame(response)
     response = []
     for category in df['CIB Category'].unique():
         cat_df = df[df['CIB Category'] == category]
-        for concern_name in df['Name'].unique():
-            temp_df = cat_df[cat_df['Name'] == concern_name]
+        for concern_name in df['Name of Concern'].unique():
+            temp_df = cat_df[cat_df['Name of Concern'] == concern_name]
             response.append(getSummaryTableFields(category, concern_name, temp_df))
         sub_total_df = pd.DataFrame(response)
         sub_total_df = sub_total_df[sub_total_df['CIB Category'] == category]
-        response.append(getSummaryTableSum(category, "Sub Total", sub_total_df))
+        response.append(getSummaryTableFields(category, "Sub Total", sub_total_df))
     total_df = pd.DataFrame(response)
     total_df = total_df[total_df['Name of Concern'] == "Sub Total"]
-    response.append(getSummaryTableSum(category, "Grand Total", total_df))
+    response.append(getSummaryTableFields(category, "Grand Total", total_df))
     return response
 
 def getSummaryTableTwo(df):
+    if df.empty:
+        return []
     response = []
     for category in df['CIB Category'].unique():
         cat_df = df[df['CIB Category'] == category]
@@ -32,6 +58,8 @@ def getSummaryTableTwo(df):
     return response
 
 def getSummaryTableThree(df):
+    if df.empty:
+        return []
     funded = []
     non_funded = []
     non_funded_loans = list(df[df['Is Funded'] == "No"]["Facility Type"].unique())
@@ -60,6 +88,8 @@ def getSummaryTableThree(df):
     }
 
 def getSummaryOfTerminatedFacilityFunded(df):
+    if df.empty:
+        return []
     response = []
     df = df[df['Phase'] != 'Living']
     df = df[df['Is Funded'] == "Yes"]
@@ -76,6 +106,8 @@ def getSummaryOfTerminatedFacilityFunded(df):
     return response
 
 def getSummaryOfTerminatedFacilityNonFunded(df):
+    if df.empty:
+        return []
     response = []
     df = df[df['Phase'] != 'Living']
     df = df[df['Is Funded'] == "No"]
@@ -123,6 +155,9 @@ def getSummaryOfNonFundedFacility(df):
     return response
 
 def getSummaryOfFacilities(df):
+    if df.empty:
+        return {"Summary of funded facility": [],
+                "Summary of non funded facility": []}
     response = {}
     summary_of_funded_facility = {}
     summary_of_non_funded_facility = {}
@@ -137,6 +172,8 @@ def getSummaryOfFacilities(df):
     return response
 
 def getSummaryOfRescheduleLoan(df, role):
+    if df.empty:
+        return []
     response = []
     df = df[(df['Reschedule Type'] != "Not Rescheduled") & df['Role'].isin(role)]
     for i, row in df.iterrows():
@@ -192,6 +229,8 @@ def getSummaryOfStayOrder(cibs):
     return response
 
 def getSummaryOfExpiredButShowingLiveFunded(df):
+    if df.empty:
+        return []
     response = []
     for i, row in df.iterrows():
         response.append({
@@ -211,6 +250,8 @@ def getSummaryOfExpiredButShowingLiveFunded(df):
         })
 
 def getSummaryOfExpiredButShowingLiveNonFunded(df):
+    if df.empty:
+        return []
     response = []
     for i, row in df.iterrows():
         response.append({
@@ -226,7 +267,7 @@ def getCorporateDashboard(cibs):
     response = {}
     df = getCorporateDataFrame(cibs)
     response['analysis type'] = "Corporate"
-    response['Summary Table - 1'] = getSummaryTable(df)
+    response['Summary Table - 1'] = getSummaryTable(cibs)
     response['A - Summary of Terminated Facilities'] = {
         "Funded": getSummaryOfTerminatedFacilityFunded(df),
         "Non Funded": getSummaryOfTerminatedFacilityNonFunded(df)
@@ -243,7 +284,7 @@ def getCorporateDashboard(cibs):
         }
     response['F - Expired Loan But Showing Live'] = {
         "Summary of Funded Facility": getSummaryOfExpiredButShowingLiveFunded(df),
-        "Summary of Non Funded Facility": "",
+        "Summary of Non Funded Facility": getSummaryOfExpiredButShowingLiveNonFunded(df),
     }
     response['Summary Table - 2'] = getSummaryTableTwo(df)
     response['Summary Table - 3'] = getSummaryTableThree(df)
