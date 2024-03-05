@@ -46,8 +46,9 @@ def generateSummaryTableWorksheet(writer, workbook, summary_table):
         worksheet.write("H" + str(i), row["Overdue"], format)
         worksheet.write("I" + str(i), row["CL Status"], format)
         worksheet.write("J" + str(i), row["Default"], format)
-        worksheet.write("K" + str(i), row["CIB PDF View"], format)
+        worksheet.write_url("K" + str(i), row["CIB PDF View"].replace(" ", "\n"), format)
         worksheet.write("L" + str(i), row["Updated Overdue and CL Status"], format)
+    worksheet.autofit()
 
 def generateSummaryTableTwoWorksheet(writer, workbook, summary_table_two):
     title_format = getTitleFormat(workbook)
@@ -110,6 +111,7 @@ def generateSummaryTableTwoWorksheet(writer, workbook, summary_table_two):
         worksheet.write("P" + str(i), row["Loan BLW"], format)
         worksheet.write("Q" + str(i), row["Loan Stay Order"], format)
         worksheet.write("R" + str(i), row["Remarks"], format)
+    worksheet.autofit()
         
     
 
@@ -146,6 +148,7 @@ def generateFundedTerminatedFacilityTableWorksheet(writer, workbook, funded_term
     worksheet.write(f'A{len(data)+4}','Sub Total',normal_bold_format)
     total_formula = f'SUM(B4:B{len(data)+3})'
     worksheet.write_formula(f'B{len(data)+4}', f'={total_formula}', normal_bold_format)
+    worksheet.autofit()
 
 
 def generateNonFundedTerminatedFacilityTableWorksheet(writer, workbook, terminated_facility_summary_table):
@@ -180,6 +183,7 @@ def generateNonFundedTerminatedFacilityTableWorksheet(writer, workbook, terminat
     worksheet.write(f'G{len(data)+4}','Sub Total',normal_bold_format)
     total_formula = f'SUM(H4:H{len(data)+3})'
     worksheet.write_formula(f'H{len(data)+4}', f'={total_formula}', normal_bold_format)
+    worksheet.autofit()
 
 
 def generateSummaryFundedFacilitiesInstallmentWorksheet(writer,workbook,funded_facility_table):
@@ -205,7 +209,7 @@ def generateSummaryFundedFacilitiesInstallmentWorksheet(writer,workbook,funded_f
     worksheet.write("G3", "Start Date", header_format)
     worksheet.write("H3", "End Date of Contract", header_format)
     worksheet.write("I3", "Installment Amount", header_format)
-    worksheet.write("J3", "Payment Period (Monthly/ Quarterly/ Half yearly/ Annually)", header_format)
+    worksheet.write("J3", "Payment Period", header_format)
     worksheet.write("K3", "Total no. of Installment", header_format)
     worksheet.write("L3", "Total no. of Installment paid", header_format)
     worksheet.write("M3", "No. of Remaining Installment", header_format)
@@ -241,7 +245,8 @@ def generateSummaryFundedFacilitiesInstallmentWorksheet(writer,workbook,funded_f
                     worksheet.write("P" + str(idx+row), item["Default"], format)
                     
             
-                row += len(facility_list) 
+                row += len(facility_list)
+    worksheet.autofit()
     return row
 
 def generateSummaryFundedFacilitiesNonInstallmentWorksheet(writer,workbook,funded_facility_table, starting_row):
@@ -306,6 +311,7 @@ def generateSummaryFundedFacilitiesNonInstallmentWorksheet(writer,workbook,funde
                     worksheet.write("P" + str(idx+row), item["Default"], format)
             
                 row += len(facility_list) 
+    worksheet.autofit()
     
 
     
@@ -348,6 +354,7 @@ def generateSummaryNonFundedFacilitiesWorksheet(writer,workbook,non_funded_facil
                 
         
             row += len(facility_list) 
+    worksheet.autofit()
 
     
 
@@ -378,13 +385,13 @@ def generateSummaryRescheduleLoanBorrowerWorksheet(writer, workbook, reschedule_
         worksheet.write("C" + str(i), row["Expiry of Reschedule Loan"], normal_format)
         worksheet.write("D" + str(i), row["Amount"], normal_format)
         worksheet.write("E" + str(i), str(row["Date of Last Rescheduling"]), normal_format)
-        worksheet.write("F" + str(i), row["Link"], normal_format)
+        worksheet.write_url("F" + str(i), row["Link"], normal_format)
 
     data = reschedule_loan_summary_table['Borrower']
     worksheet.write(f'A{len(data)+4}','Sub Total',header_format)
     total_formula = f'SUM(D3:D{len(data)+3})'
     worksheet.write_formula(f'D{len(data)+4}', f'={total_formula}', header_format)
-
+    worksheet.autofit()
     return len(data)+5
 
 
@@ -416,12 +423,13 @@ def generateSummaryRescheduleLoanGuarantorWorksheet(writer, workbook, reschedule
         worksheet.write("C" + str(i), row["Expiry of Reschedule Loan"], normal_format)
         worksheet.write("D" + str(i), row["Amount"], normal_format)
         worksheet.write("E" + str(i), str(row["Date of Last Rescheduling"]), normal_format)
-        worksheet.write("F" + str(i), row["Link"], normal_format)
+        worksheet.write_url("F" + str(i), row["Link"].replace(" ", "\n"), normal_format)
 
     data = reschedule_loan_summary_table['Guarantor'][:-1]
     worksheet.write(f'A{len(data)+starting_row}','Sub Total',header_format)
     total_formula = f'SUM(D{starting_row}:D{len(data)+(starting_row-1)})'
     worksheet.write_formula(f'D{len(data)+starting_row}', f'={total_formula}', header_format)
+    worksheet.autofit()
 
 
 def generateSummaryRequestedLoanWorksheet(writer, workbook, requested_loan_summary_table):
@@ -451,12 +459,13 @@ def generateSummaryRequestedLoanWorksheet(writer, workbook, requested_loan_summa
         worksheet.write("C" + str(i), row["Role"], normal_format)
         worksheet.write("D" + str(i), float(row["Requested Amount"]), normal_format)
         worksheet.write("E" + str(i), str(row["Date of Request"]), normal_format)
-        worksheet.write("F" + str(i), row["Link"], normal_format)
+        worksheet.write_url("F" + str(i), row["Link"].replace(" ", "\n"), normal_format)
 
     data = requested_loan_summary_table
     worksheet.write(f'A{len(data)+3}','Sub Total',header_format)
     total_formula = f'SUM(D3:D{len(data)+2})'
     worksheet.write_formula(f'D{len(data)+3}', f'={total_formula}', header_format)
+    worksheet.autofit()
 
 
 def generateSummaryStayOrderBorrowerWorksheet(writer, workbook, stay_order_summary_table):
@@ -486,13 +495,13 @@ def generateSummaryStayOrderBorrowerWorksheet(writer, workbook, stay_order_summa
         worksheet.write("C" + str(i), (row["Stayorder amount"]), normal_format)
         worksheet.write("D" + str(i), row["Writ no"], normal_format)
         worksheet.write("E" + str(i), row["Remarks"], normal_format)
-        worksheet.write("F" + str(i), row["Link"], normal_format)
+        worksheet.write_url("F" + str(i), row["Link"].replace(" ", "\n"), normal_format)
 
     data = stay_order_summary_table['Borrower']
     worksheet.write(f'A{len(data)+3}','Sub Total',header_format)
     total_formula = f'SUM(C3:C{len(data)+2})'
     worksheet.write_formula(f'C{len(data)+3}', f'={total_formula}', header_format)
-
+    worksheet.autofit()
     return len(data)+4
 
 
@@ -525,12 +534,13 @@ def generateSummaryStayOrderGuarantorWorksheet(writer, workbook, stay_order_summ
         worksheet.write("C" + str(i), (row["Stayorder amount"]), normal_format)
         worksheet.write("D" + str(i), row["Writ no"], normal_format)
         worksheet.write("E" + str(i), row["Remarks"], normal_format)
-        worksheet.write("F" + str(i), row["Link"], normal_format)
+        worksheet.write_url("F" + str(i), row["Link"].replace(" ", "\n"), normal_format)
 
     data = stay_order_summary_table['Guarantor']
     worksheet.write(f'A{len(data)+starting_row}','Sub Total',header_format)
     total_formula = f'SUM(C{starting_row}:C{len(data)+(starting_row-1)})'
     worksheet.write_formula(f'C{len(data)+starting_row}', f'={total_formula}', header_format)
+    worksheet.autofit()
 
 
 def generateSummaryTable3FundedWorksheet(writer,workbook,funded_summary_table_3):
@@ -549,19 +559,19 @@ def generateSummaryTable3FundedWorksheet(writer,workbook,funded_summary_table_3)
     worksheet.write("A3", "Type of Concern", header_format)
     worksheet.write("B3", "Borrowing Company/ Person", header_format)
     worksheet.write("C3", "A. Overdraft/ Cash Credit", header_format)
-    worksheet.write("D3", "Overdue/ EOL of A (link of overdue-single/ multiple)", header_format)
+    worksheet.write("D3", "Overdue/ EOL of A", header_format)
     worksheet.write("E3", "B. Time Loan", header_format)
-    worksheet.write("F3", "Overdue/ EOL of B (link of overdue- single/ multiple", header_format)
+    worksheet.write("F3", "Overdue/ EOL of B", header_format)
     worksheet.write("G3", "C. LTR", header_format)
-    worksheet.write("H3", "Overdue/ EOL of C (link of overdue- single/ multiple", header_format)
+    worksheet.write("H3", "Overdue/ EOL of C", header_format)
     worksheet.write("I3", "D. Other Non Installment", header_format)
-    worksheet.write("J3", "Overdue/ EOL of D (link of overdue- single/ multiple", header_format)
+    worksheet.write("J3", "Overdue/ EOL of D", header_format)
     worksheet.write("K3", "E. Term Loan", header_format)
-    worksheet.write("L3", "EMI of E (to be converted in month from instalment field of CIB for mentioned frequency)", header_format)
-    worksheet.write("M3", "Overdue/ EOL of E (link of overdue- single/ multiple", header_format)
+    worksheet.write("L3", "EMI of E", header_format)
+    worksheet.write("M3", "Overdue/ EOL of E", header_format)
     worksheet.write("N3", "F. Other Installment Loan", header_format)
-    worksheet.write("O3", "EMI of F (to be converted in month from instalment field of CIB for mentioned frequency)", header_format)
-    worksheet.write("P3", "Overdue/ EOL of F (link of overdue- single/ multiple", header_format)
+    worksheet.write("O3", "EMI of F", header_format)
+    worksheet.write("P3", "Overdue/ EOL of F", header_format)
 
     
 
@@ -596,51 +606,49 @@ def generateSummaryTable3FundedWorksheet(writer,workbook,funded_summary_table_3)
                 worksheet.write("P" + str(idx+row), item["Overdue - EOL of F"], format)
         
             row += len(concern_list) 
+    worksheet.autofit()
 
 
 
 def generateCorporateSpreadsheet(writer, analysis_report):
     workbook = writer.book
 
-    worksheet = workbook.add_worksheet("Summary Table - 1")
+    workbook.add_worksheet("Summary Table - 1")
     summary_table_1 = analysis_report["Summary Table - 1"]
     generateSummaryTableWorksheet(writer, workbook, summary_table_1)
     
-    worksheet = workbook.add_worksheet("Summary-terminated facility")
+    workbook.add_worksheet("Summary-terminated facility")
     funded_terminated_facility_summary_table = analysis_report["A - Summary of Terminated Facilities"]
     generateFundedTerminatedFacilityTableWorksheet(writer,workbook,funded_terminated_facility_summary_table)
     generateNonFundedTerminatedFacilityTableWorksheet(writer,workbook,funded_terminated_facility_summary_table)
     
-    worksheet = workbook.add_worksheet("Summary- funded facility")
+    workbook.add_worksheet("Summary- funded facility")
     funded_facility_table = analysis_report['B - Summary of Facilities']['Summary of funded facility']
     row = generateSummaryFundedFacilitiesInstallmentWorksheet(writer,workbook,funded_facility_table)
     generateSummaryFundedFacilitiesNonInstallmentWorksheet(writer,workbook,funded_facility_table,row+1)
 
-    worksheet = workbook.add_worksheet("Summary-non funded facility")
+    workbook.add_worksheet("Summary-non funded facility")
     funded_facility_table = analysis_report['B - Summary of Facilities']['Summary of non funded facility']
     generateSummaryNonFundedFacilitiesWorksheet(writer,workbook,funded_facility_table)
 
-    worksheet = workbook.add_worksheet("Summary-Reschedule Loan")
+    workbook.add_worksheet("Summary-Reschedule Loan")
     reschedule_loan_summary_table = analysis_report['C - Summary of Reschedule Loan']
     row = generateSummaryRescheduleLoanBorrowerWorksheet(writer,workbook,reschedule_loan_summary_table)
     generateSummaryRescheduleLoanGuarantorWorksheet(writer,workbook,reschedule_loan_summary_table,row)
 
-    worksheet = workbook.add_worksheet("Summary-Requested Loan")
+    workbook.add_worksheet("Summary-Requested Loan")
     requested_loan_summary_table = analysis_report['D - Summary of Requested Loan']
     generateSummaryRequestedLoanWorksheet(writer,workbook,requested_loan_summary_table)
 
-    worksheet = workbook.add_worksheet("Summary-Stay Order")
+    workbook.add_worksheet("Summary-Stay Order")
     stay_order_summary_table = analysis_report['E - Summary of Stay Order']
     row = generateSummaryStayOrderBorrowerWorksheet(writer, workbook, stay_order_summary_table)
     generateSummaryStayOrderGuarantorWorksheet(writer, workbook, stay_order_summary_table,row)
 
-    worksheet = workbook.add_worksheet("Summary Table 3 - Funded")
-    funded_summary_table_3 = analysis_report['Summary Table - 3']['funded']
-    generateSummaryTable3FundedWorksheet(writer,workbook,funded_summary_table_3)
-
-    
-    worksheet = workbook.add_worksheet("Summary Table - 2")
+    workbook.add_worksheet("Summary Table - 2")
     summary_table_2 = analysis_report["Summary Table - 2"]
     generateSummaryTableTwoWorksheet(writer, workbook, summary_table_2)
-
-    worksheet.autofit()
+    
+    workbook.add_worksheet("Summary Table 3 - Funded")
+    funded_summary_table_3 = analysis_report['Summary Table - 3']['funded']
+    generateSummaryTable3FundedWorksheet(writer,workbook,funded_summary_table_3)

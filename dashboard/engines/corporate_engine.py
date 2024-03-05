@@ -144,8 +144,8 @@ def getSummaryTableFields(category, concern_name, df):
         "Overdue": convertToFloat(df["Overdue"].sum()),
         "CL Status": general_engine.getClassFromSet(set(df["CL Status"].tolist())),
         "Default": "Yes" if "Yes" in set(df["Default"].tolist()) else "No",
-        "CIB PDF View": " ".join(list(set(list(df["CIB PDF View"])))),
-        "Updated Overdue and CL Status": " ".join(list(set(list(df["Updated Overdue and CL Status"])))),
+        "CIB PDF View": " ".join(list(set(list(df["CIB PDF View"])))) if "Total" not in concern_name else "",
+        "Updated Overdue and CL Status": " ".join(list(set(list(df["Updated Overdue and CL Status"])))) if "Total" not in concern_name else "",
     }
 
 def getSummaryTableTwoFields(category, concern_name, df):
