@@ -90,6 +90,23 @@ def getOverdue(df):
     return convertToMillion(df["Overdue"].sum())
 
 
+def isStayOrder(fac):
+    if type(fac['Contract History']) is dict:
+        return "Yes"
+    return "No"
+
+
+def getStayOrder(fac):
+    if type(fac['Contract History']) is dict:
+        return fac['Contract History']['Stay Order']
+    
+
+def getStayOrderAmount(fac):
+    for key in STAY_ORDER_AMOUNT:
+        if key in fac['Ref'].keys():
+            return fac['Ref'][key]
+
+
 def getDefault(fac):
     if type(fac['Contract History']) is not dict:
         return "Yes" if "Yes" in fac["Contract History"]["Default"].tolist() else "No"
@@ -312,6 +329,9 @@ def getCorporateDataFrame(cibs):
                             "Date of Classification": getDateOfClassification(fac),
                             "Start Date": getStartDate(fac),
                             "End Date of Contract": getEndDateOfContract(fac),
+                            "Is Stay Order": isStayOrder(fac),
+                            "Stay Order": getStayOrder(fac),
+                            "Stay Order Amount": getStayOrderAmount(fac),
                             "Writ no": "Need Elaboration",
                             "Remarks": getRemarks(fac),
                             "Payment Period (Monthly/Quarterly)": getPaymentPeriod(fac),

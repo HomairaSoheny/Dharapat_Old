@@ -31,18 +31,21 @@ def getOutstanding(fac):
         for key in OUTSTANDING:
             if key in fac['Contract History'].keys():
                 return fac['Contract History'].sort_values('Date', ascending=False)[key][0]
+    return 0
 
 def getOverdue(fac):
     if type(fac['Contract History']) is not dict:
         for key in OVERDUE:
             if key in fac['Contract History'].keys():
                 return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
+    return 0
 
 def getCurrentCLStatus(fac):
     if type(fac['Contract History']) is not dict:
         for key in STATUS:
             if key in fac['Contract History'].keys():
                 return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
+    return ""
 
 def getLimit(fac):
     for key in LIMIT:
@@ -77,6 +80,7 @@ def getCurrentNPI(fac):
         for key in NPI:
             if key in fac['Contract History'].keys():
                 return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
+    return 0
 
 
 def getEMI(fac):
