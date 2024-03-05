@@ -19,7 +19,7 @@ def getSummaryTable(cibs):
             "Funded Outstanding Total": convertToMillion(funded.total.tolist()[3]),
             "Non-Funded Outstanding": convertToMillion(non_funded.total.tolist()[3]),
             "Total Outstanding": convertToMillion(funded.total.tolist()[3]) + convertToMillion(non_funded.total.tolist()[3]),
-            "Overdue": cib.summary_1['Total Overdue Amount'],
+            "Overdue": convertToMillion(cib.summary_1['Total Overdue Amount']),
             "CL Status": "-" if df.empty else getClassFromSet(set(list(df['CL Status']))),
             "Default": "-" if df.empty else ("Yes" if "Yes" in list(df['Default']) else "No"),
             "CIB PDF View": PDF_LINK + cib.pdf_name,
