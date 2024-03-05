@@ -100,7 +100,7 @@ def getSummaryOfTerminatedFacilityFunded(df):
             "Installment": row['Facility Type'],
             "Limit": convertToFloat(row["Limit"]),
             "Loan/Limit (days of adjustment before/after)": "Not Implemented",
-            "Worse Classification Status": row["CL Status"],
+            "Worse Classification Status": row["Worse Classification Status"],
             "Date of Classification": convertToString(row["Date of Classification"])
         })
     return response
@@ -118,7 +118,7 @@ def getSummaryOfTerminatedFacilityNonFunded(df):
             "Non-Installment": row['Facility Type'],
             "Limit": convertToFloat(row["Limit"]),
             "Loan/Limit (days of adjustment before/after)": "Not Implemented",
-            "Worse Classification Status": row["CL Status"],
+            "Worse Classification Status": row["Worse Classification Status"],
             "Date of Classification": convertToString(row["Date of Classification"])
         })
     return response

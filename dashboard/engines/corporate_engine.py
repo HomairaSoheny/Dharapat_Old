@@ -97,7 +97,7 @@ def getOverdue(df):
 
 
 def isStayOrder(fac):
-    if type(fac['Contract History']) == dict:
+    if general_engine.isStayOrder(fac):
         return "Yes"
     return "No"
 

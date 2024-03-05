@@ -41,7 +41,7 @@ def getOverdue(fac):
     return 0
 
 def getCurrentCLStatus(fac):
-    if type(fac['Contract History']) == dict:
+    if not isStayOrder(fac):
         for key in STATUS:
             if key in fac['Contract History'].keys():
                 return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
@@ -65,10 +65,9 @@ def getClassFromSet(classes : set):
     return "None"
 
 def getWorstCLStatus(facility : dict):
-    if type(facility['Contract History']) == dict:
-        if not isStayOrder(facility):
-            return getClassFromSet(set(facility["Contract History"].Status))
-        return "None"
+    if not isStayOrder(facility):
+        return getClassFromSet(set(facility["Contract History"].Status))
+    return "None"
 
 def getFacilityType(fac):
     for key in FACILITY:
@@ -76,7 +75,7 @@ def getFacilityType(fac):
             return fac['Ref'][key]
 
 def getCurrentNPI(fac):
-    if type(fac['Contract History']) == dict:
+    if type(fac['Contract History']) != dict:
         for key in NPI:
             if key in fac['Contract History'].keys():
                 return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
