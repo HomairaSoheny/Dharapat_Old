@@ -70,13 +70,13 @@ def getFacilityType(i):
 def getFundedOutstandingInstallment(df):
     df = df[df["Is Funded"] == "Yes"]
     df = df[df["Installment Type"] == "Installment"]
-    return convertToMillion(df["Outstanding"].sum())
+    return convertToFloat(df["Outstanding"].sum())
 
 
 def getFundedOutstandingNonInstallment(df):
     df = df[df["Is Funded"] == "Yes"]
     df = df[df["Installment Type"] == "No Installment"]
-    return convertToMillion(df["Outstanding"].sum())
+    return convertToFloat(df["Outstanding"].sum())
 
 
 def getFundedOutstandingTotal(df):
@@ -85,7 +85,7 @@ def getFundedOutstandingTotal(df):
 
 def getNonFundedOutstanding(df):
     df = df[df["Is Funded"] == "No"]
-    return convertToMillion(df["Outstanding"].sum())
+    return convertToFloat(df["Outstanding"].sum())
 
 
 def getTotalOutstanding(df):
@@ -93,7 +93,7 @@ def getTotalOutstanding(df):
 
 
 def getOverdue(df):
-    return convertToMillion(df["Overdue"].sum())
+    return convertToFloat(df["Overdue"].sum())
 
 
 def isStayOrder(fac):
@@ -143,12 +143,12 @@ def getSummaryTableFields(category, concern_name, df):
     return {
         "CIB Category": category,
         "Name of Concern": concern_name,
-        "Funded Outstanding Installment": convertToFloat(df["Funded Outstanding Installment"].sum()),
-        "Funded Outstanding Non Installment": convertToFloat(df["Funded Outstanding Non Installment"].sum()),
-        "Funded Outstanding Total": convertToFloat(df["Funded Outstanding Total"].sum()),
-        "Non-Funded Outstanding": convertToFloat(df["Non-Funded Outstanding"].sum()),
-        "Total Outstanding": convertToFloat(df["Total Outstanding"].sum()),
-        "Overdue": convertToFloat(df["Overdue"].sum()),
+        "Funded Outstanding Installment": convertToMillion(df["Funded Outstanding Installment"].sum()),
+        "Funded Outstanding Non Installment": convertToMillion(df["Funded Outstanding Non Installment"].sum()),
+        "Funded Outstanding Total": convertToMillion(df["Funded Outstanding Total"].sum()),
+        "Non-Funded Outstanding": convertToMillion(df["Non-Funded Outstanding"].sum()),
+        "Total Outstanding": convertToMillion(df["Total Outstanding"].sum()),
+        "Overdue": convertToMillion(df["Overdue"].sum()),
         "CL Status": general_engine.getClassFromSet(set(df["CL Status"].tolist())),
         "Default": "Yes" if "Yes" in set(df["Default"].tolist()) else "No",
         "CIB PDF View": " ".join(list(set(list(df["CIB PDF View"])))) if "Total" not in concern_name else "",
@@ -182,21 +182,21 @@ def getSummaryTableTwoSum(category, concern_name, df):
     return {
         "CIB Category": category,
         "Name of Concern": concern_name,
-        "Funded Installment": convertToFloat(df["Funded Installment"].sum()),
-        "Funded Non Installment": convertToFloat(df["Funded Non Installment"].sum()),
-        "Funded Total": convertToFloat(df["Funded Total"].sum()),
-        "Non-Funded": convertToFloat(df["Non-Funded"].sum()),
-        "Total": convertToFloat(df["Total"].sum()),
-        "Overdue": convertToFloat(df["Overdue"].sum()),
+        "Funded Installment": convertToMillion(df["Funded Installment"].sum()),
+        "Funded Non Installment": convertToMillion(df["Funded Non Installment"].sum()),
+        "Funded Total": convertToMillion(df["Funded Total"].sum()),
+        "Non-Funded": convertToMillion(df["Non-Funded"].sum()),
+        "Total": convertToMillion(df["Total"].sum()),
+        "Overdue": convertToMillion(df["Overdue"].sum()),
         "Worst CL Status": general_engine.getClassFromSet(set(df["Worst CL Status"].tolist())),
         "Default": "Yes" if "Yes" in set(df["Default"].tolist()) else "No",
         "Rescheduled Loan": "Not Implemented",
-        "Loan STD": convertToFloat(df["Loan STD"].sum()),
-        "Loan SMA": convertToFloat(df["Loan SMA"].sum()),
-        "Loan SS": convertToFloat(df["Loan SS"].sum()),
-        "Loan DF": convertToFloat(df["Loan DF"].sum()),
-        "Loan BL": convertToFloat(df["Loan BL"].sum()),
-        "Loan BLW": convertToFloat(df["Loan BLW"].sum()),
+        "Loan STD": convertToMillion(df["Loan STD"].sum()),
+        "Loan SMA": convertToMillion(df["Loan SMA"].sum()),
+        "Loan SS": convertToMillion(df["Loan SS"].sum()),
+        "Loan DF": convertToMillion(df["Loan DF"].sum()),
+        "Loan BL": convertToMillion(df["Loan BL"].sum()),
+        "Loan BLW": convertToMillion(df["Loan BLW"].sum()),
         "Loan Stay Order": "Need More Clarification",
         "Remarks": "-",
     }
@@ -215,20 +215,20 @@ def getSummaryTableThreeFundedFields(category, concern_name, df):
     return {
         "CIB Category": category,
         "Borrowing Company - Person": concern_name,
-        "A - Overdraft - Cash Credit": convertToFloat(df[df['Facility Type'].isin(OVERDRAFT)]['Outstanding'].sum()),
-        "Overdue - EOL of A": convertToFloat(df[df['Facility Type'].isin(OVERDRAFT)]['Overdue'].sum()),
-        "B - Time Loan": convertToFloat(df[df['Facility Type'].isin(TIME_LOAN)]['Outstanding'].sum()),
-        "Overdue - EOL of B": convertToFloat(df[df['Facility Type'].isin(TIME_LOAN)]['Overdue'].sum()),
-        "C - LTR": convertToFloat(df[df['Facility Type'].isin(LTR)]['Outstanding'].sum()),
-        "Overdue - EOL of C": convertToFloat(df[df['Facility Type'].isin(LTR)]['Overdue'].sum()),
-        "D - Other Non Installment": getOtherNonInstallmentST3(df)['Outstanding'],
-        "Overdue - EOL of D": getOtherNonInstallmentST3(df)['Overdue'],
-        "E - Term Loan": convertToFloat(df[df['Facility Type'].isin(TERM_LOAN)]['Outstanding'].sum()),
-        "EMI of E": convertToFloat(df[df['Facility Type'].isin(TERM_LOAN)]['Installment Amount'].sum()),
-        "Overdue - EOL of E": convertToFloat(df[df['Facility Type'].isin(TERM_LOAN)]['Overdue'].sum()),
-        "F - Other Installment Loan": getOtherInstallmentST3(df)['Outstanding'],
-        "EMI of F": getOtherInstallmentST3(df)['Overdue'],
-        "Overdue - EOL of F": getOtherInstallmentST3(df)['EMI'],
+        "A - Overdraft - Cash Credit": convertToMillion(df[df['Facility Type'].isin(OVERDRAFT)]['Outstanding'].sum()),
+        "Overdue - EOL of A": convertToMillion(df[df['Facility Type'].isin(OVERDRAFT)]['Overdue'].sum()),
+        "B - Time Loan": convertToMillion(df[df['Facility Type'].isin(TIME_LOAN)]['Outstanding'].sum()),
+        "Overdue - EOL of B": convertToMillion(df[df['Facility Type'].isin(TIME_LOAN)]['Overdue'].sum()),
+        "C - LTR": convertToMillion(df[df['Facility Type'].isin(LTR)]['Outstanding'].sum()),
+        "Overdue - EOL of C": convertToMillion(df[df['Facility Type'].isin(LTR)]['Overdue'].sum()),
+        "D - Other Non Installment": convertToMillion(getOtherNonInstallmentST3(df)['Outstanding']),
+        "Overdue - EOL of D": convertToMillion(getOtherNonInstallmentST3(df)['Overdue']),
+        "E - Term Loan": convertToMillion(convertToFloat(df[df['Facility Type'].isin(TERM_LOAN)]['Outstanding'].sum())),
+        "EMI of E": convertToMillion(df[df['Facility Type'].isin(TERM_LOAN)]['Installment Amount'].sum()),
+        "Overdue - EOL of E": convertToMillion(df[df['Facility Type'].isin(TERM_LOAN)]['Overdue'].sum()),
+        "F - Other Installment Loan": convertToMillion(getOtherInstallmentST3(df)['Outstanding']),
+        "EMI of F": convertToMillion(getOtherInstallmentST3(df)['Overdue']),
+        "Overdue - EOL of F": convertToMillion(getOtherInstallmentST3(df)['EMI']),
     }
 
 def getSummaryTableThreeFundedSum(category, concern_name, df):
@@ -257,7 +257,7 @@ def getSummaryTableThreeNonFundedFields(category, concern_name, df, non_funded_l
         "Borrowing Company - Person": concern_name,
     }
     for loan in non_funded_loans:
-        response[loan] = convertToFloat(df[df['Facility Type'].isin([loan])]['Outstanding'].sum())
+        response[loan] = convertToMillion(df[df['Facility Type'].isin([loan])]['Outstanding'].sum())
     return response
 
 def getSummaryTableThreeNonFundedSum(category, concern_name, df, non_funded_loans):
@@ -295,16 +295,16 @@ def getSummaryOfFundedFacilitySum(df, total_type, installment_type):
         "SL": "-",
         "Nature of Facility": total_type,
         "Installment Type": installment_type,
-        "Limit": convertToMillion(df["Limit"].sum()),
-        "Outstanding": convertToMillion(df['Outstanding'].sum()),
-        "Overdue": convertToMillion(df["Overdue"].sum()),
+        "Limit": convertToFloat(df["Limit"].sum()),
+        "Outstanding": convertToFloat(df['Outstanding'].sum()),
+        "Overdue": convertToFloat(df["Overdue"].sum()),
         "Start Date": "-",
         "End Date of Contract": "-",
-        "Installment Amount": convertToMillion(df['Installment Amount'].sum()),
+        "Installment Amount": convertToFloat(df['Installment Amount'].sum()),
         "Payment Period": "-",
-        "Total No. of Installment": convertToMillion(df['Total No of Installment'].sum()),
-        "Total no. of Installment paid": convertToMillion(df['Total No of Installment'].sum()),
-        "No. of Remaining Installment": convertToMillion(df['No of Remaining Installment'].sum()),
+        "Total No. of Installment": convertToFloat(df['Total No of Installment'].sum()),
+        "Total no. of Installment paid": convertToFloat(df['Total No of Installment'].sum()),
+        "No. of Remaining Installment": convertToFloat(df['No of Remaining Installment'].sum()),
         "Date of Last Payment": "-",
         "NPI": convertToInteger(df['NPI'].sum()),
         "Default": "Yes" if "Yes" in set(df['Default'].tolist()) else "No",
