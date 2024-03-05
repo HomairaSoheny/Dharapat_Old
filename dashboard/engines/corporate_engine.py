@@ -50,6 +50,12 @@ def getNoOfRemainingInstallment(fac):
         if key in fac["Ref"].keys():
             return fac["Ref"][key]
 
+def getNoOfInstallmentPaid(fac):
+    total = getTotalNumberOfInstallment(fac)
+    remaining = getNoOfRemainingInstallment(fac)
+    if total is not None and remaining is not None:
+        return  total - remaining
+
 
 def getDateOfLastPayment(fac):
     for key in DATE_OF_LAST_PAYMENT:
@@ -277,7 +283,7 @@ def getSummaryOfFundedFacilityFields(row, i, installment):
         "Installment Amount": (convertToFloat(row["Installment Amount"]) if installment else "Not Applicable"),
         "Payment Period": (row["Payment Period (Monthly/Quarterly)"] if installment else "Not Applicable"),
         "Total No. of Installment": (row["Total No of Installment"] if installment else "Not Applicable"),
-        "Total no. of Installment paid": ("Not Implemented" if installment else "Not Applicable"),
+        "Total no. of Installment paid": (row["Total No of Installment Paid"] if installment else "Not Applicable"),
         "No. of Remaining Installment": (int(row["No of Remaining Installment"]) if installment else "Not Applicable"),
         "Date of Last Payment": convertToString(row["Date of Last Payment"]),
         "NPI": int(row["NPI"]) if installment else "Not Applicable",
@@ -335,10 +341,11 @@ def getCorporateDataFrame(cibs):
                             "Is Stay Order": isStayOrder(fac),
                             "Stay Order": getStayOrder(fac),
                             "Stay Order Amount": getStayOrderAmount(fac),
-                            "Writ no": "Need Elaboration",
+                            "Writ no": getStayOrder(fac),
                             "Remarks": getRemarks(fac),
                             "Payment Period (Monthly/Quarterly)": getPaymentPeriod(fac),
                             "Total No of Installment": getTotalNumberOfInstallment(fac),
+                            "Total No of Installment Paid": getNoOfInstallmentPaid(fac),
                             "No of Remaining Installment": getNoOfRemainingInstallment(fac),
                             "Date of Last Payment": getDateOfLastPayment(fac),
                             "NPI": general_engine.getCurrentNPI(fac),
