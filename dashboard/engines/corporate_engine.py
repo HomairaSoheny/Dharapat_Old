@@ -91,7 +91,9 @@ def getOverdue(df):
 
 
 def getDefault(fac):
-    return "Yes" if "Yes" in fac["Contract History"]["Default"].tolist() else "No"
+    if type(fac['Contract History']) is not dict:
+        return "Yes" if "Yes" in fac["Contract History"]["Default"].tolist() else "No"
+    return ""
 
 def getTypeOfReschedule(fac):
     for key in RESCHEDULE_LOAN:
