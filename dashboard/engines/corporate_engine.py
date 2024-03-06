@@ -1,5 +1,6 @@
 import re
 import pandas as pd
+from datetime import datetime
 from dashboard.engines import general_engine
 from dashboard.engines.keywords import *
 from utils.general_helper import *
@@ -104,6 +105,13 @@ def getOutstandingZeroDate(fac):
                     if row[column_name] == 0:
                         return row['Date']
 
+def getDaysOfAdjustment(fac):
+    if isStayOrder(fac) == "Yes":
+        return ""
+    start_date = datetime.strptime(str(getStartDate(fac)).replace(" 00:00:00", ""), "%Y-%M-%d")
+    outstanding_start_date = datetime.strptime(str((fac['Contract History']).sort_values('Date', ascending=True)['Date'][0]).replace(" 00:00:00", ""), "%Y-%M-%d")
+    return abs((outstanding_start_date - start_date).days)
+    
 
 def isStayOrder(fac):
     if general_engine.isStayOrder(fac):
@@ -135,6 +143,11 @@ def getTypeOfReschedule(fac):
             if fac['Ref'][key] not in [0, "", " ", "-"]:
                 return fac['Ref'][key]
     return "Not Rescheduled"
+
+def getRescheduleAmount(fac):
+    if getTypeOfReschedule(fac) != "Not Rescheduled":
+        return general_engine.getOutstanding(fac)
+    return 0
 
 def getDateOfLastReschedule(fac):
     for key in LAST_RESCHEDULING_DATE:
@@ -176,14 +189,14 @@ def getSummaryTableTwoFields(category, concern_name, df):
         "Overdue": convertToMillion(getOverdue(df)),
         "Worst CL Status": general_engine.getClassFromSet(set(df["CL Status"].tolist())),
         "Default": "Yes" if "Yes" in set(df["Default"].tolist()) else "No",
-        "Rescheduled Loan": "Not Implemented",
+        "Rescheduled Loan": convertToMillion(df['Reschedule Amount'].sum()),
         "Loan STD": convertToMillion(df[df['CL Status'] == 'STD']['Outstanding'].sum()),
         "Loan SMA": convertToMillion(df[df['CL Status'] == 'SMA']['Outstanding'].sum()),
         "Loan SS": convertToMillion(df[df['CL Status'] == 'SS']['Outstanding'].sum()),
         "Loan DF": convertToMillion(df[df['CL Status'] == 'DF']['Outstanding'].sum()),
         "Loan BL": convertToMillion(df[df['CL Status'] == 'BL']['Outstanding'].sum()),
         "Loan BLW": convertToMillion(df[df['CL Status'] == 'BLW']['Outstanding'].sum()),
-        "Loan Stay Order": "Need More Clarification",
+        "Loan Stay Order": convertToMillion(df['Stay Order Amount'].sum()),
         "Remarks": re.sub(r'[,\[\]]', '', str(list(df['Remarks']))).replace("'", ''),
     }
 
@@ -199,14 +212,14 @@ def getSummaryTableTwoSum(category, concern_name, df):
         "Overdue": convertToMillion(df["Overdue"].sum()),
         "Worst CL Status": general_engine.getClassFromSet(set(df["Worst CL Status"].tolist())),
         "Default": "Yes" if "Yes" in set(df["Default"].tolist()) else "No",
-        "Rescheduled Loan": "Not Implemented",
+        "Rescheduled Loan": convertToMillion(df['Rescheduled Loan'].sum()),
         "Loan STD": convertToMillion(df["Loan STD"].sum()),
         "Loan SMA": convertToMillion(df["Loan SMA"].sum()),
         "Loan SS": convertToMillion(df["Loan SS"].sum()),
         "Loan DF": convertToMillion(df["Loan DF"].sum()),
         "Loan BL": convertToMillion(df["Loan BL"].sum()),
         "Loan BLW": convertToMillion(df["Loan BLW"].sum()),
-        "Loan Stay Order": "Need More Clarification",
+        "Loan Stay Order": convertToMillion(df['Loan Stay Order'].sum()),
         "Remarks": "-",
     }
 
@@ -342,7 +355,7 @@ def getCorporateDataFrame(cibs):
                             "CL Status": general_engine.getCurrentCLStatus(fac),
                             "Default": getDefault(fac),
                             "Limit": general_engine.getLimit(fac),
-                            "Loan/Limit (days of adjustment before/after)": "Need elaboration",
+                            "Loan/Limit (days of adjustment before/after)": getDaysOfAdjustment(fac),
                             "Installment Amount": general_engine.getEMI(fac),
                             "Worse Classification Status": general_engine.getWorstCLStatus(fac),
                             "Date of Classification": getDateOfClassification(fac),
@@ -361,6 +374,7 @@ def getCorporateDataFrame(cibs):
                             "NPI": general_engine.getCurrentNPI(fac),
                             "Reschedule Type": getTypeOfReschedule(fac),
                             "Last Date of Reschedule": getDateOfLastReschedule(fac),
+                            "Reschedule Amount": getRescheduleAmount(fac),
                             "Total Disbursement Amount": getTotalDisbursementAmount(fac),
                             "CIB Link": PDF_LINK + cib.pdf_name
                         }

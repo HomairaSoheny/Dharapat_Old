@@ -99,7 +99,7 @@ def getSummaryOfTerminatedFacilityFunded(df):
         response.append({
             "Installment": row['Facility Type'],
             "Limit": convertToMillion(row["Limit"]),
-            "Loan/Limit (days of adjustment before/after)": "Not Implemented",
+            "Loan/Limit (days of adjustment before/after)": row['Loan/Limit (days of adjustment before/after)'],
             "Worse Classification Status": row["Worse Classification Status"],
             "Date of Classification": convertToString(row["Date of Classification"])
         })
@@ -117,7 +117,7 @@ def getSummaryOfTerminatedFacilityNonFunded(df):
         response.append({
             "Non-Installment": row['Facility Type'],
             "Limit": convertToMillion(row["Limit"]),
-            "Loan/Limit (days of adjustment before/after)": "Not Implemented",
+            "Loan/Limit (days of adjustment before/after)": row['Loan/Limit (days of adjustment before/after)'],
             "Worse Classification Status": row["Worse Classification Status"],
             "Date of Classification": convertToString(row["Date of Classification"])
         })
