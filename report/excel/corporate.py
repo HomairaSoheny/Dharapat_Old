@@ -125,7 +125,7 @@ def generateFundedTerminatedFacilityTableWorksheet(writer, workbook, funded_term
     normal_bold_format = getNormalBoldFormat(workbook)
 
     
-    worksheet = writer.sheets["Summary-terminated facility"]
+    worksheet = writer.sheets["terminated facility"]
     worksheet.set_column(0, 5, 30)
     worksheet.merge_range("A1:E1", "Summary of terminated facility (Funded)", title_format)
     worksheet.merge_range("A2:D2", "Total number of funded terminated loan", header_format)
@@ -160,7 +160,7 @@ def generateNonFundedTerminatedFacilityTableWorksheet(writer, workbook, terminat
     normal_bold_format = getNormalBoldFormat(workbook)
 
 
-    worksheet = writer.sheets["Summary-terminated facility"]
+    worksheet = writer.sheets["terminated facility"]
     worksheet.set_column(7, 13, 30)
     worksheet.merge_range("G1:K1", "Summary of terminated facility (Non-Funded)", title_format)
     worksheet.merge_range("G2:J2", "Total number of non funded terminated loan", header_format)
@@ -193,7 +193,7 @@ def generateSummaryFundedFacilitiesInstallmentWorksheet(writer,workbook,funded_f
     header_format = getHeaderFormat(workbook)
     normal_format = getNormalFormat(workbook)
 
-    worksheet = writer.sheets["Summary- funded facility"]
+    worksheet = writer.sheets["funded facility"]
 
     worksheet.merge_range("A1:P1", "Summary of funded facility for same type of concerns classified in summary table:1 - for individual contract: sub-total for same loan to be provided", title_format)
     worksheet.merge_range("A2:P2", "Installments", header_format)
@@ -257,7 +257,7 @@ def generateSummaryFundedFacilitiesNonInstallmentWorksheet(writer,workbook,funde
     normal_format = getNormalFormat(workbook)
     normal_bold_format = getNormalBoldFormat(workbook)
 
-    worksheet = writer.sheets["Summary- funded facility"]
+    worksheet = writer.sheets["funded facility"]
 
     starting_row+=1
 
@@ -323,7 +323,7 @@ def generateSummaryNonFundedFacilitiesWorksheet(writer,workbook,non_funded_facil
     header_format = getHeaderFormat(workbook)
     normal_format = getNormalFormat(workbook)
 
-    worksheet = writer.sheets["Summary-non funded facility"]
+    worksheet = writer.sheets["non funded facility"]
 
     worksheet.merge_range("A1:P2", "Summary of non funded facility for same type of concerns classified in summary table:1 - for individual contract: sub-total for same loan to be provided", title_format)
     worksheet.set_column(0, 8, 20)
@@ -367,7 +367,7 @@ def generateSummaryRescheduleLoanBorrowerWorksheet(writer, workbook, reschedule_
     normal_bold_format = getNormalBoldFormat(workbook)
 
     
-    worksheet = writer.sheets["Summary-Reschedule Loan"]
+    worksheet = writer.sheets["Reschedule Loan"]
     worksheet.set_column(0, 5, 20)
     worksheet.merge_range("A1:E1", "Summary of Reschedule Loan for Borrower", title_format)
     worksheet.write("F1", "BDT in Million", header_non_bold)
@@ -404,7 +404,7 @@ def generateSummaryRescheduleLoanGuarantorWorksheet(writer, workbook, reschedule
     normal_bold_format = getNormalBoldFormat(workbook)
 
     starting_row+=1
-    worksheet = writer.sheets["Summary-Reschedule Loan"]
+    worksheet = writer.sheets["Reschedule Loan"]
     worksheet.set_column(0, 5, 20)
     worksheet.merge_range(f"A{starting_row}:E{starting_row}", "Summary of Reschedule Loan for Guarantor", title_format)
     worksheet.write(f'F{starting_row}', "BDT in Million", header_non_bold)
@@ -441,7 +441,7 @@ def generateSummaryRequestedLoanWorksheet(writer, workbook, requested_loan_summa
     normal_bold_format = getNormalBoldFormat(workbook)
 
     
-    worksheet = writer.sheets["Summary-Requested Loan"]
+    worksheet = writer.sheets["Requested Loan"]
     worksheet.set_column(0, 5, 20)
     worksheet.merge_range(f"A1:F1", "Summary of Requested Loan", title_format)
     worksheet.write(f'A2', "Type of Loan", header_format)
@@ -477,7 +477,7 @@ def generateSummaryStayOrderBorrowerWorksheet(writer, workbook, stay_order_summa
     normal_bold_format = getNormalBoldFormat(workbook)
 
     
-    worksheet = writer.sheets["Summary-Stay Order"]
+    worksheet = writer.sheets["Stay Order"]
     worksheet.set_column(0, 5, 20)
     worksheet.merge_range(f"A1:F1", "Summary of Stay Order for Borrower", title_format)
     worksheet.write(f'A2', "Name of Account", header_format)
@@ -516,7 +516,7 @@ def generateSummaryStayOrderGuarantorWorksheet(writer, workbook, stay_order_summ
 
     starting_row +=1
 
-    worksheet = writer.sheets["Summary-Stay Order"]
+    worksheet = writer.sheets["Stay Order"]
     worksheet.set_column(0, 5, 20)
     worksheet.merge_range(f"A{starting_row}:F{starting_row}", "Summary of Stay Order for Guarantor", title_format)
     worksheet.write(f'A{starting_row+1}', "Name of Account", header_format)
@@ -550,7 +550,7 @@ def generateExpiredButShowingLiveWorksheet(writer, workbook, expired_but_showing
     normal_format = getNormalFormat(workbook)
     normal_bold_format = getNormalBoldFormat(workbook)
     
-    worksheet = writer.sheets["Expired Loan But Showing Live"]
+    worksheet = writer.sheets["Expired But Showing Live"]
     
     worksheet.merge_range("A1:M1", "Expired Loan But Showing Live (Funded)")
     worksheet.merge_range("O1:U1", "Expired Loan But Showing Live (Funded)")
@@ -630,35 +630,35 @@ def generateCorporateSpreadsheet(writer, analysis_report):
     summary_table_1 = analysis_report["Summary Table - 1"]
     generateSummaryTableWorksheet(writer, workbook, summary_table_1)
     
-    workbook.add_worksheet("Summary- terminated facility")
+    workbook.add_worksheet("terminated facility")
     funded_terminated_facility_summary_table = analysis_report["A - Summary of Terminated Facilities"]
     generateFundedTerminatedFacilityTableWorksheet(writer,workbook,funded_terminated_facility_summary_table)
     generateNonFundedTerminatedFacilityTableWorksheet(writer,workbook,funded_terminated_facility_summary_table)
     
-    workbook.add_worksheet("Summary- funded facility")
+    workbook.add_worksheet("funded facility")
     funded_facility_table = analysis_report['B - Summary of Facilities']['Summary of funded facility']
     row = generateSummaryFundedFacilitiesInstallmentWorksheet(writer,workbook,funded_facility_table)
     generateSummaryFundedFacilitiesNonInstallmentWorksheet(writer,workbook,funded_facility_table,row+1)
 
-    workbook.add_worksheet("Summary- non funded facility")
+    workbook.add_worksheet("non funded facility")
     funded_facility_table = analysis_report['B - Summary of Facilities']['Summary of non funded facility']
     generateSummaryNonFundedFacilitiesWorksheet(writer,workbook,funded_facility_table)
 
-    workbook.add_worksheet("Summary- Reschedule Loan")
+    workbook.add_worksheet("Reschedule Loan")
     reschedule_loan_summary_table = analysis_report['C - Summary of Reschedule Loan']
     row = generateSummaryRescheduleLoanBorrowerWorksheet(writer,workbook,reschedule_loan_summary_table)
     generateSummaryRescheduleLoanGuarantorWorksheet(writer,workbook,reschedule_loan_summary_table,row)
 
-    workbook.add_worksheet("Summary- Requested Loan")
+    workbook.add_worksheet("Requested Loan")
     requested_loan_summary_table = analysis_report['D - Summary of Requested Loan']
     generateSummaryRequestedLoanWorksheet(writer,workbook,requested_loan_summary_table)
 
-    workbook.add_worksheet("Summary- Stay Order")
+    workbook.add_worksheet("Stay Order")
     stay_order_summary_table = analysis_report['E - Summary of Stay Order']
     row = generateSummaryStayOrderBorrowerWorksheet(writer, workbook, stay_order_summary_table)
     generateSummaryStayOrderGuarantorWorksheet(writer, workbook, stay_order_summary_table,row)
     
-    workbook.add_worksheet("Summary- Expired But Showing Live")
+    workbook.add_worksheet("Expired But Showing Live")
     expired_but_showing_live = analysis_report['F - Expired Loan But Showing Live']
     generateExpiredButShowingLiveWorksheet(writer, workbook, expired_but_showing_live)
 
