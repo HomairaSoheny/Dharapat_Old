@@ -59,17 +59,18 @@ def getClassFromSet(classes : set):
     for classification in CL_STATUS:
         if classification in classes:
             return classification
-    return "None"
+    return ""
 
 def getWorstCLStatus(facility : dict):
     if not isStayOrder(facility):
         return getClassFromSet(set(facility["Contract History"].Status))
-    return "None"
+    return ""
 
 def getFacilityType(fac):
     for key in FACILITY:
         if key in fac['Ref'].keys():
             return fac['Ref'][key]
+    return ""
 
 def getCurrentNPI(fac):
     for key in NPI:
@@ -82,3 +83,4 @@ def getEMI(fac):
     for key in EMI:
         if key in fac['Ref'].keys():
             return fac['Ref'][key]
+    return 0

@@ -116,7 +116,7 @@ def getSummaryOfTerminatedFacilityNonFunded(df):
     for i, row in df.iterrows():
         response.append({
             "Non-Installment": row['Facility Type'],
-            "Limit": convertToMillion(row["Limit"]),
+            "Limit": str(convertToMillion(row["Limit"])),
             "Loan/Limit (days of adjustment before/after)": row['Loan/Limit (days of adjustment before/after)'],
             "Worse Classification Status": row["Worse Classification Status"],
             "Date of Classification": convertToString(row["Date of Classification"]).replace(" 00:00:00", "")
@@ -244,7 +244,7 @@ def getSummaryOfExpiredButShowingLiveFunded(df):
     for i, row in df.iterrows():
         response.append({
             "Nature of Facility": row['Facility Type'],
-            "Limit": row['Limit'],
+            "Limit": convertToString(row['Limit']),
             "Outstanding": row['Outstanding'],
             "Overdue": row['Overdue'],
             "Start Date": convertToString(row['Start Date']).replace(" 00:00:00", ""),
@@ -270,7 +270,7 @@ def getSummaryOfExpiredButShowingLiveNonFunded(df):
     for i, row in df.iterrows():
         response.append({
             "Nature of Facility": row['Facility Type'],
-            "Limit": row['Limit'],
+            "Limit": convertToString(row['Limit']),
             "Outstanding": row['Outstanding'],
             "Overdue": row['Overdue'],
             "Start Date": convertToString(row['Start Date']).replace(" 00:00:00", ""),

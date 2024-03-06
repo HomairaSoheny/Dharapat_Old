@@ -14,54 +14,64 @@ def getDateOfClassification(fac):
     for key in DATE_OF_CLASSIFICATION:
         if key in fac["Ref"].keys():
             return fac["Ref"][key]
+    return ""
 
 
 def getStartDate(fac):
     for key in STARTING_DATE:
         if key in fac["Ref"].keys():
             return fac["Ref"][key]
+    return ""
 
 
 def getEndDateOfContract(fac):
     for key in END_DATE_OF_CONTRACT:
         if key in fac["Ref"].keys():
             return fac["Ref"][key]
+    return ""
 
 
 def getRemarks(fac):
     for key in REMARKS:
         if key in fac["Ref"].keys():
             return fac["Ref"][key]
+    return ""
 
 
 def getPaymentPeriod(fac):
     for key in PAYMENT_PERIOD:
         if key in fac["Ref"].keys():
             return fac["Ref"][key]
+    return ""
 
 
 def getTotalNumberOfInstallment(fac):
     for key in TOTAL_NUMBER_OF_INSTALLMENT:
         if key in fac["Ref"].keys():
             return fac["Ref"][key]
+    return ""
 
 
 def getNoOfRemainingInstallment(fac):
     for key in REMAINING_INSTALLMENT_NUMBER:
         if key in fac["Ref"].keys():
             return fac["Ref"][key]
+    return ""
 
 def getNoOfInstallmentPaid(fac):
     total = getTotalNumberOfInstallment(fac)
     remaining = getNoOfRemainingInstallment(fac)
-    if total is not None and remaining is not None:
+    try:
         return  total - remaining
+    except:
+        return ""
 
 
 def getDateOfLastPayment(fac):
     for key in DATE_OF_LAST_PAYMENT:
         if key in fac["Ref"].keys():
             return fac["Ref"][key]
+    return ""
 
 
 def getFacilityType(i):
