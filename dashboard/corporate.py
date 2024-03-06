@@ -237,37 +237,47 @@ def getSummaryOfStayOrder(df, role):
 def getSummaryOfExpiredButShowingLiveFunded(df):
     if df.empty:
         return []
+    df = df[df['Is Funded'] == "Yes"]
+    df = df[df['Phase'] == 'Living']
+    df = df[df['Outstanding Zero Date'] < df['End Date of Contract']]
     response = []
     for i, row in df.iterrows():
         response.append({
-            "Nature of Facility": "",
-            "Limit": "",
-            "Outstanding": "",
-            "Overdue": "",
-            "Start Date": "",
-            "End Date of Contract": "",
-            "Installment Amount": "",
-            "Payment Period": "",
-            "Total No of Installment": "",
-            "No of Remaining Installment": "",
-            "Date of Last Payment": "",
-            "NPL": "",
-            "Default": ""
+            "Nature of Facility": row['Facility Type'],
+            "Limit": row['Limit'],
+            "Outstanding": row['Outstanding'],
+            "Overdue": row['Overdue'],
+            "Start Date": row['Start Date'],
+            "End Date of Contract": row['End Date of Contract'],
+            "Installment Amount": row['Installment Amount'],
+            "Payment Period": row['Payment Period (Monthly/Quarterly)'],
+            "Total No of Installment": row['Total No of Installment'],
+            "No of Remaining Installment": row['No of Remaining Installment'],
+            "Date of Last Payment": row['Date of Last Payment'],
+            "NPI": row['NPI'],
+            "Default": row['Default']
         })
+    return response
 
 def getSummaryOfExpiredButShowingLiveNonFunded(df):
     if df.empty:
         return []
     response = []
+    df = df[df['Is Funded'] != "Yes"]
+    df = df[df['Phase'] == 'Living']
+    df = df[df['Outstanding Zero Date'] < df['End Date of Contract']]
+    
     for i, row in df.iterrows():
         response.append({
-            "Nature of Facility": "",
-            "Limit": "",
-            "Outstanding": "",
-            "Start Date": "",
-            "End Date of Contract": "",
-            "Default": ""
+            "Nature of Facility": row['Facility Type'],
+            "Limit": row['Limit'],
+            "Outstanding": row['Outstanding'],
+            "Overdue": row['Overdue'],
+            "Start Date": row['Start Date'],
+            "End Date of Contract": row['End Date of Contract'],
+            "Default": row['Default']
         })
+    return response
 
 def getCorporateDashboard(cibs):
     response = {}
