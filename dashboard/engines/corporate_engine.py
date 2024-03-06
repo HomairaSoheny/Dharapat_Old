@@ -95,6 +95,15 @@ def getTotalOutstanding(df):
 def getOverdue(df):
     return convertToFloat(df["Overdue"].sum())
 
+def getOutstandingZeroDate(fac):
+    if 'Contract History' in fac and isinstance(fac['Contract History'], pd.DataFrame):
+        for column_name in OUTSTANDING:
+            if column_name in fac['Contract History']:
+                sorted_contracts = fac['Contract History'].sort_values('Date', ascending=True)
+                for index, row in sorted_contracts.iterrows():
+                    if row[column_name] == 0:
+                        return row['Date']
+
 
 def isStayOrder(fac):
     if general_engine.isStayOrder(fac):
@@ -328,6 +337,7 @@ def getCorporateDataFrame(cibs):
                             "Is Funded": general_engine.isFunded(fac),
                             "Installment Type": getFacilityType(i),
                             "Outstanding": general_engine.getOutstanding(fac),
+                            "Outstanding Zero Date": getOutstandingZeroDate(fac),
                             "Overdue": general_engine.getOverdue(fac),
                             "CL Status": general_engine.getCurrentCLStatus(fac),
                             "Default": getDefault(fac),
