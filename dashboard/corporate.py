@@ -18,7 +18,7 @@ def getSummaryTable(cibs):
             "Funded Outstanding Non Installment": convertToMillion(funded.total.tolist()[1]),
             "Funded Outstanding Total": convertToMillion(funded.total.tolist()[3]),
             "Non-Funded Outstanding": convertToMillion(non_funded.total.tolist()[3]),
-            "Total Outstanding": convertToMillion(funded.total.tolist()[3]) + convertToMillion(non_funded.total.tolist()[3]),
+            "Total Outstanding": convertToMillion(convertToFloat(funded.total.tolist()[3]) + convertToFloat(non_funded.total.tolist()[3])),
             "Overdue": convertToMillion(cib.summary_1['Total Overdue Amount']),
             "CL Status": "-" if df.empty else getClassFromSet(set(list(df['CL Status']))),
             "Default": "-" if df.empty else ("Yes" if "Yes" in list(df['Default']) else "No"),
@@ -101,7 +101,7 @@ def getSummaryOfTerminatedFacilityFunded(df):
             "Limit": convertToMillion(row["Limit"]),
             "Loan/Limit (days of adjustment before/after)": row['Loan/Limit (days of adjustment before/after)'],
             "Worse Classification Status": row["Worse Classification Status"],
-            "Date of Classification": convertToString(row["Date of Classification"])
+            "Date of Classification": convertToString(row["Date of Classification"]).replace(" 00:00:00", "")
         })
     return response
 
@@ -119,7 +119,7 @@ def getSummaryOfTerminatedFacilityNonFunded(df):
             "Limit": convertToMillion(row["Limit"]),
             "Loan/Limit (days of adjustment before/after)": row['Loan/Limit (days of adjustment before/after)'],
             "Worse Classification Status": row["Worse Classification Status"],
-            "Date of Classification": convertToString(row["Date of Classification"])
+            "Date of Classification": convertToString(row["Date of Classification"]).replace(" 00:00:00", "")
         })
     return response
     
@@ -150,8 +150,8 @@ def getSummaryOfNonFundedFacility(df):
             "Nature of Facility": row['Facility Type'],
             "Limit": convertToMillion(row["Limit"]),
             "Outstanding": convertToMillion(row["Outstanding"]),
-            "Start Date": convertToString(row["Start Date"]),
-            "End Date of Contract": convertToString(row["End Date of Contract"]),
+            "Start Date": convertToString(row["Start Date"]).replace(" 00:00:00", ""),
+            "End Date of Contract": convertToString(row["End Date of Contract"]).replace(" 00:00:00", ""),
             "Default": row["Default"]
         })
     return response
@@ -182,9 +182,9 @@ def getSummaryOfRescheduleLoan(df, role):
         response.append({
             "Name of Account": row['Facility Type'],
             "Type of Reschedule": row['Reschedule Type'],
-            "Expiry of Reschedule Loan": convertToString(row['End Date of Contract']),
+            "Expiry of Reschedule Loan": convertToString(row['End Date of Contract']).replace(" 00:00:00", ""),
             "Amount": row['Total Disbursement Amount'],
-            "Date of Last Rescheduling": row['Last Date of Reschedule'],
+            "Date of Last Rescheduling": convertToString(row['Last Date of Reschedule']).replace(" 00:00:00", ""),
             "Link": row['CIB Link']
         })
     if len(response) > 0:
@@ -209,10 +209,10 @@ def getSummaryOfRequestedLoan(cibs):
             df = pd.concat([df, temp_cib])
     for i, row in df.iterrows():
         response.append({
-            "Type of Loan": convertToString(row['Type of Contract']),
-            "Facility": convertToString(row['Facility']),
-            "Role": convertToString(row['Role']),
-            "Requested Amount": convertToString(row['Total Requested Amount']),
+            "Type of Loan": convertToString(row['Type of Contract']).replace(" 00:00:00", ""),
+            "Facility": convertToString(row['Facility']).replace(" 00:00:00", ""),
+            "Role": convertToString(row['Role']).replace(" 00:00:00", ""),
+            "Requested Amount": convertToString(row['Total Requested Amount']).replace(" 00:00:00", ""),
             "Date of Request": convertToString(row['Request date']).replace(" 00:00:00", ""),
             "Link": convertToString(row['Link'])
         })
@@ -247,13 +247,13 @@ def getSummaryOfExpiredButShowingLiveFunded(df):
             "Limit": row['Limit'],
             "Outstanding": row['Outstanding'],
             "Overdue": row['Overdue'],
-            "Start Date": row['Start Date'],
-            "End Date of Contract": row['End Date of Contract'],
+            "Start Date": convertToString(row['Start Date']).replace(" 00:00:00", ""),
+            "End Date of Contract": convertToString(row['End Date of Contract']).replace(" 00:00:00", ""),
             "Installment Amount": row['Installment Amount'],
             "Payment Period": row['Payment Period (Monthly/Quarterly)'],
             "Total No of Installment": row['Total No of Installment'],
             "No of Remaining Installment": row['No of Remaining Installment'],
-            "Date of Last Payment": row['Date of Last Payment'],
+            "Date of Last Payment": convertToString(row['Date of Last Payment']).replace(" 00:00:00", ""),
             "NPI": row['NPI'],
             "Default": row['Default']
         })
@@ -273,8 +273,8 @@ def getSummaryOfExpiredButShowingLiveNonFunded(df):
             "Limit": row['Limit'],
             "Outstanding": row['Outstanding'],
             "Overdue": row['Overdue'],
-            "Start Date": row['Start Date'],
-            "End Date of Contract": row['End Date of Contract'],
+            "Start Date": convertToString(row['Start Date']).replace(" 00:00:00", ""),
+            "End Date of Contract": convertToString(row['End Date of Contract']).replace(" 00:00:00", ""),
             "Default": row['Default']
         })
     return response
