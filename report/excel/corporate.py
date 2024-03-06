@@ -514,7 +514,7 @@ def generateSummaryStayOrderGuarantorWorksheet(writer, workbook, stay_order_summ
     normal_bold_format = getNormalBoldFormat(workbook)
 
 
-    starting_row +=1 
+    starting_row +=1
 
     worksheet = writer.sheets["Summary-Stay Order"]
     worksheet.set_column(0, 5, 20)
@@ -541,6 +541,19 @@ def generateSummaryStayOrderGuarantorWorksheet(writer, workbook, stay_order_summ
     total_formula = f'SUM(C{starting_row}:C{len(data)+(starting_row-1)})'
     worksheet.write_formula(f'C{len(data)+starting_row}', f'={total_formula}', header_format)
     worksheet.autofit()
+
+def generateExpiredButShowingLiveWorksheet(writer, workbook, expired_but_showing_live):
+    title_format = getTitleFormat(workbook)
+    header_bold_center = getHeaderBoldCenter(workbook)
+    header_non_bold = headerNonBold(workbook)
+    header_format = getHeaderFormat(workbook)
+    normal_format = getNormalFormat(workbook)
+    normal_bold_format = getNormalBoldFormat(workbook)
+    
+    worksheet = writer.sheets["Expired Loan But Showing Live"]
+    
+    worksheet.merge_range("A1:M1", "Expired Loan But Showing Live (Funded)")
+    worksheet.merge_range("O1:U1", "Expired Loan But Showing Live (Funded)")
 
 
 def generateSummaryTable3FundedWorksheet(writer,workbook,funded_summary_table_3):
@@ -617,7 +630,7 @@ def generateCorporateSpreadsheet(writer, analysis_report):
     summary_table_1 = analysis_report["Summary Table - 1"]
     generateSummaryTableWorksheet(writer, workbook, summary_table_1)
     
-    workbook.add_worksheet("Summary-terminated facility")
+    workbook.add_worksheet("Summary- terminated facility")
     funded_terminated_facility_summary_table = analysis_report["A - Summary of Terminated Facilities"]
     generateFundedTerminatedFacilityTableWorksheet(writer,workbook,funded_terminated_facility_summary_table)
     generateNonFundedTerminatedFacilityTableWorksheet(writer,workbook,funded_terminated_facility_summary_table)
@@ -627,23 +640,27 @@ def generateCorporateSpreadsheet(writer, analysis_report):
     row = generateSummaryFundedFacilitiesInstallmentWorksheet(writer,workbook,funded_facility_table)
     generateSummaryFundedFacilitiesNonInstallmentWorksheet(writer,workbook,funded_facility_table,row+1)
 
-    workbook.add_worksheet("Summary-non funded facility")
+    workbook.add_worksheet("Summary- non funded facility")
     funded_facility_table = analysis_report['B - Summary of Facilities']['Summary of non funded facility']
     generateSummaryNonFundedFacilitiesWorksheet(writer,workbook,funded_facility_table)
 
-    workbook.add_worksheet("Summary-Reschedule Loan")
+    workbook.add_worksheet("Summary- Reschedule Loan")
     reschedule_loan_summary_table = analysis_report['C - Summary of Reschedule Loan']
     row = generateSummaryRescheduleLoanBorrowerWorksheet(writer,workbook,reschedule_loan_summary_table)
     generateSummaryRescheduleLoanGuarantorWorksheet(writer,workbook,reschedule_loan_summary_table,row)
 
-    workbook.add_worksheet("Summary-Requested Loan")
+    workbook.add_worksheet("Summary- Requested Loan")
     requested_loan_summary_table = analysis_report['D - Summary of Requested Loan']
     generateSummaryRequestedLoanWorksheet(writer,workbook,requested_loan_summary_table)
 
-    workbook.add_worksheet("Summary-Stay Order")
+    workbook.add_worksheet("Summary- Stay Order")
     stay_order_summary_table = analysis_report['E - Summary of Stay Order']
     row = generateSummaryStayOrderBorrowerWorksheet(writer, workbook, stay_order_summary_table)
     generateSummaryStayOrderGuarantorWorksheet(writer, workbook, stay_order_summary_table,row)
+    
+    workbook.add_worksheet("Summary- Expired But Showing Live")
+    expired_but_showing_live = analysis_report['F - Expired Loan But Showing Live']
+    generateExpiredButShowingLiveWorksheet(writer, workbook, expired_but_showing_live)
 
     workbook.add_worksheet("Summary Table - 2")
     summary_table_2 = analysis_report["Summary Table - 2"]
