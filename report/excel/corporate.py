@@ -118,7 +118,6 @@ def generateSummaryTableTwoWorksheet(writer, workbook, summary_table_two):
 
 def generateFundedTerminatedFacilityTableWorksheet(writer, workbook, funded_terminated_facility_summary_table):
     title_format = getTitleFormat(workbook)
-    header_bold_center = getHeaderBoldCenter(workbook)
     header_non_bold = headerNonBold(workbook)
     header_format = getHeaderFormat(workbook)
     normal_format = getNormalFormat(workbook)
@@ -188,8 +187,6 @@ def generateNonFundedTerminatedFacilityTableWorksheet(writer, workbook, terminat
 
 def generateSummaryFundedFacilitiesInstallmentWorksheet(writer,workbook,funded_facility_table):
     title_format = getTitleFormat(workbook)
-    header_bold_center = getHeaderBoldCenter(workbook)
-    header_non_bold = headerNonBold(workbook)
     header_format = getHeaderFormat(workbook)
     normal_format = getNormalFormat(workbook)
 
@@ -251,11 +248,8 @@ def generateSummaryFundedFacilitiesInstallmentWorksheet(writer,workbook,funded_f
 
 def generateSummaryFundedFacilitiesNonInstallmentWorksheet(writer,workbook,funded_facility_table, starting_row):
     title_format = getTitleFormat(workbook)
-    header_bold_center = getHeaderBoldCenter(workbook)
-    header_non_bold = headerNonBold(workbook)
     header_format = getHeaderFormat(workbook)
     normal_format = getNormalFormat(workbook)
-    normal_bold_format = getNormalBoldFormat(workbook)
 
     worksheet = writer.sheets["funded facility"]
 
@@ -318,8 +312,6 @@ def generateSummaryFundedFacilitiesNonInstallmentWorksheet(writer,workbook,funde
 
 def generateSummaryNonFundedFacilitiesWorksheet(writer,workbook,non_funded_facility_table):
     title_format = getTitleFormat(workbook)
-    header_bold_center = getHeaderBoldCenter(workbook)
-    header_non_bold = headerNonBold(workbook)
     header_format = getHeaderFormat(workbook)
     normal_format = getNormalFormat(workbook)
 
@@ -360,11 +352,9 @@ def generateSummaryNonFundedFacilitiesWorksheet(writer,workbook,non_funded_facil
 
 def generateSummaryRescheduleLoanBorrowerWorksheet(writer, workbook, reschedule_loan_summary_table):
     title_format = getTitleFormat(workbook)
-    header_bold_center = getHeaderBoldCenter(workbook)
     header_non_bold = headerNonBold(workbook)
     header_format = getHeaderFormat(workbook)
     normal_format = getNormalFormat(workbook)
-    normal_bold_format = getNormalBoldFormat(workbook)
 
     
     worksheet = writer.sheets["Reschedule Loan"]
@@ -397,11 +387,9 @@ def generateSummaryRescheduleLoanBorrowerWorksheet(writer, workbook, reschedule_
 
 def generateSummaryRescheduleLoanGuarantorWorksheet(writer, workbook, reschedule_loan_summary_table,starting_row):
     title_format = getTitleFormat(workbook)
-    header_bold_center = getHeaderBoldCenter(workbook)
     header_non_bold = headerNonBold(workbook)
     header_format = getHeaderFormat(workbook)
     normal_format = getNormalFormat(workbook)
-    normal_bold_format = getNormalBoldFormat(workbook)
 
     starting_row+=1
     worksheet = writer.sheets["Reschedule Loan"]
@@ -434,11 +422,8 @@ def generateSummaryRescheduleLoanGuarantorWorksheet(writer, workbook, reschedule
 
 def generateSummaryRequestedLoanWorksheet(writer, workbook, requested_loan_summary_table):
     title_format = getTitleFormat(workbook)
-    header_bold_center = getHeaderBoldCenter(workbook)
-    header_non_bold = headerNonBold(workbook)
     header_format = getHeaderFormat(workbook)
     normal_format = getNormalFormat(workbook)
-    normal_bold_format = getNormalBoldFormat(workbook)
 
     
     worksheet = writer.sheets["Requested Loan"]
@@ -470,11 +455,8 @@ def generateSummaryRequestedLoanWorksheet(writer, workbook, requested_loan_summa
 
 def generateSummaryStayOrderBorrowerWorksheet(writer, workbook, stay_order_summary_table):
     title_format = getTitleFormat(workbook)
-    header_bold_center = getHeaderBoldCenter(workbook)
-    header_non_bold = headerNonBold(workbook)
     header_format = getHeaderFormat(workbook)
     normal_format = getNormalFormat(workbook)
-    normal_bold_format = getNormalBoldFormat(workbook)
 
     
     worksheet = writer.sheets["Stay Order"]
@@ -507,11 +489,8 @@ def generateSummaryStayOrderBorrowerWorksheet(writer, workbook, stay_order_summa
 
 def generateSummaryStayOrderGuarantorWorksheet(writer, workbook, stay_order_summary_table,starting_row):
     title_format = getTitleFormat(workbook)
-    header_bold_center = getHeaderBoldCenter(workbook)
-    header_non_bold = headerNonBold(workbook)
     header_format = getHeaderFormat(workbook)
     normal_format = getNormalFormat(workbook)
-    normal_bold_format = getNormalBoldFormat(workbook)
 
 
     starting_row +=1
@@ -544,22 +523,67 @@ def generateSummaryStayOrderGuarantorWorksheet(writer, workbook, stay_order_summ
 
 def generateExpiredButShowingLiveWorksheet(writer, workbook, expired_but_showing_live):
     title_format = getTitleFormat(workbook)
-    header_bold_center = getHeaderBoldCenter(workbook)
-    header_non_bold = headerNonBold(workbook)
     header_format = getHeaderFormat(workbook)
     normal_format = getNormalFormat(workbook)
-    normal_bold_format = getNormalBoldFormat(workbook)
     
     worksheet = writer.sheets["Expired But Showing Live"]
     
-    worksheet.merge_range("A1:M1", "Expired Loan But Showing Live (Funded)")
-    worksheet.merge_range("O1:U1", "Expired Loan But Showing Live (Funded)")
+    worksheet.merge_range("A1:M1", "Expired Loan But Showing Live (Funded)", title_format)
+    worksheet.merge_range("Q1:W1", "Expired Loan But Showing Live (Non Funded)", title_format)
+    
+    
+    worksheet.write("A2", "Nature of Facility", header_format)
+    worksheet.write("B2", "Limit", header_format)
+    worksheet.write("C2", "Outstanding", header_format)
+    worksheet.write("D2", "Overdue", header_format)
+    worksheet.write("E2", "Start Date", header_format)
+    worksheet.write("F2", "End Date of Contract", header_format)
+    worksheet.write("G2", "Installment Amount", header_format)
+    worksheet.write("H2", "Payment Period", header_format)
+    worksheet.write("I2", "Total No of Installment", header_format)
+    worksheet.write("J2", "No of Remaining Installment", header_format)
+    worksheet.write("K2", "Date of Last Payment", header_format)
+    worksheet.write("L2", "NPI", header_format)
+    worksheet.write("M2", "Default", header_format)
+    
+    worksheet.write("Q2", "Nature of Facility", header_format)
+    worksheet.write("R2", "Limit", header_format)
+    worksheet.write("S2", "Outstanding", header_format)
+    worksheet.write("T2", "Overdue", header_format)
+    worksheet.write("U2", "Start Date", header_format)
+    worksheet.write("V2", "End Date of Contract", header_format)
+    worksheet.write("W2", "Default", header_format)
+    
+    for i, item in enumerate(expired_but_showing_live['Summary of Funded Facility']):
+        worksheet.write("A" + str(i+3), item["Nature of Facility"], normal_format)
+        worksheet.write("B" + str(i+3), item["Limit"], normal_format)
+        worksheet.write("C" + str(i+3), item["Outstanding"], normal_format)
+        worksheet.write("D" + str(i+3), item["Overdue"], normal_format)
+        worksheet.write("E" + str(i+3), item["Start Date"], normal_format)
+        worksheet.write("F" + str(i+3), item["End Date of Contract"], normal_format)
+        worksheet.write("G" + str(i+3), item["Installment Amount"], normal_format)
+        worksheet.write("H" + str(i+3), item["Payment Period"], normal_format)
+        worksheet.write("I" + str(i+3), item["Total No of Installment"], normal_format)
+        worksheet.write("J" + str(i+3), item["No of Remaining Installment"], normal_format)
+        worksheet.write("K" + str(i+3), item["Date of Last Payment"], normal_format)
+        worksheet.write("L" + str(i+3), item["NPI"], normal_format)
+        worksheet.write("M" + str(i+3), item["Default"], normal_format)
+    
+    for i, item in enumerate(expired_but_showing_live['Summary of Non Funded Facility']):
+        worksheet.write("Q" + str(i+3), item["Nature of Facility"], normal_format)
+        worksheet.write("R" + str(i+3), item["Limit"], normal_format)
+        worksheet.write("S" + str(i+3), item["Outstanding"], normal_format)
+        worksheet.write("T" + str(i+3), item["Overdue"], normal_format)
+        worksheet.write("U" + str(i+3), item["Start Date"], normal_format)
+        worksheet.write("V" + str(i+3), item["End Date of Contract"], normal_format)
+        worksheet.write("W" + str(i+3), item["Default"], normal_format)
+    
+    worksheet.autofit()
+    
 
 
 def generateSummaryTable3FundedWorksheet(writer,workbook,funded_summary_table_3):
     title_format = getTitleFormat(workbook)
-    header_bold_center = getHeaderBoldCenter(workbook)
-    header_non_bold = headerNonBold(workbook)
     header_format = getHeaderFormat(workbook)
     normal_format = getNormalFormat(workbook)
 
