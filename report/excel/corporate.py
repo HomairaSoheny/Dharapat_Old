@@ -10,7 +10,6 @@ def generateSummaryTableWorksheet(writer, workbook, summary_table):
 
     worksheet = writer.sheets["Summary Table - 1"]
     worksheet.merge_range("A1:J1", "Summary Table - 1", title_format)
-    worksheet.write("A2", "Position as on", header_format)
     worksheet.merge_range("B2:J2", "BDT in Million", header_non_bold)
     worksheet.merge_range("B3:B4", "Name of Concern", header_format)
     worksheet.merge_range("C3:E3", "Funded Outstanding", header_bold_center)
@@ -60,7 +59,6 @@ def generateSummaryTableTwoWorksheet(writer, workbook, summary_table_two):
     
     worksheet = writer.sheets["Summary Table - 2"]
     worksheet.merge_range("A1:Q1", "Summary Table - 2", title_format)
-    worksheet.write("A2", "Position as on", header_format)
     worksheet.merge_range("B2:J2", "BDT in Million", header_non_bold)
     worksheet.merge_range("B3:B4", "Concern Name", header_format)
     worksheet.merge_range("C3:E3", "Funded", header_bold_center)
@@ -125,7 +123,6 @@ def generateFundedTerminatedFacilityTableWorksheet(writer, workbook, funded_term
 
     
     worksheet = writer.sheets["terminated facility"]
-    worksheet.set_column(0, 5, 30)
     worksheet.merge_range("A1:E1", "Summary of terminated facility (Funded)", title_format)
     worksheet.merge_range("A2:D2", "Total number of funded terminated loan", header_format)
     worksheet.write("E2", "BDT in Million", header_non_bold)
@@ -152,7 +149,6 @@ def generateFundedTerminatedFacilityTableWorksheet(writer, workbook, funded_term
 
 def generateNonFundedTerminatedFacilityTableWorksheet(writer, workbook, terminated_facility_summary_table):
     title_format = getTitleFormat(workbook)
-    header_bold_center = getHeaderBoldCenter(workbook)
     header_non_bold = headerNonBold(workbook)
     header_format = getHeaderFormat(workbook)
     normal_format = getNormalFormat(workbook)
@@ -160,7 +156,6 @@ def generateNonFundedTerminatedFacilityTableWorksheet(writer, workbook, terminat
 
 
     worksheet = writer.sheets["terminated facility"]
-    worksheet.set_column(7, 13, 30)
     worksheet.merge_range("G1:K1", "Summary of terminated facility (Non-Funded)", title_format)
     worksheet.merge_range("G2:J2", "Total number of non funded terminated loan", header_format)
     worksheet.write("K2", "BDT in Million", header_non_bold)
@@ -192,27 +187,24 @@ def generateSummaryFundedFacilitiesInstallmentWorksheet(writer,workbook,funded_f
 
     worksheet = writer.sheets["funded facility"]
 
-    worksheet.merge_range("A1:P1", "Summary of funded facility for same type of concerns classified in summary table:1 - for individual contract: sub-total for same loan to be provided", title_format)
-    worksheet.merge_range("A2:P2", "Installments", header_format)
-    worksheet.set_column(0, 0, 10)
-    worksheet.set_column(2, 15, 30)
+    worksheet.merge_range("A1:O1", "Summary of funded facility", title_format)
+    worksheet.merge_range("A2:O2", "Installments", header_format)
 
     worksheet.write("A3", "Name of Concern", header_format)
-    worksheet.write("B3", "B", header_format)
-    worksheet.write("C3", "Summary of Funded Facility", header_format)
-    worksheet.write("D3", "Limit", header_format)
-    worksheet.write("E3", "Outstanding", header_format)
-    worksheet.write("F3", "Overdue", header_format)
-    worksheet.write("G3", "Start Date", header_format)
-    worksheet.write("H3", "End Date of Contract", header_format)
-    worksheet.write("I3", "Installment Amount", header_format)
-    worksheet.write("J3", "Payment Period", header_format)
-    worksheet.write("K3", "Total no. of Installment", header_format)
-    worksheet.write("L3", "Total no. of Installment paid", header_format)
-    worksheet.write("M3", "No. of Remaining Installment", header_format)
-    worksheet.write("N3", "Date of last payment", header_format)
-    worksheet.write("O3", "NPI (No.)", header_format)
-    worksheet.write("P3", "Default (Yes/No)", header_format)
+    worksheet.write("B3", "Summary of Funded Facility", header_format)
+    worksheet.write("C3", "Limit", header_format)
+    worksheet.write("D3", "Outstanding", header_format)
+    worksheet.write("E3", "Overdue", header_format)
+    worksheet.write("F3", "Start Date", header_format)
+    worksheet.write("G3", "End Date of Contract", header_format)
+    worksheet.write("H3", "Installment Amount", header_format)
+    worksheet.write("I3", "Payment Period", header_format)
+    worksheet.write("J3", "Total no. of Installment", header_format)
+    worksheet.write("K3", "Total no. of Installment paid", header_format)
+    worksheet.write("L3", "No. of Remaining Installment", header_format)
+    worksheet.write("M3", "Date of last payment", header_format)
+    worksheet.write("N3", "NPI (No.)", header_format)
+    worksheet.write("O3", "Default (Yes/No)", header_format)
 
     row = 4
     for concern_type in funded_facility_table.keys():
@@ -225,21 +217,20 @@ def generateSummaryFundedFacilitiesInstallmentWorksheet(writer,workbook,funded_f
                         format = header_format
                     else:
                         format = normal_format
-                    worksheet.write("B" + str(idx+row), item["SL"], format)
-                    worksheet.write("C" + str(idx+row), item["Nature of Facility"], format)
-                    worksheet.write("D" + str(idx+row), item["Limit"], format)
-                    worksheet.write("E" + str(idx+row), item["Outstanding"], format)
-                    worksheet.write("F" + str(idx+row), item["Overdue"], format)
-                    worksheet.write("G" + str(idx+row), item["Start Date"], format)
-                    worksheet.write("H" + str(idx+row), item["End Date of Contract"], format)
-                    worksheet.write("I" + str(idx+row), item["Installment Amount"], format)
-                    worksheet.write("J" + str(idx+row), item["Payment Period"], format)
+                    worksheet.write("B" + str(idx+row), item["Nature of Facility"], format)
+                    worksheet.write("C" + str(idx+row), item["Limit"], format)
+                    worksheet.write("D" + str(idx+row), item["Outstanding"], format)
+                    worksheet.write("E" + str(idx+row), item["Overdue"], format)
+                    worksheet.write("F" + str(idx+row), item["Start Date"], format)
+                    worksheet.write("G" + str(idx+row), item["End Date of Contract"], format)
+                    worksheet.write("H" + str(idx+row), item["Installment Amount"], format)
+                    worksheet.write("I" + str(idx+row), item["Payment Period"], format)
+                    worksheet.write("J" + str(idx+row), item["Total No. of Installment"], format)
                     worksheet.write("K" + str(idx+row), item["Total No. of Installment"], format)
-                    worksheet.write("L" + str(idx+row), item["Total No. of Installment"], format)
-                    worksheet.write("M" + str(idx+row), item["No. of Remaining Installment"], format)
-                    worksheet.write("N" + str(idx+row), item["Date of Last Payment"], format)
-                    worksheet.write("O" + str(idx+row), item["NPI"], format)
-                    worksheet.write("P" + str(idx+row), item["Default"], format)
+                    worksheet.write("L" + str(idx+row), item["No. of Remaining Installment"], format)
+                    worksheet.write("M" + str(idx+row), item["Date of Last Payment"], format)
+                    worksheet.write("N" + str(idx+row), item["NPI"], format)
+                    worksheet.write("O" + str(idx+row), item["Default"], format)
                     
             
                 row += len(facility_list)
@@ -255,26 +246,25 @@ def generateSummaryFundedFacilitiesNonInstallmentWorksheet(writer,workbook,funde
 
     starting_row+=1
 
-    worksheet.merge_range(f"A{starting_row}:P{starting_row}", "Summary of funded facility for same type of concerns classified in summary table:1 - for individual contract: sub-total for same loan to be provided", title_format)
+    worksheet.merge_range(f"A{starting_row}:P{starting_row}", "Summary of funded facility", title_format)
     worksheet.merge_range(f"A{starting_row+1}:P{starting_row+1}", "Non Installments", title_format)
     
 
     worksheet.write(f"A{starting_row+2}", "Name of Concern", header_format)
-    worksheet.write(f"B{starting_row+2}", "B", header_format)
-    worksheet.write(f"C{starting_row+2}", "Summary of Funded Facility", header_format)
-    worksheet.write(f"D{starting_row+2}", "Limit", header_format)
-    worksheet.write(f"E{starting_row+2}", "Outstanding", header_format)
-    worksheet.write(f"F{starting_row+2}", "Overdue", header_format)
-    worksheet.write(f"G{starting_row+2}", "Start Date", header_format)
-    worksheet.write(f"H{starting_row+2}", "End Date of Contract", header_format)
-    worksheet.write(f"I{starting_row+2}", "Installment Amount", header_format)
-    worksheet.write(f"J{starting_row+2}", "Payment Period (Monthly/ Quarterly/ Half yearly/ Annually)", header_format)
-    worksheet.write(f"K{starting_row+2}", "Total no. of Installment", header_format)
-    worksheet.write(f"L{starting_row+2}", "Total no. of Installment paid", header_format)
-    worksheet.write(f"M{starting_row+2}", "No. of Remaining Installment", header_format)
-    worksheet.write(f"N{starting_row+2}", "Date of last payment", header_format)
-    worksheet.write(f"O{starting_row+2}", "NPI (No.)", header_format)
-    worksheet.write(f"P{starting_row+2}", "Default (Yes/No)", header_format)
+    worksheet.write(f"B{starting_row+2}", "Summary of Funded Facility", header_format)
+    worksheet.write(f"C{starting_row+2}", "Limit", header_format)
+    worksheet.write(f"D{starting_row+2}", "Outstanding", header_format)
+    worksheet.write(f"E{starting_row+2}", "Overdue", header_format)
+    worksheet.write(f"F{starting_row+2}", "Start Date", header_format)
+    worksheet.write(f"G{starting_row+2}", "End Date of Contract", header_format)
+    worksheet.write(f"H{starting_row+2}", "Installment Amount", header_format)
+    worksheet.write(f"I{starting_row+2}", "Payment Period (Monthly/ Quarterly/ Half yearly/ Annually)", header_format)
+    worksheet.write(f"J{starting_row+2}", "Total no. of Installment", header_format)
+    worksheet.write(f"K{starting_row+2}", "Total no. of Installment paid", header_format)
+    worksheet.write(f"L{starting_row+2}", "No. of Remaining Installment", header_format)
+    worksheet.write(f"M{starting_row+2}", "Date of last payment", header_format)
+    worksheet.write(f"N{starting_row+2}", "NPI (No.)", header_format)
+    worksheet.write(f"O{starting_row+2}", "Default (Yes/No)", header_format)
 
     row = starting_row + 3
     
@@ -288,21 +278,20 @@ def generateSummaryFundedFacilitiesNonInstallmentWorksheet(writer,workbook,funde
                         format = header_format
                     else:
                         format = normal_format
-                    worksheet.write("B" + str(idx+row), item["SL"], format)
-                    worksheet.write("C" + str(idx+row), item["Nature of Facility"], format)
-                    worksheet.write("D" + str(idx+row), item["Limit"], format)
-                    worksheet.write("E" + str(idx+row), item["Outstanding"], format)
-                    worksheet.write("F" + str(idx+row), item["Overdue"], format)
-                    worksheet.write("G" + str(idx+row), item["Start Date"], format)
-                    worksheet.write("H" + str(idx+row), item["End Date of Contract"], format)
-                    worksheet.write("I" + str(idx+row), item["Installment Amount"], format)
-                    worksheet.write("J" + str(idx+row), item["Payment Period"], format)
+                    worksheet.write("B" + str(idx+row), item["Nature of Facility"], format)
+                    worksheet.write("C" + str(idx+row), item["Limit"], format)
+                    worksheet.write("D" + str(idx+row), item["Outstanding"], format)
+                    worksheet.write("E" + str(idx+row), item["Overdue"], format)
+                    worksheet.write("F" + str(idx+row), item["Start Date"], format)
+                    worksheet.write("G" + str(idx+row), item["End Date of Contract"], format)
+                    worksheet.write("H" + str(idx+row), item["Installment Amount"], format)
+                    worksheet.write("I" + str(idx+row), item["Payment Period"], format)
+                    worksheet.write("J" + str(idx+row), item["Total No. of Installment"], format)
                     worksheet.write("K" + str(idx+row), item["Total No. of Installment"], format)
-                    worksheet.write("L" + str(idx+row), item["Total No. of Installment"], format)
-                    worksheet.write("M" + str(idx+row), item["No. of Remaining Installment"], format)
-                    worksheet.write("N" + str(idx+row), item["Date of Last Payment"], format)
-                    worksheet.write("O" + str(idx+row), item["NPI"], format)
-                    worksheet.write("P" + str(idx+row), item["Default"], format)
+                    worksheet.write("L" + str(idx+row), item["No. of Remaining Installment"], format)
+                    worksheet.write("M" + str(idx+row), item["Date of Last Payment"], format)
+                    worksheet.write("N" + str(idx+row), item["NPI"], format)
+                    worksheet.write("O" + str(idx+row), item["Default"], format)
             
                 row += len(facility_list) 
     worksheet.autofit()
@@ -316,10 +305,7 @@ def generateSummaryNonFundedFacilitiesWorksheet(writer,workbook,non_funded_facil
     normal_format = getNormalFormat(workbook)
 
     worksheet = writer.sheets["non funded facility"]
-
-    worksheet.merge_range("A1:P2", "Summary of non funded facility for same type of concerns classified in summary table:1 - for individual contract: sub-total for same loan to be provided", title_format)
-    worksheet.set_column(0, 8, 20)
-
+    worksheet.merge_range("A1:P2", "Summary of non funded facility", title_format)
 
     worksheet.write("A3", "Name of Concern", header_format)
     worksheet.write("B3", "Facility Name", header_format)
@@ -358,7 +344,6 @@ def generateSummaryRescheduleLoanBorrowerWorksheet(writer, workbook, reschedule_
 
     
     worksheet = writer.sheets["Reschedule Loan"]
-    worksheet.set_column(0, 5, 20)
     worksheet.merge_range("A1:E1", "Summary of Reschedule Loan for Borrower", title_format)
     worksheet.write("F1", "BDT in Million", header_non_bold)
     worksheet.write("A2", "Name of Account", header_format)
@@ -393,7 +378,6 @@ def generateSummaryRescheduleLoanGuarantorWorksheet(writer, workbook, reschedule
 
     starting_row+=1
     worksheet = writer.sheets["Reschedule Loan"]
-    worksheet.set_column(0, 5, 20)
     worksheet.merge_range(f"A{starting_row}:E{starting_row}", "Summary of Reschedule Loan for Guarantor", title_format)
     worksheet.write(f'F{starting_row}', "BDT in Million", header_non_bold)
     worksheet.write(f'A{starting_row+1}', "Name of Account", header_format)
@@ -427,7 +411,6 @@ def generateSummaryRequestedLoanWorksheet(writer, workbook, requested_loan_summa
 
     
     worksheet = writer.sheets["Requested Loan"]
-    worksheet.set_column(0, 5, 20)
     worksheet.merge_range(f"A1:F1", "Summary of Requested Loan", title_format)
     worksheet.write(f'A2', "Type of Loan", header_format)
     worksheet.write(f'B2', "Facility", header_format)
@@ -460,7 +443,6 @@ def generateSummaryStayOrderBorrowerWorksheet(writer, workbook, stay_order_summa
 
     
     worksheet = writer.sheets["Stay Order"]
-    worksheet.set_column(0, 5, 20)
     worksheet.merge_range(f"A1:F1", "Summary of Stay Order for Borrower", title_format)
     worksheet.write(f'A2', "Name of Account", header_format)
     worksheet.write(f'B2', "Nature of Facility", header_format)
@@ -496,7 +478,6 @@ def generateSummaryStayOrderGuarantorWorksheet(writer, workbook, stay_order_summ
     starting_row +=1
 
     worksheet = writer.sheets["Stay Order"]
-    worksheet.set_column(0, 5, 20)
     worksheet.merge_range(f"A{starting_row}:F{starting_row}", "Summary of Stay Order for Guarantor", title_format)
     worksheet.write(f'A{starting_row+1}', "Name of Account", header_format)
     worksheet.write(f'B{starting_row+1}', "Nature of Facility", header_format)
@@ -590,7 +571,6 @@ def generateSummaryTable3FundedWorksheet(writer,workbook,funded_summary_table_3)
     worksheet = writer.sheets["Summary Table 3 - Funded"]
 
     worksheet.merge_range("A1:P2", "Summary Table- 3: Liability type wise break up (only Live contracts)", title_format)
-    worksheet.set_column(0, 16, 20)
 
 
     worksheet.write("A3", "Type of Concern", header_format)
