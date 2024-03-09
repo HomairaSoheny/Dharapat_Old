@@ -60,12 +60,13 @@ def getSummaryTableTwo(df):
 def getSummaryTableThree(df):
     if df.empty:
         return []
+    df = df[df['Phase'] == 'Living']
     funded = []
     non_funded = []
     non_funded_loans = list(df[df['Is Funded'] == "No"]["Facility Type"].unique())
     for category in df['CIB Category'].unique():
         cat_df = df[df['CIB Category'] == category]
-        for concern_name in df['Name'].unique():
+        for concern_name in cat_df['Name'].unique():
             temp_df = cat_df[cat_df['Name'] == concern_name]
             funded.append(getSummaryTableThreeFundedFields(category, concern_name, temp_df[temp_df['Is Funded'] == "Yes"]))
             non_funded.append(getSummaryTableThreeNonFundedFields(category, concern_name, temp_df[temp_df['Is Funded'] == "No"], non_funded_loans))
@@ -126,6 +127,7 @@ def getSummaryOfTerminatedFacilityNonFunded(df):
 
 def getSummaryOfFundedFacility(df):
     response = []
+    df = df[df['Phase'] == 'Living']
     df = df[df['Is Funded'] == 'Yes']
     installment = df[df['Installment Type'] == 'Installment']
     non_installment = df[df['Installment Type'] == 'No Installment']
@@ -144,6 +146,7 @@ def getSummaryOfFundedFacility(df):
 
 def getSummaryOfNonFundedFacility(df):
     response = []
+    df = df[df['Phase'] == 'Living']
     df = df[df['Is Funded'] == 'No']
     for i, row in df.iterrows():
         response.append({

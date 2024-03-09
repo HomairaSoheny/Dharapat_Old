@@ -1,4 +1,5 @@
 from report.excel.general_helper import *
+import pandas as pd
 
 def generateSummaryTableWorksheet(writer, workbook, summary_table):
 
@@ -570,7 +571,7 @@ def generateSummaryTable3FundedWorksheet(writer,workbook,funded_summary_table_3)
 
     worksheet = writer.sheets["Summary Table 3 - Funded"]
 
-    worksheet.merge_range("A1:P2", "Summary Table- 3: Liability type wise break up (only Live contracts)", title_format)
+    worksheet.merge_range("A1:P2", "Summary Table- 3: Liability type wise break up (only Live contracts) Funded", title_format)
 
 
     worksheet.write("A3", "Type of Concern", header_format)
@@ -624,7 +625,16 @@ def generateSummaryTable3FundedWorksheet(writer,workbook,funded_summary_table_3)
         
             row += len(concern_list) 
     worksheet.autofit()
+    
 
+def generateSummaryTable3NonFundedWorksheet(writer, workbook, non_funded_summary_table_3):
+    title_format = getTitleFormat(workbook)
+
+    df = pd.DataFrame(non_funded_summary_table_3)
+    df.style.apply(align_center, axis=0).to_excel(writer, sheet_name="Summary Table 3 - Non Funded", startrow=2, index=False)
+    worksheet = writer.sheets["Summary Table 3 - Non Funded"]
+    worksheet.merge_range("A1:F2", "Summary Table- 3: Liability type wise break up (only Live contracts) Non Funded", title_format)
+    worksheet.autofit()
 
 
 def generateCorporateSpreadsheet(writer, analysis_report):
@@ -673,3 +683,6 @@ def generateCorporateSpreadsheet(writer, analysis_report):
     workbook.add_worksheet("Summary Table 3 - Funded")
     funded_summary_table_3 = analysis_report['Summary Table - 3']['funded']
     generateSummaryTable3FundedWorksheet(writer,workbook,funded_summary_table_3)
+    
+    non_funded_summary_table_3 = analysis_report['Summary Table - 3']['non_funded']
+    generateSummaryTable3NonFundedWorksheet(writer, workbook, non_funded_summary_table_3)
