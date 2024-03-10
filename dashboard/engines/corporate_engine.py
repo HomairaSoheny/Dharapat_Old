@@ -118,6 +118,8 @@ def getOutstandingZeroDate(fac):
 def getDaysOfAdjustment(fac):
     if isStayOrder(fac) == "Yes":
         return ""
+    if getStartDate(fac) == "":
+        return 0
     start_date = datetime.strptime(str(getStartDate(fac)).replace(" 00:00:00", ""), "%Y-%M-%d")
     outstanding_start_date = datetime.strptime(str((fac['Contract History']).sort_values('Date', ascending=True)['Date'][0]).replace(" 00:00:00", ""), "%Y-%M-%d")
     return abs((outstanding_start_date - start_date).days)
