@@ -44,6 +44,7 @@ def getSummaryTableTwo(df):
     if df.empty:
         return []
     response = []
+    df = df[df['Phase'] == 'Living']
     for category in df['CIB Category'].unique():
         cat_df = df[df['CIB Category'] == category]
         for concern_name in cat_df['Name'].unique():
