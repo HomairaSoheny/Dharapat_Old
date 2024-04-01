@@ -96,7 +96,8 @@ def getSummaryOfTerminatedFacilityFunded(df):
     df = df[df['Phase'] != 'Living']
     df = df[df['Is Funded'] == "Yes"]
     df = df[df['Installment Type'] == 'Installment']
-    
+    total_limit = 0
+    total_days = 0
     for i, row in df.iterrows():
         response.append({
             "Installment": row['Facility Type'],
@@ -105,6 +106,17 @@ def getSummaryOfTerminatedFacilityFunded(df):
             "Worse Classification Status": row["Worse Classification Status"],
             "Date of Classification": convertToString(row["Date of Classification"]).replace(" 00:00:00", "")
         })
+        total_limit += convertToMillion(row["Limit"])
+        total_days += row['Loan/Limit (days of adjustment before/after)']
+
+    response.append({
+            "Installment": 'Sub Total',
+            "Limit": total_limit,
+            "Loan/Limit (days of adjustment before/after)": total_days,
+            "Worse Classification Status": '',
+            "Date of Classification": ''
+        })
+    
     return response
 
 def getSummaryOfTerminatedFacilityNonFunded(df):
@@ -114,7 +126,8 @@ def getSummaryOfTerminatedFacilityNonFunded(df):
     df = df[df['Phase'] != 'Living']
     df = df[df['Is Funded'] == "No"]
     df = df[df['Installment Type'] == 'No Installment']
-    
+    total_limit = 0
+    total_days = 0
     for i, row in df.iterrows():
         response.append({
             "Non-Installment": row['Facility Type'],
@@ -122,6 +135,16 @@ def getSummaryOfTerminatedFacilityNonFunded(df):
             "Loan/Limit (days of adjustment before/after)": row['Loan/Limit (days of adjustment before/after)'],
             "Worse Classification Status": row["Worse Classification Status"],
             "Date of Classification": convertToString(row["Date of Classification"]).replace(" 00:00:00", "")
+        })
+        total_limit += convertToMillion(row["Limit"])
+        total_days += row['Loan/Limit (days of adjustment before/after)']
+    
+    response.append({
+            "Installment": 'Sub Total',
+            "Limit": total_limit,
+            "Loan/Limit (days of adjustment before/after)": total_days,
+            "Worse Classification Status": '',
+            "Date of Classification": ''
         })
     return response
     
