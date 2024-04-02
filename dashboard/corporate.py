@@ -116,10 +116,20 @@ def getSummaryOfTerminatedFacilityNonFunded(df):
     for i, row in df.iterrows():
         response.append({
             "Non-Installment": row['Facility Type'],
-            "Limit": convertToFloat(row["Limit"]),
-            "Loan/Limit (days of adjustment before/after)": "Not Implemented",
-            "Worse Classification Status": row["CL Status"],
-            "Date of Classification": convertToString(row["Date of Classification"])
+            "Limit": str(convertToMillion(row["Limit"])),
+            "Loan/Limit (days of adjustment before/after)": row['Loan/Limit (days of adjustment before/after)'],
+            "Worse Classification Status": row["Worse Classification Status"],
+            "Date of Classification": convertToString(row["Date of Classification"]).replace(" 00:00:00", "")
+        })
+        total_limit += convertToMillion(row["Limit"])
+        total_days += row['Loan/Limit (days of adjustment before/after)']
+    
+    response.append({
+            "Non-Installment": 'Sub Total',
+            "Limit": total_limit,
+            "Loan/Limit (days of adjustment before/after)": total_days,
+            "Worse Classification Status": '',
+            "Date of Classification": ''
         })
     return response
     
@@ -143,6 +153,8 @@ def getSummaryOfFundedFacility(df):
 def getSummaryOfNonFundedFacility(df):
     response = []
     df = df[df['Is Funded'] == 'No']
+    total_limit = 0
+    total_outstanding = 0
     for i, row in df.iterrows():
         response.append({
             "Nature of Facility": row['Facility Type'],
@@ -151,6 +163,17 @@ def getSummaryOfNonFundedFacility(df):
             "Start Date": convertToString(row["Start Date"]),
             "End Date of Contract": convertToString(row["End Date of Contract"]),
             "Default": row["Default"]
+        })
+        total_limit += convertToMillion(row["Limit"])
+        total_outstanding += convertToMillion(row["Outstanding"])
+
+    response.append({
+            "Nature of Facility": 'Sub Total',
+            "Limit": total_limit,
+            "Outstanding": total_outstanding,
+            "Start Date": '',
+            "End Date of Contract": '',
+            "Default": ''
         })
     return response
 
