@@ -100,6 +100,7 @@ def getSummaryOfTerminatedFacilityFunded(df):
     total_days = 0
     for i, row in df.iterrows():
         response.append({
+            "Category": row['CIB Category'],
             "Installment": row['Facility Type'],
             "Limit": convertToMillion(row["Limit"]),
             "Loan/Limit (days of adjustment before/after)": row['Loan/Limit (days of adjustment before/after)'],
@@ -110,6 +111,7 @@ def getSummaryOfTerminatedFacilityFunded(df):
         total_days += row['Loan/Limit (days of adjustment before/after)']
 
     response.append({
+            "Category": '',
             "Installment": 'Sub Total',
             "Limit": total_limit,
             "Loan/Limit (days of adjustment before/after)": total_days,
@@ -130,6 +132,7 @@ def getSummaryOfTerminatedFacilityNonFunded(df):
     total_days = 0
     for i, row in df.iterrows():
         response.append({
+            "Category": row['CIB Category'],
             "Non-Installment": row['Facility Type'],
             "Limit": str(convertToMillion(row["Limit"])),
             "Loan/Limit (days of adjustment before/after)": row['Loan/Limit (days of adjustment before/after)'],
@@ -140,7 +143,7 @@ def getSummaryOfTerminatedFacilityNonFunded(df):
         total_days += row['Loan/Limit (days of adjustment before/after)']
     
     response.append({
-
+            "Category": '',
             "Non-Installment": 'Sub Total',
             "Limit": total_limit,
             "Loan/Limit (days of adjustment before/after)": total_days,
