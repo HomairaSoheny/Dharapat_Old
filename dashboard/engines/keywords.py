@@ -65,6 +65,8 @@ GUARANTOR = ['Guarantor']
 
 RESCHEDULE_LOAN = ['Number of time(s) rescheduled', 'Number of time(s)    rescheduled']
 
+STAY_ORDER_AMOUNT = ['Total Disbursement Amount']
+
 LAST_RESCHEDULING_DATE = ['Date of last rescheduling']
 
 TOTAL_DISBURSEMENT_AMOUNT = ['Total Disbursement Amount']

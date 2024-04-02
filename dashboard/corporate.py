@@ -14,12 +14,12 @@ def getSummaryTable(cibs):
         response.append({
             "CIB Category": getCIBCategory(cib),
             "Name of Concern": getBorrowersName(cib.subject_info),
-            "Funded Outstanding Installment": convertToFloat(funded.total.tolist()[0]),
-            "Funded Outstanding Non Installment": convertToFloat(funded.total.tolist()[1]),
-            "Funded Outstanding Total": convertToFloat(funded.total.tolist()[3]),
-            "Non-Funded Outstanding": convertToFloat(non_funded.total.tolist()[3]),
-            "Total Outstanding": convertToFloat(funded.total.tolist()[3]) + convertToFloat(non_funded.total.tolist()[3]),
-            "Overdue": cib.summary_1['Total Overdue Amount'],
+            "Funded Outstanding Installment": convertToMillion(funded.total.tolist()[0]),
+            "Funded Outstanding Non Installment": convertToMillion(funded.total.tolist()[1]),
+            "Funded Outstanding Total": convertToMillion(funded.total.tolist()[3]),
+            "Non-Funded Outstanding": convertToMillion(non_funded.total.tolist()[3]),
+            "Total Outstanding": convertToMillion(convertToFloat(funded.total.tolist()[3]) + convertToFloat(non_funded.total.tolist()[3])),
+            "Overdue": convertToMillion(cib.summary_1['Total Overdue Amount']),
             "CL Status": "-" if df.empty else getClassFromSet(set(list(df['CL Status']))),
             "Default": "-" if df.empty else ("Yes" if "Yes" in list(df['Default']) else "No"),
             "CIB PDF View": PDF_LINK + cib.pdf_name,
@@ -29,7 +29,7 @@ def getSummaryTable(cibs):
     response = []
     for category in df['CIB Category'].unique():
         cat_df = df[df['CIB Category'] == category]
-        for concern_name in df['Name of Concern'].unique():
+        for concern_name in cat_df['Name of Concern'].unique():
             temp_df = cat_df[cat_df['Name of Concern'] == concern_name]
             response.append(getSummaryTableFields(category, concern_name, temp_df))
         sub_total_df = pd.DataFrame(response)
@@ -37,16 +37,17 @@ def getSummaryTable(cibs):
         response.append(getSummaryTableFields(category, "Sub Total", sub_total_df))
     total_df = pd.DataFrame(response)
     total_df = total_df[total_df['Name of Concern'] == "Sub Total"]
-    response.append(getSummaryTableFields(category, "Grand Total", total_df))
+    response.append(getSummaryTableFields("", "Grand Total", total_df))
     return response
 
 def getSummaryTableTwo(df):
     if df.empty:
         return []
     response = []
+    df = df[df['Phase'] == 'Living']
     for category in df['CIB Category'].unique():
         cat_df = df[df['CIB Category'] == category]
-        for concern_name in df['Name'].unique():
+        for concern_name in cat_df['Name'].unique():
             temp_df = cat_df[cat_df['Name'] == concern_name]
             response.append(getSummaryTableTwoFields(category, concern_name, temp_df))
         sub_total_df = pd.DataFrame(response)
@@ -54,18 +55,19 @@ def getSummaryTableTwo(df):
         response.append(getSummaryTableTwoSum(category, "Sub Total", sub_total_df))
     total_df = pd.DataFrame(response)
     total_df = total_df[total_df['Name of Concern'] == "Sub Total"]
-    response.append(getSummaryTableTwoSum(category, "Grand Total", total_df))
+    response.append(getSummaryTableTwoSum("", "Grand Total", total_df))
     return response
 
 def getSummaryTableThree(df):
     if df.empty:
         return []
+    df = df[df['Phase'] == 'Living']
     funded = []
     non_funded = []
     non_funded_loans = list(df[df['Is Funded'] == "No"]["Facility Type"].unique())
     for category in df['CIB Category'].unique():
         cat_df = df[df['CIB Category'] == category]
-        for concern_name in df['Name'].unique():
+        for concern_name in cat_df['Name'].unique():
             temp_df = cat_df[cat_df['Name'] == concern_name]
             funded.append(getSummaryTableThreeFundedFields(category, concern_name, temp_df[temp_df['Is Funded'] == "Yes"]))
             non_funded.append(getSummaryTableThreeNonFundedFields(category, concern_name, temp_df[temp_df['Is Funded'] == "No"], non_funded_loans))
@@ -77,10 +79,10 @@ def getSummaryTableThree(df):
         non_funded.append(getSummaryTableThreeNonFundedSum(category, "Sub Total", non_funded_sub_total_df, non_funded_loans))
     funded_total_df = pd.DataFrame(funded)
     funded_total_df = funded_total_df[funded_total_df['Borrowing Company - Person'] == "Sub Total"]
-    funded.append(getSummaryTableThreeFundedSum(category, "Grand Total", funded_total_df))
+    funded.append(getSummaryTableThreeFundedSum("", "Grand Total", funded_total_df))
     non_funded_total_df = pd.DataFrame(non_funded)
     non_funded_total_df = non_funded_total_df[non_funded_total_df['Borrowing Company - Person'] == "Sub Total"]
-    non_funded.append(getSummaryTableThreeNonFundedSum(category, "Grand Total", non_funded_total_df, non_funded_loans))
+    non_funded.append(getSummaryTableThreeNonFundedSum("", "Grand Total", non_funded_total_df, non_funded_loans))
         
     return {
         "funded": funded,
@@ -94,15 +96,27 @@ def getSummaryOfTerminatedFacilityFunded(df):
     df = df[df['Phase'] != 'Living']
     df = df[df['Is Funded'] == "Yes"]
     df = df[df['Installment Type'] == 'Installment']
-    
+    total_limit = 0
+    total_days = 0
     for i, row in df.iterrows():
         response.append({
             "Installment": row['Facility Type'],
-            "Limit": convertToFloat(row["Limit"]),
-            "Loan/Limit (days of adjustment before/after)": "Not Implemented",
-            "Worse Classification Status": row["CL Status"],
-            "Date of Classification": convertToString(row["Date of Classification"])
+            "Limit": convertToMillion(row["Limit"]),
+            "Loan/Limit (days of adjustment before/after)": row['Loan/Limit (days of adjustment before/after)'],
+            "Worse Classification Status": row["Worse Classification Status"],
+            "Date of Classification": convertToString(row["Date of Classification"]).replace(" 00:00:00", "")
         })
+        total_limit += convertToMillion(row["Limit"])
+        total_days += row['Loan/Limit (days of adjustment before/after)']
+
+    response.append({
+            "Installment": 'Sub Total',
+            "Limit": total_limit,
+            "Loan/Limit (days of adjustment before/after)": total_days,
+            "Worse Classification Status": '',
+            "Date of Classification": ''
+        })
+    
     return response
 
 def getSummaryOfTerminatedFacilityNonFunded(df):
@@ -112,7 +126,8 @@ def getSummaryOfTerminatedFacilityNonFunded(df):
     df = df[df['Phase'] != 'Living']
     df = df[df['Is Funded'] == "No"]
     df = df[df['Installment Type'] == 'No Installment']
-    
+    total_limit = 0
+    total_days = 0
     for i, row in df.iterrows():
         response.append({
             "Non-Installment": row['Facility Type'],
@@ -125,6 +140,7 @@ def getSummaryOfTerminatedFacilityNonFunded(df):
         total_days += row['Loan/Limit (days of adjustment before/after)']
     
     response.append({
+
             "Non-Installment": 'Sub Total',
             "Limit": total_limit,
             "Loan/Limit (days of adjustment before/after)": total_days,
@@ -136,32 +152,36 @@ def getSummaryOfTerminatedFacilityNonFunded(df):
 
 def getSummaryOfFundedFacility(df):
     response = []
+    df = df[df['Phase'] == 'Living']
     df = df[df['Is Funded'] == 'Yes']
     installment = df[df['Installment Type'] == 'Installment']
     non_installment = df[df['Installment Type'] == 'No Installment']
 
     for i, row in installment.iterrows():
         response.append(getSummaryOfFundedFacilityFields(row, i, True))
-    response.append(getSummaryOfFundedFacilitySum(installment, "Sub Total", "Installment"))
+    if installment.shape[0] > 0:
+        response.append(getSummaryOfFundedFacilitySum(installment, "Sub Total", "Installment"))
 
     for i, row in non_installment.iterrows():
         response.append(getSummaryOfFundedFacilityFields(row, i, False))
-    response.append(getSummaryOfFundedFacilitySum(non_installment, "Sub Total", "No Installment"))
+    if non_installment.shape[0] > 0:
+        response.append(getSummaryOfFundedFacilitySum(non_installment, "Sub Total", "No Installment"))
     
     return response
 
 def getSummaryOfNonFundedFacility(df):
     response = []
+    df = df[df['Phase'] == 'Living']
     df = df[df['Is Funded'] == 'No']
     total_limit = 0
     total_outstanding = 0
     for i, row in df.iterrows():
         response.append({
             "Nature of Facility": row['Facility Type'],
-            "Limit": convertToFloat(row["Limit"]),
-            "Outstanding": convertToFloat(row["Outstanding"]),
-            "Start Date": convertToString(row["Start Date"]),
-            "End Date of Contract": convertToString(row["End Date of Contract"]),
+            "Limit": convertToMillion(row["Limit"]),
+            "Outstanding": convertToMillion(row["Outstanding"]),
+            "Start Date": convertToString(row["Start Date"]).replace(" 00:00:00", ""),
+            "End Date of Contract": convertToString(row["End Date of Contract"]).replace(" 00:00:00", ""),
             "Default": row["Default"]
         })
         total_limit += convertToMillion(row["Limit"])
@@ -203,19 +223,20 @@ def getSummaryOfRescheduleLoan(df, role):
         response.append({
             "Name of Account": row['Facility Type'],
             "Type of Reschedule": row['Reschedule Type'],
-            "Expiry of Reschedule Loan": convertToString(row['End Date of Contract']),
+            "Expiry of Reschedule Loan": convertToString(row['End Date of Contract']).replace(" 00:00:00", ""),
             "Amount": row['Total Disbursement Amount'],
-            "Date of Last Rescheduling": row['Last Date of Reschedule'],
+            "Date of Last Rescheduling": convertToString(row['Last Date of Reschedule']).replace(" 00:00:00", ""),
             "Link": row['CIB Link']
         })
-    response.append({
-        "Name of Account": "Sub Total",
-        "Type of Reschedule": "-",
-        "Expiry of Reschedule Loan": "-",
-        "Amount": convertToInteger(df['Total Disbursement Amount'].sum),
-        "Date of Last Rescheduling": "-",
-        "Link": "-"
-    })
+    if len(response) > 0:
+        response.append({
+            "Name of Account": "Sub Total",
+            "Type of Reschedule": "-",
+            "Expiry of Reschedule Loan": "-",
+            "Amount": convertToInteger(df['Total Disbursement Amount'].sum),
+            "Date of Last Rescheduling": "-",
+            "Link": "-"
+        })
     return response
 
 def getSummaryOfRequestedLoan(cibs):
@@ -229,62 +250,75 @@ def getSummaryOfRequestedLoan(cibs):
             df = pd.concat([df, temp_cib])
     for i, row in df.iterrows():
         response.append({
-            "Type of Loan": convertToString(row['Type of Contract']),
-            "Facility": convertToString(row['Facility']),
-            "Role": convertToString(row['Role']),
-            "Requested Amount": convertToString(row['Total Requested Amount']),
+            "Type of Loan": convertToString(row['Type of Contract']).replace(" 00:00:00", ""),
+            "Facility": convertToString(row['Facility']).replace(" 00:00:00", ""),
+            "Role": convertToString(row['Role']).replace(" 00:00:00", ""),
+            "Requested Amount": convertToString(row['Total Requested Amount']).replace(" 00:00:00", ""),
             "Date of Request": convertToString(row['Request date']).replace(" 00:00:00", ""),
             "Link": convertToString(row['Link'])
         })
     return response
 
-def getSummaryOfStayOrder(cibs):
+def getSummaryOfStayOrder(df, role):
+    if df.empty:
+        return []
+    df = df[df['Role'].isin(role) & (df['Is Stay Order'] == "Yes")]
     response = []
-    for cib in cibs:
+    for i, row in df.iterrows():
         response.append({
-            "Name of account": "",
-            "Nature of facility": "",
-            "Stayorder amount": "",
-            "Writ no": "",
-            "Remarks": "",
-            "Link": ""
+            "Name of account": row['Name'],
+            "Nature of facility": row['Facility Type'],
+            "Stayorder amount": row['Stay Order Amount'],
+            "Writ no": row["Stay Order"],
+            "Remarks": row['Remarks'],
+            "Link": row['CIB Link']
         })
     return response
 
 def getSummaryOfExpiredButShowingLiveFunded(df):
     if df.empty:
         return []
+    df = df[df['Is Funded'] == "Yes"]
+    df = df[df['Phase'] == 'Living']
+    df = df[df['Outstanding Zero Date'] < df['End Date of Contract']]
     response = []
     for i, row in df.iterrows():
         response.append({
-            "Nature of Facility": "",
-            "Limit": "",
-            "Outstanding": "",
-            "Overdue": "",
-            "Start Date": "",
-            "End Date of Contract": "",
-            "Installment Amount": "",
-            "Payment Period": "",
-            "Total No of Installment": "",
-            "No of Remaining Installment": "",
-            "Date of Last Payment": "",
-            "NPL": "",
-            "Default": ""
+            "Nature of Facility": row['Facility Type'],
+            "Limit": convertToString(row['Limit']),
+            "Outstanding": row['Outstanding'],
+            "Overdue": row['Overdue'],
+            "Start Date": convertToString(row['Start Date']).replace(" 00:00:00", ""),
+            "End Date of Contract": convertToString(row['End Date of Contract']).replace(" 00:00:00", ""),
+            "Installment Amount": row['Installment Amount'],
+            "Payment Period": row['Payment Period (Monthly/Quarterly)'],
+            "Total No of Installment": row['Total No of Installment'],
+            "No of Remaining Installment": row['No of Remaining Installment'],
+            "Date of Last Payment": convertToString(row['Date of Last Payment']).replace(" 00:00:00", ""),
+            "NPI": row['NPI'],
+            "Default": row['Default']
         })
+    return response
 
 def getSummaryOfExpiredButShowingLiveNonFunded(df):
     if df.empty:
         return []
     response = []
+    df = df[df['Is Funded'] != "Yes"]
+    df = df[df['Phase'] == 'Living']
+    df = df[df['Outstanding Zero Date'] < df['End Date of Contract']]
+    
     for i, row in df.iterrows():
         response.append({
-            "Nature of Facility": "",
-            "Limit": "",
-            "Outstanding": "",
-            "Start Date": "",
-            "End Date of Contract": "",
-            "Default": ""
+            "Nature of Facility": row['Facility Type'],
+            "Limit": convertToString(row['Limit']),
+            "Outstanding": row['Outstanding'],
+            "Overdue": row['Overdue'],
+            "Start Date": convertToString(row['Start Date']).replace(" 00:00:00", ""),
+            "End Date of Contract": convertToString(row['End Date of Contract']).replace(" 00:00:00", ""),
+            "Default": row['Default']
         })
+    return response
 
 def getCorporateDashboard(cibs):
     response = {}
@@ -302,8 +336,8 @@ def getCorporateDashboard(cibs):
     }
     response['D - Summary of Requested Loan'] = getSummaryOfRequestedLoan(cibs)
     response['E - Summary of Stay Order'] = {
-        "Borrower": getSummaryOfStayOrder(cibs),
-        "Guarantor": getSummaryOfStayOrder(cibs)
+        "Borrower": getSummaryOfStayOrder(df, BORROWER),
+        "Guarantor": getSummaryOfStayOrder(df, GUARANTOR)
         }
     response['F - Expired Loan But Showing Live'] = {
         "Summary of Funded Facility": getSummaryOfExpiredButShowingLiveFunded(df),

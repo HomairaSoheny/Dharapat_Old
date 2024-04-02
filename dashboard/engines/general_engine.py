@@ -30,16 +30,20 @@ def getOutstanding(fac):
     for key in OUTSTANDING:
         if key in fac['Contract History'].keys():
             return fac['Contract History'].sort_values('Date', ascending=False)[key][0]
+    return 0
 
 def getOverdue(fac):
     for key in OVERDUE:
         if key in fac['Contract History'].keys():
             return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
+    return 0
 
 def getCurrentCLStatus(fac):
-    for key in STATUS:
-        if key in fac['Contract History'].keys():
-            return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
+    if not isStayOrder(fac):
+        for key in STATUS:
+            if key in fac['Contract History'].keys():
+                return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
+    return ""
 
 def getLimit(fac):
     for key in LIMIT:
@@ -55,12 +59,12 @@ def getClassFromSet(classes : set):
     for classification in CL_STATUS:
         if classification in classes:
             return classification
-    return "None"
+    return ""
 
 def getWorstCLStatus(facility : dict):
     if not isStayOrder(facility):
         return getClassFromSet(set(facility["Contract History"].Status))
-    return "None"
+    return ""
 
 def getWorstCLDate(facility : dict):
     if not isStayOrder(facility):
@@ -74,14 +78,17 @@ def getFacilityType(fac):
     for key in FACILITY:
         if key in fac['Ref'].keys():
             return fac['Ref'][key]
+    return ""
 
 def getCurrentNPI(fac):
     for key in NPI:
         if key in fac['Contract History'].keys():
             return (fac['Contract History']).sort_values('Date', ascending=False)[key][0]
+    return 0
 
 
 def getEMI(fac):
     for key in EMI:
         if key in fac['Ref'].keys():
             return fac['Ref'][key]
+    return 0
