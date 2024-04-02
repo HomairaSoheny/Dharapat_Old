@@ -371,7 +371,7 @@ def getCorporateDataFrame(cibs):
                             "Loan/Limit (days of adjustment before/after)": getDaysOfAdjustment(fac),
                             "Installment Amount": general_engine.getEMI(fac),
                             "Worse Classification Status": general_engine.getWorstCLStatus(fac),
-                            "Date of Classification": getDateOfClassification(fac),
+                            "Date of Classification": general_engine.getWorstCLDate(fac),
                             "Start Date": getStartDate(fac),
                             "End Date of Contract": getEndDateOfContract(fac),
                             "Is Stay Order": isStayOrder(fac),

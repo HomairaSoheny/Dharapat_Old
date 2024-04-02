@@ -140,7 +140,8 @@ def getSummaryOfTerminatedFacilityNonFunded(df):
         total_days += row['Loan/Limit (days of adjustment before/after)']
     
     response.append({
-            "Installment": 'Sub Total',
+
+            "Non-Installment": 'Sub Total',
             "Limit": total_limit,
             "Loan/Limit (days of adjustment before/after)": total_days,
             "Worse Classification Status": '',
@@ -172,6 +173,8 @@ def getSummaryOfNonFundedFacility(df):
     response = []
     df = df[df['Phase'] == 'Living']
     df = df[df['Is Funded'] == 'No']
+    total_limit = 0
+    total_outstanding = 0
     for i, row in df.iterrows():
         response.append({
             "Nature of Facility": row['Facility Type'],
@@ -180,6 +183,17 @@ def getSummaryOfNonFundedFacility(df):
             "Start Date": convertToString(row["Start Date"]).replace(" 00:00:00", ""),
             "End Date of Contract": convertToString(row["End Date of Contract"]).replace(" 00:00:00", ""),
             "Default": row["Default"]
+        })
+        total_limit += convertToMillion(row["Limit"])
+        total_outstanding += convertToMillion(row["Outstanding"])
+
+    response.append({
+            "Nature of Facility": 'Sub Total',
+            "Limit": total_limit,
+            "Outstanding": total_outstanding,
+            "Start Date": '',
+            "End Date of Contract": '',
+            "Default": ''
         })
     return response
 

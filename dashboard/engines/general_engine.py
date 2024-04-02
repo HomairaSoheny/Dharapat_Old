@@ -66,6 +66,14 @@ def getWorstCLStatus(facility : dict):
         return getClassFromSet(set(facility["Contract History"].Status))
     return ""
 
+def getWorstCLDate(facility : dict):
+    if not isStayOrder(facility):
+        worst_CL_status = getWorstCLStatus(facility)
+        df = facility["Contract History"].copy()
+        worst_CL_date = df.loc[df['Status'] == worst_CL_status, 'Date'].min()
+        return worst_CL_date
+    return ""
+
 def getFacilityType(fac):
     for key in FACILITY:
         if key in fac['Ref'].keys():
