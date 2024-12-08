@@ -1,0 +1,14 @@
+# Default values for k8.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+mode_name: dev
+deployments: cib-report
+labels:
+  cib:
+    pod: cib-analyser
+
+replicas: 2
+
+images:
+  cib: dharapat.azurecr.io/dharapat_analytics_bankstatement_backend:latest

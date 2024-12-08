@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev-cib-deployments
+  namespace: pbl-cib-analytics
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cib-analyser
+  template:
+    metadata:
+      labels:
+        app: cib-analyser
+    spec:
+      containers:
+        - name: worker
+          image: dharapat.azurecr.io/dharapat-prime-bank-cib:dev_v3.1.23
+          command: ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "--timeout", "600", "report.wsgi"]
+          env:
+            - name: PYTHONUNBUFFERED
+              value: "1"
+        - name: cib-analyser
+          image: dharapat.azurecr.io/dharapat-prime-bank-cib:dev_v3.1.23
+          # command: ["python", "main.py"]
+          # imagePullPolicy: "Always"
+          env:
+            - name: PYTHONUNBUFFERED
+              value: "1"
+
+      imagePullSecrets:
+        - name: analytics-secret-cred
