@@ -1,9 +1,0 @@
-env
-__pycache__
-.DS_STORE
-*.ipynb
-test_files
-*.xlsx
-db.sqlite3
-venv
-BRD
