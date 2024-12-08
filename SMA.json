@@ -1,0 +1,7963 @@
+{
+  "Credit Information Bureau - Bangladesh Bank": [
+    [
+      "Credit Information Bureau - Bangladesh Bank"
+    ],
+    [
+      "Date of Inquiry",
+      "User ID",
+      "FI Code",
+      "Branch Code",
+      "FI Name"
+    ],
+    [
+      "17-Feb-2021 03:04:22 PM",
+      "GYO215295",
+      "215",
+      "2151",
+      "I.D.L.C."
+    ]
+  ],
+  "INQUIRED": [
+    [
+      "INQUIRED"
+    ],
+    [
+      "Subject code:X6066277958"
+    ]
+  ],
+  "Matched found": [
+    [
+      "Matched found"
+    ]
+  ],
+  "SUBJECT INFORMATION": [
+    [
+      "SUBJECT INFORMATION"
+    ],
+    [
+      "CIB subject code:",
+      "X6066277958",
+      "Type of subject:",
+      "INDIVIDUAL"
+    ],
+    [
+      "Title, Name:",
+      "MR., AHMED RAJEEB SAMDANI",
+      "Reference number (Ref.):",
+      "1 (CIB Subject Code:X6066277958)"
+    ],
+    [
+      "Title, Father's name:",
+      "MR., ENAMUZZAMAN CHOWDHURY",
+      "Sector type:",
+      "PRIVATE"
+    ],
+    [
+      "Title, Mother's name:",
+      "MRS., ZAHEDA KHATOON",
+      "Sector code:",
+      "915059 (Other Local Individuals not mentioned above.)"
+    ],
+    [
+      "Title, Spouse Name:",
+      "MRS., NADIA KHALIL CHOUDHURY",
+      "ID type:",
+      "BIRTH REGISTRATION CERTIFICATE"
+    ],
+    [
+      "Date of birth:",
+      "28/03/1974",
+      "ID number:",
+      "00000000000000000001"
+    ],
+    [
+      "Gender:",
+      "MALE",
+      "ID issue date:",
+      "05/01/2005"
+    ],
+    [
+      "District(Country):",
+      "DHAKA(BD)",
+      "ID issue country:",
+      "BD"
+    ],
+    [
+      "NID:",
+      "2692618501324",
+      "Telephone",
+      ""
+    ],
+    [
+      "TIN:",
+      "742736840994",
+      "Remarks:",
+      ""
+    ]
+  ],
+  "ADDRESS": [
+    [
+      "ADDRESS"
+    ],
+    [
+      "Address Type",
+      "Address",
+      "Postal code:",
+      "District",
+      "Country"
+    ],
+    [
+      "Permanent",
+      "HOUSE # 9B, ROAD # 12, BLOCK-SW(B), GULSHAN-1,",
+      "1212",
+      "DHAKA",
+      "BD"
+    ],
+    [
+      "Present",
+      "H-5, R-9, BARIDHARA, GULSHAN",
+      "1213",
+      "DHAKA",
+      "BD"
+    ],
+    [
+      "Business",
+      "SHANTA WESTERN TOWER, LEVEL-5, GULSHAN-TEJGAON LINK ROAD, TEJGAON I/A",
+      "1208",
+      "DHAKA",
+      "BD"
+    ]
+  ],
+  "COMPANY(S) LIST": [
+    [
+      "COMPANY(S) LIST"
+    ],
+    [
+      "CIB subject code",
+      "Name of the Owner/Company",
+      "Role in the company",
+      "FI code",
+      "Legal form",
+      "Stay Order"
+    ],
+    [
+      "Z4107492294",
+      "BRAIN TRAIN STUDIO LTD",
+      "Chairman",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "Q0000982167",
+      "COLD CHAIN BANGLADESH LIMITED",
+      "Nominated director (by Pvt. Institution)",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "A0001495179",
+      "GOLDEN HARVEST AGRO INDUSTRIES LTD.",
+      "Managing director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0001495179",
+      "GOLDEN HARVEST AGRO INDUSTRIES LTD.",
+      "Managing director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0001495179",
+      "GOLDEN HARVEST AGRO INDUSTRIES LTD.",
+      "Managing director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0001495179",
+      "GOLDEN HARVEST AGRO INDUSTRIES LTD.",
+      "Managing director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0001495179",
+      "GOLDEN HARVEST AGRO INDUSTRIES LTD.",
+      "Managing director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0001495179",
+      "GOLDEN HARVEST AGRO INDUSTRIES LTD.",
+      "Managing director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0001495179",
+      "GOLDEN HARVEST AGRO INDUSTRIES LTD.",
+      "Managing director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0001495179",
+      "GOLDEN HARVEST AGRO INDUSTRIES LTD.",
+      "Managing director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "M0000440226",
+      "GOLDEN HARVEST AGRO INDUSTRIES LTD.",
+      "Managing director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0001495179",
+      "GOLDEN HARVEST AGRO INDUSTRIES LTD.",
+      "Managing director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0001495179",
+      "GOLDEN HARVEST AGRO INDUSTRIES LTD.",
+      "Managing director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0001495179",
+      "GOLDEN HARVEST AGRO INDUSTRIES LTD.",
+      "Managing director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0001495179",
+      "GOLDEN HARVEST AGRO INDUSTRIES LTD.",
+      "Managing director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0001495179",
+      "GOLDEN HARVEST AGRO INDUSTRIES LTD.",
+      "Chairman",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0001495179",
+      "GOLDEN HARVEST AGRO INDUSTRIES LTD.",
+      "Managing director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0001495179",
+      "GOLDEN HARVEST AGRO INDUSTRIES LTD.",
+      "Sponsor director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0001495179",
+      "GOLDEN HARVEST AGRO INDUSTRIES LTD.",
+      "Managing director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "Q5735874139",
+      "GOLDEN HARVEST DAIRY LTD.",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "A0002316370",
+      "GOLDEN HARVEST DEVELOPERS LTD.",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "A0002316370",
+      "GOLDEN HARVEST DEVELOPERS LTD.",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "A0002316370",
+      "GOLDEN HARVEST DEVELOPERS LTD.",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "A0000606297",
+      "GOLDEN HARVEST FOODS LTD",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "A0000606297",
+      "GOLDEN HARVEST FOODS LTD",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "A0000606297",
+      "GOLDEN HARVEST FOODS LTD",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "A0000606297",
+      "GOLDEN HARVEST FOODS LTD",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "A0000606297",
+      "GOLDEN HARVEST FOODS LTD",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "A0000606297",
+      "GOLDEN HARVEST FOODS LTD",
+      "Managing director",
+      "215",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "A0000606297",
+      "GOLDEN HARVEST FOODS LTD",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "R0000895242",
+      "GOLDEN HARVEST ICE CREAM LIMITED",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "R0000895242",
+      "GOLDEN HARVEST ICE CREAM LIMITED",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "R0000895242",
+      "GOLDEN HARVEST ICE CREAM LIMITED",
+      "Chairman",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "R0000895242",
+      "GOLDEN HARVEST ICE CREAM LIMITED",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "R0000895242",
+      "GOLDEN HARVEST ICE CREAM LIMITED",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "R0000895242",
+      "GOLDEN HARVEST ICE CREAM LIMITED",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "R0000895242",
+      "GOLDEN HARVEST ICE CREAM LIMITED",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "R0000895242",
+      "GOLDEN HARVEST ICE CREAM LIMITED",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "R0000895242",
+      "GOLDEN HARVEST ICE CREAM LIMITED",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "R0000895242",
+      "GOLDEN HARVEST ICE CREAM LIMITED",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "R0000895242",
+      "GOLDEN HARVEST ICE CREAM LIMITED",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "R0000895242",
+      "GOLDEN HARVEST ICE CREAM LIMITED",
+      "Sponsor director",
+      "215",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "R0000895242",
+      "GOLDEN HARVEST ICE CREAM LIMITED",
+      "Nominated director (by Pvt. Institution)",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "R0000895242",
+      "GOLDEN HARVEST ICE CREAM LIMITED",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "R0000895242",
+      "GOLDEN HARVEST ICE CREAM LIMITED",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "R0000895242",
+      "GOLDEN HARVEST ICE CREAM LIMITED",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "V8909095621",
+      "GOLDEN HARVEST QSR LIMITED",
+      "Sponsor director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "V8909095621",
+      "GOLDEN HARVEST QSR LIMITED",
+      "Managing director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "V8909095621",
+      "GOLDEN HARVEST QSR LIMITED",
+      "Sponsor director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "B0000670377",
+      "NIPPON EXPRESS BANGLADESH LTD.",
+      "Sponsor director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "B0000670377",
+      "NIPPON EXPRESS BANGLADESH LTD.",
+      "Nominated director (by Pvt. Institution)",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "B0000670377",
+      "NIPPON EXPRESS BANGLADESH LTD.",
+      "Sponsor director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "A0000081417",
+      "PARTEX AVIATION LTD",
+      "Sponsor director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "A0000169760",
+      "SONALI LIFE INSURANCE COMPANY LIMITED",
+      "Sponsor director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "A0000169760",
+      "SONALI LIFE INSURANCE COMPANY LIMITED",
+      "Sponsor director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "A0000169760",
+      "SONALI LIFE INSURANCE COMPANY LIMITED",
+      "Elected director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "A0000169760",
+      "SONALI LIFE INSURANCE COMPANY LIMITED",
+      "Sponsor director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ]
+  ],
+  "1. SUMMARY OF FACILITY(S) AS BORROWER & CO-BORROWER": [
+    [
+      "1. SUMMARY OF FACILITY(S) AS BORROWER & CO-BORROWER"
+    ],
+    [
+      "No of reporting Institutes:",
+      "7",
+      "Total Overdue Amount:",
+      "0"
+    ],
+    [
+      "No of Living Contracts:",
+      "4",
+      "No of Stay order contracts:",
+      "0"
+    ],
+    [
+      "Total Outstanding Amount:",
+      "6,500,000",
+      "Total Outstanding amount for Stay Order Contracts:",
+      "0"
+    ]
+  ],
+  "1.(A) SUMMARY OF THE FUNDED FACILITIES AS BORROWER & CO-BORROWER": [
+    [
+      "1.(A) SUMMARY OF THE FUNDED FACILITIES AS BORROWER & CO-BORROWER"
+    ],
+    [
+      "Total Outstanding Amount:",
+      "0"
+    ],
+    [
+      "Contract Category",
+      "UC",
+      " ",
+      "SMA",
+      " ",
+      "SS",
+      " ",
+      "DF",
+      " ",
+      "BL",
+      " ",
+      "BLW",
+      " ",
+      "Terminated",
+      " ",
+      "Requested",
+      " ",
+      "Stay Order"
+    ],
+    [
+      " ",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount"
+    ],
+    [
+      "Installments",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "1",
+      "200,000,000",
+      "0",
+      "0"
+    ],
+    [
+      "Non- Installments",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "3",
+      "17,000,000",
+      "0",
+      "0"
+    ],
+    [
+      "Credit Cards",
+      "3",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "Total",
+      "3",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "4",
+      "217,000,000",
+      "0",
+      "0"
+    ]
+  ],
+  "1.(B) SUMMARY OF THE NON-FUNDED FACILITIES AS BORROWER & CO-BORROWER": [
+    [
+      "1.(B) SUMMARY OF THE NON-FUNDED FACILITIES AS BORROWER & CO-BORROWER"
+    ],
+    [
+      "Total Outstanding Amount:",
+      "6,500,000"
+    ],
+    [
+      "Type of Financing",
+      "Living",
+      " ",
+      "Terminated",
+      " ",
+      "Requested",
+      " ",
+      "Stay order"
+    ],
+    [
+      " ",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount"
+    ],
+    [
+      "Guarantee (GU)",
+      "1",
+      "6,500,000",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "Letter of credit (LC)",
+      "0",
+      "0",
+      "0",
+      "0",
+      "5",
+      "1,000,000,000",
+      "0",
+      "0"
+    ],
+    [
+      "Other indirect facility (OF)",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "Total",
+      "1",
+      "6,500,000",
+      "0",
+      "0",
+      "5",
+      "1,000,000,000",
+      "0",
+      "0"
+    ]
+  ],
+  "2. SUMMARY OF FACILITY(S) AS GUARANTOR": [
+    [
+      "2. SUMMARY OF FACILITY(S) AS GUARANTOR"
+    ],
+    [
+      "No of reporting Institutes:",
+      "9",
+      "Total Overdue Amount:",
+      "13,215,437"
+    ],
+    [
+      "No of Living Contracts:",
+      "16",
+      "No of Stay order contracts:",
+      "0"
+    ],
+    [
+      "Total Outstanding Amount:",
+      "458,985,853",
+      "Total Outstanding amount for Stay Order Contracts:",
+      "0"
+    ]
+  ],
+  "2.(A) SUMMARY OF THE FUNDED FACILITIES AS GUARANTOR": [
+    [
+      "2.(A) SUMMARY OF THE FUNDED FACILITIES AS GUARANTOR"
+    ],
+    [
+      "Total Outstanding Amount:",
+      "458,985,853"
+    ],
+    [
+      "Contract Category",
+      "UC",
+      " ",
+      "SMA",
+      " ",
+      "SS",
+      " ",
+      "DF",
+      " ",
+      "BL",
+      " ",
+      "BLW",
+      " ",
+      "Terminated",
+      " ",
+      "Requested",
+      " ",
+      "Stay Order"
+    ],
+    [
+      " ",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount"
+    ],
+    [
+      "Installments",
+      "10",
+      "205,472,861",
+      "1",
+      "10,887,325",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "5",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "Non- Installments",
+      "5",
+      "242,625,667",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "5",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "Credit Cards",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "Total",
+      "15",
+      "448,098,528",
+      "1",
+      "10,887,325",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "10",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ]
+  ],
+  "2.(B) SUMMARY OF THE NON-FUNDED FACILITIES AS GUARANTOR": [
+    [
+      "2.(B) SUMMARY OF THE NON-FUNDED FACILITIES AS GUARANTOR"
+    ],
+    [
+      "Total Outstanding Amount:",
+      "0"
+    ],
+    [
+      "Type of Financing",
+      "Living",
+      " ",
+      "Terminated",
+      " ",
+      "Requested",
+      " ",
+      "Stay order"
+    ],
+    [
+      " ",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount"
+    ],
+    [
+      "Guarantee (GU)",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "Letter of credit (LC)",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "Other indirect facility (OF)",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "Total",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ]
+  ],
+  "REQUESTED CONTRACT DETAILS": [
+    [
+      "REQUESTED CONTRACT DETAILS"
+    ],
+    [
+      "SL",
+      "Type of Contract",
+      "Facility",
+      "Phase",
+      "Role",
+      "FI code",
+      "Branch code",
+      "Request date",
+      "Total Requested Amount",
+      "CIB subject code",
+      "CIB contract code",
+      "FI contract code"
+    ],
+    [
+      "1",
+      "NonInstallment",
+      "Overdraft",
+      "Requested",
+      "Borrower",
+      "###",
+      "###",
+      "02/04/2019",
+      "6,000,000",
+      "X6066277958",
+      "O0000677137",
+      "_O0000677137"
+    ],
+    [
+      "2",
+      "NonInstallment",
+      "Letter of credit (non funded)",
+      "Requested",
+      "Borrower",
+      "###",
+      "###",
+      "12/05/2019",
+      "50,000,000",
+      "X6066277958",
+      "X0000122279",
+      "_X0000122279"
+    ],
+    [
+      "3",
+      "NonInstallment",
+      "Letter of credit (non funded)",
+      "Requested",
+      "Borrower",
+      "###",
+      "###",
+      "17/07/2019",
+      "0",
+      "X6066277958",
+      "V0000460716",
+      "_V0000460716"
+    ],
+    [
+      "4",
+      "NonInstallment",
+      "Letter of credit (non funded)",
+      "Requested",
+      "Borrower",
+      "###",
+      "###",
+      "31/10/2019",
+      "500,000,000",
+      "X6066277958",
+      "R0000208138",
+      "_R0000208138"
+    ],
+    [
+      "5",
+      "NonInstallment",
+      "Letter of credit (non funded)",
+      "Requested",
+      "Co- Borrower",
+      "###",
+      "###",
+      "19/12/2019",
+      "400,000,000",
+      "X6066277958",
+      "J0000394391",
+      "_J0000394391"
+    ],
+    [
+      "6",
+      "NonInstallment",
+      "Letter of credit (non funded)",
+      "Requested",
+      "Borrower",
+      "###",
+      "###",
+      "24/06/2020",
+      "50,000,000",
+      "X6066277958",
+      "C9808942105",
+      "_C9808942105"
+    ],
+    [
+      "7",
+      "Installment",
+      "Hire-Purchase",
+      "Requested",
+      "Co- Borrower",
+      "###",
+      "###",
+      "26/08/2020",
+      "200,000,000",
+      "X6066277958",
+      "V9225737303",
+      "_V9225737303"
+    ],
+    [
+      "8",
+      "NonInstallment",
+      "Quard",
+      "Requested",
+      "Borrower",
+      "###",
+      "###",
+      "24/09/2020",
+      "1,000,000",
+      "X6066277958",
+      "U8991606339",
+      "_U8991606339"
+    ],
+    [
+      "9",
+      "NonInstallment",
+      "Bai-Muazzal",
+      "Requested",
+      "Borrower",
+      "###",
+      "###",
+      "23/12/2020",
+      "10,000,000",
+      "X6066277958",
+      "C2679835175",
+      "_C2679835175"
+    ]
+  ],
+  "DETAILS OF INSTALLMENT FACILITY(S)": [
+    {
+      "Ref": [
+        [
+          "DETAILS OF INSTALLMENT FACILITY(S)"
+        ],
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "215",
+          "0001",
+          "A0001820072",
+          "1016202217424002"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Terminated",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Financial Leasing",
+          "Date of last payment:",
+          "16/04/2015"
+        ],
+        [
+          "Starting date:",
+          "16/04/2015",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "15/04/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Sanction Limit:",
+          "4,277,000",
+          "Method of payment:",
+          "Cheque"
+        ],
+        [
+          "Total Disbursement Amount:",
+          "4,277,000",
+          "Payments periodicity:",
+          "Monthly Installments"
+        ],
+        [
+          "Total number of installments:",
+          "48",
+          "Number of time(s) rescheduled:",
+          "000000"
+        ],
+        [
+          "Installment Amount:",
+          "113,004",
+          "Remaining installments Amount:",
+          "0"
+        ],
+        [
+          "Remaining installments Number:",
+          "0",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Security Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "21,385,000",
+          "Remarks:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "R0000895242",
+          "Borrower",
+          "GOLDEN HARVEST ICE CREAM LIMITED"
+        ],
+        [
+          "O4325221299",
+          "Guarantor",
+          "MOHIUS SAMAD CHOUDHURY"
+        ],
+        [
+          "G0000465825",
+          "Guarantor",
+          "AZIZUL HUQUE"
+        ],
+        [
+          "A0000657410",
+          "Guarantor",
+          "AHMED MEHDI SAMDANI"
+        ],
+        [
+          "P1954555351",
+          "Guarantor",
+          "NADIA KHALIL CHOUDHURY"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "Outstanding",
+          "Overdue",
+          "NPI",
+          "Status",
+          "Default"
+        ],
+        [
+          "30/04/2019",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/03/2019",
+          "111,839",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "28/02/2019",
+          "222,670",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/01/2019",
+          "445,506",
+          "113,148",
+          "1",
+          "UC",
+          "No"
+        ],
+        [
+          "31/12/2018",
+          "440,915",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2018",
+          "548,353",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2018",
+          "767,831",
+          "113,148",
+          "1",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2018",
+          "759,917",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2018",
+          "864,067",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2018",
+          "967,142",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2018",
+          "1,069,155",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/05/2018",
+          "1,170,116",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "J0000169302",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Living",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Financial Leasing",
+          "Date of last payment:",
+          ""
+        ],
+        [
+          "Starting date:",
+          "17/06/2019",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "20/07/2023",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Sanction Limit:",
+          "40,000,000",
+          "Method of payment:",
+          "Cheque"
+        ],
+        [
+          "Total Disbursement Amount:",
+          "40,000,000",
+          "Payments periodicity:",
+          "Monthly Installments"
+        ],
+        [
+          "Total number of installments:",
+          "48",
+          "Number of time(s) rescheduled:",
+          "000000"
+        ],
+        [
+          "Installment Amount:",
+          "1,520,301",
+          "Remaining installments Amount:",
+          "60,812,056"
+        ],
+        [
+          "Remaining installments Number:",
+          "41",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Security Amount:",
+          "5,000,000",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Remarks:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "A0000606297",
+          "Borrower",
+          "GOLDEN HARVEST FOODS LTD"
+        ],
+        [
+          "N7184881052",
+          "Guarantor",
+          "ENAMUZZAMAN CHOWDHURY"
+        ],
+        [
+          "P1954555351",
+          "Guarantor",
+          "NADIA KHALIL CHOUDHURY"
+        ],
+        [
+          "O4325221299",
+          "Guarantor",
+          "MOHIUS SAMAD CHOUDHURY"
+        ],
+        [
+          "O0000718485",
+          "Guarantor",
+          "AZIZUL HAQUE"
+        ],
+        [
+          "U0006585777",
+          "Guarantor",
+          "MOQSUD AHMED KHAN"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "Outstanding",
+          "Overdue",
+          "NPI",
+          "Status",
+          "Default"
+        ],
+        [
+          "31/12/2020",
+          "43,511,309",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2020",
+          "43,381,851",
+          "13,850,460",
+          "12",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2020",
+          "42,953,211",
+          "12,696,255",
+          "11",
+          "SS",
+          "Yes"
+        ],
+        [
+          "30/09/2020",
+          "42,514,436",
+          "11,542,050",
+          "10",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2020",
+          "42,065,667",
+          "10,387,845",
+          "9",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2020",
+          "41,607,044",
+          "9,233,640",
+          "8",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2020",
+          "41,138,704",
+          "8,079,435",
+          "7",
+          "UC",
+          "No"
+        ],
+        [
+          "31/05/2020",
+          "40,660,784",
+          "6,925,230",
+          "6",
+          "UC",
+          "No"
+        ],
+        [
+          "30/04/2020",
+          "40,173,417",
+          "5,771,025",
+          "5",
+          "UC",
+          "No"
+        ],
+        [
+          "31/03/2020",
+          "39,676,735",
+          "4,616,820",
+          "4",
+          "UC",
+          "No"
+        ],
+        [
+          "29/02/2020",
+          "39,170,868",
+          "3,462,615",
+          "3",
+          "SMA",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "39,810,150",
+          "3,462,615",
+          "3",
+          "SMA",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "C8343096860",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Terminated",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Term Loan",
+          "Date of last payment:",
+          ""
+        ],
+        [
+          "Starting date:",
+          "30/03/2016",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "29/03/2021",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Sanction Limit:",
+          "3,450,000",
+          "Method of payment:",
+          "Cheque"
+        ],
+        [
+          "Total Disbursement Amount:",
+          "3,450,000",
+          "Payments periodicity:",
+          "Monthly Installments"
+        ],
+        [
+          "Total number of installments:",
+          "60",
+          "Number of time(s) rescheduled:",
+          ""
+        ],
+        [
+          "Installment Amount:",
+          "77,618",
+          "Remaining installments Amount:",
+          "0"
+        ],
+        [
+          "Remaining installments Number:",
+          "0",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Security Amount:",
+          "3,450,000",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "3,450,000",
+          "Remarks:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "79 (Other Securities)",
+          "",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "B0000670377",
+          "Borrower",
+          "NIPPON EXPRESS BANGLADESH LTD."
+        ],
+        [
+          "A0001498918",
+          "Guarantor",
+          "REZAUL ALAM"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "Outstanding",
+          "Overdue",
+          "NPI",
+          "Status",
+          "Default"
+        ],
+        [
+          "29/02/2020",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "1,040,089",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/12/2019",
+          "1,104,981",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2019",
+          "1,166,698",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2019",
+          "1,230,559",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2019",
+          "1,293,250",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2019",
+          "1,355,651",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2019",
+          "1,416,716",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2019",
+          "1,477,190",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/05/2019",
+          "1,615,123",
+          "77,618",
+          "1",
+          "UC",
+          "No"
+        ],
+        [
+          "30/04/2019",
+          "1,595,790",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/03/2019",
+          "1,654,736",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "D7108689957",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Terminated",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Term Loan",
+          "Date of last payment:",
+          ""
+        ],
+        [
+          "Starting date:",
+          "15/03/2016",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "14/03/2021",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Sanction Limit:",
+          "3,300,000",
+          "Method of payment:",
+          "Cheque"
+        ],
+        [
+          "Total Disbursement Amount:",
+          "3,300,000",
+          "Payments periodicity:",
+          "Monthly Installments"
+        ],
+        [
+          "Total number of installments:",
+          "60",
+          "Number of time(s) rescheduled:",
+          ""
+        ],
+        [
+          "Installment Amount:",
+          "74,244",
+          "Remaining installments Amount:",
+          "0"
+        ],
+        [
+          "Remaining installments Number:",
+          "0",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Security Amount:",
+          "3,300,000",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "3,300,000",
+          "Remarks:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "79 (Other Securities)",
+          "",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "B0000670377",
+          "Borrower",
+          "NIPPON EXPRESS BANGLADESH LTD."
+        ],
+        [
+          "A0001498918",
+          "Guarantor",
+          "REZAUL ALAM"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "Outstanding",
+          "Overdue",
+          "NPI",
+          "Status",
+          "Default"
+        ],
+        [
+          "29/02/2020",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "1,021,860",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/12/2019",
+          "1,083,610",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2019",
+          "1,142,219",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2019",
+          "1,203,001",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2019",
+          "1,262,658",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2019",
+          "1,322,052",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2019",
+          "1,380,160",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2019",
+          "1,437,707",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/05/2019",
+          "1,569,359",
+          "74,244",
+          "1",
+          "UC",
+          "No"
+        ],
+        [
+          "30/04/2019",
+          "1,550,575",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/03/2019",
+          "1,606,681",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "G1884777193",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Living",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Financial Leasing",
+          "Date of last payment:",
+          "30/07/2020"
+        ],
+        [
+          "Starting date:",
+          "09/05/2016",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Sanction Limit:",
+          "23,600,000",
+          "Method of payment:",
+          "Cheque"
+        ],
+        [
+          "Total Disbursement Amount:",
+          "23,600,000",
+          "Payments periodicity:",
+          "Monthly Installments"
+        ],
+        [
+          "Total number of installments:",
+          "49",
+          "Number of time(s) rescheduled:",
+          ""
+        ],
+        [
+          "Installment Amount:",
+          "643,890",
+          "Remaining installments Amount:",
+          "0"
+        ],
+        [
+          "Remaining installments Number:",
+          "0",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Security Amount:",
+          "23,600,000",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "23,600,000",
+          "Remarks:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "45 (Vehicles)",
+          "",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "R0000895242",
+          "Borrower",
+          "GOLDEN HARVEST ICE CREAM LIMITED"
+        ],
+        [
+          "G0000465825",
+          "Guarantor",
+          "AZIZUL HUQUE"
+        ],
+        [
+          "P1954555351",
+          "Guarantor",
+          "NADIA KHALIL CHOUDHURY"
+        ],
+        [
+          "O4325221299",
+          "Guarantor",
+          "MOHIUS SAMAD CHOUDHURY"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "Outstanding",
+          "Overdue",
+          "NPI",
+          "Status",
+          "Default"
+        ],
+        [
+          "31/12/2020",
+          "2,976,827",
+          "2,976,827",
+          "3",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2020",
+          "2,976,827",
+          "2,976,827",
+          "3",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2020",
+          "2,976,827",
+          "2,976,827",
+          "3",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2020",
+          "2,976,827",
+          "2,976,827",
+          "5",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2020",
+          "2,976,827",
+          "2,976,827",
+          "5",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2020",
+          "2,976,827",
+          "2,976,827",
+          "5",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2020",
+          "3,376,827",
+          "376,827",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/05/2020",
+          "4,002,382",
+          "3,879,939",
+          "1",
+          "UC",
+          "No"
+        ],
+        [
+          "30/04/2020",
+          "3,991,677",
+          "3,236,049",
+          "5",
+          "UC",
+          "No"
+        ],
+        [
+          "31/03/2020",
+          "3,972,128",
+          "2,592,159",
+          "4",
+          "SMA",
+          "No"
+        ],
+        [
+          "29/02/2020",
+          "3,943,857",
+          "1,948,269",
+          "3",
+          "SMA",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "3,906,987",
+          "1,304,379",
+          "2",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "H0000525314",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Living",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Term Loan",
+          "Date of last payment:",
+          "05/09/2019"
+        ],
+        [
+          "Starting date:",
+          "05/02/2019",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "05/01/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Sanction Limit:",
+          "50,000,000",
+          "Method of payment:",
+          "Cheque"
+        ],
+        [
+          "Total Disbursement Amount:",
+          "50,000,000",
+          "Payments periodicity:",
+          "Monthly Installments"
+        ],
+        [
+          "Total number of installments:",
+          "12",
+          "Number of time(s) rescheduled:",
+          "000000"
+        ],
+        [
+          "Installment Amount:",
+          "4,549,465",
+          "Remaining installments Amount:",
+          "0"
+        ],
+        [
+          "Remaining installments Number:",
+          "0",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Security Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Remarks:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "A0000606297",
+          "Borrower",
+          "GOLDEN HARVEST FOODS LTD"
+        ],
+        [
+          "P1954555351",
+          "Guarantor",
+          "NADIA KHALIL CHOUDHURY"
+        ],
+        [
+          "O4325221299",
+          "Guarantor",
+          "MOHIUS SAMAD CHOUDHURY"
+        ],
+        [
+          "A0001495179",
+          "Guarantor",
+          "GOLDEN HARVEST AGRO INDUSTRIES LTD."
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "Outstanding",
+          "Overdue",
+          "NPI",
+          "Status",
+          "Default"
+        ],
+        [
+          "31/12/2020",
+          "10,887,325",
+          "9,098,930",
+          "2",
+          "SMA",
+          "No"
+        ],
+        [
+          "30/11/2020",
+          "11,087,325",
+          "9,098,930",
+          "2",
+          "SMA",
+          "No"
+        ],
+        [
+          "31/10/2020",
+          "11,087,325",
+          "9,098,930",
+          "2",
+          "SMA",
+          "No"
+        ],
+        [
+          "30/09/2020",
+          "11,247,325",
+          "9,098,930",
+          "2",
+          "SMA",
+          "No"
+        ],
+        [
+          "31/08/2020",
+          "19,047,325",
+          "18,197,860",
+          "4",
+          "SMA",
+          "No"
+        ],
+        [
+          "31/07/2020",
+          "19,247,325",
+          "18,197,860",
+          "4",
+          "SMA",
+          "No"
+        ],
+        [
+          "30/06/2020",
+          "19,247,325",
+          "18,197,860",
+          "4",
+          "SMA",
+          "No"
+        ],
+        [
+          "31/05/2020",
+          "19,247,325",
+          "18,197,860",
+          "4",
+          "SMA",
+          "No"
+        ],
+        [
+          "30/04/2020",
+          "19,247,325",
+          "18,197,860",
+          "4",
+          "SMA",
+          "No"
+        ],
+        [
+          "29/02/2020",
+          "19,247,325",
+          "18,197,860",
+          "4",
+          "SMA",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "19,247,325",
+          "18,197,860",
+          "4",
+          "SMA",
+          "No"
+        ],
+        [
+          "31/12/2019",
+          "20,683,774",
+          "18,197,860",
+          "4",
+          "SMA",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "H2617403634",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Living",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Term Loan",
+          "Date of last payment:",
+          ""
+        ],
+        [
+          "Starting date:",
+          "15/07/2020",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "14/07/2025",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Sanction Limit:",
+          "2,661,000",
+          "Method of payment:",
+          "Other"
+        ],
+        [
+          "Total Disbursement Amount:",
+          "2,651,000",
+          "Payments periodicity:",
+          "Monthly Installments"
+        ],
+        [
+          "Total number of installments:",
+          "60",
+          "Number of time(s) rescheduled:",
+          ""
+        ],
+        [
+          "Installment Amount:",
+          "55,238",
+          "Remaining installments Amount:",
+          "2,480,851"
+        ],
+        [
+          "Remaining installments Number:",
+          "56",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Security Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Remarks:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "B0000670377",
+          "Borrower",
+          "NIPPON EXPRESS BANGLADESH LTD."
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "Outstanding",
+          "Overdue",
+          "NPI",
+          "Status",
+          "Default"
+        ],
+        [
+          "31/12/2020",
+          "2,480,851",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2020",
+          "2,480,851",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2020",
+          "2,536,089",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2020",
+          "2,591,327",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2020",
+          "2,595,762",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2020",
+          "2,651,000",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "I0000046129",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Living",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Term Loan",
+          "Date of last payment:",
+          "27/02/2020"
+        ],
+        [
+          "Starting date:",
+          "27/09/2018",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "27/09/2022",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Sanction Limit:",
+          "20,000,000",
+          "Method of payment:",
+          "Other"
+        ],
+        [
+          "Total Disbursement Amount:",
+          "20,000,000",
+          "Payments periodicity:",
+          "Monthly Installments"
+        ],
+        [
+          "Total number of installments:",
+          "48",
+          "Number of time(s) rescheduled:",
+          "000000"
+        ],
+        [
+          "Installment Amount:",
+          "451,983",
+          "Remaining installments Amount:",
+          "13,675,505"
+        ],
+        [
+          "Remaining installments Number:",
+          "33",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Security Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "60,000,000",
+          "Remarks:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "79 (Other Securities)",
+          "",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "R0000895242",
+          "Borrower",
+          "GOLDEN HARVEST ICE CREAM LIMITED"
+        ],
+        [
+          "N7184881052",
+          "Guarantor",
+          "ENAMUZZAMAN CHOWDHURY"
+        ],
+        [
+          "P1954555351",
+          "Guarantor",
+          "NADIA KHALIL CHOUDHURY"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "Outstanding",
+          "Overdue",
+          "NPI",
+          "Status",
+          "Default"
+        ],
+        [
+          "31/12/2020",
+          "17,202,478",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2020",
+          "17,002,501",
+          "1,125,786",
+          "2",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2020",
+          "16,823,491",
+          "546,555",
+          "1",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2020",
+          "16,638,514",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2020",
+          "16,459,504",
+          "4,372,316",
+          "8",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2020",
+          "16,274,527",
+          "3,826,824",
+          "7",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2020",
+          "16,089,550",
+          "3,281,332",
+          "6",
+          "UC",
+          "No"
+        ],
+        [
+          "31/05/2020",
+          "15,910,540",
+          "2,735,840",
+          "5",
+          "UC",
+          "No"
+        ],
+        [
+          "30/04/2020",
+          "15,725,563",
+          "2,186,220",
+          "4",
+          "UC",
+          "No"
+        ],
+        [
+          "31/03/2020",
+          "15,546,553",
+          "1,644,856",
+          "3",
+          "UC",
+          "No"
+        ],
+        [
+          "29/02/2020",
+          "15,361,576",
+          "1,093,110",
+          "2",
+          "UC",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "15,734,410",
+          "1,093,110",
+          "2",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "I4383344981",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Living",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Term Loan",
+          "Date of last payment:",
+          ""
+        ],
+        [
+          "Starting date:",
+          "23/07/2020",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "22/07/2025",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Sanction Limit:",
+          "2,734,000",
+          "Method of payment:",
+          "Other"
+        ],
+        [
+          "Total Disbursement Amount:",
+          "2,734,000",
+          "Payments periodicity:",
+          "Monthly Installments"
+        ],
+        [
+          "Total number of installments:",
+          "60",
+          "Number of time(s) rescheduled:",
+          ""
+        ],
+        [
+          "Installment Amount:",
+          "56,754",
+          "Remaining installments Amount:",
+          "2,554,123"
+        ],
+        [
+          "Remaining installments Number:",
+          "56",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Security Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Remarks:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "B0000670377",
+          "Borrower",
+          "NIPPON EXPRESS BANGLADESH LTD."
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "Outstanding",
+          "Overdue",
+          "NPI",
+          "Status",
+          "Default"
+        ],
+        [
+          "31/12/2020",
+          "2,554,123",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2020",
+          "2,554,123",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2020",
+          "2,610,877",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2020",
+          "2,667,631",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2020",
+          "2,677,246",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2020",
+          "2,734,000",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "K0000913614",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Terminated",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Term Loan",
+          "Date of last payment:",
+          "03/11/2019"
+        ],
+        [
+          "Starting date:",
+          "17/10/2017",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "17/10/2018",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Sanction Limit:",
+          "30,000,000",
+          "Method of payment:",
+          "Other"
+        ],
+        [
+          "Total Disbursement Amount:",
+          "60,000,000",
+          "Payments periodicity:",
+          "Monthly Installments"
+        ],
+        [
+          "Total number of installments:",
+          "12",
+          "Number of time(s) rescheduled:",
+          "000000"
+        ],
+        [
+          "Installment Amount:",
+          "2,646,594",
+          "Remaining installments Amount:",
+          "0"
+        ],
+        [
+          "Remaining installments Number:",
+          "0",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Security Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "90,000,000",
+          "Remarks:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "79 (Other Securities)",
+          "",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "R0000895242",
+          "Borrower",
+          "GOLDEN HARVEST ICE CREAM LIMITED"
+        ],
+        [
+          "N7184881052",
+          "Guarantor",
+          "ENAMUZZAMAN CHOWDHURY"
+        ],
+        [
+          "P1954555351",
+          "Guarantor",
+          "NADIA KHALIL CHOUDHURY"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "Outstanding",
+          "Overdue",
+          "NPI",
+          "Status",
+          "Default"
+        ],
+        [
+          "30/11/2019",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2019",
+          "29,787,908",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2019",
+          "29,800,393",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2019",
+          "30,152,867",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2019",
+          "30,143,757",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2019",
+          "30,134,647",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/05/2019",
+          "30,137,120",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/04/2019",
+          "30,128,011",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/03/2019",
+          "30,130,485",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "28/02/2019",
+          "29,787,908",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/01/2019",
+          "30,147,017",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/12/2018",
+          "30,137,908",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "L0003861910",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Terminated in advance",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Financial Leasing",
+          "Date of last payment:",
+          "25/03/2020"
+        ],
+        [
+          "Starting date:",
+          "07/03/2017",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "25/04/2021",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Sanction Limit:",
+          "13,500,000",
+          "Method of payment:",
+          "Cheque"
+        ],
+        [
+          "Total Disbursement Amount:",
+          "5,544,094",
+          "Payments periodicity:",
+          "Monthly Installments"
+        ],
+        [
+          "Total number of installments:",
+          "48",
+          "Number of time(s) rescheduled:",
+          "000000"
+        ],
+        [
+          "Installment Amount:",
+          "149,093",
+          "Remaining installments Amount:",
+          "0"
+        ],
+        [
+          "Remaining installments Number:",
+          "0",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Security Amount:",
+          "39,965",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Remarks:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "R0000895242",
+          "Borrower",
+          "GOLDEN HARVEST ICE CREAM LIMITED"
+        ],
+        [
+          "N7184881052",
+          "Guarantor",
+          "ENAMUZZAMAN CHOWDHURY"
+        ],
+        [
+          "P1954555351",
+          "Guarantor",
+          "NADIA KHALIL CHOUDHURY"
+        ],
+        [
+          "O4325221299",
+          "Guarantor",
+          "MOHIUS SAMAD CHOUDHURY"
+        ],
+        [
+          "O0000718485",
+          "Guarantor",
+          "AZIZUL HAQUE"
+        ],
+        [
+          "U0006585777",
+          "Guarantor",
+          "MOQSUD AHMED KHAN"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "Outstanding",
+          "Overdue",
+          "NPI",
+          "Status",
+          "Default"
+        ],
+        [
+          "31/05/2020",
+          "0",
+          "151,776",
+          "1",
+          "UC",
+          "No"
+        ],
+        [
+          "30/04/2020",
+          "1,857,281",
+          "151,776",
+          "1",
+          "UC",
+          "No"
+        ],
+        [
+          "31/03/2020",
+          "1,832,843",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "29/02/2020",
+          "1,958,506",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "2,082,515",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/12/2019",
+          "2,204,892",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2019",
+          "2,325,659",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2019",
+          "2,444,837",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2019",
+          "2,562,447",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2019",
+          "2,678,510",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2019",
+          "2,793,045",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2019",
+          "2,906,073",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "S0000780202",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Terminated in advance",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Financial Leasing",
+          "Date of last payment:",
+          "15/04/2020"
+        ],
+        [
+          "Starting date:",
+          "07/03/2017",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "15/06/2021",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Sanction Limit:",
+          "13,500,000",
+          "Method of payment:",
+          "Cheque"
+        ],
+        [
+          "Total Disbursement Amount:",
+          "5,600,340",
+          "Payments periodicity:",
+          "Monthly Installments"
+        ],
+        [
+          "Total number of installments:",
+          "48",
+          "Number of time(s) rescheduled:",
+          "000000"
+        ],
+        [
+          "Installment Amount:",
+          "151,358",
+          "Remaining installments Amount:",
+          "0"
+        ],
+        [
+          "Remaining installments Number:",
+          "0",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Security Amount:",
+          "28,896",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Remarks:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "R0000895242",
+          "Borrower",
+          "GOLDEN HARVEST ICE CREAM LIMITED"
+        ],
+        [
+          "N7184881052",
+          "Guarantor",
+          "ENAMUZZAMAN CHOWDHURY"
+        ],
+        [
+          "P1954555351",
+          "Guarantor",
+          "NADIA KHALIL CHOUDHURY"
+        ],
+        [
+          "O4325221299",
+          "Guarantor",
+          "MOHIUS SAMAD CHOUDHURY"
+        ],
+        [
+          "O0000718485",
+          "Guarantor",
+          "AZIZUL HAQUE"
+        ],
+        [
+          "U0006585777",
+          "Guarantor",
+          "MOQSUD AHMED KHAN"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "Outstanding",
+          "Overdue",
+          "NPI",
+          "Status",
+          "Default"
+        ],
+        [
+          "31/05/2020",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/04/2020",
+          "1,991,638",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/03/2020",
+          "2,117,279",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "29/02/2020",
+          "2,241,266",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "2,363,622",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/12/2019",
+          "2,484,368",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2019",
+          "2,603,525",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2019",
+          "2,721,114",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2019",
+          "2,837,156",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2019",
+          "2,951,671",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2019",
+          "3,064,680",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2019",
+          "3,176,202",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "215",
+          "0001",
+          "X0000363484",
+          "1016109417927001"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Living",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Term Loan",
+          "Date of last payment:",
+          "12/03/2019"
+        ],
+        [
+          "Starting date:",
+          "12/03/2019",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "12/03/2024",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Sanction Limit:",
+          "22,000,000",
+          "Method of payment:",
+          "Cheque"
+        ],
+        [
+          "Total Disbursement Amount:",
+          "22,000,000",
+          "Payments periodicity:",
+          "Monthly Installments"
+        ],
+        [
+          "Total number of installments:",
+          "60",
+          "Number of time(s) rescheduled:",
+          "000000"
+        ],
+        [
+          "Installment Amount:",
+          "500,570",
+          "Remaining installments Amount:",
+          "15,853,437"
+        ],
+        [
+          "Remaining installments Number:",
+          "39",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Security Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "66,000,000",
+          "Remarks:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "A0000606297",
+          "Borrower",
+          "GOLDEN HARVEST FOODS LTD"
+        ],
+        [
+          "O4325221299",
+          "Guarantor",
+          "MOHIUS SAMAD CHOUDHURY"
+        ],
+        [
+          "P1954555351",
+          "Guarantor",
+          "NADIA KHALIL CHOUDHURY"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "Outstanding",
+          "Overdue",
+          "NPI",
+          "Status",
+          "Default"
+        ],
+        [
+          "31/12/2020",
+          "16,354,007",
+          "500,570",
+          "1",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2020",
+          "16,178,738",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2020",
+          "17,001,122",
+          "500,570",
+          "1",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2020",
+          "17,319,487",
+          "500,570",
+          "1",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2020",
+          "18,135,010",
+          "1,001,140",
+          "2",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2020",
+          "17,946,017",
+          "500,570",
+          "1",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2020",
+          "18,254,256",
+          "500,570",
+          "1",
+          "UC",
+          "No"
+        ],
+        [
+          "31/05/2020",
+          "18,559,191",
+          "500,570",
+          "1",
+          "UC",
+          "No"
+        ],
+        [
+          "30/04/2020",
+          "18,860,858",
+          "500,570",
+          "1",
+          "UC",
+          "No"
+        ],
+        [
+          "31/03/2020",
+          "18,658,722",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "29/02/2020",
+          "18,953,958",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "19,246,029",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "X6176637741",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Living",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Financial Leasing",
+          "Date of last payment:",
+          "26/07/2020"
+        ],
+        [
+          "Starting date:",
+          "18/09/2016",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "15/09/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Sanction Limit:",
+          "2,820,000",
+          "Method of payment:",
+          "Cheque"
+        ],
+        [
+          "Total Disbursement Amount:",
+          "2,820,000",
+          "Payments periodicity:",
+          "Monthly Installments"
+        ],
+        [
+          "Total number of installments:",
+          "49",
+          "Number of time(s) rescheduled:",
+          ""
+        ],
+        [
+          "Installment Amount:",
+          "98,346",
+          "Remaining installments Amount:",
+          "0"
+        ],
+        [
+          "Remaining installments Number:",
+          "0",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Security Amount:",
+          "2,820,000",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "2,820,000",
+          "Remarks:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "45 (Vehicles)",
+          "",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "A0001495179",
+          "Borrower",
+          "GOLDEN HARVEST AGRO INDUSTRIES LTD."
+        ],
+        [
+          "P1954555351",
+          "Guarantor",
+          "NADIA KHALIL CHOUDHURY"
+        ],
+        [
+          "O4325221299",
+          "Guarantor",
+          "MOHIUS SAMAD CHOUDHURY"
+        ],
+        [
+          "R0000895242",
+          "Guarantor",
+          "GOLDEN HARVEST ICE CREAM LIMITED"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "Outstanding",
+          "Overdue",
+          "NPI",
+          "Status",
+          "Default"
+        ],
+        [
+          "31/12/2020",
+          "487,334",
+          "487,334",
+          "7",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2020",
+          "487,334",
+          "487,334",
+          "7",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2020",
+          "487,334",
+          "487,334",
+          "7",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2020",
+          "487,045",
+          "466,678",
+          "3",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2020",
+          "485,689",
+          "389,948",
+          "5",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2020",
+          "483,280",
+          "313,218",
+          "4",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2020",
+          "633,293",
+          "389,948",
+          "5",
+          "UC",
+          "No"
+        ],
+        [
+          "31/05/2020",
+          "628,822",
+          "313,218",
+          "4",
+          "UC",
+          "No"
+        ],
+        [
+          "30/04/2020",
+          "623,342",
+          "236,488",
+          "3",
+          "UC",
+          "No"
+        ],
+        [
+          "31/03/2020",
+          "616,866",
+          "159,758",
+          "2",
+          "UC",
+          "No"
+        ],
+        [
+          "29/02/2020",
+          "609,409",
+          "83,028",
+          "1",
+          "UC",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "754,444",
+          "159,758",
+          "2",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "Y0000678230",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Living",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Term Loan",
+          "Date of last payment:",
+          ""
+        ],
+        [
+          "Starting date:",
+          "28/05/2019",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "27/05/2026",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Sanction Limit:",
+          "98,800,000",
+          "Method of payment:",
+          "Cash"
+        ],
+        [
+          "Total Disbursement Amount:",
+          "98,800,000",
+          "Payments periodicity:",
+          "Quarterly Installments"
+        ],
+        [
+          "Total number of installments:",
+          "26",
+          "Number of time(s) rescheduled:",
+          ""
+        ],
+        [
+          "Installment Amount:",
+          "5,060,668",
+          "Remaining installments Amount:",
+          "103,386,000"
+        ],
+        [
+          "Remaining installments Number:",
+          "24",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Security Amount:",
+          "98,800,000",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Remarks:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "R0000895242",
+          "Borrower",
+          "GOLDEN HARVEST ICE CREAM LIMITED"
+        ],
+        [
+          "N7184881052",
+          "Guarantor",
+          "ENAMUZZAMAN CHOWDHURY"
+        ],
+        [
+          "G0000465825",
+          "Guarantor",
+          "AZIZUL HUQUE"
+        ],
+        [
+          "O4325221299",
+          "Guarantor",
+          "MOHIUS SAMAD CHOUDHURY"
+        ],
+        [
+          "P1954555351",
+          "Guarantor",
+          "NADIA KHALIL CHOUDHURY"
+        ],
+        [
+          "A0001495179",
+          "Guarantor",
+          "GOLDEN HARVEST AGRO INDUSTRIES LTD."
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "Outstanding",
+          "Overdue",
+          "NPI",
+          "Status",
+          "Default"
+        ],
+        [
+          "31/12/2020",
+          "103,386,000",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2020",
+          "101,121,188",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2020",
+          "101,121,188",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2020",
+          "101,121,188",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2020",
+          "98,896,455",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2020",
+          "98,896,455",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2020",
+          "96,727,511",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/05/2020",
+          "96,695,905",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/04/2020",
+          "96,695,905",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/03/2020",
+          "94,487,365",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "29/02/2020",
+          "94,487,365",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "99,587,065",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "Q1327919012",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Terminated",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Term Loan",
+          "Date of last payment:",
+          ""
+        ],
+        [
+          "Starting date:",
+          "05/10/2015",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "05/10/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Sanction Limit:",
+          "1,575,000",
+          "Method of payment:",
+          "Cheque"
+        ],
+        [
+          "Total Disbursement Amount:",
+          "1,575,000",
+          "Payments periodicity:",
+          "Monthly Installments"
+        ],
+        [
+          "Total number of installments:",
+          "60",
+          "Number of time(s) rescheduled:",
+          ""
+        ],
+        [
+          "Installment Amount:",
+          "35,837",
+          "Remaining installments Amount:",
+          "0"
+        ],
+        [
+          "Remaining installments Number:",
+          "0",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Security Amount:",
+          "1,000,000",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "1,000,000",
+          "Remarks:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "79 (Other Securities)",
+          "",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "B0000670377",
+          "Borrower",
+          "NIPPON EXPRESS BANGLADESH LTD."
+        ],
+        [
+          "A0001498918",
+          "Guarantor",
+          "REZAUL ALAM"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "Outstanding",
+          "Overdue",
+          "NPI",
+          "Status",
+          "Default"
+        ],
+        [
+          "31/12/2020",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2020",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2020",
+          "62,861",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2020",
+          "98,726",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2020",
+          "129,054",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2020",
+          "164,891",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2020",
+          "200,728",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/05/2020",
+          "227,144",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/04/2020",
+          "262,980",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/03/2020",
+          "298,817",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "29/02/2020",
+          "321,454",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "357,291",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "H9926520991",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Living",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Term Loan",
+          "Date of last payment:",
+          ""
+        ],
+        [
+          "Starting date:",
+          "23/06/2020",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "22/06/2025",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Sanction Limit:",
+          "7,930,000",
+          "Method of payment:",
+          "Other"
+        ],
+        [
+          "Total Disbursement Amount:",
+          "7,930,000",
+          "Payments periodicity:",
+          "Monthly Installments"
+        ],
+        [
+          "Total number of installments:",
+          "60",
+          "Number of time(s) rescheduled:",
+          ""
+        ],
+        [
+          "Installment Amount:",
+          "164,614",
+          "Remaining installments Amount:",
+          "7,300,574"
+        ],
+        [
+          "Remaining installments Number:",
+          "55",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Security Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Remarks:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "B0000670377",
+          "Borrower",
+          "NIPPON EXPRESS BANGLADESH LTD."
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "Outstanding",
+          "Overdue",
+          "NPI",
+          "Status",
+          "Default"
+        ],
+        [
+          "31/12/2020",
+          "7,300,574",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2020",
+          "7,300,574",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2020",
+          "7,465,188",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2020",
+          "7,629,802",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2020",
+          "7,616,632",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2020",
+          "7,781,246",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2020",
+          "7,945,860",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "C0000504332",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Living",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Term Loan",
+          "Date of last payment:",
+          ""
+        ],
+        [
+          "Starting date:",
+          "25/09/2018",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "25/09/2023",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Sanction Limit:",
+          "200,000,000",
+          "Method of payment:",
+          "Cheque"
+        ],
+        [
+          "Total Disbursement Amount:",
+          "10,000,000",
+          "Payments periodicity:",
+          "Monthly Installments"
+        ],
+        [
+          "Total number of installments:",
+          "70",
+          "Number of time(s) rescheduled:",
+          "000000"
+        ],
+        [
+          "Installment Amount:",
+          "268,090",
+          "Remaining installments Amount:",
+          "9,219,358"
+        ],
+        [
+          "Remaining installments Number:",
+          "44",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Security Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Remarks:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "R0000895242",
+          "Borrower",
+          "GOLDEN HARVEST ICE CREAM LIMITED"
+        ],
+        [
+          "P1954555351",
+          "Guarantor",
+          "NADIA KHALIL CHOUDHURY"
+        ],
+        [
+          "N7184881052",
+          "Guarantor",
+          "ENAMUZZAMAN CHOWDHURY"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "Outstanding",
+          "Overdue",
+          "NPI",
+          "Status",
+          "Default"
+        ],
+        [
+          "31/12/2020",
+          "9,219,358",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2020",
+          "8,951,268",
+          "268,090",
+          "1",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2020",
+          "8,838,926",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2020",
+          "8,992,720",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2020",
+          "8,879,859",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2020",
+          "8,768,413",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2020",
+          "8,516,581",
+          "1,196,075",
+          "5",
+          "UC",
+          "No"
+        ],
+        [
+          "31/05/2020",
+          "8,421,714",
+          "956,860",
+          "4",
+          "UC",
+          "No"
+        ],
+        [
+          "30/04/2020",
+          "8,325,035",
+          "717,645",
+          "3",
+          "UC",
+          "No"
+        ],
+        [
+          "31/03/2020",
+          "8,226,567",
+          "478,430",
+          "2",
+          "UC",
+          "No"
+        ],
+        [
+          "29/02/2020",
+          "8,126,333",
+          "239,215",
+          "1",
+          "UC",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "8,263,570",
+          "239,215",
+          "1",
+          "UC",
+          "No"
+        ]
+      ]
+    }
+  ],
+  "DETAILS OF NONINSTALLMENT FACILITY(S)": [
+    {
+      "Ref": [
+        [
+          "DETAILS OF NONINSTALLMENT FACILITY(S)"
+        ],
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "C0000156782",
+          "###"
+        ],
+        [
+          "Role:",
+          "Co-Borrower",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Living",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Guarantee (non funded)",
+          "Date of last payment:",
+          "31/12/2020"
+        ],
+        [
+          "Starting date:",
+          "29/03/2018",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "22/11/2018",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Subsidized credit Y/N:",
+          "0",
+          "Number of time(s) rescheduled",
+          "000000"
+        ],
+        [
+          "Security Amount:",
+          "1,400,000",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "60 (Financial obligations only (e.g. Insurance Policie...)",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "B0000670377",
+          "Borrower",
+          "NIPPON EXPRESS BANGLADESH LTD."
+        ],
+        [
+          "N0000362535",
+          "Co-Borrower",
+          "KAZUHIRO KOBAYAKAWA"
+        ],
+        [
+          "M0000124890",
+          "Co-Borrower",
+          "TERUAKI NAGOYA"
+        ],
+        [
+          "A0001498918",
+          "Co-Borrower",
+          "REZAUL ALAM"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "SancLmt",
+          "Outstand",
+          "Overdue",
+          "Status",
+          "Default"
+        ],
+        [
+          "31/12/2020",
+          "20,000,000",
+          "6,500,000",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2020",
+          "20,000,000",
+          "6,500,000",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2020",
+          "20,000,000",
+          "6,500,000",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2020",
+          "20,000,000",
+          "6,500,000",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2020",
+          "20,000,000",
+          "6,500,000",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2020",
+          "20,000,000",
+          "6,500,000",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2020",
+          "20,000,000",
+          "6,500,000",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/05/2020",
+          "20,000,000",
+          "6,500,000",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/04/2020",
+          "20,000,000",
+          "6,500,000",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "29/02/2020",
+          "20,000,000",
+          "6,500,000",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "20,000,000",
+          "6,500,000",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/12/2019",
+          "20,000,000",
+          "6,500,000",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "I0000641667",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Terminated",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        [
+          "Starting date:",
+          "28/07/2019",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "24/11/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Subsidized credit Y/N:",
+          "",
+          "Number of time(s) rescheduled",
+          ""
+        ],
+        [
+          "Security Amount:",
+          "0",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "A0000606297",
+          "Borrower",
+          "GOLDEN HARVEST FOODS LTD"
+        ],
+        [
+          "O4325221299",
+          "Guarantor",
+          "MOHIUS SAMAD CHOUDHURY"
+        ],
+        [
+          "P1954555351",
+          "Guarantor",
+          "NADIA KHALIL CHOUDHURY"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "SancLmt",
+          "Outstand",
+          "Overdue",
+          "Status",
+          "Default"
+        ],
+        [
+          "29/02/2020",
+          "29,230,500",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "29,230,500",
+          "31,185,009",
+          "0",
+          "SMA",
+          "No"
+        ],
+        [
+          "31/12/2019",
+          "29,230,500",
+          "31,185,009",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2019",
+          "29,230,500",
+          "30,022,159",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2019",
+          "29,230,500",
+          "30,022,159",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2019",
+          "29,230,500",
+          "30,022,159",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2019",
+          "29,230,500",
+          "29,230,500",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2019",
+          "29,230,500",
+          "29,230,500",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "J0000725263",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Terminated",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        [
+          "Starting date:",
+          "11/07/2019",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "07/11/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Subsidized credit Y/N:",
+          "",
+          "Number of time(s) rescheduled",
+          ""
+        ],
+        [
+          "Security Amount:",
+          "0",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "A0000606297",
+          "Borrower",
+          "GOLDEN HARVEST FOODS LTD"
+        ],
+        [
+          "P1954555351",
+          "Guarantor",
+          "NADIA KHALIL CHOUDHURY"
+        ],
+        [
+          "O4325221299",
+          "Guarantor",
+          "MOHIUS SAMAD CHOUDHURY"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "SancLmt",
+          "Outstand",
+          "Overdue",
+          "Status",
+          "Default"
+        ],
+        [
+          "29/02/2020",
+          "19,830,349",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "19,830,349",
+          "9,801,438",
+          "0",
+          "SMA",
+          "No"
+        ],
+        [
+          "31/12/2019",
+          "19,830,349",
+          "20,801,438",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2019",
+          "19,830,349",
+          "20,507,886",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2019",
+          "19,830,349",
+          "20,507,886",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2019",
+          "19,830,349",
+          "20,507,886",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2019",
+          "19,830,349",
+          "19,830,349",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2019",
+          "19,830,349",
+          "19,830,349",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "O0000384698",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Living",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Bai-Muazzal",
+          "Date of last payment:",
+          "30/12/2020"
+        ],
+        [
+          "Starting date:",
+          "07/05/2019",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "07/05/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Subsidized credit Y/N:",
+          "0",
+          "Number of time(s) rescheduled",
+          "000000"
+        ],
+        [
+          "Security Amount:",
+          "0",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "90,000,000",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "79 (Other Securities)",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "R0000895242",
+          "Borrower",
+          "GOLDEN HARVEST ICE CREAM LIMITED"
+        ],
+        [
+          "N7184881052",
+          "Guarantor",
+          "ENAMUZZAMAN CHOWDHURY"
+        ],
+        [
+          "P1954555351",
+          "Guarantor",
+          "NADIA KHALIL CHOUDHURY"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "SancLmt",
+          "Outstand",
+          "Overdue",
+          "Status",
+          "Default"
+        ],
+        [
+          "31/12/2020",
+          "30,000,000",
+          "31,018,333",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2020",
+          "30,000,000",
+          "30,761,246",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2020",
+          "30,000,000",
+          "30,761,236",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2020",
+          "30,000,000",
+          "31,249,544",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2020",
+          "30,000,000",
+          "31,178,878",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2020",
+          "30,000,000",
+          "31,980,545",
+          "31,980,545",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2020",
+          "30,000,000",
+          "33,053,657",
+          "33,053,657",
+          "UC",
+          "No"
+        ],
+        [
+          "31/05/2020",
+          "30,000,000",
+          "32,703,657",
+          "32,703,657",
+          "UC",
+          "No"
+        ],
+        [
+          "30/04/2020",
+          "30,000,000",
+          "32,411,990",
+          "32,411,990",
+          "UC",
+          "No"
+        ],
+        [
+          "31/03/2020",
+          "30,000,000",
+          "30,314,518",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "29/02/2020",
+          "30,000,000",
+          "134,363",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "30,000,000",
+          "30,314,528",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "Y0054453977",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Living",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        [
+          "Starting date:",
+          "09/02/2020",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "07/06/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Subsidized credit Y/N:",
+          "",
+          "Number of time(s) rescheduled",
+          ""
+        ],
+        [
+          "Security Amount:",
+          "0",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "A0000606297",
+          "Borrower",
+          "GOLDEN HARVEST FOODS LTD"
+        ],
+        [
+          "P1954555351",
+          "Guarantor",
+          "NADIA KHALIL CHOUDHURY"
+        ],
+        [
+          "O4325221299",
+          "Guarantor",
+          "MOHIUS SAMAD CHOUDHURY"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "SancLmt",
+          "Outstand",
+          "Overdue",
+          "Status",
+          "Default"
+        ],
+        [
+          "31/12/2020",
+          "40,000,000",
+          "42,119,990",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2020",
+          "40,000,000",
+          "42,119,990",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2020",
+          "40,000,000",
+          "42,119,990",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2020",
+          "40,000,000",
+          "42,119,990",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2020",
+          "40,000,000",
+          "41,173,011",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2020",
+          "40,000,000",
+          "41,173,011",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2020",
+          "40,000,000",
+          "41,173,011",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/05/2020",
+          "40,000,000",
+          "40,866,667",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/04/2020",
+          "40,000,000",
+          "40,866,667",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/03/2020",
+          "40,000,000",
+          "40,866,667",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "29/02/2020",
+          "40,000,000",
+          "40,000,000",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "P0067235832",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Living",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        [
+          "Starting date:",
+          "10/02/2020",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "08/06/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Subsidized credit Y/N:",
+          "",
+          "Number of time(s) rescheduled",
+          ""
+        ],
+        [
+          "Security Amount:",
+          "0",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "A0000606297",
+          "Borrower",
+          "GOLDEN HARVEST FOODS LTD"
+        ],
+        [
+          "O4325221299",
+          "Guarantor",
+          "MOHIUS SAMAD CHOUDHURY"
+        ],
+        [
+          "P1954555351",
+          "Guarantor",
+          "NADIA KHALIL CHOUDHURY"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "SancLmt",
+          "Outstand",
+          "Overdue",
+          "Status",
+          "Default"
+        ],
+        [
+          "31/12/2020",
+          "12,384,721",
+          "13,035,790",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2020",
+          "12,384,721",
+          "13,035,790",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2020",
+          "12,384,721",
+          "13,035,790",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2020",
+          "12,384,721",
+          "13,035,790",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2020",
+          "12,384,721",
+          "12,742,707",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2020",
+          "12,384,721",
+          "12,742,707",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2020",
+          "12,384,721",
+          "12,742,707",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/05/2020",
+          "12,384,721",
+          "12,647,896",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/04/2020",
+          "12,384,721",
+          "12,647,896",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/03/2020",
+          "12,384,721",
+          "12,647,896",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "29/02/2020",
+          "12,384,721",
+          "12,384,721",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "T0020263014",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Living",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        [
+          "Starting date:",
+          "02/02/2020",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "31/05/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Subsidized credit Y/N:",
+          "",
+          "Number of time(s) rescheduled",
+          ""
+        ],
+        [
+          "Security Amount:",
+          "0",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "A0000606297",
+          "Borrower",
+          "GOLDEN HARVEST FOODS LTD"
+        ],
+        [
+          "O4325221299",
+          "Guarantor",
+          "MOHIUS SAMAD CHOUDHURY"
+        ],
+        [
+          "P1954555351",
+          "Guarantor",
+          "NADIA KHALIL CHOUDHURY"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "SancLmt",
+          "Outstand",
+          "Overdue",
+          "Status",
+          "Default"
+        ],
+        [
+          "31/12/2020",
+          "100,000,000",
+          "103,074,418",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2020",
+          "100,000,000",
+          "103,074,418",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2020",
+          "100,000,000",
+          "103,074,418",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2020",
+          "100,000,000",
+          "103,074,418",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2020",
+          "100,000,000",
+          "100,757,007",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2020",
+          "100,000,000",
+          "100,757,007",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2020",
+          "100,000,000",
+          "100,757,007",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/05/2020",
+          "100,000,000",
+          "100,007,333",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/04/2020",
+          "100,000,000",
+          "100,007,333",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/03/2020",
+          "100,000,000",
+          "100,007,333",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "29/02/2020",
+          "100,000,000",
+          "97,600,000",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "Y0000023987",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Living",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Overdraft",
+          "Date of last payment:",
+          ""
+        ],
+        [
+          "Starting date:",
+          "09/07/2019",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "30/06/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Subsidized credit Y/N:",
+          "",
+          "Number of time(s) rescheduled",
+          ""
+        ],
+        [
+          "Security Amount:",
+          "0",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "A0000606297",
+          "Borrower",
+          "GOLDEN HARVEST FOODS LTD"
+        ],
+        [
+          "P1954555351",
+          "Guarantor",
+          "NADIA KHALIL CHOUDHURY"
+        ],
+        [
+          "O4325221299",
+          "Guarantor",
+          "MOHIUS SAMAD CHOUDHURY"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "SancLmt",
+          "Outstand",
+          "Overdue",
+          "Status",
+          "Default"
+        ],
+        [
+          "31/12/2020",
+          "50,000,000",
+          "53,377,136",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2020",
+          "50,000,000",
+          "53,377,136",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2020",
+          "50,000,000",
+          "53,377,136",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2020",
+          "50,000,000",
+          "53,377,136",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2020",
+          "50,000,000",
+          "52,177,064",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2020",
+          "50,000,000",
+          "52,177,064",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2020",
+          "50,000,000",
+          "52,177,064",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/05/2020",
+          "50,000,000",
+          "51,788,845",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/04/2020",
+          "50,000,000",
+          "51,788,845",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/03/2020",
+          "50,000,000",
+          "51,788,845",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "29/02/2020",
+          "50,000,000",
+          "49,877,564",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "50,000,000",
+          "51,653,271",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "Y0000082015",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Terminated",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        [
+          "Starting date:",
+          "24/07/2019",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "20/11/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Subsidized credit Y/N:",
+          "",
+          "Number of time(s) rescheduled",
+          ""
+        ],
+        [
+          "Security Amount:",
+          "0",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "A0000606297",
+          "Borrower",
+          "GOLDEN HARVEST FOODS LTD"
+        ],
+        [
+          "O4325221299",
+          "Guarantor",
+          "MOHIUS SAMAD CHOUDHURY"
+        ],
+        [
+          "P1954555351",
+          "Guarantor",
+          "NADIA KHALIL CHOUDHURY"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "SancLmt",
+          "Outstand",
+          "Overdue",
+          "Status",
+          "Default"
+        ],
+        [
+          "29/02/2020",
+          "15,769,500",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "15,769,500",
+          "16,856,750",
+          "0",
+          "SMA",
+          "No"
+        ],
+        [
+          "31/12/2019",
+          "15,769,500",
+          "16,856,750",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2019",
+          "15,769,500",
+          "16,222,873",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2019",
+          "15,769,500",
+          "16,222,873",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2019",
+          "15,769,500",
+          "16,222,873",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2019",
+          "15,769,500",
+          "15,769,500",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2019",
+          "15,769,500",
+          "15,769,500",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "H0000172751",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Terminated",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        [
+          "Starting date:",
+          "30/07/2019",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "26/11/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Subsidized credit Y/N:",
+          "",
+          "Number of time(s) rescheduled",
+          ""
+        ],
+        [
+          "Security Amount:",
+          "0",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "A0000606297",
+          "Borrower",
+          "GOLDEN HARVEST FOODS LTD"
+        ],
+        [
+          "O4325221299",
+          "Guarantor",
+          "MOHIUS SAMAD CHOUDHURY"
+        ],
+        [
+          "P1954555351",
+          "Guarantor",
+          "NADIA KHALIL CHOUDHURY"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "SancLmt",
+          "Outstand",
+          "Overdue",
+          "Status",
+          "Default"
+        ],
+        [
+          "29/02/2020",
+          "65,369,651",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "65,369,651",
+          "69,682,219",
+          "0",
+          "SMA",
+          "No"
+        ],
+        [
+          "31/12/2019",
+          "65,369,651",
+          "69,682,219",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2019",
+          "65,369,651",
+          "67,085,604",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2019",
+          "65,369,651",
+          "67,085,604",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2019",
+          "65,369,651",
+          "67,085,604",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2019",
+          "65,369,651",
+          "65,369,651",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2019",
+          "65,369,651",
+          "65,369,651",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "P0000424890",
+          "###"
+        ],
+        [
+          "Role:",
+          "Guarantor",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Terminated",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        [
+          "Starting date:",
+          "17/07/2019",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "13/11/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Subsidized credit Y/N:",
+          "",
+          "Number of time(s) rescheduled",
+          ""
+        ],
+        [
+          "Security Amount:",
+          "0",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        [
+          "Other subjects linked to the same contract"
+        ],
+        [
+          "CIB subject code",
+          "Role",
+          "Name"
+        ],
+        [
+          "A0000606297",
+          "Borrower",
+          "GOLDEN HARVEST FOODS LTD"
+        ],
+        [
+          "P1954555351",
+          "Guarantor",
+          "NADIA KHALIL CHOUDHURY"
+        ],
+        [
+          "O4325221299",
+          "Guarantor",
+          "MOHIUS SAMAD CHOUDHURY"
+        ]
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "SancLmt",
+          "Outstand",
+          "Overdue",
+          "Status",
+          "Default"
+        ],
+        [
+          "29/02/2020",
+          "19,800,000",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "19,800,000",
+          "21,222,035",
+          "0",
+          "SMA",
+          "No"
+        ],
+        [
+          "31/12/2019",
+          "19,800,000",
+          "21,222,035",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2019",
+          "19,800,000",
+          "20,427,000",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2019",
+          "19,800,000",
+          "20,427,000",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2019",
+          "19,800,000",
+          "20,427,000",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2019",
+          "19,800,000",
+          "19,800,000",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2019",
+          "19,800,000",
+          "19,800,000",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    }
+  ],
+  "DETAILS OF CREDIT CARD FACILITY(S)": [
+    {
+      "Ref": [
+        [
+          "DETAILS OF CREDIT CARD FACILITY(S)"
+        ],
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "B0000459530",
+          "###"
+        ],
+        [
+          "Role:",
+          "Borrower",
+          "Security Type:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Living",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Facility:",
+          "Credit Card (Revolving)",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Starting date:",
+          "04/11/2009",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Credit limit:",
+          "929,195",
+          "Method of payment:",
+          "-"
+        ],
+        [
+          "Monthly instalment amount:",
+          "0",
+          "Payments Periodicity:",
+          "M"
+        ],
+        [
+          "Remaining Amount:",
+          "0",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Security Amount:",
+          "0",
+          "Basis for    classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        " "
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "Credit Limit",
+          "Outstanding",
+          "Overdue",
+          "NPI",
+          "Status",
+          "Default"
+        ],
+        [
+          "31/12/2020",
+          "929,195",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2020",
+          "930,000",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2020",
+          "930,000",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2020",
+          "930,000",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2020",
+          "930,000",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2020",
+          "930,000",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2020",
+          "930,000",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/05/2020",
+          "930,000",
+          "7,354",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/04/2020",
+          "930,000",
+          "4,882",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/03/2020",
+          "930,000",
+          "2,420",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "29/02/2020",
+          "930,000",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "930,000",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "H0000236951",
+          "###"
+        ],
+        [
+          "Role:",
+          "Borrower",
+          "Security Type:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Living",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Facility:",
+          "Credit Card (Revolving)",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Starting date:",
+          "29/03/2012",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Credit limit:",
+          "70,638",
+          "Method of payment:",
+          "-"
+        ],
+        [
+          "Monthly instalment amount:",
+          "0",
+          "Payments Periodicity:",
+          "M"
+        ],
+        [
+          "Remaining Amount:",
+          "0",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Security Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        " "
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "Credit Limit",
+          "Outstanding",
+          "Overdue",
+          "NPI",
+          "Status",
+          "Default"
+        ],
+        [
+          "31/12/2020",
+          "70,638",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2020",
+          "70,638",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2020",
+          "70,638",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2020",
+          "70,663",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2020",
+          "70,663",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2020",
+          "70,680",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2020",
+          "70,680",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/05/2020",
+          "70,722",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/04/2020",
+          "70,722",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/03/2020",
+          "70,722",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "29/02/2020",
+          "70,722",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "70,722",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:X6066277958)",
+          "###",
+          "###",
+          "D0000693535",
+          "###"
+        ],
+        [
+          "Role:",
+          "Borrower",
+          "Security Type:",
+          ""
+        ],
+        [
+          "Phase:",
+          "Living",
+          "Date of Last Update:",
+          ""
+        ],
+        [
+          "Facility:",
+          "Credit Card (Revolving)",
+          "Date of Law suit:",
+          "-"
+        ],
+        [
+          "Starting date:",
+          "02/04/2015",
+          "Date of classification:",
+          ""
+        ],
+        [
+          "End date of contract:",
+          "30/04/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        [
+          "Credit limit:",
+          "500,000",
+          "Method of payment:",
+          "Other"
+        ],
+        [
+          "Monthly instalment amount:",
+          "0",
+          "Payments Periodicity:",
+          "M"
+        ],
+        [
+          "Remaining Amount:",
+          "0",
+          "Reorganized credit:",
+          "NO"
+        ],
+        [
+          "Security Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [
+        " "
+      ],
+      "Contract History": [
+        [
+          "Contract History"
+        ],
+        [
+          "Date",
+          "Credit Limit",
+          "Outstanding",
+          "Overdue",
+          "NPI",
+          "Status",
+          "Default"
+        ],
+        [
+          "31/12/2020",
+          "500,000",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/11/2020",
+          "500,000",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/10/2020",
+          "500,000",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/09/2020",
+          "500,000",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/08/2020",
+          "500,000",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/07/2020",
+          "500,000",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/06/2020",
+          "500,000",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/05/2020",
+          "500,000",
+          "169",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "30/04/2020",
+          "500,000",
+          "168",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/03/2020",
+          "500,000",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "29/02/2020",
+          "500,000",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ],
+        [
+          "31/01/2020",
+          "500,000",
+          "0",
+          "0",
+          "0",
+          "UC",
+          "No"
+        ]
+      ]
+    }
+  ]
+}

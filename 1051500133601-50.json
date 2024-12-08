@@ -1,0 +1,5698 @@
+{
+  "Credit Information Bureau - Bangladesh Bank": [
+    ["Credit Information Bureau - Bangladesh Bank"],
+    ["Date of Inquiry", "User ID", "FI Code", "Branch Code", "FI Name"],
+    ["07-Feb-2021 04:29:31 PM", "KUI215373", "215", "2151", "I.D.L.C."]
+  ],
+  "INQUIRED": [["INQUIRED"], ["Subject code:A0002729238"]],
+  "Matched found": [["Matched found"]],
+  "SUBJECT INFORMATION": [
+    ["SUBJECT INFORMATION"],
+    ["CIB subject code:", "A0002729238", "Type of subject:", "INDIVIDUAL"],
+    [
+      "Title, Name:",
+      "MD, SHAMSUL ALAM",
+      "Reference number (Ref.):",
+      "1 (CIB Subject Code:A0002729238)"
+    ],
+    ["Title, Father's name:", "LATE, KASHEM", "Sector type:", "PRIVATE"],
+    [
+      "Title, Mother's name:",
+      "LATE, JAHANARA KHATUN",
+      "Sector code:",
+      "903010 (Importers )"
+    ],
+    ["Title, Spouse Name:", "", "ID type:", ""],
+    ["Date of birth:", "10/04/1953", "ID number:", ""],
+    ["Gender:", "MALE", "ID issue date:", ""],
+    ["District(Country):", "KHULNA(BD)", "ID issue country:", ""],
+    ["NID:", "2691649106212", "Telephone", ""],
+    ["TIN:", "", "Remarks:", ""]
+  ],
+  "ADDRESS": [
+    ["ADDRESS"],
+    ["Address Type", "Address", "Postal code:", "District", "Country"],
+    ["Permanent", "104/1, KHANJAHAN ALI ROAD, KHULNA,", "0000", "KHULNA", "BD"],
+    [
+      "Present",
+      "HOUSE#45, ROAD#4/A, DHANMONDI, DHAKA-1209,",
+      "1209",
+      "DHAKA",
+      "BD"
+    ]
+  ],
+  "LINKED PROPRIETORSHIP(S) LIST": [
+    {
+      "PROPRIETORSHIP CONCERN": [
+        ["PROPRIETORSHIP CONCERN"],
+        [
+          "CIB subject code:",
+          "A0002285895",
+          "Reference number (Ref.):",
+          "2 (CIB Subject Code:A0002285895)",
+          "Trade Name:",
+          "NEW MOTOR CYCLE MART"
+        ],
+        [
+          "Sector type:",
+          "PRIVATE",
+          "Sector code:",
+          "903050 (Retail Traders)",
+          "Telephone number:",
+          ""
+        ]
+      ],
+      "ADDRESS": [
+        ["ADDRESS"],
+        ["Address Type", "Address", "Postal code:", "District", "Country"],
+        [
+          "Business",
+          "79, KHAN A SABUR ROAD, J.K TOWER, KHULNA-9100",
+          "9100",
+          "KHULNA",
+          "BD"
+        ]
+      ]
+    },
+    {
+      "PROPRIETORSHIP CONCERN": [
+        ["PROPRIETORSHIP CONCERN"],
+        [
+          "CIB subject code:",
+          "X0000276996",
+          "Reference number (Ref.):",
+          "3 (CIB Subject Code:X0000276996)",
+          "Trade Name:",
+          "NEW MOTOR CYCLE MART"
+        ],
+        [
+          "Sector type:",
+          "PRIVATE",
+          "Sector code:",
+          "903050 (Retail Traders)",
+          "Telephone number:",
+          ""
+        ]
+      ],
+      "ADDRESS": [
+        ["ADDRESS"],
+        ["Address Type", "Address", "Postal code:", "District", "Country"],
+        ["Business", "83, JASHORE ROAD, KHULNA.", "", "KHULNA", "BD"]
+      ]
+    }
+  ],
+  "COMPANY(S) LIST": [
+    ["COMPANY(S) LIST"],
+    [
+      "CIB subject code",
+      "Name of the Owner/Company",
+      "Role in the company",
+      "FI code",
+      "Legal form",
+      "Stay Order"
+    ],
+    [
+      "T0000940593",
+      "KEYSTONE CONSORTIUM LIMITED",
+      "Sponsor director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "A0000468794",
+      "RUNNER AUTOMOBILES LIMITED",
+      "Sponsor director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "A0000468794",
+      "RUNNER AUTOMOBILES LIMITED",
+      "Others",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "A0000468794",
+      "RUNNER AUTOMOBILES LIMITED",
+      "Sponsor director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "A0000468794",
+      "RUNNER AUTOMOBILES LIMITED",
+      "Sponsor director",
+      "###",
+      "Private Ltd. Co",
+      ""
+    ],
+    [
+      "A0000003992",
+      "RUNNER MOTORS LTD.",
+      "Sponsor director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0000003992",
+      "RUNNER MOTORS LTD.",
+      "Sponsor director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0000003992",
+      "RUNNER MOTORS LTD.",
+      "Sponsor director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0000003992",
+      "RUNNER MOTORS LTD.",
+      "Sponsor director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0000003992",
+      "RUNNER MOTORS LTD.",
+      "Sponsor director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0000003992",
+      "RUNNER MOTORS LTD.",
+      "Sponsor director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0000003992",
+      "RUNNER MOTORS LTD.",
+      "Sponsor director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0000003992",
+      "RUNNER MOTORS LTD.",
+      "Sponsor director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0000003992",
+      "RUNNER MOTORS LTD.",
+      "Sponsor director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0000003992",
+      "RUNNER MOTORS LTD.",
+      "Sponsor director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0000003992",
+      "RUNNER MOTORS LTD.",
+      "Sponsor director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0000003992",
+      "RUNNER MOTORS LTD.",
+      "Sponsor director",
+      "215",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0000003992",
+      "RUNNER MOTORS LTD.",
+      "Sponsor director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0000003992",
+      "RUNNER MOTORS LTD.",
+      "Sponsor director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0000003992",
+      "RUNNER MOTORS LTD.",
+      "Sponsor director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0000003992",
+      "RUNNER MOTORS LTD.",
+      "Sponsor director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0000003992",
+      "RUNNER MOTORS LTD.",
+      "Sponsor director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0000003992",
+      "RUNNER MOTORS LTD.",
+      "Sponsor director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0000003992",
+      "RUNNER MOTORS LTD.",
+      "Elected director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ],
+    [
+      "A0000003992",
+      "RUNNER MOTORS LTD.",
+      "Sponsor director",
+      "###",
+      "Public Ltd. Co",
+      ""
+    ]
+  ],
+  "1. SUMMARY OF FACILITY(S) AS BORROWER & CO-BORROWER": [
+    ["1. SUMMARY OF FACILITY(S) AS BORROWER & CO-BORROWER"],
+    ["No of reporting Institutes:", "2", "Total Overdue Amount:", "0"],
+    ["No of Living Contracts:", "12", "No of Stay order contracts:", "0"],
+    [
+      "Total Outstanding Amount:",
+      "78,939,408",
+      "Total Outstanding amount for Stay Order Contracts:",
+      "0"
+    ]
+  ],
+  "1.(A) SUMMARY OF THE FUNDED FACILITIES AS BORROWER & CO-BORROWER": [
+    ["1.(A) SUMMARY OF THE FUNDED FACILITIES AS BORROWER & CO-BORROWER"],
+    ["Total Outstanding Amount:", "78,939,408"],
+    [
+      "Contract Category",
+      "UC",
+      " ",
+      "SMA",
+      " ",
+      "SS",
+      " ",
+      "DF",
+      " ",
+      "BL",
+      " ",
+      "BLW",
+      " ",
+      "Terminated",
+      " ",
+      "Requested",
+      " ",
+      "Stay Order"
+    ],
+    [
+      " ",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount"
+    ],
+    [
+      "Installments",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "3",
+      "60,000,000",
+      "0",
+      "0"
+    ],
+    [
+      "Non- Installments",
+      "12",
+      "78,939,408",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "70",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "Credit Cards",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "Total",
+      "12",
+      "78,939,408",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "70",
+      "0",
+      "3",
+      "60,000,000",
+      "0",
+      "0"
+    ]
+  ],
+  "1.(B) SUMMARY OF THE NON-FUNDED FACILITIES AS BORROWER & CO-BORROWER": [
+    ["1.(B) SUMMARY OF THE NON-FUNDED FACILITIES AS BORROWER & CO-BORROWER"],
+    ["Total Outstanding Amount:", "0"],
+    [
+      "Type of Financing",
+      "Living",
+      " ",
+      "Terminated",
+      " ",
+      "Requested",
+      " ",
+      "Stay order"
+    ],
+    [" ", "No.", "Amount", "No.", "Amount", "No.", "Amount", "No.", "Amount"],
+    ["Guarantee (GU)", "0", "0", "0", "0", "0", "0", "0", "0"],
+    ["Letter of credit (LC)", "0", "0", "0", "0", "0", "0", "0", "0"],
+    ["Other indirect facility (OF)", "0", "0", "0", "0", "0", "0", "0", "0"],
+    ["Total", "0", "0", "0", "0", "0", "0", "0", "0"]
+  ],
+  "2. SUMMARY OF FACILITY(S) AS GUARANTOR": [
+    ["2. SUMMARY OF FACILITY(S) AS GUARANTOR"],
+    ["No of reporting Institutes:", "1", "Total Overdue Amount:", "0"],
+    ["No of Living Contracts:", "0", "No of Stay order contracts:", "0"],
+    [
+      "Total Outstanding Amount:",
+      "0",
+      "Total Outstanding amount for Stay Order Contracts:",
+      "0"
+    ]
+  ],
+  "2.(A) SUMMARY OF THE FUNDED FACILITIES AS GUARANTOR": [
+    ["2.(A) SUMMARY OF THE FUNDED FACILITIES AS GUARANTOR"],
+    ["Total Outstanding Amount:", "0"],
+    [
+      "Contract Category",
+      "UC",
+      " ",
+      "SMA",
+      " ",
+      "SS",
+      " ",
+      "DF",
+      " ",
+      "BL",
+      " ",
+      "BLW",
+      " ",
+      "Terminated",
+      " ",
+      "Requested",
+      " ",
+      "Stay Order"
+    ],
+    [
+      " ",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount",
+      "No.",
+      "Amount"
+    ],
+    [
+      "Installments",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "5",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "Non- Installments",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "Credit Cards",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "Total",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "5",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ]
+  ],
+  "2.(B) SUMMARY OF THE NON-FUNDED FACILITIES AS GUARANTOR": [
+    ["2.(B) SUMMARY OF THE NON-FUNDED FACILITIES AS GUARANTOR"],
+    ["Total Outstanding Amount:", "0"],
+    [
+      "Type of Financing",
+      "Living",
+      " ",
+      "Terminated",
+      " ",
+      "Requested",
+      " ",
+      "Stay order"
+    ],
+    [" ", "No.", "Amount", "No.", "Amount", "No.", "Amount", "No.", "Amount"],
+    ["Guarantee (GU)", "0", "0", "0", "0", "0", "0", "0", "0"],
+    ["Letter of credit (LC)", "0", "0", "0", "0", "0", "0", "0", "0"],
+    ["Other indirect facility (OF)", "0", "0", "0", "0", "0", "0", "0", "0"],
+    ["Total", "0", "0", "0", "0", "0", "0", "0", "0"]
+  ],
+  "REQUESTED CONTRACT DETAILS": [
+    ["REQUESTED CONTRACT DETAILS"],
+    [
+      "SL",
+      "Type of Contract",
+      "Facility",
+      "Phase",
+      "Role",
+      "FI code",
+      "Branch code",
+      "Request date",
+      "Total Requested Amount",
+      "CIB subject code",
+      "CIB contract code",
+      "FI contract code"
+    ],
+    [
+      "1",
+      "Installment",
+      "Term Loan",
+      "Requested",
+      "Borrower",
+      "###",
+      "###",
+      "05/03/2020",
+      "20,000,000",
+      "X0000276996",
+      "P0000188275",
+      "_P0000188275"
+    ],
+    [
+      "2",
+      "Installment",
+      "Term Loan",
+      "Requested",
+      "Borrower",
+      "###",
+      "###",
+      "14/07/2020",
+      "20,000,000",
+      "X0000276996",
+      "J3906436926",
+      "_J3906436926"
+    ],
+    [
+      "3",
+      "Installment",
+      "Term Loan",
+      "Requested",
+      "Borrower",
+      "###",
+      "###",
+      "26/11/2020",
+      "20,000,000",
+      "X0000276996",
+      "X2505054877",
+      "_X2505054877"
+    ]
+  ],
+  "DETAILS OF INSTALLMENT FACILITY(S)": [
+    {
+      "Ref": [
+        ["DETAILS OF INSTALLMENT FACILITY(S)"],
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:A0002729238)",
+          "###",
+          "###",
+          "I8198388394",
+          "###"
+        ],
+        ["Role:", "Guarantor", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        ["Facility:", "Term Loan", "Date of last payment:", ""],
+        ["Starting date:", "14/10/2015", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "15/10/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Sanction Limit:", "78,908,000", "Method of payment:", "Cheque"],
+        [
+          "Total Disbursement Amount:",
+          "78,908,000",
+          "Payments periodicity:",
+          "Monthly Installments"
+        ],
+        [
+          "Total number of installments:",
+          "48",
+          "Number of time(s) rescheduled:",
+          ""
+        ],
+        [
+          "Installment Amount:",
+          "2,116,905",
+          "Remaining installments Amount:",
+          "0"
+        ],
+        ["Remaining installments Number:", "0", "Reorganized credit:", "NO"],
+        [
+          "Security Amount:",
+          "3,000,000",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        ["Third Party guarantee Amount:", "3,000,000", "Remarks:", ""],
+        ["Security Type:", "79 (Other Securities)", "", ""]
+      ],
+      "Other subjects linked to the same contract": [
+        ["Other subjects linked to the same contract"],
+        ["CIB subject code", "Role", "Name"],
+        ["A0000003992", "Borrower", "RUNNER MOTORS LTD."],
+        ["A0000468794", "Guarantor", "RUNNER AUTOMOBILES LIMITED"],
+        ["C0000638714", "Guarantor", "HAFIZUR RAHMAN KHAN"],
+        ["K0000632872", "Guarantor", "MOZAMMEL HOSSAIN"],
+        ["B0000605647", "Guarantor", "ALI DEEN"]
+      ],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "Outstanding", "Overdue", "NPI", "Status", "Default"],
+        ["30/11/2019", "0", "0", "0", "UC", "No"],
+        ["31/10/2019", "193,221", "0", "0", "UC", "No"],
+        ["30/09/2019", "2,287,655", "0", "0", "UC", "No"],
+        ["31/08/2019", "4,197,484", "0", "0", "UC", "No"],
+        ["31/07/2019", "6,291,919", "0", "0", "UC", "No"],
+        ["30/06/2019", "8,406,906", "0", "0", "UC", "No"],
+        ["31/05/2019", "10,113,171", "0", "0", "UC", "No"],
+        ["30/04/2019", "12,204,617", "0", "0", "UC", "No"],
+        ["31/03/2019", "14,296,063", "0", "0", "UC", "No"],
+        ["28/02/2019", "15,819,718", "0", "0", "UC", "No"],
+        ["31/01/2019", "17,881,590", "0", "0", "UC", "No"],
+        ["31/12/2018", "20,190,292", "0", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:A0002729238)",
+          "###",
+          "###",
+          "J6904689561",
+          "###"
+        ],
+        ["Role:", "Guarantor", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        ["Facility:", "Term Loan", "Date of last payment:", ""],
+        ["Starting date:", "17/11/2015", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "16/11/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Sanction Limit:", "75,908,000", "Method of payment:", "Cheque"],
+        [
+          "Total Disbursement Amount:",
+          "75,908,000",
+          "Payments periodicity:",
+          "Monthly Installments"
+        ],
+        [
+          "Total number of installments:",
+          "48",
+          "Number of time(s) rescheduled:",
+          ""
+        ],
+        [
+          "Installment Amount:",
+          "2,036,422",
+          "Remaining installments Amount:",
+          "0"
+        ],
+        ["Remaining installments Number:", "0", "Reorganized credit:", "NO"],
+        [
+          "Security Amount:",
+          "75,908,000",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        ["Third Party guarantee Amount:", "75,908,000", "Remarks:", ""],
+        ["Security Type:", "79 (Other Securities)", "", ""]
+      ],
+      "Other subjects linked to the same contract": [
+        ["Other subjects linked to the same contract"],
+        ["CIB subject code", "Role", "Name"],
+        ["A0000003992", "Borrower", "RUNNER MOTORS LTD."],
+        ["A0000468794", "Guarantor", "RUNNER AUTOMOBILES LIMITED"],
+        ["C0000638714", "Guarantor", "HAFIZUR RAHMAN KHAN"],
+        ["K0000632872", "Guarantor", "MOZAMMEL HOSSAIN"],
+        ["B0000605647", "Guarantor", "ALI DEEN"]
+      ],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "Outstanding", "Overdue", "NPI", "Status", "Default"],
+        ["31/12/2019", "0", "0", "0", "UC", "No"],
+        ["30/11/2019", "54,422", "0", "0", "UC", "No"],
+        ["31/10/2019", "2,070,144", "0", "0", "UC", "No"],
+        ["30/09/2019", "4,085,867", "0", "0", "UC", "No"],
+        ["31/08/2019", "5,858,823", "0", "0", "UC", "No"],
+        ["31/07/2019", "7,874,546", "0", "0", "UC", "No"],
+        ["30/06/2019", "9,911,826", "0", "0", "UC", "No"],
+        ["31/05/2019", "11,492,048", "0", "0", "UC", "No"],
+        ["30/04/2019", "13,504,490", "0", "0", "UC", "No"],
+        ["31/03/2019", "15,516,932", "0", "0", "UC", "No"],
+        ["28/02/2019", "16,925,464", "0", "0", "UC", "No"],
+        ["31/01/2019", "18,907,911", "0", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:A0002729238)",
+          "###",
+          "###",
+          "Z7606145257",
+          "###"
+        ],
+        ["Role:", "Guarantor", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        ["Facility:", "Term Loan", "Date of last payment:", ""],
+        ["Starting date:", "25/01/2016", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "25/01/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Sanction Limit:", "75,760,000", "Method of payment:", "Cheque"],
+        [
+          "Total Disbursement Amount:",
+          "75,760,000",
+          "Payments periodicity:",
+          "Monthly Installments"
+        ],
+        [
+          "Total number of installments:",
+          "48",
+          "Number of time(s) rescheduled:",
+          ""
+        ],
+        [
+          "Installment Amount:",
+          "2,032,452",
+          "Remaining installments Amount:",
+          "0"
+        ],
+        ["Remaining installments Number:", "0", "Reorganized credit:", "NO"],
+        [
+          "Security Amount:",
+          "75,760,000",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        ["Third Party guarantee Amount:", "75,760,000", "Remarks:", ""],
+        ["Security Type:", "79 (Other Securities)", "", ""]
+      ],
+      "Other subjects linked to the same contract": [
+        ["Other subjects linked to the same contract"],
+        ["CIB subject code", "Role", "Name"],
+        ["A0000003992", "Borrower", "RUNNER MOTORS LTD."],
+        ["A0000468794", "Guarantor", "RUNNER AUTOMOBILES LIMITED"],
+        ["C0000638714", "Guarantor", "HAFIZUR RAHMAN KHAN"],
+        ["K0000632872", "Guarantor", "MOZAMMEL HOSSAIN"],
+        ["B0000605647", "Guarantor", "ALI DEEN"]
+      ],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "Outstanding", "Overdue", "NPI", "Status", "Default"],
+        ["31/01/2020", "0", "0", "0", "UC", "No"],
+        ["31/12/2019", "2,145,569", "0", "0", "UC", "No"],
+        ["30/11/2019", "3,951,351", "0", "0", "UC", "No"],
+        ["31/10/2019", "5,963,719", "0", "0", "UC", "No"],
+        ["30/09/2019", "7,976,087", "0", "0", "UC", "No"],
+        ["31/08/2019", "9,588,219", "0", "0", "UC", "No"],
+        ["31/07/2019", "11,600,587", "0", "0", "UC", "No"],
+        ["30/06/2019", "13,621,112", "0", "0", "UC", "No"],
+        ["31/05/2019", "15,052,089", "0", "0", "UC", "No"],
+        ["30/04/2019", "17,060,379", "0", "0", "UC", "No"],
+        ["31/03/2019", "19,068,669", "0", "0", "UC", "No"],
+        ["28/02/2019", "20,338,286", "0", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:A0002729238)",
+          "###",
+          "###",
+          "X8969400938",
+          "###"
+        ],
+        ["Role:", "Guarantor", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        ["Facility:", "Term Loan", "Date of last payment:", ""],
+        ["Starting date:", "11/05/2016", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "10/05/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Sanction Limit:", "30,888,000", "Method of payment:", "Cheque"],
+        [
+          "Total Disbursement Amount:",
+          "30,888,000",
+          "Payments periodicity:",
+          "Monthly Installments"
+        ],
+        [
+          "Total number of installments:",
+          "48",
+          "Number of time(s) rescheduled:",
+          ""
+        ],
+        [
+          "Installment Amount:",
+          "813,400",
+          "Remaining installments Amount:",
+          "0"
+        ],
+        ["Remaining installments Number:", "0", "Reorganized credit:", "NO"],
+        [
+          "Security Amount:",
+          "30,888,000",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        ["Third Party guarantee Amount:", "30,888,000", "Remarks:", ""],
+        ["Security Type:", "79 (Other Securities)", "", ""]
+      ],
+      "Other subjects linked to the same contract": [
+        ["Other subjects linked to the same contract"],
+        ["CIB subject code", "Role", "Name"],
+        ["A0000003992", "Borrower", "RUNNER MOTORS LTD."],
+        ["C0000638714", "Guarantor", "HAFIZUR RAHMAN KHAN"],
+        ["A0000468794", "Guarantor", "RUNNER AUTOMOBILES LIMITED"],
+        ["K0000632872", "Guarantor", "MOZAMMEL HOSSAIN"],
+        ["B0000605647", "Guarantor", "ALI DEEN"]
+      ],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "Outstanding", "Overdue", "NPI", "Status", "Default"],
+        ["31/07/2020", "0", "0", "0", "UC", "No"],
+        ["30/06/2020", "892,251", "823,381", "1", "UC", "No"],
+        ["31/05/2020", "1,655,995", "1,646,762", "2", "UC", "No"],
+        ["30/04/2020", "1,655,994", "823,381", "1", "UC", "No"],
+        ["31/03/2020", "1,655,994", "0", "0", "UC", "No"],
+        ["29/02/2020", "2,385,840", "0", "0", "UC", "No"],
+        ["31/01/2020", "3,209,221", "0", "0", "UC", "No"],
+        ["31/12/2019", "4,032,602", "0", "0", "UC", "No"],
+        ["30/11/2019", "4,673,571", "0", "0", "UC", "No"],
+        ["31/10/2019", "5,496,952", "0", "0", "UC", "No"],
+        ["30/09/2019", "6,320,333", "0", "0", "UC", "No"],
+        ["31/08/2019", "6,891,252", "0", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "1 (CIB Subject Code:A0002729238)",
+          "###",
+          "###",
+          "J7157371119",
+          "###"
+        ],
+        ["Role:", "Guarantor", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        ["Facility:", "Term Loan", "Date of last payment:", ""],
+        ["Starting date:", "15/09/2015", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "15/09/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Sanction Limit:", "29,520,000", "Method of payment:", "Cheque"],
+        [
+          "Total Disbursement Amount:",
+          "29,520,000",
+          "Payments periodicity:",
+          "Monthly Installments"
+        ],
+        [
+          "Total number of installments:",
+          "48",
+          "Number of time(s) rescheduled:",
+          ""
+        ],
+        [
+          "Installment Amount:",
+          "791,948",
+          "Remaining installments Amount:",
+          "0"
+        ],
+        ["Remaining installments Number:", "0", "Reorganized credit:", "NO"],
+        [
+          "Security Amount:",
+          "29,520,000",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        ["Third Party guarantee Amount:", "29,520,000", "Remarks:", ""],
+        ["Security Type:", "79 (Other Securities)", "", ""]
+      ],
+      "Other subjects linked to the same contract": [
+        ["Other subjects linked to the same contract"],
+        ["CIB subject code", "Role", "Name"],
+        ["A0000003992", "Borrower", "RUNNER MOTORS LTD."],
+        ["A0000468794", "Guarantor", "RUNNER AUTOMOBILES LIMITED"],
+        ["C0000638714", "Guarantor", "HAFIZUR RAHMAN KHAN"],
+        ["K0000632872", "Guarantor", "MOZAMMEL HOSSAIN"],
+        ["B0000605647", "Guarantor", "ALI DEEN"]
+      ],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "Outstanding", "Overdue", "NPI", "Status", "Default"],
+        ["30/09/2019", "0", "0", "0", "UC", "No"],
+        ["31/08/2019", "757,361", "0", "0", "UC", "No"],
+        ["31/07/2019", "1,540,546", "0", "0", "UC", "No"],
+        ["30/06/2019", "2,354,909", "0", "0", "UC", "No"],
+        ["31/05/2019", "3,019,639", "0", "0", "UC", "No"],
+        ["30/04/2019", "3,801,864", "0", "0", "UC", "No"],
+        ["31/03/2019", "4,584,089", "0", "0", "UC", "No"],
+        ["28/02/2019", "5,179,565", "0", "0", "UC", "No"],
+        ["31/01/2019", "5,951,330", "0", "0", "UC", "No"],
+        ["31/12/2018", "6,723,095", "0", "0", "UC", "No"],
+        ["30/11/2018", "7,220,533", "0", "0", "UC", "No"],
+        ["31/10/2018", "7,992,298", "0", "0", "UC", "No"]
+      ]
+    }
+  ],
+  "DETAILS OF NONINSTALLMENT FACILITY(S)": [
+    {
+      "Ref": [
+        ["DETAILS OF NONINSTALLMENT FACILITY(S)"],
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "A0002311329",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Living", "Date of Law suit:", "-"],
+        ["Facility:", "Overdraft", "Date of last payment:", ""],
+        ["Starting date:", "27/02/2015", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "27/02/2016",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", "0"],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2020", "50,000,000", "50,707,943", "0", "UC", "No"],
+        ["30/11/2020", "50,000,000", "50,113,208", "0", "UC", "No"],
+        ["31/10/2020", "50,000,000", "47,336,650", "0", "UC", "No"],
+        ["30/09/2020", "50,000,000", "48,979,555", "0", "UC", "No"],
+        ["31/08/2020", "50,000,000", "48,582,429", "0", "UC", "No"],
+        ["31/07/2020", "50,000,000", "49,947,590", "0", "UC", "No"],
+        ["30/06/2020", "50,000,000", "51,060,590", "0", "UC", "No"],
+        ["31/05/2020", "50,000,000", "44,433,729", "0", "UC", "No"],
+        ["30/04/2020", "50,000,000", "51,583,310", "0", "UC", "No"],
+        ["31/03/2020", "50,000,000", "46,494,684", "0", "UC", "No"],
+        ["29/02/2020", "50,000,000", "46,494,684", "0", "UC", "No"],
+        ["31/01/2020", "50,000,000", "46,567,429", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "A5367269919",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "23/09/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "22/12/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/11/2020", "2,000,000", "2,038,370", "0", "UC", "No"],
+        ["31/10/2020", "2,000,000", "2,004,440", "0", "UC", "No"],
+        ["30/09/2020", "2,000,000", "2,004,440", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "B0000097057",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "24/11/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "22/02/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["29/02/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/01/2020", "2,000,000", "2,027,444", "0", "UC", "No"],
+        ["31/12/2019", "2,000,000", "2,027,444", "0", "UC", "No"],
+        ["30/11/2019", "2,000,000", "2,000,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "B0000487028",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "01/10/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "30/12/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/01/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/12/2019", "2,000,000", "2,066,836", "0", "UC", "No"],
+        ["30/11/2019", "2,000,000", "2,000,000", "0", "UC", "No"],
+        ["31/10/2019", "2,000,000", "2,022,388", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "B3150348494",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "27/05/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "25/08/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/08/2020", "3,000,000", "0", "0", "UC", "No"],
+        ["31/07/2020", "3,000,000", "3,026,250", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "3,026,250", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "2,002,500", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "D1253173659",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "27/08/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "25/11/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2020", "3,000,000", "0", "0", "UC", "No"],
+        ["30/11/2020", "3,000,000", "3,081,515", "0", "UC", "No"],
+        ["31/10/2020", "3,000,000", "3,029,138", "0", "UC", "No"],
+        ["30/09/2020", "3,000,000", "3,029,138", "0", "UC", "No"],
+        ["31/08/2020", "3,000,000", "3,000,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "D1366370419",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "28/05/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "26/08/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["30/09/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/08/2020", "2,000,000", "2,017,000", "0", "UC", "No"],
+        ["31/07/2020", "2,000,000", "2,017,000", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "2,017,000", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "2,002,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "D4111027886",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "27/05/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "25/08/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/08/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/07/2020", "2,000,000", "2,017,500", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "2,017,500", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "2,002,500", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "E0000602963",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "09/05/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "07/08/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        ["Security Type:", "", "Remarks:", ""]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/08/2019", "0", "0", "0", "UC", "No"],
+        ["31/07/2019", "2,000,000", "2,061,095", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "E1349443973",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "26/08/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "24/11/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/11/2020", "2,000,000", "2,055,029", "0", "UC", "No"],
+        ["31/10/2020", "2,000,000", "2,019,980", "0", "UC", "No"],
+        ["30/09/2020", "2,000,000", "2,019,980", "0", "UC", "No"],
+        ["31/08/2020", "2,000,000", "2,000,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "E5817157091",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "11/06/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "09/09/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["30/09/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/08/2020", "2,000,000", "2,010,000", "0", "UC", "No"],
+        ["31/07/2020", "2,000,000", "2,010,000", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "2,010,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "F0000829306",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "29/12/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "28/03/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/07/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "2,088,770", "0", "UC", "No"],
+        ["30/04/2020", "2,000,000", "2,088,770", "0", "UC", "No"],
+        ["31/03/2020", "2,000,000", "2,002,167", "0", "UC", "No"],
+        ["29/02/2020", "2,000,000", "2,002,167", "0", "UC", "No"],
+        ["31/01/2020", "2,000,000", "2,002,167", "0", "UC", "No"],
+        ["31/12/2019", "2,000,000", "2,002,167", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "F0773175172",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "19/08/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "17/11/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["30/11/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/10/2020", "2,000,000", "2,023,865", "0", "UC", "No"],
+        ["30/09/2020", "2,000,000", "2,023,865", "0", "UC", "No"],
+        ["31/08/2020", "2,000,000", "2,000,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "F2358924664",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "03/09/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "02/12/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2020", "3,000,000", "0", "0", "UC", "No"],
+        ["30/11/2020", "3,000,000", "3,074,487", "0", "UC", "No"],
+        ["31/10/2020", "3,000,000", "3,023,310", "0", "UC", "No"],
+        ["30/09/2020", "3,000,000", "3,023,310", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "F5491314048",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Living", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "22/11/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "20/02/2021",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2020", "2,800,000", "2,830,541", "0", "UC", "No"],
+        ["30/11/2020", "2,800,000", "2,806,993", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "G0000374206",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "24/11/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "22/02/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        ["Security Type:", "", "Remarks:", ""]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["29/02/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/01/2020", "2,000,000", "2,027,444", "0", "UC", "No"],
+        ["31/12/2019", "2,000,000", "2,027,444", "0", "UC", "No"],
+        ["30/11/2019", "2,000,000", "2,000,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "G4710773966",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Living", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "02/12/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "02/03/2021",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2020", "2,000,000", "2,016,265", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "G5772457177",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "03/09/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "02/12/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2020", "3,000,000", "0", "0", "UC", "No"],
+        ["30/11/2020", "3,000,000", "3,074,487", "0", "UC", "No"],
+        ["31/10/2020", "3,000,000", "3,023,310", "0", "UC", "No"],
+        ["30/09/2020", "3,000,000", "3,023,310", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "G8455839974",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "14/05/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "12/08/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/08/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/07/2020", "2,000,000", "2,024,000", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "2,024,000", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "2,009,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "H0000293538",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "30/06/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "28/09/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["30/09/2019", "5,000,000", "0", "0", "UC", "No"],
+        ["31/08/2019", "5,000,000", "5,113,790", "0", "UC", "No"],
+        ["31/07/2019", "5,000,000", "5,057,797", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "H0060160592",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "22/03/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "20/06/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/07/2020", "3,000,000", "0", "0", "UC", "No"],
+        ["30/06/2020", "3,000,000", "0", "0", "UC", "No"],
+        ["31/05/2020", "3,000,000", "3,056,749", "0", "UC", "No"],
+        ["30/04/2020", "3,000,000", "3,033,415", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "H5993846427",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "23/08/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "21/11/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/11/2020", "2,000,000", "2,057,085", "0", "UC", "No"],
+        ["31/10/2020", "2,000,000", "2,021,645", "0", "UC", "No"],
+        ["30/09/2020", "2,000,000", "2,021,645", "0", "UC", "No"],
+        ["31/08/2020", "2,000,000", "2,000,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "H8973733779",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Living", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "13/12/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "13/03/2021",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2020", "3,000,000", "3,015,240", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "H9427869746",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "17/05/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "15/08/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/08/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/07/2020", "2,000,000", "2,022,500", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "2,022,500", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "2,007,500", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "I0000016745",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "29/09/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "28/12/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["30/09/2019", "0", "0", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "I0000279211",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "28/10/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "26/01/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["29/02/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/01/2020", "2,000,000", "2,046,944", "0", "UC", "No"],
+        ["31/12/2019", "2,000,000", "2,046,944", "0", "UC", "No"],
+        ["30/11/2019", "2,000,000", "2,000,000", "0", "UC", "No"],
+        ["31/10/2019", "2,000,000", "2,002,888", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "I1780672749",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "01/06/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "30/08/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["30/09/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/08/2020", "2,000,000", "2,015,000", "0", "UC", "No"],
+        ["31/07/2020", "2,000,000", "2,015,000", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "2,015,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "I8014647839",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Living", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "23/12/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "23/03/2021",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2020", "2,000,000", "2,004,500", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "J0000389034",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "15/01/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "14/03/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/07/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/04/2020", "2,000,000", "2,073,004", "0", "UC", "No"],
+        ["31/03/2020", "2,000,000", "2,000,000", "0", "UC", "No"],
+        ["29/02/2020", "2,000,000", "2,000,000", "0", "UC", "No"],
+        ["31/01/2020", "2,000,000", "2,000,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "J0000594611",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "09/05/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "07/08/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/08/2019", "0", "0", "0", "UC", "No"],
+        ["31/07/2019", "2,000,000", "2,061,095", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "J0000706136",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "22/12/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "21/03/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/07/2020", "2,500,000", "0", "0", "UC", "No"],
+        ["30/06/2020", "2,500,000", "0", "0", "UC", "No"],
+        ["31/05/2020", "2,500,000", "2,509,028", "0", "UC", "No"],
+        ["30/04/2020", "2,500,000", "2,509,028", "0", "UC", "No"],
+        ["31/03/2020", "2,500,000", "2,509,028", "0", "UC", "No"],
+        ["29/02/2020", "2,500,000", "2,509,028", "0", "UC", "No"],
+        ["31/01/2020", "2,500,000", "2,509,028", "0", "UC", "No"],
+        ["31/12/2019", "2,500,000", "2,509,028", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "J2954492516",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "31/05/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "29/08/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["30/09/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/08/2020", "2,000,000", "2,015,500", "0", "UC", "No"],
+        ["31/07/2020", "2,000,000", "2,015,500", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "2,015,500", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "2,000,500", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "K0000996503",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "10/08/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "08/01/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/01/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/12/2019", "2,000,000", "2,059,944", "0", "UC", "No"],
+        ["30/11/2019", "2,000,000", "2,000,000", "0", "UC", "No"],
+        ["31/10/2019", "2,000,000", "2,015,888", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "K0275762896",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "28/05/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "26/08/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["30/09/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/08/2020", "2,000,000", "2,017,000", "0", "UC", "No"],
+        ["31/07/2020", "2,000,000", "2,017,000", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "2,017,000", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "2,002,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "L0000170581",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "09/05/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "07/08/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["30/09/2019", "0", "0", "0", "UC", "No"],
+        ["31/08/2019", "0", "0", "0", "UC", "No"],
+        ["31/07/2019", "2,000,000", "2,061,095", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "L3304147229",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "17/06/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "15/09/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["30/09/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/08/2020", "2,000,000", "3,010,500", "0", "UC", "No"],
+        ["31/07/2020", "2,000,000", "3,010,500", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "3,010,500", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "L3411538584",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Living", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "13/12/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "13/03/2021",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2020", "3,000,000", "3,015,240", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "M0009055294",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "08/03/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "06/06/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/07/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "2,048,098", "0", "UC", "No"],
+        ["30/04/2020", "2,000,000", "2,032,463", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "M0067574501",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "23/02/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "23/05/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/07/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/04/2020", "2,000,000", "2,042,650", "0", "UC", "No"],
+        ["31/03/2020", "2,000,000", "2,000,000", "0", "UC", "No"],
+        ["29/02/2020", "2,000,000", "2,000,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "M3648303131",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "03/09/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "02/12/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/11/2020", "2,000,000", "2,049,658", "0", "UC", "No"],
+        ["31/10/2020", "2,000,000", "2,015,540", "0", "UC", "No"],
+        ["30/09/2020", "2,000,000", "2,015,540", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "N0000039571",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "01/09/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "30/11/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2019", "5,000,000", "0", "0", "UC", "No"],
+        ["30/11/2019", "5,000,000", "5,000,000", "0", "UC", "No"],
+        ["31/10/2019", "5,000,000", "5,110,745", "0", "UC", "No"],
+        ["30/09/2019", "5,000,000", "5,054,166", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "N0000467106",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "29/09/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "28/12/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2019", "4,000,000", "0", "0", "UC", "No"],
+        ["30/11/2019", "4,000,000", "4,000,000", "0", "UC", "No"],
+        ["31/10/2019", "4,000,000", "4,047,699", "0", "UC", "No"],
+        ["30/09/2019", "4,000,000", "4,002,888", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "N0000519399",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "07/07/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "05/10/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/10/2019", "2,000,000", "0", "0", "UC", "No"],
+        ["30/09/2019", "2,000,000", "2,062,111", "0", "UC", "No"],
+        ["31/08/2019", "2,000,000", "2,040,444", "0", "UC", "No"],
+        ["31/07/2019", "2,000,000", "2,018,055", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "N0000844042",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "14/01/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "13/04/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/07/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/04/2020", "2,000,000", "2,073,846", "0", "UC", "No"],
+        ["31/03/2020", "2,000,000", "2,000,000", "0", "UC", "No"],
+        ["29/02/2020", "2,000,000", "2,000,000", "0", "UC", "No"],
+        ["31/01/2020", "2,000,000", "2,000,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "N0054280143",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "05/02/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "05/05/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/07/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/04/2020", "2,000,000", "2,055,748", "0", "UC", "No"],
+        ["31/03/2020", "2,000,000", "2,000,000", "0", "UC", "No"],
+        ["29/02/2020", "2,000,000", "2,000,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "N8781096516",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "13/08/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "11/11/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["30/11/2020", "4,000,000", "0", "0", "UC", "No"],
+        ["31/10/2020", "4,000,000", "4,054,390", "0", "UC", "No"],
+        ["30/09/2020", "4,000,000", "4,054,390", "0", "UC", "No"],
+        ["31/08/2020", "4,000,000", "4,000,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "O0000191667",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "03/12/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "02/03/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/07/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "2,088,770", "0", "UC", "No"],
+        ["30/04/2020", "2,000,000", "2,088,770", "0", "UC", "No"],
+        ["31/03/2020", "2,000,000", "2,020,944", "0", "UC", "No"],
+        ["29/02/2020", "2,000,000", "2,020,944", "0", "UC", "No"],
+        ["31/01/2020", "2,000,000", "2,020,944", "0", "UC", "No"],
+        ["31/12/2019", "2,000,000", "2,020,944", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "O0000333249",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "03/12/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "02/03/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/07/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "2,020,944", "0", "UC", "No"],
+        ["30/04/2020", "2,000,000", "2,020,944", "0", "UC", "No"],
+        ["31/03/2020", "2,000,000", "2,020,944", "0", "UC", "No"],
+        ["29/02/2020", "2,000,000", "2,020,944", "0", "UC", "No"],
+        ["31/01/2020", "2,000,000", "2,020,944", "0", "UC", "No"],
+        ["31/12/2019", "2,000,000", "2,020,944", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "O0000696262",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "15/01/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "14/03/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/07/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/04/2020", "2,000,000", "2,073,004", "0", "UC", "No"],
+        ["31/03/2020", "2,000,000", "2,000,000", "0", "UC", "No"],
+        ["29/02/2020", "2,000,000", "2,000,000", "0", "UC", "No"],
+        ["31/01/2020", "2,000,000", "2,000,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "O2192637756",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Living", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "23/11/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "21/02/2021",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2020", "1,200,000", "1,212,756", "0", "UC", "No"],
+        ["30/11/2020", "1,200,000", "1,202,664", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "Q0000053444",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "29/09/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "28/12/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2019", "0", "0", "0", "UC", "No"],
+        ["30/11/2019", "0", "0", "0", "UC", "No"],
+        ["31/10/2019", "0", "0", "0", "UC", "No"],
+        ["30/09/2019", "0", "0", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "Q0000304493",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "28/12/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "28/12/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["30/09/2019", "0", "0", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "Q0000837257",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "26/08/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "24/11/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["30/11/2019", "5,000,000", "0", "0", "UC", "No"],
+        ["31/10/2019", "5,000,000", "5,121,699", "0", "UC", "No"],
+        ["30/09/2019", "5,000,000", "5,065,000", "0", "UC", "No"],
+        ["31/08/2019", "5,000,000", "5,010,833", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "Q0002098902",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "10/03/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "08/06/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/07/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "2,046,631", "0", "UC", "No"],
+        ["30/04/2020", "2,000,000", "2,031,008", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "Q5258322967",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "08/09/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "07/12/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/11/2020", "2,000,000", "2,046,836", "0", "UC", "No"],
+        ["31/10/2020", "2,000,000", "2,012,765", "0", "UC", "No"],
+        ["30/09/2020", "2,000,000", "2,012,765", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "R0000320045",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "31/07/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "29/10/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        ["Security Type:", "", "Remarks:", ""]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/10/2019", "2,000,000", "0", "0", "UC", "No"],
+        ["30/09/2019", "2,000,000", "2,044,777", "0", "UC", "No"],
+        ["31/08/2019", "2,000,000", "2,023,111", "0", "UC", "No"],
+        ["31/07/2019", "2,000,000", "2,000,722", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "S0000280037",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "03/12/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "02/03/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/07/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "2,020,944", "0", "UC", "No"],
+        ["30/04/2020", "2,000,000", "2,020,944", "0", "UC", "No"],
+        ["31/03/2020", "2,000,000", "2,020,944", "0", "UC", "No"],
+        ["29/02/2020", "2,000,000", "2,020,944", "0", "UC", "No"],
+        ["31/01/2020", "2,000,000", "2,020,944", "0", "UC", "No"],
+        ["31/12/2019", "2,000,000", "2,020,944", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "S0000365462",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "03/11/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "01/02/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["29/02/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/01/2020", "2,000,000", "2,042,611", "0", "UC", "No"],
+        ["31/12/2019", "2,000,000", "2,042,611", "0", "UC", "No"],
+        ["30/11/2019", "2,000,000", "2,000,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "S2396763383",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Living", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "08/12/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "08/03/2021",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2020", "3,000,000", "3,019,403", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "S6048183547",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Living", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "14/12/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "14/03/2021",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2020", "3,000,000", "3,014,408", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "T0000742456",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "26/05/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "24/08/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["30/09/2019", "0", "0", "0", "UC", "No"],
+        ["31/08/2019", "0", "0", "0", "UC", "No"],
+        ["31/07/2019", "2,000,000", "2,048,679", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "T0000788851",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "30/01/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "29/04/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/07/2020", "3,000,000", "0", "0", "UC", "No"],
+        ["30/06/2020", "3,000,000", "0", "0", "UC", "No"],
+        ["31/05/2020", "3,000,000", "0", "0", "UC", "No"],
+        ["30/04/2020", "3,000,000", "3,090,524", "0", "UC", "No"],
+        ["31/03/2020", "3,000,000", "3,000,000", "0", "UC", "No"],
+        ["29/02/2020", "3,000,000", "3,000,000", "0", "UC", "No"],
+        ["31/01/2020", "3,000,000", "3,000,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "T0430907593",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Living", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "30/09/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "29/12/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2020", "3,000,000", "3,077,434", "0", "UC", "No"],
+        ["30/11/2020", "3,000,000", "3,051,629", "0", "UC", "No"],
+        ["31/10/2020", "3,000,000", "3,000,833", "0", "UC", "No"],
+        ["30/09/2020", "3,000,000", "3,000,833", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "U0000055146",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "28/07/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "26/10/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/10/2019", "2,000,000", "0", "0", "UC", "No"],
+        ["30/09/2019", "2,000,000", "2,046,944", "0", "UC", "No"],
+        ["31/08/2019", "2,000,000", "2,025,277", "0", "UC", "No"],
+        ["31/07/2019", "2,000,000", "2,002,888", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "U7895668256",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "01/09/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "30/11/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/11/2020", "2,000,000", "2,050,910", "0", "UC", "No"],
+        ["31/10/2020", "2,000,000", "2,016,650", "0", "UC", "No"],
+        ["30/09/2020", "2,000,000", "2,016,650", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "V0000423765",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "07/08/2017", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "18/11/2017",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/08/2019", "0", "0", "0", "UC", "No"],
+        ["31/07/2019", "30,000,000", "0", "0", "UC", "No"],
+        ["30/06/2019", "30,000,000", "28,424,724", "0", "UC", "No"],
+        ["31/05/2019", "30,000,000", "28,424,724", "0", "UC", "No"],
+        ["30/04/2019", "30,000,000", "28,424,724", "0", "UC", "No"],
+        ["31/03/2019", "30,000,000", "28,424,724", "0", "UC", "No"],
+        ["28/02/2019", "30,000,000", "26,538,819", "0", "UC", "No"],
+        ["31/01/2019", "30,000,000", "28,424,724", "0", "UC", "No"],
+        ["31/12/2018", "30,000,000", "28,424,724", "0", "UC", "No"],
+        ["30/11/2018", "20,000,000", "16,270,992", "0", "UC", "No"],
+        ["31/10/2018", "20,000,000", "2,037,725", "0", "UC", "No"],
+        ["30/09/2018", "20,000,000", "28,000,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "V0000693370",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "27/05/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "25/08/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/08/2019", "0", "0", "0", "UC", "No"],
+        ["31/07/2019", "2,000,000", "2,047,949", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "V0034504718",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "03/03/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "01/06/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/07/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "2,051,764", "0", "UC", "No"],
+        ["30/04/2020", "2,000,000", "2,036,102", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "V0090364614",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "03/02/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "03/05/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/07/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/04/2020", "2,000,000", "2,057,203", "0", "UC", "No"],
+        ["31/03/2020", "2,000,000", "2,000,000", "0", "UC", "No"],
+        ["29/02/2020", "2,000,000", "2,000,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "W0000179947",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "28/07/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "26/10/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/10/2019", "2,000,000", "0", "0", "UC", "No"],
+        ["30/09/2019", "2,000,000", "2,046,944", "0", "UC", "No"],
+        ["31/08/2019", "2,000,000", "2,025,277", "0", "UC", "No"],
+        ["31/07/2019", "2,000,000", "2,002,888", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "W0049402448",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "23/02/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "23/05/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/07/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/04/2020", "2,000,000", "2,042,650", "0", "UC", "No"],
+        ["31/03/2020", "2,000,000", "2,000,000", "0", "UC", "No"],
+        ["29/02/2020", "2,000,000", "2,000,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "W0889398493",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Living", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "08/12/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "08/03/2021",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2020", "3,000,000", "3,019,403", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "W3712732028",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "17/05/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "15/08/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/08/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/07/2020", "2,000,000", "2,022,500", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "2,022,500", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "2,007,500", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "X0000436182",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "22/07/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "21/08/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/08/2019", "0", "0", "0", "UC", "No"],
+        ["31/07/2019", "10,000,000", "10,036,111", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "X0000518066",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "25/12/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "14/03/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/07/2020", "2,500,000", "0", "0", "UC", "No"],
+        ["30/06/2020", "2,500,000", "0", "0", "UC", "No"],
+        ["31/05/2020", "2,500,000", "2,515,347", "0", "UC", "No"],
+        ["30/04/2020", "2,500,000", "2,515,347", "0", "UC", "No"],
+        ["31/03/2020", "2,500,000", "2,515,347", "0", "UC", "No"],
+        ["29/02/2020", "2,500,000", "2,515,347", "0", "UC", "No"],
+        ["31/01/2020", "2,500,000", "2,515,347", "0", "UC", "No"],
+        ["31/12/2019", "2,500,000", "2,515,347", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "X0008698581",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "19/03/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "17/06/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/07/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "2,040,032", "0", "UC", "No"],
+        ["30/04/2020", "2,000,000", "2,024,459", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "X2518756396",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "14/05/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "12/08/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/08/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/07/2020", "2,000,000", "2,024,000", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "2,024,000", "0", "UC", "No"],
+        ["31/05/2020", "2,000,000", "2,009,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "X3839154893",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Living", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "20/12/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "20/03/2021",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2020", "2,000,000", "2,006,275", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "X8109907838",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "03/06/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "01/09/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["30/09/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/08/2020", "2,000,000", "2,014,000", "0", "UC", "No"],
+        ["31/07/2020", "2,000,000", "2,014,000", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "2,014,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "Y2224398005",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "03/06/2020", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "01/09/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["30/09/2020", "2,000,000", "0", "0", "UC", "No"],
+        ["31/08/2020", "2,000,000", "2,014,000", "0", "UC", "No"],
+        ["31/07/2020", "2,000,000", "2,014,000", "0", "UC", "No"],
+        ["30/06/2020", "2,000,000", "2,014,000", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "Z0000288545",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "29/08/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "27/11/2019",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/12/2019", "5,000,000", "0", "0", "UC", "No"],
+        ["30/11/2019", "5,000,000", "5,000,000", "0", "UC", "No"],
+        ["31/10/2019", "5,000,000", "5,116,222", "0", "UC", "No"],
+        ["30/09/2019", "5,000,000", "5,059,583", "0", "UC", "No"],
+        ["31/08/2019", "5,000,000", "5,005,416", "0", "UC", "No"]
+      ]
+    },
+    {
+      "Ref": [
+        [
+          "Ref",
+          "FI code",
+          "Branch code",
+          "CIB contract code",
+          "FI contract code"
+        ],
+        [
+          "2 (CIB Subject Code:A0002285895)",
+          "###",
+          "###",
+          "Z0000860324",
+          "###"
+        ],
+        ["Role:", "Borrower", "Date of Last Update:", ""],
+        ["Phase:", "Terminated", "Date of Law suit:", "-"],
+        [
+          "Facility:",
+          "Demand Loan (Not Installment)",
+          "Date of last payment:",
+          ""
+        ],
+        ["Starting date:", "27/10/2019", "Date of classification:", ""],
+        [
+          "End date of contract:",
+          "25/01/2020",
+          "Date of last rescheduling:",
+          ""
+        ],
+        ["Subsidized credit Y/N:", "0", "Number of time(s) rescheduled", ""],
+        ["Security Amount:", "0", "Reorganized credit:", "NO"],
+        [
+          "Third Party guarantee Amount:",
+          "0",
+          "Basis for classification:qualitative judgment:",
+          ""
+        ],
+        [
+          "Security Type:",
+          "50 (Real estate (Land,Building,Flat,etc.))",
+          "Remarks:",
+          ""
+        ]
+      ],
+      "Other subjects linked to the same contract": [" "],
+      "Contract History": [
+        ["Contract History"],
+        ["Date", "SancLmt", "Outstand", "Overdue", "Status", "Default"],
+        ["31/01/2020", "3,000,000", "0", "0", "UC", "No"],
+        ["31/12/2019", "3,000,000", "3,071,500", "0", "UC", "No"],
+        ["30/11/2019", "3,000,000", "3,000,000", "0", "UC", "No"],
+        ["31/10/2019", "3,000,000", "3,005,416", "0", "UC", "No"]
+      ]
+    }
+  ]
+}

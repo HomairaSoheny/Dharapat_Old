@@ -13,6 +13,8 @@ CATEGORY_MAPPING = {
         "Type g": "Corporate Guarantor",
         "Type h": "Related party of Guarantor",
         "Type i": "Other concerns/persons not related to the company",
+        "Type j": "Related party of Guarantor(with proprietorship concern)", 
+        "Type k":  "Directors CIB(with proprietorship concern)"
     }
 
 DATE_OF_CLASSIFICATION = ["Date of classification"]

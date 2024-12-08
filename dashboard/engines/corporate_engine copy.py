@@ -120,31 +120,7 @@ def getOutstandingZeroDate_1(fac):
                 for index, row in sorted_contracts.iterrows():
                     if row[column_name] == 0:
                         return row['Date']
-def extract_trade_names(prp_list):
-    trade_names_dict = {}
-    if prp_list is not None:
-        for entry in prp_list:
-            ref_number = entry['PROPRIETORSHIP CONCERN']['Reference number (Ref.):']
-            first_digit = next((char for char in ref_number if char.isdigit()), None)
-            # Check if the first digit is '2'
-            key = ref_number.split('(')[0].strip()  # Extract the key
-            trade_name = entry['PROPRIETORSHIP CONCERN']['Trade Name:']
-            trade_names_dict[key] = trade_name
-        return trade_names_dict
-    return trade_names_dict
-
-def extract_subject_code(prp_list):
-    subject_code= []
-    if prp_list is not None:
-        for entry in prp_list:
-            sub_code = entry['PROPRIETORSHIP CONCERN']['CIB subject code:']
-            subject_code.append(sub_code)
-        return subject_code
-    return subject_code
-
-
-
-                 
+                    
 def getOutstandingZeroDate(fac):
     if 'Contract History' in fac and isinstance(fac['Contract History'], pd.DataFrame):
         for column_name in OUTSTANDING:
@@ -211,20 +187,7 @@ def getTotalDisbursementAmount(fac):
     for key in TOTAL_DISBURSEMENT_AMOUNT:
         if key in fac['Ref'].keys():
             return fac['Ref'][key]
-        
-def extract_subject_code(prp_list):
-    subject_code= []
-    if prp_list is not None:
-        for entry in prp_list:
-            sub_code = entry['PROPRIETORSHIP CONCERN']['CIB subject code:']
-            subject_code.append(sub_code)
-        return subject_code
-    return subject_code
 
-def getOtherInstallmentST3(df):
-    df = df[~df['Facility Type'].isin([OVERDRAFT+TIME_LOAN+LTR+TERM_LOAN])]
-    df = df[df['Installment Type'] == "Installment"]
-    return {"Outstanding": convertToFloat(df['Outstanding'].sum()), "Overdue": convertToFloat(df['Overdue'].sum()), "EMI": convertToFloat(df['Installment Amount'])}
 
 def getSummaryTableFields(category, concern_name, df):
     return {
@@ -447,79 +410,13 @@ def getSummaryOfExpiredButShowingLiveFundedTotalSum( total_type, total_df):
         "NPI": total_df['NPI'].sum(),
         "Default": "Yes" if "Yes" in set(total_df['Default'].tolist()) else "No"}
 
-def getSummaryOfExpiredButShowingLiveFundedConcernTotalSum( total_type, total_df):
-    return {
-        "Concerns Trade Name":convertToString(total_type),
-        "Nature of Facility": '',
-        "Limit": convertToMillion(total_df["Limit"].sum()),
-        "Outstanding": convertToMillion(total_df['Outstanding'].sum()),
-        "Overdue": convertToMillion(total_df["Overdue"].sum()),
-        "Start Date": "-",
-        "End Date of Contract": "-",
-        "Installment Amount": "-",
-        "Payment Period": "-",
-        "Total No of Installment": "-",
-        "Total No of Installment paid":"-",
-        "No of Remaining Installment": "-",
-        "Date of Last Payment": "-",
-        "NPI": convertToFloat(total_df['NPI'].sum()),
-        "Default": "Yes" if "Yes" in set(total_df['Default'].tolist()) else "No"}
-
-
-def getSummaryOfExpiredButShowingLiveFieldsConcern(row, i, installment):
-    return {"Concerns Trade Name": row["Concern's Trade Name"],
-            "Nature of Facility": row['Facility Type'],
-            "Limit": convertToMillion(row['Limit']),
-            "Outstanding": convertToMillion(row['Outstanding']),
-            "Overdue": convertToMillion(row['Overdue']),
-            "Start Date": convertToString(row['Start Date']).replace(" 00:00:00", ""),
-            "End Date of Contract": convertToString(row['End Date of Contract']).replace(" 00:00:00", ""),
-            "Installment Amount": (convertToMillion(row['Installment Amount']) if installment else "Not Applicable"),
-            "Payment Period": (row['Payment Period (Monthly/Quarterly)'] if installment else "Not Applicable"),
-            "Total No of Installment": (convertToFloat(row["Total No of Installment"]) if installment else "Not Applicable"),
-            "Total No of Installment paid": (convertToFloat(row["Total No of Installment Paid"]) if installment else "Not Applicable"),
-            "No of Remaining Installment": (convertToFloat(row["No of Remaining Installment"]) if installment else "Not Applicable"),
-            "Date of Last Payment": convertToString(row['Date of Last Payment']).replace(" 00:00:00", ""),
-            "NPI": convertToFloat(row["NPI"]) if installment else "Not Applicable",
-            "Default": row['Default']
-        }
-
-def getSummaryOfExpiredButShowingLiveFundedConcernSum(df, total_type, installment_type):
-    return {
-        "Concerns Trade Name": total_type, 
-        "Nature of Facility": '',
-        "Limit": convertToMillion(df["Limit"].sum()),
-        "Outstanding": convertToMillion(df['Outstanding'].sum()),
-        "Overdue": convertToMillion(df["Overdue"].sum()),
-        "Start Date": "-",
-        "End Date of Contract": "-",
-        "Installment Amount": convertToMillion(df['Installment Amount'].sum()),
-        "Payment Period": "-",
-        "Total No of Installment": convertToFloat(df['Total No of Installment'].sum()),
-        "Total No of Installment paid": convertToFloat(df['Total No of Installment Paid'].sum()),
-        "No of Remaining Installment": convertToFloat(df['No of Remaining Installment'].sum()),
-        "Date of Last Payment": "-",
-        "NPI": convertToFloat(df['NPI'].sum()),
-        "Default": "Yes" if "Yes" in set(df['Default'].tolist()) else "No"}
-
 def getCorporateDataFrame(cibs):
     df = pd.DataFrame()
     for cib in cibs:
-        if getCIBCategory(cib) in ["Related party of Guarantor(with proprietorship concern)", "Directors CIB(with proprietorship concern)"]:
-            if cib.linked_prop_list is not None:
-                trade_names_dict = extract_trade_names(cib.linked_prop_list)
-            else:
-                trade_names_dict = {}  # Initialize an empty dictionary if linked_prop_list is None
         for i, fac_type in enumerate((cib.installment_facility, cib.noninstallment_facility, cib.credit_card_facility)):
             response = []
             if fac_type is not None:
                 for fac in fac_type:
-                    subject_code = general_engine.getSubjectCode(fac)
-                    if getCIBCategory(cib) in ["Related party of Guarantor(with proprietorship concern)", "Directors CIB(with proprietorship concern)"]:
-                        concern_trade_name = trade_names_dict.get(subject_code, None)
-                    else:
-                        concern_trade_name = None
-
                     response.append(
                         {
                             "CIB Category": getCIBCategory(cib),
@@ -527,8 +424,6 @@ def getCorporateDataFrame(cibs):
                             "Facility Type": general_engine.getFacilityType(fac),
                             "Phase": general_engine.getPhase(fac),
                             "Role": general_engine.getRole(fac),
-                            "Subject code": subject_code,
-                            "Concern's Trade Name": concern_trade_name,
                             "Is Funded": general_engine.isFunded(fac),
                             "Installment Type": getFacilityType(i),
                             "Outstanding": general_engine.getOutstanding(fac),
@@ -561,8 +456,6 @@ def getCorporateDataFrame(cibs):
                             "Total Disbursement Amount": getTotalDisbursementAmount(fac),
                             "CIB Link": PDF_LINK + cib.pdf_name
                         }
-                    
                     )
-                    
             df = pd.concat([df, pd.DataFrame(response)], ignore_index=True)
     return df

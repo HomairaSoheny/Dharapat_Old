@@ -1,4 +1,5 @@
 from dashboard.engines.keywords import *
+import pandas as pd
 
 def getPhase(fac):
     return fac["Ref"]["Phase"]
@@ -26,11 +27,29 @@ def isFunded(fac):
             return "No"
     return "Yes"
 
+    
+def getSubjectCode(fac):
+    account_name = fac['Ref']['Ref']
+    first_character = account_name.strip()[0]  # Extract the first character
+    if first_character.isdigit():  # Check if the first character is a digit
+        return (first_character)
+    else:
+        return None  # Return None if the first character is not a digit
+
 def getOutstanding(fac):
     for key in OUTSTANDING:
         if key in fac['Contract History'].keys():
             return fac['Contract History'].sort_values('Date', ascending=False)[key][0]
     return 0
+
+def getOutstandingDate(fac):
+    if 'Contract History' in fac and isinstance(fac['Contract History'], pd.DataFrame):
+        for column_name in OUTSTANDING:
+            if column_name in fac['Contract History']:
+                sorted_contracts = fac['Contract History'].sort_values('Date', ascending=True)
+                if sorted_contracts[column_name].iloc[0] != 0:
+                    return sorted_contracts['Date'].iloc[0]
+    return pd.NaT 
 
 def getOverdue(fac):
     for key in OVERDUE:

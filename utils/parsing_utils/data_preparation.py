@@ -1,6 +1,6 @@
 import json
 import time
-from utils.cib_data_class import CIB
+from dharapat_pbl_cib_analytics.cib_data_class import CIB
 from beeprint import pp
 
 def process_response(body):
